@@ -1,0 +1,24 @@
+name: Check README sync
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml
+      - run: python3 scripts/generate_readme.py
+      - name: Verify README is in sync with data.yaml
+        run: |
+          if ! git diff --exit-code README.md; then
+            echo "::error::README.md is out of sync. Run 'python3 scripts/generate_readme.py' and commit the result."
+            exit 1
+          fi

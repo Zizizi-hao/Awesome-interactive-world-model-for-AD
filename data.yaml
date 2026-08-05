@@ -1,0 +1,40 @@
+# =====================================================================
+# 本文件是数据入口 (single source of truth)
+# 论文条目按分类拆分在 data/ 目录下，由下方 includes 引用
+# README.md 由 scripts/generate_readme.py 自动生成，请勿手动编辑 README
+# 添加/修改条目：编辑 data/<category>.yaml 后运行  python3 scripts/generate_readme.py
+# 字段说明见 CONTRIBUTING.md
+# =====================================================================
+
+meta:
+  title: "Awesome Interactive World Models"
+  subtitle: "面向自动驾驶与具身智能的可交互世界模型"
+  description: >
+    世界模型 (World Model) 通过学习环境的动态表征，实现对未来的预测与想象；
+    可交互世界模型进一步支持以动作 (action) 为条件的生成与控制，
+    为自动驾驶和具身智能提供数据引擎、神经仿真器与策略学习基础。
+    本仓库收录并整理该方向的代表性工作，按应用场景分类，
+    并标注每篇工作的交互能力维度。
+
+categories:
+  - id: driving
+    name: "自动驾驶"
+    name_en: "Autonomous Driving"
+  - id: embodied
+    name: "具身智能"
+    name_en: "Embodied AI"
+  - id: general
+    name: "通用 / 游戏"
+    name_en: "General / Game"
+
+# 交互能力字段约定 (features):
+#   action      动作条件生成：模型输出可被显式动作控制
+#   realtime    实时推理：可达交互/游戏帧率
+#   closedloop  闭环支持：可用于闭环评测或闭环策略学习
+#   longhorizon 长时序一致性：支持长时程连贯生成
+
+# 论文条目按分类拆分存放，路径相对于仓库根目录
+includes:
+  - data/driving.yaml
+  - data/embodied.yaml
+  - data/general.yaml

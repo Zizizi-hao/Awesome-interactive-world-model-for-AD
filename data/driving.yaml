@@ -1,0 +1,119 @@
+# =====================================================================
+# 分类：自动驾驶 (driving)
+# 字段说明见 CONTRIBUTING.md；修改后运行  python3 scripts/generate_readme.py
+# =====================================================================
+
+papers:
+  - title: "GAIA-1: A Generative World Model for Autonomous Driving"
+    short: GAIA-1
+    org: Wayve
+    year: 2023
+    venue: arXiv
+    category: driving
+    links:
+      arxiv: "2309.17080"
+    features: {action: true}
+    tags: [视频生成, 文本可控, 场景生成]
+    note: 驾驶世界模型的开山之作之一，以视频/文本/动作为输入生成真实驾驶场景，支持对自车行为与场景要素的细粒度控制。
+
+  - title: "GAIA-2: A Controllable Multi-View Generative World Model for Autonomous Driving"
+    short: GAIA-2
+    org: Wayve
+    year: 2025
+    venue: arXiv
+    category: driving
+    links:
+      arxiv: "2503.20523"
+    features: {action: true}
+    tags: [多视角, 视频生成, 场景属性可控]
+    note: 多视角可控驾驶世界模型，支持对天气、地理、交通流等场景属性的细粒度控制，为 AV 系统提供神经仿真环境。
+
+  - title: "DriveDreamer: Towards Real-world-driven World Models for Autonomous Driving"
+    short: DriveDreamer
+    org: GigaAI / 清华大学
+    year: 2023
+    venue: ICLR 2024
+    category: driving
+    links:
+      arxiv: "2309.09777"
+      project: "https://drivedreamer.github.io"
+      code: "https://github.com/JeffWang98/DriveDreamer"
+    features: {action: true}
+    tags: [真实数据驱动, 结构化条件控制]
+    note: 首个由真实驾驶数据驱动的世界模型，利用 HDMap、3D 框等结构化交通条件实现可控视频生成。
+
+  - title: "Driving into the Future: Multiview Visual Forecasting and Planning with World Model for Autonomous Driving"
+    short: Drive-WM
+    org: 上海人工智能实验室 / 清华大学
+    year: 2023
+    venue: CVPR 2024
+    category: driving
+    links:
+      arxiv: "2311.17918"
+      project: "https://drive-wm.github.io"
+    features: {action: true, closedloop: true}
+    tags: [多视角预测, 规划]
+    note: 基于世界模型的多视角未来预测与规划框架，首次在 nuScenes 上实现基于生成式世界模型的闭环规划。
+
+  - title: "Vista: A Generalizable Driving World Model with High Fidelity and Versatile Controllability"
+    short: Vista
+    org: OpenDriveLab / 上海人工智能实验室
+    year: 2024
+    venue: NeurIPS 2024
+    category: driving
+    links:
+      arxiv: "2405.17398"
+    features: {action: true, longhorizon: true}
+    tags: [高保真, 动作可控, 奖励预测]
+    note: 高保真、可泛化的驾驶世界模型，同时支持动作级与高层语义级控制，并可直接预测奖励信号用于策略优化。
+
+  - title: "OccWorld: Learning a 3D Occupancy World Model for Autonomous Driving"
+    short: OccWorld
+    org: 清华大学
+    year: 2023
+    venue: ECCV 2024
+    category: driving
+    links:
+      arxiv: "2311.16038"
+      code: "https://github.com/wzzheng/OccWorld"
+    features: {}
+    tags: [3D占用栅格, 联合预测]
+    note: 基于 3D 占用栅格的世界模型，在统一框架内联合预测未来场景演化与自车轨迹，无需高精地图与人工标注。
+
+  - title: "Generalized Predictive Model for Autonomous Driving"
+    short: GenAD
+    org: OpenDriveLab / 上海人工智能实验室
+    year: 2024
+    venue: CVPR 2024 (Highlight)
+    category: driving
+    links:
+      arxiv: "2403.09630"
+      code: "https://github.com/OpenDriveLab/GenAD"
+    features: {}
+    tags: [大规模视频预训练, 未来预测]
+    note: 面向自动驾驶的大规模视频预测模型，通过未来帧预测任务学习驾驶场景中的世界知识。
+
+  - title: "MagicDrive: Street View Generation with Diverse 3D Geometry Control"
+    short: MagicDrive
+    org: UCLA (cure-lab)
+    year: 2023
+    venue: ICLR 2024
+    category: driving
+    links:
+      arxiv: "2310.02601"
+      code: "https://github.com/cure-lab/MagicDrive"
+    features: {}
+    tags: [街景生成, 3D几何控制, 数据增强]
+    note: 支持 BEV 地图、3D 框、相机位姿等多源几何控制的街景生成方法，可用于下游感知任务的 3D 数据增强。
+
+  - title: "DriveArena: A Closed-loop Generative Simulation Platform for Autonomous Driving"
+    short: DriveArena
+    org: 上海人工智能实验室
+    year: 2024
+    venue: arXiv
+    category: driving
+    links:
+      arxiv: "2403.18031"
+    features: {action: true, closedloop: true}
+    tags: [生成式仿真, 闭环评测]
+    note: 全生成式闭环驾驶仿真平台，智能体可在完全由世界模型生成的环境中持续交互与评测。

@@ -1,0 +1,53 @@
+# =====================================================================
+# 分类：具身智能 (embodied)
+# 字段说明见 CONTRIBUTING.md；修改后运行  python3 scripts/generate_readme.py
+# =====================================================================
+
+papers:
+  - title: "Learning Interactive Real-World Simulators"
+    short: UniSim
+    org: Google DeepMind
+    year: 2023
+    venue: ICLR 2024 (Outstanding Paper)
+    category: embodied
+    links:
+      arxiv: "2310.06114"
+    features: {action: true, closedloop: true}
+    tags: [统一仿真器, 文本/动作可控, 策略评测]
+    note: 统一的真实世界交互仿真器，通过文本与动作条件生成多样化交互体验，用于训练与评测具身策略。
+
+  - title: "Genie: Generative Interactive Environments"
+    short: Genie
+    org: Google DeepMind
+    year: 2024
+    venue: ICML 2024 (Best Paper)
+    category: embodied
+    links:
+      arxiv: "2402.15391"
+    features: {action: true}
+    tags: [潜在动作, 单图生成环境, 无标注视频学习]
+    note: 从未标注视频中学习潜在动作空间，可从单张图像生成可玩的 2D 交互环境，是通用具身智能的基础性探索。
+
+  - title: "RoboDreamer: Learning Compositional World Models for Robot Imagination"
+    short: RoboDreamer
+    org: ""
+    year: 2024
+    venue: ICML 2024
+    category: embodied
+    links:
+      arxiv: "2401.09985"
+    features: {}
+    tags: [组合式世界模型, 机器人想象, 语言可控]
+    note: 面向机器人想象的组合式世界模型，将长时程任务分解为可复用的概念组合进行视频预测与规划。
+
+  - title: "Navigation World Models"
+    short: NWM
+    org: Meta FAIR
+    year: 2024
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2412.03572"
+    features: {action: true, closedloop: true}
+    tags: [导航, 预测-控制, 单目视频]
+    note: 面向导航任务的世界模型，从单目视频学习预测未来观测，并通过预测-控制机制支持路径跟随与目标导航。

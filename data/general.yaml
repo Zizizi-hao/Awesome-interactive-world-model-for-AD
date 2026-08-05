@@ -1,0 +1,92 @@
+# =====================================================================
+# 分类：通用 / 游戏 (general)
+# 字段说明见 CONTRIBUTING.md；修改后运行  python3 scripts/generate_readme.py
+# =====================================================================
+
+papers:
+  - title: "Cosmos World Foundation Model Platform for Physical AI"
+    short: Cosmos
+    org: NVIDIA
+    year: 2025
+    venue: arXiv
+    category: general
+    links:
+      arxiv: "2501.03575"
+    features: {action: true}
+    tags: [世界基础模型, 物理AI, 仿真数据生成]
+    note: 面向物理 AI 的世界基础模型平台，提供可动作条件化的预训练世界模型，服务于自动驾驶与机器人的后训练。
+
+  - title: "Mastering Diverse Domains through World Models"
+    short: DreamerV3
+    org: Google DeepMind
+    year: 2023
+    venue: arXiv
+    category: general
+    links:
+      arxiv: "2301.04104"
+      code: "https://github.com/danijar/dreamerv3"
+    features: {action: true, closedloop: true}
+    tags: [世界模型强化学习, 通用算法]
+    note: 通用世界模型强化学习算法，单一超参数配置横跨多领域任务，首次实现从零开始在 Minecraft 中收集钻石。
+
+  - title: "TD-MPC2: Scalable, Robust World Models for Continuous Control"
+    short: TD-MPC2
+    org: UC San Diego
+    year: 2023
+    venue: ICLR 2024 (Oral)
+    category: general
+    links:
+      arxiv: "2310.16828"
+      code: "https://github.com/nicklashansen/tdmpc2"
+    features: {action: true, closedloop: true}
+    tags: [连续控制, 模型预测控制, 可扩展]
+    note: 可扩展的隐式世界模型 + 模型预测控制框架，单套超参数在 80+ 连续控制任务上取得鲁棒表现。
+
+  - title: "Diffusion for World Modeling: Visual Details Matter in Atari"
+    short: DIAMOND
+    org: University of Geneva
+    year: 2024
+    venue: NeurIPS 2024
+    category: general
+    links:
+      arxiv: "2405.12399"
+      code: "https://github.com/eloialonso/diamond"
+    features: {action: true, realtime: true, closedloop: true}
+    tags: [扩散世界模型, Atari, 神经游戏引擎]
+    note: 基于扩散模型的世界模型与 RL 智能体，刷新 Atari 100k 基准，并可实时运行可玩的 CS:GO 神经引擎。
+
+  - title: "Diffusion Models Are Real-Time Game Engines"
+    short: GameNGen
+    org: Google
+    year: 2024
+    venue: arXiv
+    category: general
+    links:
+      arxiv: "2408.14837"
+    features: {action: true, realtime: true}
+    tags: [神经游戏引擎, DOOM, 实时生成]
+    note: 基于扩散模型的神经游戏引擎，在单张 TPU 上以 20FPS 实时运行 DOOM，人类评测难以区分其与真实引擎。
+
+  - title: "WorldDreamer: Towards General World Models for Video Generation via Predicting Masked Tokens"
+    short: WorldDreamer
+    org: ""
+    year: 2024
+    venue: arXiv
+    category: general
+    links:
+      arxiv: "2408.00415"
+    features: {}
+    tags: [掩码预测, 多领域泛化, 视频生成]
+    note: 通过预测掩码 token 构建通用世界模型，在图像预测、动作条件预测与文本到视频生成间统一建模。
+
+  - title: "Matrix-Game: Interactive World Foundation Model"
+    short: Matrix-Game
+    org: Skywork AI
+    year: 2025
+    venue: arXiv
+    category: general
+    links:
+      arxiv: "2506.18701"
+    features: {action: true, realtime: true, longhorizon: true}
+    tags: [实时交互, 世界基础模型, 长视频生成]
+    note: 开源实时交互世界基础模型，支持丰富的动作可控性与长时程连贯生成，探索世界模型的交互式应用范式。
