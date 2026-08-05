@@ -86,12 +86,28 @@ def render_features(features: dict) -> str:
     return " ".join(icons) if icons else "—"
 
 
+def render_venue(paper: dict) -> str:
+    venue = paper.get("venue")
+    if not venue:
+        return "—"
+    # 年份统一取自 year 字段（首次发表年份），去掉 venue 中内嵌的会议年份
+    text = re.sub(r"\s*\b(?:19|20)\d{2}\b", "", str(venue), count=1).strip()
+    year = paper.get("year")
+    if year:
+        m = re.match(r"^(.*?)\s*\(([^)]+)\)\s*$", text)
+        if m and m.group(1).strip():
+            text = f"{m.group(1).strip()} ({year}, {m.group(2).strip()})"
+        else:
+            text = f"{text} ({year})"
+    return esc(text)
+
+
 def render_paper_row(paper: dict) -> str:
     title, short = paper["title"], paper.get("short")
     if short and title.lower().startswith(short.lower() + ":"):
         title = title[len(short) + 1:].strip()
     name = f"**{esc(short)}**: {esc(title)}" if short else f"**{esc(title)}**"
-    venue_year = f"{esc(paper['venue'])}" if paper.get("venue") else "—"
+    venue_year = render_venue(paper)
     org = esc(paper.get("org") or "—")
     return (
         f"| {name} | {venue_year} | {org} | "

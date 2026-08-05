@@ -15,8 +15,8 @@
 - title: "论文完整标题"        # 必填
   short: 简称                  # 可选，用于表格中加粗显示
   org: 机构名                  # 可选
-  year: 2025                   # 必填，首次发表年份
-  venue: 会议/期刊名           # 必填，未正式发表填 arXiv
+  year: 2025                   # 必填，首次发表年份（表格中统一以 (year) 显示）
+  venue: 会议/期刊名           # 必填，未正式发表填 arXiv；无需带年份
   category: driving            # 必填，见下方分类 id
   links:
     arxiv: "2501.00000"        # arXiv 编号（不含域名）
