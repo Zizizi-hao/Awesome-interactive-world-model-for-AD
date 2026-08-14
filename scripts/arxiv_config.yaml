@@ -1,0 +1,28 @@
+# =====================================================================
+# arXiv 检索配置，由 scripts/fetch_arxiv.py 与 .github/workflows/daily-arxiv.yml 使用
+# 召回太多噪音时收紧 queries 关键词；漏报时放宽
+# =====================================================================
+
+lookback_days: 7            # 每次扫描回溯的天数（每日运行 + 去重，窗口留余量）
+max_results_per_query: 100  # 每个 query 最多拉取的条目数
+delay_seconds: 3            # 相邻请求间隔（arXiv API 限速要求）
+abstract_chars: 400         # Issue 中摘要截断长度
+
+# 仅保留主分类在列表内的论文（空列表 = 不限制）
+category_filter: [cs.CV, cs.RO, cs.LG, cs.AI, cs.GR]
+
+queries:
+  - name: 自动驾驶世界模型
+    search: >-
+      (all:"world model" OR all:"world models") AND
+      (all:"autonomous driving" OR all:"self-driving" OR all:"driving scene" OR all:"end-to-end driving")
+
+  - name: 具身智能世界模型
+    search: >-
+      (all:"world model" OR all:"world models") AND
+      (all:"embodied" OR all:"robotic" OR all:"manipulation" OR all:"vision-language-action")
+
+  - name: 交互视频生成 / 游戏世界模型
+    search: >-
+      (all:"world model" OR all:"world models") AND
+      (all:"playable" OR all:"action-conditioned" OR all:"interactive video" OR all:"game engine")

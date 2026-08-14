@@ -51,3 +51,27 @@ papers:
     features: {action: true, closedloop: true}
     tags: [导航, 预测-控制, 单目视频]
     note: 面向导航任务的世界模型，从单目视频学习预测未来观测，并通过预测-控制机制支持路径跟随与目标导航。
+
+  - title: "FACT: Failure-Aware Causal Training for World-Action Models"
+    short: FACT
+    org: ""
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2608.10232"
+    features: {}
+    tags: [因果训练, 失败感知, WAM]
+    note: 失败感知因果训练，显式建模动作-后果因果关系以纠正世界模型的乐观偏差。
+
+  - title: "CausalNav: Reliability-Certified Causal World Models for Control under Physical-Parameter Shift"
+    short: CausalNav
+    org: ""
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2608.07809"
+    features: {}
+    tags: [因果世界模型, 可靠性认证, 导航控制]
+    note: 物理参数变化下可靠性认证的因果世界模型，用于导航控制。

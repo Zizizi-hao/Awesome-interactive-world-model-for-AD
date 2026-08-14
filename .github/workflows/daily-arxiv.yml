@@ -1,0 +1,46 @@
+name: Daily arXiv scan
+
+on:
+  schedule:
+    - cron: "0 16 * * *"   # UTC 16:00 = 北京时间 00:00（GitHub cron 可能有延迟）
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: arxiv-scan
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml
+      - name: Fetch arXiv candidates
+        id: fetch
+        run: python3 scripts/fetch_arxiv.py
+      - name: Create issue with candidates
+        if: steps.fetch.outputs.has_new == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create "new-papers" --color "1D76DB" --description "arXiv 新论文候选" 2>/dev/null || true
+          gh issue create \
+            --title "arXiv 候选论文更新 $(date +%F)" \
+            --label "new-papers" \
+            --body-file "${{ steps.fetch.outputs.report }}"
+      - name: Commit seen ids
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/seen_arxiv_ids.txt
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: update seen arxiv ids"
+            git push
+          fi
