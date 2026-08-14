@@ -132,7 +132,7 @@ papers:
 
   - title: "Cam2Sim: Neural Scenario Reconstruction for Closed-Loop Autonomous Driving Simulation"
     short: Cam2Sim
-    org: ""
+    org: "Andrea Stocco 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -144,7 +144,7 @@ papers:
 
   - title: "DecoupleGS: Interactive 3D Gaussian Splatting for End-to-End Autonomous Driving Testing"
     short: DecoupleGS
-    org: ""
+    org: "Haotian Shi 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -155,7 +155,7 @@ papers:
     note: 解耦动静高斯泼溅，为端到端自动驾驶提供高保真实时闭环传感器仿真平台。
 
   - title: "Point as Skeleton: Accumulated Point Cloud Enhanced Autoregressive Generation for Closed-Loop AD Simulation"
-    org: ""
+    org: "Junchi Yan 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -166,7 +166,7 @@ papers:
     note: 点云骨架条件 + Reset-and-Roll 扩散推理，实现状态更新式闭环驾驶视频生成。
 
   - title: "A Risk-Field Enhanced Closed-Loop Digital Twin Framework for Autonomous Driving Safety Validation"
-    org: ""
+    org: "Yongzhi Liu 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -178,7 +178,7 @@ papers:
 
   - title: "CommonRoad-Game: A Human-in-the-Loop Simulation Framework for Autonomous Driving"
     short: CommonRoad-Game
-    org: ""
+    org: "Youran Wang 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -190,7 +190,7 @@ papers:
 
   - title: "MDrive: Benchmarking Closed-Loop Cooperative Driving for End-to-End Multi-agent Systems"
     short: MDrive
-    org: ""
+    org: "Jiaqi Ma 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -202,7 +202,7 @@ papers:
 
   - title: "UnsDrive: Towards Robust End-to-End Autonomous Driving in Unstructured Scenes"
     short: UnsDrive
-    org: ""
+    org: "Yunfeng Ai 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -213,7 +213,7 @@ papers:
     note: 面向矿区非结构化场景的端到端规划器，含未知空间占据表示与 MineLoop 闭环仿真器。
 
   - title: "CMU-Drive and V2V-VLA: Cooperative Multi-agent Unified Driving with Reasoning Benchmark"
-    org: ""
+    org: "Stephen F. Smith 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -225,7 +225,7 @@ papers:
 
   - title: "From Driving Videos to Simulatable Scenarios"
     short: D-V2S
-    org: ""
+    org: "Antonio Manuel López 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -260,7 +260,7 @@ papers:
 
   - title: "RLGF: Reinforcement Learning with Geometric Feedback for Autonomous Driving Video Generation"
     short: RLGF
-    org: ""
+    org: "Jianbing Shen 团队"
     year: 2025
     venue: arXiv
     category: driving
@@ -272,7 +272,7 @@ papers:
 
   - title: "AnyScene: Towards Highly Controllable Driving Scene Generation at Anywhere and Beyond"
     short: AnyScene
-    org: ""
+    org: "Benjin Zhu 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -284,7 +284,7 @@ papers:
 
   - title: "muSync-GS: Physics-Synchronized Driving Video Synthesis for Weather and Geometric Road Hazards"
     short: muSync-GS
-    org: ""
+    org: "Zilin Bian 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -296,7 +296,7 @@ papers:
 
   - title: "RealWeather: Realistic and Scene-Faithful Weather Translation with Driving World Models"
     short: RealWeather
-    org: ""
+    org: "Guanbin Li 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -308,7 +308,7 @@ papers:
 
   - title: "FrozenDrive: Zero-Shot Text-Guided Driving Scene Generation with Parameter-Free Frozen Diffusion"
     short: FrozenDrive
-    org: ""
+    org: "Kuk-Jin Yoon 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -320,7 +320,7 @@ papers:
 
   - title: "HERMES++: Toward a Unified Driving World Model for 3D Scene Understanding and Generation"
     short: HERMES++
-    org: ""
+    org: "Xiang Bai 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -332,7 +332,7 @@ papers:
 
   - title: "EditSSC: Toward Editable Semantic Occupancy Scenes with Unconditional Diffusion Models"
     short: EditSSC
-    org: ""
+    org: "Alexandre Boulch 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -344,7 +344,7 @@ papers:
 
   - title: "DrivePTS: A Progressive Learning Framework for Driving Scene Generation"
     short: DrivePTS
-    org: ""
+    org: "Cheng Lu 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -355,7 +355,7 @@ papers:
     note: 渐进学习解耦几何条件依赖，VLM 多视角描述 + 频率结构损失提升场景生成保真度。
 
   - title: "Mitigating Compounding Error via Video Representation Regularization"
-    org: ""
+    org: "Yisen Wang 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -367,7 +367,7 @@ papers:
 
   - title: "DriveWeaver: Point-Conditioned Video Inpainting for Controllable Vehicle Insertion in Autonomous Driving Simulation"
     short: DriveWeaver
-    org: ""
+    org: "Li Zhang 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -378,7 +378,7 @@ papers:
     note: 点云条件视频修复实现可控车辆插入，并提取 3DGS 支持实时渲染。
 
   - title: "Long-term Traffic Scene Prediction via Polynomial Representations in Autonomous Driving"
-    org: ""
+    org: "Yue Yao 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -390,7 +390,7 @@ papers:
 
   - title: "E2E-CDiff: End-to-end Conditional Diffusion for Realistic and Controllable Visual Traffic Scenario Generation"
     short: E2E-CDiff
-    org: ""
+    org: "Philip S Yu 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -402,7 +402,7 @@ papers:
 
   - title: "OLiDM: Object-aware LiDAR Diffusion Models for Autonomous Driving"
     short: OLiDM
-    org: ""
+    org: "Jianbing Shen 团队"
     year: 2024
     venue: arXiv
     category: driving
@@ -426,7 +426,7 @@ papers:
 
   - title: "Real2Sim: A Physics-driven and Editable Gaussian Splatting Framework for Autonomous Driving Scenes"
     short: Real2Sim
-    org: ""
+    org: "Ruimin Ke 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -438,7 +438,7 @@ papers:
 
   - title: "RealityBridge: Bridging Editable 3D Gaussian Splatting Driving Simulations and Real-World Videos"
     short: RealityBridge
-    org: ""
+    org: "Guanbin Li 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -449,7 +449,7 @@ papers:
     note: 视频基础模型 + GateNet 自适应注入，将编辑后的 3DGS 渲染还原为真实驾驶视频。
 
   - title: "Towards Physically Consistent 4D Scene Reconstruction for Closed-loop Autonomous Driving Simulation"
-    org: ""
+    org: "Shengbo Eben Li 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -461,7 +461,7 @@ papers:
 
   - title: "GEM: Gaussian Evolution Model for Occupancy Forecasting and Motion Planning"
     short: GEM
-    org: ""
+    org: "Saurabh Bagchi 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -473,7 +473,7 @@ papers:
 
   - title: "Sensor2Sensor: Cross-Embodiment Sensor Conversion for Autonomous Driving"
     short: Sensor2Sensor
-    org: ""
+    org: "Chiyu Max Jiang 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -485,7 +485,7 @@ papers:
 
   - title: "GSDrive: Reinforcing Driving Policies by Multi-mode Future Trajectory Probing with 3D Gaussian Splatting Environment"
     short: GSDrive
-    org: ""
+    org: "Zufeng Zhang 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -497,7 +497,7 @@ papers:
 
   - title: "DLWM: Dual Latent World Models enable Holistic Gaussian-centric Pre-training in Autonomous Driving"
     short: DLWM
-    org: ""
+    org: "Shaojie Shen 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -509,7 +509,7 @@ papers:
 
   - title: "OWMDrive: Causality-Aware End-to-End Autonomous Driving via 4D Occupancy World Model"
     short: OWMDrive
-    org: ""
+    org: "Yunfeng Ai 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -521,7 +521,7 @@ papers:
 
   - title: "DynamicVGGT: Learning Dynamic Point Maps for 4D Scene Reconstruction in Autonomous Driving"
     short: DynamicVGGT
-    org: ""
+    org: "Xiangyang Xue 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -533,7 +533,7 @@ papers:
 
   - title: "DriveFix: Spatio-Temporally Coherent Driving Scene Restoration"
     short: DriveFix
-    org: ""
+    org: "Qi Guo 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -545,7 +545,7 @@ papers:
 
   - title: "L2D2-GS: Learning to Densify for Feedforward Dynamic Gaussian Scene Reconstruction"
     short: L2D2-GS
-    org: ""
+    org: "Wen Gao 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -556,7 +556,7 @@ papers:
     note: 自监督增密策略 + 几何正则化，实现高效前馈动态城市高斯重建。
 
   - title: "Physics-Aware 3D Gaussian Editing for Driving Scene Generation"
-    org: ""
+    org: "Rui Ma 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -568,7 +568,7 @@ papers:
 
   - title: "RS2AD-LiDAR: End-to-End Autonomous Driving LiDAR Data Generation from Roadside Sensor Observations"
     short: RS2AD-LiDAR
-    org: ""
+    org: "Keqiang Li 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -580,7 +580,7 @@ papers:
 
   - title: "Nexus: Decoupled Diffusion Sparks Adaptive Scene Generation"
     short: Nexus
-    org: ""
+    org: "Hongyang Li 团队"
     year: 2025
     venue: arXiv
     category: driving
@@ -592,7 +592,7 @@ papers:
 
   - title: "Omega: Optimization-Guided Diffusion for Interactive Scene Generation"
     short: Omega
-    org: ""
+    org: "Hongyang Li 团队"
     year: 2025
     venue: arXiv
     category: driving
@@ -604,7 +604,7 @@ papers:
 
   - title: "OccDirector: Language-Guided Behavior and Interaction Generation in 4D Occupancy Space"
     short: OccDirector
-    org: ""
+    org: "Jianbing Shen 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -616,7 +616,7 @@ papers:
 
   - title: "World Engine: Towards the Era of Post-Training for Autonomous Driving"
     short: World Engine
-    org: ""
+    org: "Hongyang Li 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -627,7 +627,7 @@ papers:
     note: 从真实日志重建高保真交互环境并外推安全关键变体，驱动策略后训练。
 
   - title: "World Models as Adversaries: Multi-Agent Self-Play Fine-Tuning for Robust Motion Planning"
-    org: ""
+    org: "Wei Ma 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -639,7 +639,7 @@ papers:
 
   - title: "PHASE: Heterogeneous Self-Play for Realistic Highway Traffic Simulation"
     short: PHASE
-    org: ""
+    org: "Xiaoyu Huang 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -650,7 +650,7 @@ papers:
     note: 上下文感知的异构自博弈策略，零样本迁移至 512 个真实高速交互场景。
 
   - title: "Scaling Self-Play for End-to-End Driving"
-    org: ""
+    org: "Liam Paull 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -662,7 +662,7 @@ papers:
 
   - title: "ECoSim: Data Efficient Fine-Tuning for Controllable Traffic Simulation"
     short: ECoSim
-    org: ""
+    org: "Masayoshi Tomizuka 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -673,7 +673,7 @@ papers:
     note: FiLM 层轻量适配预训练交通模型，<1% 数据实现多模态可控仿真。
 
   - title: "Proposal-Conditioned Latent Diffusion for Closed-Loop Traffic Scenario Generation"
-    org: ""
+    org: "Steven Peters 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -685,7 +685,7 @@ papers:
 
   - title: "TrafficDiffuser: Top-down Traffic Scenario Generation via Joint Initial-Goal Diffusion and Trajectory Infilling"
     short: TrafficDiffuser
-    org: ""
+    org: "Sebastian Fischmeister 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -697,7 +697,7 @@ papers:
 
   - title: "AD-R1: Closed-Loop Reinforcement Learning for End-to-End Autonomous Driving with Impartial World Models"
     short: AD-R1
-    org: ""
+    org: "Jianbing Shen 团队"
     year: 2025
     venue: arXiv
     category: driving
@@ -709,7 +709,7 @@ papers:
 
   - title: "BrainWAM: Action-Space Coordination of Semantic Priors and Predictive Dynamics for Autonomous Driving"
     short: BrainWAM
-    org: ""
+    org: "Zhaoxiang Zhang 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -721,7 +721,7 @@ papers:
 
   - title: "SimWAM: A Simple World Action Model for End-to-End Autonomous Driving"
     short: SimWAM
-    org: ""
+    org: "Xiang Bai 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -733,7 +733,7 @@ papers:
 
   - title: "4D-WAM: 4D Consistent World Modeling for Autonomous Driving"
     short: 4D-WAM
-    org: ""
+    org: "Zhiwei Xiong 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -745,7 +745,7 @@ papers:
 
   - title: "DriveWAM: Video Generative Priors Enable Scalable World-Action Modeling for Autonomous Driving"
     short: DriveWAM
-    org: ""
+    org: "Li Jiang 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -757,7 +757,7 @@ papers:
 
   - title: "CLEAR: Closed-Loop Reinforcement Learning at Scale for End-to-End Autonomous Driving"
     short: CLEAR
-    org: ""
+    org: "Fatih Porikli 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -769,7 +769,7 @@ papers:
 
   - title: "GraphWorld: Long-Horizon Planning with World Models for End-to-End Autonomous Driving"
     short: GraphWorld
-    org: ""
+    org: "Yadan Luo 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -781,7 +781,7 @@ papers:
 
   - title: "IDOL: Inverse-Dynamics-Guided Future Prediction for End-to-End Autonomous Driving"
     short: IDOL
-    org: ""
+    org: "Dongmei Li 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -793,7 +793,7 @@ papers:
 
   - title: "Dreamer-SAC: Off-Policy Learning in Latent World Models for Sample-Efficient Autonomous Driving"
     short: Dreamer-SAC
-    org: ""
+    org: "Xi Xiong 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -804,7 +804,7 @@ papers:
     note: 循环状态空间世界模型 + 离策略 SAC + n 步估计，提升自动驾驶样本效率。
 
   - title: "Ego-Dynamics-Augmented World Model for Autonomous Driving with Zero-Shot Cross-Chassis Adaptation"
-    org: ""
+    org: "Chen Lv 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -816,7 +816,7 @@ papers:
 
   - title: "CoWorld-VLA: Thinking in a Multi-Expert World Model for Autonomous Driving"
     short: CoWorld-VLA
-    org: ""
+    org: "Gong Che 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -828,7 +828,7 @@ papers:
 
   - title: "WCog-VLA: A Dual-Level World-Cognitive Vision-Language-Action Model for End-to-End Autonomous Driving"
     short: WCog-VLA
-    org: ""
+    org: "Binyang Song 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -840,7 +840,7 @@ papers:
 
   - title: "HyWorldVLA: A Vision-Language-Action Model with Hybrid World Modeling for Autonomous Driving"
     short: HyWorldVLA
-    org: ""
+    org: "Liulong Ma 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -852,7 +852,7 @@ papers:
 
   - title: "PLAN-S: Bridging Planning with Latent Style Dynamics for Autonomous Driving World Models"
     short: PLAN-S
-    org: ""
+    org: "Xinhu Zheng 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -864,7 +864,7 @@ papers:
 
   - title: "WorldDrive: Bridging Scene Generation and Planning via Unifying Vision and Motion Representation"
     short: WorldDrive
-    org: ""
+    org: "Jianbing Shen 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -876,7 +876,7 @@ papers:
 
   - title: "LWDrive: Layer-Wise World-Model-Guided Vision-Language Model Planning for Autonomous Driving"
     short: LWDrive
-    org: ""
+    org: "Guofa Li 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -888,7 +888,7 @@ papers:
 
   - title: "FlashDrive: Flash Vision-Language-Action Inference for Autonomous Driving"
     short: FlashDrive
-    org: ""
+    org: "Zhijian Liu 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -900,7 +900,7 @@ papers:
 
   - title: "TerraTransfer: Learning End-to-End Driving Policies Without Expert Demonstrations"
     short: TerraTransfer
-    org: ""
+    org: "Wei Zhan 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -912,7 +912,7 @@ papers:
 
   - title: "BeyondSight: Object Permanence for End-to-End Autonomous Driving"
     short: BeyondSight
-    org: ""
+    org: "Steven L. Waslander 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -923,7 +923,7 @@ papers:
     note: 解耦存在性与可观测性，时序传播 actor 查询实现遮挡下的感知预测规划。
 
   - title: "Toward the Cognitive-Physical Limits of Embodied Intelligence through a World-Model-Centric Autonomous Racing Agent"
-    org: ""
+    org: "Chen Lv 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -935,7 +935,7 @@ papers:
 
   - title: "SAGE: Steerable Adversarial Scenario Generation through Test-Time Preference Alignment"
     short: SAGE
-    org: ""
+    org: "Jian Sun 团队"
     year: 2025
     venue: arXiv
     category: driving
@@ -947,7 +947,7 @@ papers:
 
   - title: "ADV-0: Closed-Loop Min-Max Adversarial Training for Long-Tail Robustness in Autonomous Driving"
     short: ADV-0
-    org: ""
+    org: "Jian Sun 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -959,7 +959,7 @@ papers:
 
   - title: "AlignADV: Learnability-Guided Adversarial Training for Safe Autonomous Driving"
     short: AlignADV
-    org: ""
+    org: "Jian Sun 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -971,7 +971,7 @@ papers:
 
   - title: "EvoDrive: Pareto Evolution for Safety-Critical Autonomous Driving via Self-Improving LLM Agents"
     short: EvoDrive
-    org: ""
+    org: "Wei Ma 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -983,7 +983,7 @@ papers:
 
   - title: "LLM-attacker: Using LLMs to Identify Adversarial Drivers for Testing Autonomous Vehicles"
     short: LLM-attacker
-    org: ""
+    org: "Ye Tian 团队"
     year: 2025
     venue: arXiv
     category: driving
@@ -994,7 +994,7 @@ papers:
     note: 多个 LLM agent 识别最适合作为攻击者的交通参与者，再优化其轨迹形成迭代反馈。
 
   - title: "Seeking to Collide: Generating Adversarial Trajectories for Testing Autonomous Vehicles"
-    org: ""
+    org: "Ye Tian 团队"
     year: 2025
     venue: arXiv
     category: driving
@@ -1006,7 +1006,7 @@ papers:
 
   - title: "CCFM: Collision-Constrained Flow Matching for Safety-Critical Scenario Generation"
     short: CCFM
-    org: ""
+    org: "Ruwen Qin 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -1018,7 +1018,7 @@ papers:
 
   - title: "RiskFlow: Fast and Faithful Safety-Critical Traffic Scenario Generation"
     short: RiskFlow
-    org: ""
+    org: "Guofa Li 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -1030,7 +1030,7 @@ papers:
 
   - title: "PCASim: Promptable Closed-loop Adversarial Simulation for Urban Traffic Environment"
     short: PCASim
-    org: ""
+    org: "Bin Jiang 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -1042,7 +1042,7 @@ papers:
 
   - title: "KG-ASG: Collision-Knowledge-Guided Closed-Loop Adversarial Scenario Generation"
     short: KG-ASG
-    org: ""
+    org: "Qiang Liu 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -1054,7 +1054,7 @@ papers:
 
   - title: "ScenePilot: Controllable Boundary-Driven Critical Scenario Generation"
     short: ScenePilot
-    org: ""
+    org: "Cheng-zhong Xu 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -1066,7 +1066,7 @@ papers:
 
   - title: "CARS: Learning Responsibility-Attributed Adversarial Scenarios for Testing Autonomous Vehicles"
     short: CARS
-    org: ""
+    org: "Cheng Wang 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -1077,7 +1077,7 @@ papers:
     note: 上下文感知对手选择 + 生成对抗策略，碰撞场景可归责且法规对齐。
 
   - title: "Conditional Flow-VAE for Safety-Critical Traffic Scenario Generation"
-    org: ""
+    org: "Raquel Urtasun 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -1089,7 +1089,7 @@ papers:
 
   - title: "TrafficAlign: Aligning Large Language Models for Traffic Scenario Generation"
     short: TrafficAlign
-    org: ""
+    org: "Tianyi Zhang 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -1100,7 +1100,7 @@ papers:
     note: 基于真实视频合成场景并验证对齐 LLM，生成场景使三模型碰撞率提升 10.8%。
 
   - title: "Scenario Generation for Testing of Autonomous Driving Systems Using Real-World Failure Records"
-    org: ""
+    org: "Chuchu Fan 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -1112,7 +1112,7 @@ papers:
 
   - title: "AnchorDrive: LLM Scenario Rollout with Anchor-Guided Diffusion Regeneration"
     short: AnchorDrive
-    org: ""
+    org: "Chen Xiong 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -1124,7 +1124,7 @@ papers:
 
   - title: "SaFeR: Safety-Critical Scenario Generation via Feasibility-Constrained Token Resampling"
     short: SaFeR
-    org: ""
+    org: "Jianxun Cui 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -1135,7 +1135,7 @@ papers:
     note: 离散下一 token 预测 + 差分注意力 + 最大可行域约束的重采样生成对抗场景。
 
   - title: "Map-Agnostic Interactive Safety-Critical Scenario Generation via Multi-Objective Tree Search"
-    org: ""
+    org: "Chen Sun 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -1146,7 +1146,7 @@ papers:
     note: MCTS + UCB/LCB 混合策略，地图无关 SUMO 微观模型生成交互场景。
 
   - title: "Safety-Centered Scenario Generation for Autonomous Vehicles"
-    org: ""
+    org: "Aliasghar Moj Arab 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -1158,7 +1158,7 @@ papers:
 
   - title: "Dynasto: Validity-Aware Dynamic-Static Parameter Optimization for Autonomous Driving Testing"
     short: Dynasto
-    org: ""
+    org: "Foutse Khomh 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -1170,7 +1170,7 @@ papers:
 
   - title: "STADA: Specification-based Testing for Autonomous Driving Agents"
     short: STADA
-    org: ""
+    org: "Matthew B. Dwyer 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -1181,7 +1181,7 @@ papers:
     note: 从 LTLf 形式规范系统生成所有初始场景与续延，覆盖率为最佳基线 2 倍。
 
   - title: "Risk-Controllable Multi-View Diffusion for Driving Scenario Generation"
-    org: ""
+    org: "Jinhua Zhao 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -1192,7 +1192,7 @@ papers:
     note: 风险等级 + 物理风险建模驱动多视角扩散，区域感知 DPO 聚焦动态区。
 
   - title: "Threat-guided Policy-aware Scene Perturbation for Safe Autonomous Driving with Online Reinforcement Learning"
-    org: ""
+    org: "Zongzhang Zhang 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -1204,7 +1204,7 @@ papers:
 
   - title: "SPHINX: First Explain, Then Explore"
     short: SPHINX
-    org: ""
+    org: "My T. Thai 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -1216,7 +1216,7 @@ papers:
 
   - title: "WorldLens: Full-Spectrum Evaluations of Driving World Models in Real World"
     short: WorldLens
-    org: ""
+    org: "Ziwei Liu 团队"
     year: 2025
     venue: arXiv
     category: driving
@@ -1228,7 +1228,7 @@ papers:
 
   - title: "DriveCombo: Benchmarking Compositional Traffic Rule Reasoning in Autonomous Driving"
     short: DriveCombo
-    org: ""
+    org: "Kaicheng Yu 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -1240,7 +1240,7 @@ papers:
 
   - title: "VIScore: Diagnosing Planning-Relevant Quality in Latent World Models"
     short: VIScore
-    org: ""
+    org: "Morgan Levine 团队"
     year: 2026
     venue: arXiv
     category: driving
@@ -1251,7 +1251,7 @@ papers:
     note: 诊断潜世界模型中与规划相关的质量问题的评价分数。
 
   - title: "How Can Driving World Models Do Counterfactual Prediction?"
-    org: ""
+    org: "Ziran Wang 团队"
     year: 2026
     venue: arXiv
     category: driving

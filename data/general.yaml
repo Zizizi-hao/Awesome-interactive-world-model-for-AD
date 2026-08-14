@@ -69,7 +69,7 @@ papers:
 
   - title: "WorldDreamer: Towards General World Models for Video Generation via Predicting Masked Tokens"
     short: WorldDreamer
-    org: ""
+    org: "Yu Qiao 团队"
     year: 2024
     venue: arXiv
     category: general
@@ -105,7 +105,7 @@ papers:
 
   - title: "GAUGE: A Measurement-Grounded Benchmark for Physical Fidelity in Simulation Engines and Video World Models"
     short: GAUGE
-    org: ""
+    org: "Weinan Zhang 团队"
     year: 2026
     venue: arXiv
     category: general
@@ -116,7 +116,7 @@ papers:
     note: 测量驱动的物理保真度基准，诊断仿真引擎与视频世界模型的物理一致性。
 
   - title: "The Evaluation Protocol Determines the Result: An Independent Reproduction of LeWorldModel on TwoRoom"
-    org: ""
+    org: "Joyjeet Singh 团队"
     year: 2026
     venue: arXiv
     category: general
@@ -127,7 +127,7 @@ papers:
     note: 独立复现发现评价协议决定世界模型排名，揭示评测方法论对结果的影响。
 
   - title: "Diagnosing JEPA World Models with Action-Conditioned Predictive Consistency"
-    org: ""
+    org: "Qi Tian 团队"
     year: 2026
     venue: arXiv
     category: general
@@ -138,7 +138,7 @@ papers:
     note: 用动作条件预测一致性诊断 JEPA 世界模型的表示质量。
 
   - title: "A Unifying Perspective on Causal World Models: From Observations to Representations to Structure"
-    org: ""
+    org: "Fabrizio Russo 团队"
     year: 2026
     venue: arXiv
     category: general
@@ -150,7 +150,7 @@ papers:
 
   - title: "Twin Rollouts: Noise-Coupled Counterfactual Branching in Interactive Video World Models"
     short: Twin Rollouts
-    org: ""
+    org: "Xinran Xu 团队"
     year: 2026
     venue: arXiv
     category: general
@@ -162,7 +162,7 @@ papers:
 
   - title: "WorldDirector: Building Controllable World Simulators with Persistent Dynamic Memory"
     short: WorldDirector
-    org: ""
+    org: "Qifeng Chen 团队"
     year: 2026
     venue: arXiv
     category: general
@@ -174,7 +174,7 @@ papers:
 
   - title: "HelloWorld: Enabling Socially Interactive Characters in Video World Models"
     short: HelloWorld
-    org: ""
+    org: "Yoichi Sato 团队"
     year: 2026
     venue: arXiv
     category: general
@@ -186,7 +186,7 @@ papers:
 
   - title: "MASS: Multiplayer World Models with Authoritative Shared State"
     short: MASS
-    org: ""
+    org: "Boxin Shi 团队"
     year: 2026
     venue: arXiv
     category: general
@@ -197,7 +197,7 @@ papers:
     note: 权威共享状态的多玩家世界模型，解决多智能体状态同步问题。
 
   - title: "Addressable Memory for Video World Models"
-    org: ""
+    org: "Aljoša Ošep 团队"
     year: 2026
     venue: arXiv
     category: general
@@ -208,7 +208,7 @@ papers:
     note: 可寻址视觉记忆机制，解决交互式视频世界模型中 KV cache 的视觉持久性局限。
 
   - title: "Persistent Computational State: A Session-Centric Runtime for Generative World Models"
-    org: ""
+    org: "Zhen Lin 团队"
     year: 2026
     venue: arXiv
     category: general
@@ -220,7 +220,7 @@ papers:
 
   - title: "AlayaWorld: Interactive Long-Horizon World Modeling"
     short: AlayaWorld
-    org: ""
+    org: "Zihui Gao 团队"
     year: 2026
     venue: arXiv
     category: general
@@ -232,7 +232,7 @@ papers:
 
   - title: "ABot-World-0: Infinite Interactive World Rollout on a Single Desktop GPU"
     short: ABot-World-0
-    org: ""
+    org: "Ning Guo 团队"
     year: 2026
     venue: arXiv
     category: general
@@ -244,7 +244,7 @@ papers:
 
   - title: "Sekai2: From World Exploration to Interactive World Modeling"
     short: Sekai2
-    org: ""
+    org: "Yongtao Ge 团队"
     year: 2026
     venue: arXiv
     category: general
@@ -256,7 +256,7 @@ papers:
 
   - title: "WorldCycle: Self-Verifiable Reinforcement Learning for Long-Horizon Video World Models"
     short: WorldCycle
-    org: ""
+    org: "Song Guo 团队"
     year: 2026
     venue: arXiv
     category: general
@@ -267,7 +267,7 @@ papers:
     note: 自验证强化学习让视频世界模型在长程 rollout 中自我检测并修正错误。
 
   - title: "Distilling Physical Priors into Streaming World Models"
-    org: ""
+    org: "Yihao Liu 团队"
     year: 2026
     venue: arXiv
     category: general
@@ -279,7 +279,7 @@ papers:
 
   - title: "PlayWorld: Benchmarking World Models with Agent Players over Long-Horizon Objectives"
     short: PlayWorld
-    org: ""
+    org: "Hengshuang Zhao 团队"
     year: 2026
     venue: arXiv
     category: general

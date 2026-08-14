@@ -30,7 +30,7 @@ papers:
 
   - title: "RoboDreamer: Learning Compositional World Models for Robot Imagination"
     short: RoboDreamer
-    org: ""
+    org: "Jiwen Lu 团队"
     year: 2024
     venue: ICML 2024
     category: embodied
@@ -54,7 +54,7 @@ papers:
 
   - title: "FACT: Failure-Aware Causal Training for World-Action Models"
     short: FACT
-    org: ""
+    org: "Xiaolong Wang 团队"
     year: 2026
     venue: arXiv
     category: embodied
@@ -66,7 +66,7 @@ papers:
 
   - title: "CausalNav: Reliability-Certified Causal World Models for Control under Physical-Parameter Shift"
     short: CausalNav
-    org: ""
+    org: "Jun Shen 团队"
     year: 2026
     venue: arXiv
     category: embodied

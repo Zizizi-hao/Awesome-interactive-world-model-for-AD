@@ -25,6 +25,9 @@ try:
 except ImportError:
     sys.exit("Missing dependency: pip install pyyaml")
 
+if sys.platform == "win32":
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
 ROOT = Path(__file__).resolve().parent.parent
 CONFIG_FILE = Path(__file__).resolve().parent / "arxiv_config.yaml"
 DATA_FILE = ROOT / "data.yaml"
@@ -58,8 +61,9 @@ def fetch_query(search: str, max_results: int, retries: int = 3) -> bytes:
         except Exception as e:
             if attempt == retries:
                 raise
-            print(f"请求失败（{e}），{5}s 后重试（{attempt}/{retries - 1}）...")
-            time.sleep(5)
+            wait = 15 * attempt
+            print(f"请求失败（{e}），{wait}s 后重试（{attempt}/{retries - 1}）...")
+            time.sleep(wait)
 
 
 def parse_entries(xml_bytes: bytes) -> list:
