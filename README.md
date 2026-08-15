@@ -8,7 +8,7 @@
 
 世界模型 (World Model) 通过学习环境的动态表征，实现对未来的预测与想象； 可交互世界模型进一步支持以动作 (action) 为条件的生成与控制， 为自动驾驶和具身智能提供数据引擎、神经仿真器与策略学习基础。 本仓库收录并整理该方向的代表性工作，按应用场景分类， 并标注每篇工作的交互能力维度。
 
-📊 共收录 **136** 篇工作 ｜ 最后更新：2026-08-15
+📊 共收录 **137** 篇工作 ｜ 最后更新：2026-08-15
 
 <p align="center">
   <img src="assets/interactive-world-model.png" alt="交互式世界模型：智能体与世界模型的闭环交互" width="760">
@@ -26,7 +26,7 @@
 ## 目录
 
 - [自动驾驶 Autonomous Driving](#自动驾驶-autonomous-driving)（106）
-- [具身智能 Embodied AI](#具身智能-embodied-ai)（6）
+- [具身智能 Embodied AI](#具身智能-embodied-ai)（7）
 - [通用 / 游戏 General / Game](#通用--游戏-general--game)（24）
 
 ## 自动驾驶 Autonomous Driving
@@ -146,6 +146,7 @@
 | :--- | :--- | :--- | :---: | :--- | :--- |
 | **CausalNav**: Reliability-Certified Causal World Models for Control under Physical-Parameter Shift | arXiv (2026) | Jun Shen 团队 | — | [论文](https://arxiv.org/abs/2608.07809) | 物理参数变化下可靠性认证的因果世界模型，用于导航控制。 |
 | **FACT**: Failure-Aware Causal Training for World-Action Models | arXiv (2026) | Xiaolong Wang 团队 | — | [论文](https://arxiv.org/abs/2608.10232) | 失败感知因果训练，显式建模动作-后果因果关系以纠正世界模型的乐观偏差。 |
+| **WorldSimProbe**: Diagnosing Simulator Faithfulness in Action-Conditioned World Models for Embodied Manipulation | arXiv (2026) | Shanghang Zhang 团队 | — | [论文](https://arxiv.org/abs/2608.09298) | 世界模型要当仿真器用，就必须通过可观测的物理契约，而不是靠观感或任务分数。 |
 | **Genie**: Generative Interactive Environments | ICML (2024, Best Paper) | Google DeepMind | 🎮 | [论文](https://arxiv.org/abs/2402.15391) | 从未标注视频中学习潜在动作空间，可从单张图像生成可玩的 2D 交互环境，是通用具身智能的基础性探索。 |
 | **NWM**: Navigation World Models | arXiv (2024) | Meta FAIR | 🎮 🔁 | [论文](https://arxiv.org/abs/2412.03572) | 面向导航任务的世界模型，从单目视频学习预测未来观测，并通过预测-控制机制支持路径跟随与目标导航。 |
 | **RoboDreamer**: Learning Compositional World Models for Robot Imagination | ICML (2024) | Jiwen Lu 团队 | — | [论文](https://arxiv.org/abs/2401.09985) | 面向机器人想象的组合式世界模型，将长时程任务分解为可复用的概念组合进行视频预测与规划。 |

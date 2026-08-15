@@ -75,3 +75,15 @@ papers:
     features: {}
     tags: [因果世界模型, 可靠性认证, 导航控制]
     note: 物理参数变化下可靠性认证的因果世界模型，用于导航控制。
+  
+  - title: "WorldSimProbe: Diagnosing Simulator Faithfulness in Action-Conditioned World Models for Embodied Manipulation"
+    short: WorldSimProbe
+    org: "Shanghang Zhang 团队"
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2608.09298"
+    features: {}
+    tags: [模拟器可信度诊断, 具身操作, 动作条件世界模型]
+    note: 世界模型要当仿真器用，就必须通过可观测的物理契约，而不是靠观感或任务分数。
