@@ -111,3 +111,26 @@ papers:
     features: {action: true, closedloop: true}
     tags: [分层VLA, 测试时计算, 世界模型引导, 长时程操作]
     note: 分层机器人基础模型，在测试时用世界模型引导计算分配，为困难决策步骤分配额外计算资源，提升长时程操作的可靠性与连贯性。
+
+  - title: "Hydra-0: Action Flow for Generalist World Modeling and Control"
+    short: Hydra-0
+    org: "NVIDIA"
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2608.18077"
+    features: {action: true, closedloop: true}
+    tags: [动作流, 像素运动表示, 跨本体泛化, 通用世界模型]
+    note: 将机器人动作表示为像素运动（action flow）作为统一视觉接口，跨本体、任务、环境与视频骨干学习动作后果，机器人运动误差降低 90.4%、物体运动误差降低 60.2%。
+
+  - title: "Q-Learning With World Models"
+    org: "Chelsea Finn / Dorsa Sadigh 团队"
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2608.17163"
+    features: {action: true, closedloop: true}
+    tags: [离策略强化学习, Q学习, 样本效率, VLA微调]
+    note: 把世界模型引入离策略 Q 学习——预测状态变化而非仅动作，突破此前世界模型局限于监督式策略学习的困境，提升 VLA 模型 RL 微调的样本效率。
