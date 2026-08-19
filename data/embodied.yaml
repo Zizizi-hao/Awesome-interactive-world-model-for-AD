@@ -87,3 +87,15 @@ papers:
     features: {}
     tags: [模拟器可信度诊断, 具身操作, 动作条件世界模型]
     note: 世界模型要当仿真器用，就必须通过可观测的物理契约，而不是靠观感或任务分数。
+
+  - title: "hint²: Hierarchical World Models for Inference-Time Temporal Logic Guidance"
+    short: hint²
+    org: Purdue University
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2608.13678"
+    features: {action: true, closedloop: true}
+    tags: [分层世界模型, 时序逻辑引导, 推理时引导, 扩散策略, 机器人操作]
+    note: 用两层世界模型在推理时将 LTL 规范注入扩散策略——高层追踪自动机进展，低层用 STL 鲁棒性梯度保障局部几何安全，无需重训策略。
