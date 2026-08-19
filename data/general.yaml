@@ -277,6 +277,30 @@ papers:
     tags: [物理先验, 流式世界模型, 蒸馏]
     note: 将物理先验蒸馏到流式世界模型，改善长程 rollout 的物理一致性。
 
+  - title: "Beyond Visual CoT: Internalized Visual Thinking for Proactive Video Reasoning"
+    short: InternalVCoT
+    org: "Xiaoyu Zhu 团队"
+    year: 2026
+    venue: arXiv
+    category: general
+    links:
+      arxiv: "2608.15869"
+    features: {longhorizon: true}
+    tags: [视觉思维链, 内化推理, 视频推理, 多模态大模型]
+    note: 将显式视觉 CoT（生成中间推理图像）内化为隐式视觉预见，在保持空间/时序推理能力的同时大幅降低推理开销。
+
+  - title: "SCOPE: Score-Isolated Agentic Optimization for Video World Models"
+    short: SCOPE
+    org: "Yuhua Jiang 团队"
+    year: 2026
+    venue: arXiv
+    category: general
+    links:
+      arxiv: "2608.15043"
+    features: {action: true}
+    tags: [推理时优化, 评分隔离, 视频世界模型, 具身决策]
+    note: 提出评分隔离的 Agentic 优化框架，解耦 prompt/采样器/验证器/选择器的评估，使视频世界模型在规划与具身决策中推理时优化更可靠。
+
   - title: "PlayWorld: Benchmarking World Models with Agent Players over Long-Horizon Objectives"
     short: PlayWorld
     org: "Hengshuang Zhao 团队"

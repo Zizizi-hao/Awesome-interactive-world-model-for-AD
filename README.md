@@ -8,7 +8,7 @@
 
 世界模型 (World Model) 通过学习环境的动态表征，实现对未来的预测与想象； 可交互世界模型进一步支持以动作 (action) 为条件的生成与控制， 为自动驾驶和具身智能提供数据引擎、神经仿真器与策略学习基础。 本仓库收录并整理该方向的代表性工作，按应用场景分类， 并标注每篇工作的交互能力维度。
 
-📊 共收录 **138** 篇工作 ｜ 最后更新：2026-08-19
+📊 共收录 **143** 篇工作 ｜ 最后更新：2026-08-19
 
 <p align="center">
   <img src="assets/interactive-world-model.png" alt="交互式世界模型：智能体与世界模型的闭环交互" width="760">
@@ -25,9 +25,9 @@
 
 ## 目录
 
-- [自动驾驶 Autonomous Driving](#自动驾驶-autonomous-driving)（106）
-- [具身智能 Embodied AI](#具身智能-embodied-ai)（8）
-- [通用 / 游戏 General / Game](#通用--游戏-general--game)（24）
+- [自动驾驶 Autonomous Driving](#自动驾驶-autonomous-driving)（108）
+- [具身智能 Embodied AI](#具身智能-embodied-ai)（9）
+- [通用 / 游戏 General / Game](#通用--游戏-general--game)（26）
 
 ## 自动驾驶 Autonomous Driving
 
@@ -53,6 +53,7 @@
 | **DLWM**: Dual Latent World Models enable Holistic Gaussian-centric Pre-training in Autonomous Driving | arXiv (2026) | Shaojie Shen 团队 | — | [论文](https://arxiv.org/abs/2604.00969) | 双潜世界模型（占据流 + 规划流）实现高斯中心式自动驾驶预训练。 |
 | **DecoupleGS**: Interactive 3D Gaussian Splatting for End-to-End Autonomous Driving Testing | arXiv (2026) | Haotian Shi 团队 | ⚡ 🔁 | [论文](https://arxiv.org/abs/2608.01761) | 解耦动静高斯泼溅，为端到端自动驾驶提供高保真实时闭环传感器仿真平台。 |
 | **Dreamer-SAC**: Off-Policy Learning in Latent World Models for Sample-Efficient Autonomous Driving | arXiv (2026) | Xi Xiong 团队 | 🎮 | [论文](https://arxiv.org/abs/2608.10386) | 循环状态空间世界模型 + 离策略 SAC + n 步估计，提升自动驾驶样本效率。 |
+| **DriveCache**: Action-Aware Caching for Driving World Model Inference | arXiv (2026) | Jianchun Yang 团队 | 🎮 | [论文](https://arxiv.org/abs/2608.16354) | 针对扩散驾驶世界模型的动作感知 KV 缓存策略，在多步去噪中复用空间不变特征，显著提升生成吞吐量。 |
 | **DriveCombo**: Benchmarking Compositional Traffic Rule Reasoning in Autonomous Driving | arXiv (2026) | Kaicheng Yu 团队 | — | [论文](https://arxiv.org/abs/2603.01637) | 组合式交通规则推理基准，评估驾驶系统对复杂规则的理解能力。 |
 | **DriveFix**: Spatio-Temporally Coherent Driving Scene Restoration | arXiv (2026) | Qi Guo 团队 | — | [论文](https://arxiv.org/abs/2603.16306) | 交错扩散 Transformer 建模时序依赖与跨相机一致性，实现 4D 驾驶场景修复。 |
 | **DrivePTS**: A Progressive Learning Framework for Driving Scene Generation | arXiv (2026) | Cheng Lu 团队 | — | [论文](https://arxiv.org/abs/2602.22549) | 渐进学习解耦几何条件依赖，VLM 多视角描述 + 频率结构损失提升场景生成保真度。 |
@@ -70,6 +71,7 @@
 | **FrozenDrive**: Zero-Shot Text-Guided Driving Scene Generation with Parameter-Free Frozen Diffusion | arXiv (2026) | Kuk-Jin Yoon 团队 | — | [论文](https://arxiv.org/abs/2606.20110) | 冻结扩散骨干 + 知识保持时空注意力，零样本生成多视角一致驾驶场景。 |
 | **GEM**: Gaussian Evolution Model for Occupancy Forecasting and Motion Planning | arXiv (2026) | Saurabh Bagchi 团队 | — | [论文](https://arxiv.org/abs/2605.17682) | 非自回归连续 4D 高斯占据世界模型，支持任意时刻查询与运动规划。 |
 | **GSDrive**: Reinforcing Driving Policies by Multi-mode Future Trajectory Probing with 3D Gaussian Splatting Environment | arXiv (2026) | Zufeng Zhang 团队 | 🔁 | [论文](https://arxiv.org/abs/2604.28111) | 3DGS 可微环境中多模态轨迹探测，将仿真回报转为密集奖励塑造端到端策略。 |
+| **GaussianDWM++**: Language-Grounded 3D Gaussian Driving World Model for Unified Scene Understanding, Editing, and Multi-Modal Generation | arXiv (2026) | Tianchen Deng 团队 | 🎮 | [论文](https://arxiv.org/abs/2608.16234) | 语言接地的 3D 高斯驾驶世界模型，统一场景理解、语言推理、可控 4D 编辑与多模态生成，弥补现有方法缺乏显式 3D 表示的不足。 |
 | **GraphWorld**: Long-Horizon Planning with World Models for End-to-End Autonomous Driving | arXiv (2026) | Yadan Luo 团队 | ⏳ | [论文](https://arxiv.org/abs/2606.16274) | 自车中心交互图 + 世界状态条件规划，降低碰撞率提升长程规划。 |
 | **HERMES++**: Toward a Unified Driving World Model for 3D Scene Understanding and Generation | arXiv (2026) | Xiang Bai 团队 | — | [论文](https://arxiv.org/abs/2604.28196) | 统一 3D 场景理解与未来几何预测的驾驶世界模型，采用 BEV + LLM 增强世界查询。 |
 | **How Can Driving World Models Do Counterfactual Prediction?** | arXiv (2026) | Ziran Wang 团队 | — | [论文](https://arxiv.org/abs/2608.11601) | 形式化驾驶世界模型作为反事实仿真器的条件，分析因果可识别性与估计偏差。 |
@@ -148,6 +150,7 @@
 | **FACT**: Failure-Aware Causal Training for World-Action Models | arXiv (2026) | Xiaolong Wang 团队 | — | [论文](https://arxiv.org/abs/2608.10232) | 失败感知因果训练，显式建模动作-后果因果关系以纠正世界模型的乐观偏差。 |
 | **WorldSimProbe**: Diagnosing Simulator Faithfulness in Action-Conditioned World Models for Embodied Manipulation | arXiv (2026) | Shanghang Zhang 团队 | — | [论文](https://arxiv.org/abs/2608.09298) | 世界模型要当仿真器用，就必须通过可观测的物理契约，而不是靠观感或任务分数。 |
 | **hint²**: Hierarchical World Models for Inference-Time Temporal Logic Guidance | arXiv (2026) | Purdue University | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.13678) | 用两层世界模型在推理时将 LTL 规范注入扩散策略——高层追踪自动机进展，低层用 STL 鲁棒性梯度保障局部几何安全，无需重训策略。 |
+| **τ0-VLA**: a Hierarchical Robot Foundation Model with World-Model-Guided Test-Time Computation | arXiv (2026) | Xiaowei Cai 团队 | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.16885) | 分层机器人基础模型，在测试时用世界模型引导计算分配，为困难决策步骤分配额外计算资源，提升长时程操作的可靠性与连贯性。 |
 | **Genie**: Generative Interactive Environments | ICML (2024, Best Paper) | Google DeepMind | 🎮 | [论文](https://arxiv.org/abs/2402.15391) | 从未标注视频中学习潜在动作空间，可从单张图像生成可玩的 2D 交互环境，是通用具身智能的基础性探索。 |
 | **NWM**: Navigation World Models | arXiv (2024) | Meta FAIR | 🎮 🔁 | [论文](https://arxiv.org/abs/2412.03572) | 面向导航任务的世界模型，从单目视频学习预测未来观测，并通过预测-控制机制支持路径跟随与目标导航。 |
 | **RoboDreamer**: Learning Compositional World Models for Robot Imagination | ICML (2024) | Jiwen Lu 团队 | — | [论文](https://arxiv.org/abs/2401.09985) | 面向机器人想象的组合式世界模型，将长时程任务分解为可复用的概念组合进行视频预测与规划。 |
@@ -161,6 +164,7 @@
 | **ABot-World-0**: Infinite Interactive World Rollout on a Single Desktop GPU | arXiv (2026) | Ning Guo 团队 | ⏳ | [论文](https://arxiv.org/abs/2607.19191) | 单桌面 GPU 上的无限交互式世界 rollout，演示了低资源持续交互可行性。 |
 | **Addressable Memory for Video World Models** | arXiv (2026) | Aljoša Ošep 团队 | ⏳ | [论文](https://arxiv.org/abs/2608.07408) | 可寻址视觉记忆机制，解决交互式视频世界模型中 KV cache 的视觉持久性局限。 |
 | **AlayaWorld**: Interactive Long-Horizon World Modeling | arXiv (2026) | Zihui Gao 团队 | 🎮 ⏳ | [论文](https://arxiv.org/abs/2607.18367) | 长时程可交互视频世界建模，支持持久状态演化与玩家级交互。 |
+| **InternalVCoT**: Beyond Visual CoT: Internalized Visual Thinking for Proactive Video Reasoning | arXiv (2026) | Xiaoyu Zhu 团队 | ⏳ | [论文](https://arxiv.org/abs/2608.15869) | 将显式视觉 CoT（生成中间推理图像）内化为隐式视觉预见，在保持空间/时序推理能力的同时大幅降低推理开销。 |
 | **Diagnosing JEPA World Models with Action-Conditioned Predictive Consistency** | arXiv (2026) | Qi Tian 团队 | 🎮 | [论文](https://arxiv.org/abs/2608.12939) | 用动作条件预测一致性诊断 JEPA 世界模型的表示质量。 |
 | **Distilling Physical Priors into Streaming World Models** | arXiv (2026) | Yihao Liu 团队 | ⏳ | [论文](https://arxiv.org/abs/2608.07981) | 将物理先验蒸馏到流式世界模型，改善长程 rollout 的物理一致性。 |
 | **GAUGE**: A Measurement-Grounded Benchmark for Physical Fidelity in Simulation Engines and Video World Models | arXiv (2026) | Weinan Zhang 团队 | — | [论文](https://arxiv.org/abs/2608.05948) | 测量驱动的物理保真度基准，诊断仿真引擎与视频世界模型的物理一致性。 |
@@ -169,6 +173,7 @@
 | **Persistent Computational State: A Session-Centric Runtime for Generative World Models** | arXiv (2026) | Zhen Lin 团队 | — | [论文](https://arxiv.org/abs/2607.21686) | 会话中心运行时支持分叉、回溯和重访视角，面向生成式世界模型的状态管理。 |
 | **PlayWorld**: Benchmarking World Models with Agent Players over Long-Horizon Objectives | arXiv (2026) | Hengshuang Zhao 团队 | — | [论文](https://arxiv.org/abs/2608.13552) | 用多模态 Agent Player 追求长程目标来评估世界模型的几何一致性与交互保真度。 |
 | **Qwen-RobotWorld**: A Joint World Model Integrating Driving, Navigation and Manipulation | arXiv (2026) | Alibaba Qwen | 🎮 | [论文](https://arxiv.org/abs/2606.17030) | 将语言作为统一动作接口，把视频世界模型扩展到自动驾驶、导航和机器人操作。 |
+| **SCOPE**: Score-Isolated Agentic Optimization for Video World Models | arXiv (2026) | Yuhua Jiang 团队 | 🎮 | [论文](https://arxiv.org/abs/2608.15043) | 提出评分隔离的 Agentic 优化框架，解耦 prompt/采样器/验证器/选择器的评估，使视频世界模型在规划与具身决策中推理时优化更可靠。 |
 | **Sekai2**: From World Exploration to Interactive World Modeling | arXiv (2026) | Yongtao Ge 团队 | ⏳ | [论文](https://arxiv.org/abs/2608.09449) | 从世界探索到交互式世界建模的统一框架，支持长时程交互 rollout。 |
 | **The Evaluation Protocol Determines the Result: An Independent Reproduction of LeWorldModel on TwoRoom** | arXiv (2026) | Joyjeet Singh 团队 | — | [论文](https://arxiv.org/abs/2608.10145) | 独立复现发现评价协议决定世界模型排名，揭示评测方法论对结果的影响。 |
 | **Twin Rollouts**: Noise-Coupled Counterfactual Branching in Interactive Video World Models | arXiv (2026) | Xinran Xu 团队 | 🎮 | [论文](https://arxiv.org/abs/2608.08982) | 噪声耦合实现同一世界状态的分支式反事实 rollout，保持共享上下文一致性。 |

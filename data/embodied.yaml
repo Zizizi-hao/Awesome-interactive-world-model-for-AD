@@ -99,3 +99,15 @@ papers:
     features: {action: true, closedloop: true}
     tags: [分层世界模型, 时序逻辑引导, 推理时引导, 扩散策略, 机器人操作]
     note: 用两层世界模型在推理时将 LTL 规范注入扩散策略——高层追踪自动机进展，低层用 STL 鲁棒性梯度保障局部几何安全，无需重训策略。
+
+  - title: "τ0-VLA: a Hierarchical Robot Foundation Model with World-Model-Guided Test-Time Computation"
+    short: τ0-VLA
+    org: "Xiaowei Cai 团队"
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2608.16885"
+    features: {action: true, closedloop: true}
+    tags: [分层VLA, 测试时计算, 世界模型引导, 长时程操作]
+    note: 分层机器人基础模型，在测试时用世界模型引导计算分配，为困难决策步骤分配额外计算资源，提升长时程操作的可靠性与连贯性。

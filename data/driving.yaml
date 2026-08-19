@@ -578,6 +578,30 @@ papers:
     tags: [LiDAR生成, 路侧感知, 跨视角]
     note: 从路侧传感器观测生成端到端自动驾驶可用 LiDAR 数据。
 
+  - title: "DriveCache: Action-Aware Caching for Driving World Model Inference"
+    short: DriveCache
+    org: "Jianchun Yang 团队"
+    year: 2026
+    venue: arXiv
+    category: driving
+    links:
+      arxiv: "2608.16354"
+    features: {action: true}
+    tags: [推理加速, 动作感知缓存, 扩散驾驶生成]
+    note: 针对扩散驾驶世界模型的动作感知 KV 缓存策略，在多步去噪中复用空间不变特征，显著提升生成吞吐量。
+
+  - title: "GaussianDWM++: Language-Grounded 3D Gaussian Driving World Model for Unified Scene Understanding, Editing, and Multi-Modal Generation"
+    short: GaussianDWM++
+    org: "Tianchen Deng 团队"
+    year: 2026
+    venue: arXiv
+    category: driving
+    links:
+      arxiv: "2608.16234"
+    features: {action: true}
+    tags: [3DGS驾驶世界模型, 语言接地, 4D编辑, 场景理解]
+    note: 语言接地的 3D 高斯驾驶世界模型，统一场景理解、语言推理、可控 4D 编辑与多模态生成，弥补现有方法缺乏显式 3D 表示的不足。
+
   - title: "Nexus: Decoupled Diffusion Sparks Adaptive Scene Generation"
     short: Nexus
     org: "Hongyang Li 团队"
