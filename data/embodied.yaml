@@ -134,3 +134,15 @@ papers:
     features: {action: true, closedloop: true}
     tags: [离策略强化学习, Q学习, 样本效率, VLA微调]
     note: 把世界模型引入离策略 Q 学习——预测状态变化而非仅动作，突破此前世界模型局限于监督式策略学习的困境，提升 VLA 模型 RL 微调的样本效率。
+
+
+  - title: "GigaBrain-WBC-0.5: A Behavior World Model for Robust Whole-Body Control with Environment Interaction"
+    org: "GigaAI"
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2608.18234"
+    features: {action: true, closedloop: false}
+    tags: [行为世界模型，全身控制，统一控制接口]
+    note: 为人形机器人全身控制训练了一个行为世界模型，通过causal Transformer预测下一帧得状态、动作以及动作指令得分布，从而对环境对动作的影响进行建模。

@@ -1284,3 +1284,14 @@ papers:
     features: {}
     tags: [反事实预测, 因果可识别性, 分析]
     note: 形式化驾驶世界模型作为反事实仿真器的条件，分析因果可识别性与估计偏差。
+  
+  - title: "DA-WAM: Decision-Aligned Future Latents for Driving World Models"
+    org: "HKUST Jun Ma 团队"
+    year: 2026
+    venue: arXiv
+    category: driving
+    links: 
+      arxiv: "2608.19085"
+    features: {action: true}
+    tags: [JEPA, 对齐轨迹与未来表征，世界动作模型]
+    note: 通过将轨迹与未来表征对齐，从而提高驾驶世界模型的性能。

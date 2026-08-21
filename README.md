@@ -8,7 +8,7 @@
 
 世界模型 (World Model) 通过学习环境的动态表征，实现对未来的预测与想象； 可交互世界模型进一步支持以动作 (action) 为条件的生成与控制， 为自动驾驶和具身智能提供数据引擎、神经仿真器与策略学习基础。 本仓库收录并整理该方向的代表性工作，按应用场景分类， 并标注每篇工作的交互能力维度。
 
-📊 共收录 **145** 篇工作 ｜ 最后更新：2026-08-20
+📊 共收录 **147** 篇工作 ｜ 最后更新：2026-08-20
 
 <p align="center">
   <img src="assets/interactive-world-model.png" alt="交互式世界模型：智能体与世界模型的闭环交互" width="760">
@@ -25,8 +25,8 @@
 
 ## 目录
 
-- [自动驾驶 Autonomous Driving](#自动驾驶-autonomous-driving)（108）
-- [具身智能 Embodied AI](#具身智能-embodied-ai)（11）
+- [自动驾驶 Autonomous Driving](#自动驾驶-autonomous-driving)（109）
+- [具身智能 Embodied AI](#具身智能-embodied-ai)（12）
 - [通用 / 游戏 General / Game](#通用--游戏-general--game)（26）
 
 ## 自动驾驶 Autonomous Driving
@@ -50,6 +50,7 @@
 | **CoWorld-VLA**: Thinking in a Multi-Expert World Model for Autonomous Driving | arXiv (2026) | Gong Che 团队 | — | [论文](https://arxiv.org/abs/2605.10426) | 四类专家 token（交互/几何/演化/轨迹）+ 扩散层级融合规划器。 |
 | **CommonRoad-Game**: A Human-in-the-Loop Simulation Framework for Autonomous Driving | arXiv (2026) | Youran Wang 团队 | 🔁 | [论文](https://arxiv.org/abs/2607.01382) | 轻量级人机闭环驾驶仿真框架，多线程同步支持交互式场景生成与规划测试。 |
 | **Conditional Flow-VAE for Safety-Critical Traffic Scenario Generation** | arXiv (2026) | Raquel Urtasun 团队 | — | [论文](https://arxiv.org/abs/2605.04366) | 条件潜流匹配将名义场景分布匹配为安全关键 rollout。 |
+| **DA-WAM: Decision-Aligned Future Latents for Driving World Models** | arXiv (2026) | HKUST Jun Ma 团队 | 🎮 | [论文](https://arxiv.org/abs/2608.19085) | 通过将轨迹与未来表征对齐，从而提高驾驶世界模型的性能。 |
 | **DLWM**: Dual Latent World Models enable Holistic Gaussian-centric Pre-training in Autonomous Driving | arXiv (2026) | Shaojie Shen 团队 | — | [论文](https://arxiv.org/abs/2604.00969) | 双潜世界模型（占据流 + 规划流）实现高斯中心式自动驾驶预训练。 |
 | **DecoupleGS**: Interactive 3D Gaussian Splatting for End-to-End Autonomous Driving Testing | arXiv (2026) | Haotian Shi 团队 | ⚡ 🔁 | [论文](https://arxiv.org/abs/2608.01761) | 解耦动静高斯泼溅，为端到端自动驾驶提供高保真实时闭环传感器仿真平台。 |
 | **Dreamer-SAC**: Off-Policy Learning in Latent World Models for Sample-Efficient Autonomous Driving | arXiv (2026) | Xi Xiong 团队 | 🎮 | [论文](https://arxiv.org/abs/2608.10386) | 循环状态空间世界模型 + 离策略 SAC + n 步估计，提升自动驾驶样本效率。 |
@@ -148,6 +149,7 @@
 | :--- | :--- | :--- | :---: | :--- | :--- |
 | **CausalNav**: Reliability-Certified Causal World Models for Control under Physical-Parameter Shift | arXiv (2026) | Jun Shen 团队 | — | [论文](https://arxiv.org/abs/2608.07809) | 物理参数变化下可靠性认证的因果世界模型，用于导航控制。 |
 | **FACT**: Failure-Aware Causal Training for World-Action Models | arXiv (2026) | Xiaolong Wang 团队 | — | [论文](https://arxiv.org/abs/2608.10232) | 失败感知因果训练，显式建模动作-后果因果关系以纠正世界模型的乐观偏差。 |
+| **GigaBrain-WBC-0.5: A Behavior World Model for Robust Whole-Body Control with Environment Interaction** | arXiv (2026) | GigaAI | 🎮 | [论文](https://arxiv.org/abs/2608.18234) | 为人形机器人全身控制训练了一个行为世界模型，通过causal Transformer预测下一帧得状态、动作以及动作指令得分布，从而对环境对动作的影响进行建模。 |
 | **Hydra-0**: Action Flow for Generalist World Modeling and Control | arXiv (2026) | NVIDIA | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.18077) | 将机器人动作表示为像素运动（action flow）作为统一视觉接口，跨本体、任务、环境与视频骨干学习动作后果，机器人运动误差降低 90.4%、物体运动误差降低 60.2%。 |
 | **Q-Learning With World Models** | arXiv (2026) | Chelsea Finn / Dorsa Sadigh 团队 | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.17163) | 把世界模型引入离策略 Q 学习——预测状态变化而非仅动作，突破此前世界模型局限于监督式策略学习的困境，提升 VLA 模型 RL 微调的样本效率。 |
 | **WorldSimProbe**: Diagnosing Simulator Faithfulness in Action-Conditioned World Models for Embodied Manipulation | arXiv (2026) | Shanghang Zhang 团队 | — | [论文](https://arxiv.org/abs/2608.09298) | 世界模型要当仿真器用，就必须通过可观测的物理契约，而不是靠观感或任务分数。 |
