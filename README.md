@@ -8,7 +8,7 @@
 
 世界模型 (World Model) 通过学习环境的动态表征，实现对未来的预测与想象； 可交互世界模型进一步支持以动作 (action) 为条件的生成与控制， 为自动驾驶和具身智能提供数据引擎、神经仿真器与策略学习基础。 本仓库收录并整理该方向的代表性工作，按应用场景分类， 并标注每篇工作的交互能力维度。
 
-📊 共收录 **147** 篇工作 ｜ 最后更新：2026-08-21
+📊 共收录 **151** 篇工作 ｜ 最后更新：2026-08-21
 
 <p align="center">
   <img src="assets/interactive-world-model.png" alt="交互式世界模型：智能体与世界模型的闭环交互" width="760">
@@ -25,9 +25,9 @@
 
 ## 目录
 
-- [自动驾驶 Autonomous Driving](#自动驾驶-autonomous-driving)（109）
-- [具身智能 Embodied AI](#具身智能-embodied-ai)（12）
-- [通用 / 游戏 General / Game](#通用--游戏-general--game)（26）
+- [自动驾驶 Autonomous Driving](#自动驾驶-autonomous-driving)（110）
+- [具身智能 Embodied AI](#具身智能-embodied-ai)（13）
+- [通用 / 游戏 General / Game](#通用--游戏-general--game)（28）
 
 ## 自动驾驶 Autonomous Driving
 
@@ -73,6 +73,7 @@
 | **GEM**: Gaussian Evolution Model for Occupancy Forecasting and Motion Planning | arXiv (2026) | Saurabh Bagchi 团队 | — | [论文](https://arxiv.org/abs/2605.17682) | 非自回归连续 4D 高斯占据世界模型，支持任意时刻查询与运动规划。 |
 | **GSDrive**: Reinforcing Driving Policies by Multi-mode Future Trajectory Probing with 3D Gaussian Splatting Environment | arXiv (2026) | Zufeng Zhang 团队 | 🔁 | [论文](https://arxiv.org/abs/2604.28111) | 3DGS 可微环境中多模态轨迹探测，将仿真回报转为密集奖励塑造端到端策略。 |
 | **GaussianDWM++**: Language-Grounded 3D Gaussian Driving World Model for Unified Scene Understanding, Editing, and Multi-Modal Generation | arXiv (2026) | Tianchen Deng 团队 | 🎮 | [论文](https://arxiv.org/abs/2608.16234) | 语言接地的 3D 高斯驾驶世界模型，统一场景理解、语言推理、可控 4D 编辑与多模态生成，弥补现有方法缺乏显式 3D 表示的不足。 |
+| **GeoWAM**: Visual Geometry World Action Models for Autonomous Driving | arXiv (2026) | Uber AV Labs / Case Western Reserve University | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.23486) \| [项目](https://yiren-lu.com/project_pages/geowam/) | 主张以点云几何而非像素作为驾驶世界模型的状态空间，通过预训练预测未来场景几何、再由几何条件动作头预测自车轨迹，开环与闭环评测均显著优于基于图像的 WAM。 |
 | **GraphWorld**: Long-Horizon Planning with World Models for End-to-End Autonomous Driving | arXiv (2026) | Yadan Luo 团队 | ⏳ | [论文](https://arxiv.org/abs/2606.16274) | 自车中心交互图 + 世界状态条件规划，降低碰撞率提升长程规划。 |
 | **HERMES++**: Toward a Unified Driving World Model for 3D Scene Understanding and Generation | arXiv (2026) | Xiang Bai 团队 | — | [论文](https://arxiv.org/abs/2604.28196) | 统一 3D 场景理解与未来几何预测的驾驶世界模型，采用 BEV + LLM 增强世界查询。 |
 | **How Can Driving World Models Do Counterfactual Prediction?** | arXiv (2026) | Ziran Wang 团队 | — | [论文](https://arxiv.org/abs/2608.11601) | 形式化驾驶世界模型作为反事实仿真器的条件，分析因果可识别性与估计偏差。 |
@@ -151,6 +152,7 @@
 | **FACT**: Failure-Aware Causal Training for World-Action Models | arXiv (2026) | Xiaolong Wang 团队 | — | [论文](https://arxiv.org/abs/2608.10232) | 失败感知因果训练，显式建模动作-后果因果关系以纠正世界模型的乐观偏差。 |
 | **GigaBrain-WBC-0.5: A Behavior World Model for Robust Whole-Body Control with Environment Interaction** | arXiv (2026) | GigaAI | 🎮 | [论文](https://arxiv.org/abs/2608.18234) | 为人形机器人全身控制训练了一个行为世界模型，通过causal Transformer预测下一帧得状态、动作以及动作指令得分布，从而对环境对动作的影响进行建模。 |
 | **Hydra-0**: Action Flow for Generalist World Modeling and Control | arXiv (2026) | NVIDIA | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.18077) | 将机器人动作表示为像素运动（action flow）作为统一视觉接口，跨本体、任务、环境与视频骨干学习动作后果，机器人运动误差降低 90.4%、物体运动误差降低 60.2%。 |
+| **DELE-w0.5**: Inferring Action from Future Latent State for Robotic Manipulation | arXiv (2026) | DeepLeap Research | 🎮 | [论文](https://arxiv.org/abs/2608.22067) \| [项目](https://deepleap-x.com/research/dele-w0.5) | 提出 DELE-w0.5，从预测的未来潜状态直接推断机器人动作，省去视频生成这一中间目标，建模物理世界在动作下的状态变化而非逐帧外观演化，实现更低训练成本与低延迟推理，在 640 次真机实验中取得 62.5% 全任务成功率，显著优于各 VLA 基线。 |
 | **Q-Learning With World Models** | arXiv (2026) | Chelsea Finn / Dorsa Sadigh 团队 | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.17163) | 把世界模型引入离策略 Q 学习——预测状态变化而非仅动作，突破此前世界模型局限于监督式策略学习的困境，提升 VLA 模型 RL 微调的样本效率。 |
 | **WorldSimProbe**: Diagnosing Simulator Faithfulness in Action-Conditioned World Models for Embodied Manipulation | arXiv (2026) | Shanghang Zhang 团队 | — | [论文](https://arxiv.org/abs/2608.09298) | 世界模型要当仿真器用，就必须通过可观测的物理契约，而不是靠观感或任务分数。 |
 | **hint²**: Hierarchical World Models for Inference-Time Temporal Logic Guidance | arXiv (2026) | Purdue University | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.13678) | 用两层世界模型在推理时将 LTL 规范注入扩散策略——高层追踪自动机进展，低层用 STL 鲁棒性梯度保障局部几何安全，无需重训策略。 |
@@ -171,8 +173,10 @@
 | **InternalVCoT**: Beyond Visual CoT: Internalized Visual Thinking for Proactive Video Reasoning | arXiv (2026) | Xiaoyu Zhu 团队 | ⏳ | [论文](https://arxiv.org/abs/2608.15869) | 将显式视觉 CoT（生成中间推理图像）内化为隐式视觉预见，在保持空间/时序推理能力的同时大幅降低推理开销。 |
 | **Diagnosing JEPA World Models with Action-Conditioned Predictive Consistency** | arXiv (2026) | Qi Tian 团队 | 🎮 | [论文](https://arxiv.org/abs/2608.12939) | 用动作条件预测一致性诊断 JEPA 世界模型的表示质量。 |
 | **Distilling Physical Priors into Streaming World Models** | arXiv (2026) | Yihao Liu 团队 | ⏳ | [论文](https://arxiv.org/abs/2608.07981) | 将物理先验蒸馏到流式世界模型，改善长程 rollout 的物理一致性。 |
+| **From Generation to Simulation: How Far Are World Models from Being True Simulators?** | arXiv (2026) | Tong Wang 等 | — | [论文](https://arxiv.org/abs/2608.23070) \| [项目](https://github.com/AtongWang/world-model-simulators) | 以传统仿真器的八项能力为外部标尺，系统评估生成式世界模型距离真正仿真器的差距，梳理潜空间动力学、视频生成与联合嵌入预测三条技术路线并映射 200 篇代表性工作，指出状态反馈是最被忽视的短板，并给出六个研究方向。 |
 | **GAUGE**: A Measurement-Grounded Benchmark for Physical Fidelity in Simulation Engines and Video World Models | arXiv (2026) | Weinan Zhang 团队 | — | [论文](https://arxiv.org/abs/2608.05948) | 测量驱动的物理保真度基准，诊断仿真引擎与视频世界模型的物理一致性。 |
 | **HelloWorld**: Enabling Socially Interactive Characters in Video World Models | arXiv (2026) | Yoichi Sato 团队 | — | [论文](https://arxiv.org/abs/2608.05070) | 首次在视频世界模型中实现用户与虚拟角色间的社交交互。 |
+| **LpWM**: A Case for Sparse Representations in World Models | arXiv (2026) | NYU / AMI Labs | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.22764) \| [代码](https://github.com/YilunKuang/lpworldmodel) | 论证稀疏表征是世界模型更有利的几何结构：用 RDMReg 正则化 JEPA 学习非负稀疏潜码，在 PushT 上以更低的预测器复杂度实现规划成功率最高提升 57%，且学到的表征呈模式分解的可解释结构。 |
 | **MASS**: Multiplayer World Models with Authoritative Shared State | arXiv (2026) | Boxin Shi 团队 | — | [论文](https://arxiv.org/abs/2608.06257) | 权威共享状态的多玩家世界模型，解决多智能体状态同步问题。 |
 | **Persistent Computational State: A Session-Centric Runtime for Generative World Models** | arXiv (2026) | Zhen Lin 团队 | — | [论文](https://arxiv.org/abs/2607.21686) | 会话中心运行时支持分叉、回溯和重访视角，面向生成式世界模型的状态管理。 |
 | **PlayWorld**: Benchmarking World Models with Agent Players over Long-Horizon Objectives | arXiv (2026) | Hengshuang Zhao 团队 | — | [论文](https://arxiv.org/abs/2608.13552) | 用多模态 Agent Player 追求长程目标来评估世界模型的几何一致性与交互保真度。 |

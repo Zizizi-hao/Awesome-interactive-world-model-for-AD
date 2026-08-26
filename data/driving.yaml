@@ -1295,3 +1295,16 @@ papers:
     features: {action: true}
     tags: [JEPA, 对齐轨迹与未来表征，世界动作模型]
     note: 通过将轨迹与未来表征对齐，从而提高驾驶世界模型的性能。
+
+  - title: "GeoWAM: Visual Geometry World Action Models for Autonomous Driving"
+    short: GeoWAM
+    org: Uber AV Labs / Case Western Reserve University
+    year: 2026
+    venue: arXiv
+    category: driving
+    links:
+      arxiv: "2608.23486"
+      project: "https://yiren-lu.com/project_pages/geowam/"
+    features: {action: true, closedloop: true}
+    tags: [几何世界模型, 未来点云预测, 世界动作模型]
+    note: 主张以点云几何而非像素作为驾驶世界模型的状态空间，通过预训练预测未来场景几何、再由几何条件动作头预测自车轨迹，开环与闭环评测均显著优于基于图像的 WAM。

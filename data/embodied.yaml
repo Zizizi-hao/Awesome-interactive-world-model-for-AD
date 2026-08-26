@@ -146,3 +146,16 @@ papers:
     features: {action: true, closedloop: false}
     tags: [行为世界模型，全身控制，统一控制接口]
     note: 为人形机器人全身控制训练了一个行为世界模型，通过causal Transformer预测下一帧得状态、动作以及动作指令得分布，从而对环境对动作的影响进行建模。
+
+  - title: "Inferring Action from Future Latent State for Robotic Manipulation"
+    short: DELE-w0.5
+    org: DeepLeap Research
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2608.22067"
+      project: "https://deepleap-x.com/research/dele-w0.5"
+    features: {action: true}
+    tags: [未来潜状态, 动作推断, 无视频生成, 机器人操作]
+    note: 提出 DELE-w0.5，从预测的未来潜状态直接推断机器人动作，省去视频生成这一中间目标，建模物理世界在动作下的状态变化而非逐帧外观演化，实现更低训练成本与低延迟推理，在 640 次真机实验中取得 62.5% 全任务成功率，显著优于各 VLA 基线。

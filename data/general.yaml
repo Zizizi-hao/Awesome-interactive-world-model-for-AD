@@ -312,3 +312,28 @@ papers:
     features: {}
     tags: [Agent Player, 长程目标, 基准测试]
     note: 用多模态 Agent Player 追求长程目标来评估世界模型的几何一致性与交互保真度。
+
+  - title: "From Generation to Simulation: How Far Are World Models from Being True Simulators?"
+    org: "Tong Wang 等"
+    year: 2026
+    venue: arXiv
+    category: general
+    links:
+      arxiv: "2608.23070"
+      project: "https://github.com/AtongWang/world-model-simulators"
+    features: {}
+    tags: [综述, 仿真器能力评估, 世界模型]
+    note: 以传统仿真器的八项能力为外部标尺，系统评估生成式世界模型距离真正仿真器的差距，梳理潜空间动力学、视频生成与联合嵌入预测三条技术路线并映射 200 篇代表性工作，指出状态反馈是最被忽视的短板，并给出六个研究方向。
+
+  - title: "LpWM: A Case for Sparse Representations in World Models"
+    short: LpWM
+    org: NYU / AMI Labs
+    year: 2026
+    venue: arXiv
+    category: general
+    links:
+      arxiv: "2608.22764"
+      code: "https://github.com/YilunKuang/lpworldmodel"
+    features: {action: true, closedloop: true}
+    tags: [稀疏表征, JEPA, 潜空间动力学, 规划]
+    note: 论证稀疏表征是世界模型更有利的几何结构：用 RDMReg 正则化 JEPA 学习非负稀疏潜码，在 PushT 上以更低的预测器复杂度实现规划成功率最高提升 57%，且学到的表征呈模式分解的可解释结构。
