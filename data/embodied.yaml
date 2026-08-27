@@ -159,3 +159,51 @@ papers:
     features: {action: true}
     tags: [未来潜状态, 动作推断, 无视频生成, 机器人操作]
     note: 提出 DELE-w0.5，从预测的未来潜状态直接推断机器人动作，省去视频生成这一中间目标，建模物理世界在动作下的状态变化而非逐帧外观演化，实现更低训练成本与低延迟推理，在 640 次真机实验中取得 62.5% 全任务成功率，显著优于各 VLA 基线。
+
+  - title: "Do Robotic World Models Really Follow Actions? Diagnosing and Aligning Action-Conditioned Generation for Policy Learning"
+    short: WorldSync
+    org: "Shanghang Zhang 团队"
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2608.24885"
+    features: {action: true, closedloop: true}
+    tags: [动作跟随诊断, 专家外动作, 策略改进, 动作条件生成]
+    note: 用 WorldEcho 在专家外动作上联合测视觉完整性与 SE(3) 轨迹对齐，再用 WorldSync 从分布覆盖、表示锚定与干预效应对齐三方面校准生成，使世界模型更能作为策略改进的仿真器。
+
+  - title: "TrAct: Bridging Robot Control and Visual Prediction with Visual Tracks"
+    short: TrAct
+    org: Stanford
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2608.24101"
+    features: {action: true, closedloop: true}
+    tags: [视觉轨迹, 轨迹条件世界模型, 跨本体, 动作选择]
+    note: 用视觉轨迹作为控制与预测的中间接口：VLAT 联合预测动作与轨迹，轨迹条件世界模型 rollout，再由视觉语言奖励模型选动作，仿真与真机成功率均高于动作条件世界模型。
+
+  - title: "DreamLedger: Execution-Settled Credit Files for World-Model Imagination in Robot Decision Loops"
+    short: DreamLedger
+    org: "University of Florida"
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2608.23863"
+    features: {action: true, closedloop: true}
+    tags: [执行结算, 信用档案, 想象门控, 可审计部署]
+    note: 把世界模型想象的可靠性做成按工况、区域与预测时域记账的执行结算信用档案，使用前门控、事后对照现实结算，减少未兑现想象依赖且每笔花费可审计回放。
+
+  - title: "JEPA-x: Cross-Predictive Physics Grounding for Forecastable Latent Dynamics"
+    short: JEPA-x
+    org: NUS
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2608.24044"
+    features: {action: true, closedloop: true}
+    tags: [交叉预测, 特权物理状态, 潜在动力学, JEPA, XP-JEPA]
+    note: 亦称 XP-JEPA。训练时把视觉观测与特权物理状态当作同一动作条件轨迹的两个视图做交叉预测，约束潜在动力学更可预报；部署丢弃物理分支，多任务控制成功率从 53.6% 升至 78.2%。
