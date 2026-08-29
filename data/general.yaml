@@ -337,3 +337,27 @@ papers:
     features: {action: true, closedloop: true}
     tags: [稀疏表征, JEPA, 潜空间动力学, 规划]
     note: 论证稀疏表征是世界模型更有利的几何结构：用 RDMReg 正则化 JEPA 学习非负稀疏潜码，在 PushT 上以更低的预测器复杂度实现规划成功率最高提升 57%，且学到的表征呈模式分解的可解释结构。
+
+  - title: "4DStreamCtrl: Interactive Video Generation with Online 4D Control"
+    short: 4DStreamCtrl
+    org: "Yixin Zhu 团队"
+    year: 2026
+    venue: arXiv
+    category: general
+    links:
+      arxiv: "2608.25479"
+    features: {action: true, realtime: true, longhorizon: true}
+    tags: [3D点轨迹, 相机-物体联合控制, 流式生成, 因果蒸馏, 可交互视频生成]
+    note: 把相机运动、物体轨迹与深度统一为单一 3D 点轨迹表征，单模型一次前向即联合完成相机/物体控制、深度编辑与运动迁移；从野外视频挖掘 3D 运动监督构建 OpenVidHD-Motion3D，借时间可分离的几何运动编码器蒸馏为因果流式学生模型，4 步去噪生成任意长视频，单卡 480p 达 20 FPS 并在数百帧内保持时序一致，首次实现可交互的 4D 可控流式生成。
+
+  - title: "Agentic Game Development as a Verifiable Trajectory Data Engine for Scaling World Models"
+    short: RLHEV
+    org: "Yang You 团队"
+    year: 2026
+    venue: arXiv
+    category: general
+    links:
+      arxiv: "2608.25518"
+    features: {}
+    tags: [数据引擎, 可验证奖励, 游戏开发, RL后训练, 长程轨迹]
+    note: 认为靠爬取更多视频scaling世界模型效率低下，需要像代码智能体那样具备可验证奖励的递归数据引擎：游戏引擎编码的场景是可执行的世界规范，可密集校验碰撞、物理、可导航性与有界可玩性，故提出 RLHEV 后训练范式，将引擎信号与开发过程中的人类接受反馈结合，为空间世界模型提供长程轨迹与可靠奖励。

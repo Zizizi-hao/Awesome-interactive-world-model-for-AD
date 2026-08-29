@@ -8,7 +8,7 @@
 
 世界模型 (World Model) 通过学习环境的动态表征，实现对未来的预测与想象； 可交互世界模型进一步支持以动作 (action) 为条件的生成与控制， 为自动驾驶和具身智能提供数据引擎、神经仿真器与策略学习基础。 本仓库收录并整理该方向的代表性工作，按应用场景分类， 并标注每篇工作的交互能力维度。
 
-📊 共收录 **155** 篇工作 ｜ 最后更新：2026-08-27
+📊 共收录 **158** 篇工作 ｜ 最后更新：2026-08-27
 
 <p align="center">
   <img src="assets/interactive-world-model.png" alt="交互式世界模型：智能体与世界模型的闭环交互" width="760">
@@ -26,8 +26,8 @@
 ## 目录
 
 - [自动驾驶 Autonomous Driving](#自动驾驶-autonomous-driving)（110）
-- [具身智能 Embodied AI](#具身智能-embodied-ai)（17）
-- [通用 / 游戏 General / Game](#通用--游戏-general--game)（28）
+- [具身智能 Embodied AI](#具身智能-embodied-ai)（18）
+- [通用 / 游戏 General / Game](#通用--游戏-general--game)（30）
 
 ## 自动驾驶 Autonomous Driving
 
@@ -152,6 +152,7 @@
 | **WorldSync**: Do Robotic World Models Really Follow Actions? Diagnosing and Aligning Action-Conditioned Generation for Policy Learning | arXiv (2026) | Shanghang Zhang 团队 | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.24885) | 用 WorldEcho 在专家外动作上联合测视觉完整性与 SE(3) 轨迹对齐，再用 WorldSync 从分布覆盖、表示锚定与干预效应对齐三方面校准生成，使世界模型更能作为策略改进的仿真器。 |
 | **DreamLedger**: Execution-Settled Credit Files for World-Model Imagination in Robot Decision Loops | arXiv (2026) | University of Florida | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.23863) | 把世界模型想象的可靠性做成按工况、区域与预测时域记账的执行结算信用档案，使用前门控、事后对照现实结算，减少未兑现想象依赖且每笔花费可审计回放。 |
 | **FACT**: Failure-Aware Causal Training for World-Action Models | arXiv (2026) | Xiaolong Wang 团队 | — | [论文](https://arxiv.org/abs/2608.10232) | 失败感知因果训练，显式建模动作-后果因果关系以纠正世界模型的乐观偏差。 |
+| **GaussianDream++**: Efficient 3D Gaussian World Modeling for Robotic Manipulation | arXiv (2026) | Haibao Yu 团队 | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.25659) | GaussianDream 的策略原生紧凑扩展：向 VLA 骨干插入世界状态/世界预测 token，仅训练期用世界表征头解码到共享高斯基元得到当前世界与未来预测监督，静态-动态分解聚焦交互区域；推理时移除高斯解码与 rollout 路径仅留 20 个世界 token，LIBERO 达 98.6%，真机平均成功率从 29.2% 升至 52.5% 且保持高效闭环控制。 |
 | **GigaBrain-WBC-0.5: A Behavior World Model for Robust Whole-Body Control with Environment Interaction** | arXiv (2026) | GigaAI | 🎮 | [论文](https://arxiv.org/abs/2608.18234) | 为人形机器人全身控制训练了一个行为世界模型，通过causal Transformer预测下一帧得状态、动作以及动作指令得分布，从而对环境对动作的影响进行建模。 |
 | **Hydra-0**: Action Flow for Generalist World Modeling and Control | arXiv (2026) | NVIDIA | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.18077) | 将机器人动作表示为像素运动（action flow）作为统一视觉接口，跨本体、任务、环境与视频骨干学习动作后果，机器人运动误差降低 90.4%、物体运动误差降低 60.2%。 |
 | **DELE-w0.5**: Inferring Action from Future Latent State for Robotic Manipulation | arXiv (2026) | DeepLeap Research | 🎮 | [论文](https://arxiv.org/abs/2608.22067) \| [项目](https://deepleap-x.com/research/dele-w0.5) | 提出 DELE-w0.5，从预测的未来潜状态直接推断机器人动作，省去视频生成这一中间目标，建模物理世界在动作下的状态变化而非逐帧外观演化，实现更低训练成本与低延迟推理，在 640 次真机实验中取得 62.5% 全任务成功率，显著优于各 VLA 基线。 |
@@ -170,9 +171,11 @@
 
 | 论文 | 发表 | 机构 | 交互能力 | 链接 | 一句话点评 |
 | :--- | :--- | :--- | :---: | :--- | :--- |
+| **4DStreamCtrl**: Interactive Video Generation with Online 4D Control | arXiv (2026) | Yixin Zhu 团队 | 🎮 ⚡ ⏳ | [论文](https://arxiv.org/abs/2608.25479) | 把相机运动、物体轨迹与深度统一为单一 3D 点轨迹表征，单模型一次前向即联合完成相机/物体控制、深度编辑与运动迁移；从野外视频挖掘 3D 运动监督构建 OpenVidHD-Motion3D，借时间可分离的几何运动编码器蒸馏为因果流式学生模型，4 步去噪生成任意长视频，单卡 480p 达 20 FPS 并在数百帧内保持时序一致，首次实现可交互的 4D 可控流式生成。 |
 | **A Unifying Perspective on Causal World Models: From Observations to Representations to Structure** | arXiv (2026) | Fabrizio Russo 团队 | — | [论文](https://arxiv.org/abs/2608.13456) | 从因果视角统一世界模型的观测、表示与结构，分析 OOD 泛化与干预推理。 |
 | **ABot-World-0**: Infinite Interactive World Rollout on a Single Desktop GPU | arXiv (2026) | Ning Guo 团队 | ⏳ | [论文](https://arxiv.org/abs/2607.19191) | 单桌面 GPU 上的无限交互式世界 rollout，演示了低资源持续交互可行性。 |
 | **Addressable Memory for Video World Models** | arXiv (2026) | Aljoša Ošep 团队 | ⏳ | [论文](https://arxiv.org/abs/2608.07408) | 可寻址视觉记忆机制，解决交互式视频世界模型中 KV cache 的视觉持久性局限。 |
+| **RLHEV**: Agentic Game Development as a Verifiable Trajectory Data Engine for Scaling World Models | arXiv (2026) | Yang You 团队 | — | [论文](https://arxiv.org/abs/2608.25518) | 认为靠爬取更多视频scaling世界模型效率低下，需要像代码智能体那样具备可验证奖励的递归数据引擎：游戏引擎编码的场景是可执行的世界规范，可密集校验碰撞、物理、可导航性与有界可玩性，故提出 RLHEV 后训练范式，将引擎信号与开发过程中的人类接受反馈结合，为空间世界模型提供长程轨迹与可靠奖励。 |
 | **AlayaWorld**: Interactive Long-Horizon World Modeling | arXiv (2026) | Zihui Gao 团队 | 🎮 ⏳ | [论文](https://arxiv.org/abs/2607.18367) | 长时程可交互视频世界建模，支持持久状态演化与玩家级交互。 |
 | **InternalVCoT**: Beyond Visual CoT: Internalized Visual Thinking for Proactive Video Reasoning | arXiv (2026) | Xiaoyu Zhu 团队 | ⏳ | [论文](https://arxiv.org/abs/2608.15869) | 将显式视觉 CoT（生成中间推理图像）内化为隐式视觉预见，在保持空间/时序推理能力的同时大幅降低推理开销。 |
 | **Diagnosing JEPA World Models with Action-Conditioned Predictive Consistency** | arXiv (2026) | Qi Tian 团队 | 🎮 | [论文](https://arxiv.org/abs/2608.12939) | 用动作条件预测一致性诊断 JEPA 世界模型的表示质量。 |

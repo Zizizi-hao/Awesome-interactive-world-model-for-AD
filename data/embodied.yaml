@@ -207,3 +207,15 @@ papers:
     features: {action: true, closedloop: true}
     tags: [交叉预测, 特权物理状态, 潜在动力学, JEPA, XP-JEPA]
     note: 亦称 XP-JEPA。训练时把视觉观测与特权物理状态当作同一动作条件轨迹的两个视图做交叉预测，约束潜在动力学更可预报；部署丢弃物理分支，多任务控制成功率从 53.6% 升至 78.2%。
+
+  - title: "GaussianDream++: Efficient 3D Gaussian World Modeling for Robotic Manipulation"
+    short: GaussianDream++
+    org: "Haibao Yu 团队"
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2608.25659"
+    features: {action: true, closedloop: true}
+    tags: [3D高斯, VLA, 世界状态token, 训练期监督, 静动分解]
+    note: GaussianDream 的策略原生紧凑扩展：向 VLA 骨干插入世界状态/世界预测 token，仅训练期用世界表征头解码到共享高斯基元得到当前世界与未来预测监督，静态-动态分解聚焦交互区域；推理时移除高斯解码与 rollout 路径仅留 20 个世界 token，LIBERO 达 98.6%，真机平均成功率从 29.2% 升至 52.5% 且保持高效闭环控制。
