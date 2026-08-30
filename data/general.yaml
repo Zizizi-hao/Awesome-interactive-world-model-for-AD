@@ -361,3 +361,15 @@ papers:
     features: {}
     tags: [数据引擎, 可验证奖励, 游戏开发, RL后训练, 长程轨迹]
     note: 认为靠爬取更多视频scaling世界模型效率低下，需要像代码智能体那样具备可验证奖励的递归数据引擎：游戏引擎编码的场景是可执行的世界规范，可密集校验碰撞、物理、可导航性与有界可玩性，故提出 RLHEV 后训练范式，将引擎信号与开发过程中的人类接受反馈结合，为空间世界模型提供长程轨迹与可靠奖励。
+
+  - title: "R2M-Bench: Evaluating Revisit Memory via Relative Consistency in Interactive Video World Models"
+    short: R2M-Bench
+    year: 2026
+    venue: arXiv
+    category: general
+    links:
+      arxiv: "2608.27328"
+      code: "https://github.com/AMAP-ML/R2MBench"
+    features: {}
+    tags: [重访记忆基准, 相对一致性, 慢动作捷径, 交互式视频世界模型]
+    note: 指出首访-重访帧的绝对相似度会被「慢动作捷径」迷惑，提出在同一 rollout 内用间隙匹配的非重访对与短程对做相对校准的 MemoryGain 与归一化记忆比 NMR，覆盖外观、场景/物体身份、局部几何与持久状态，评测 7 个动作条件视频世界模型且与人类一致性判断相关 ρ=0.547。

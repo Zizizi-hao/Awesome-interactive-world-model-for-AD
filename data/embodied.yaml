@@ -219,3 +219,50 @@ papers:
     features: {action: true, closedloop: true}
     tags: [3D高斯, VLA, 世界状态token, 训练期监督, 静动分解]
     note: GaussianDream 的策略原生紧凑扩展：向 VLA 骨干插入世界状态/世界预测 token，仅训练期用世界表征头解码到共享高斯基元得到当前世界与未来预测监督，静态-动态分解聚焦交互区域；推理时移除高斯解码与 rollout 路径仅留 20 个世界 token，LIBERO 达 98.6%，真机平均成功率从 29.2% 升至 52.5% 且保持高效闭环控制。
+
+  - title: "CLAP: Cross-Embodiment Video World Models are Zero-Shot Physical Simulators"
+    short: CLAP
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2608.27406"
+      project: "https://omni-clap.github.io"
+    features: {action: true}
+    tags: [跨本体, 动作条件视频生成, 零样本物理仿真, 潜动作课程学习]
+    note: 用末端位姿、语言指令与潜动作统一异构动作空间，以课程式跨本体训练先从无标注互联网视频学物理先验、再接地到真实动作空间做零样本部署，在 DROID 等环境逼近或超越单本体 SOTA，代码与模型全部开源。
+
+  - title: "SpatialCrafter: Single Image World Modeling with Generative 3D Proxies"
+    short: SpatialCrafter
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2608.27073"
+      project: "https://fangchuan.github.io/SpatialCrafter/"
+    features: {action: true, longhorizon: true}
+    tags: [单图生场景, 生成式3D代理, 两阶段解耦, 可探索场景]
+    note: 将可探索图生场景拆解为「全局 3D 代理生成 + 外观细化」两阶段：PaSS Flow 预测空间对齐、几何一致的 3D 代理，再把视频扩散模型重构为生成式延迟细化器在其上合成高频细节，缓解幻觉与长时漂移；并构建 115K 场景的首个图生场景混合数据集。
+
+  - title: "WALL-SS: Scaling Long-horizon World Models via Next-Scale Autoregression"
+    short: WALL-SS
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2608.26239"
+    features: {action: true, closedloop: true, longhorizon: true}
+    tags: [长时序世界模型, 尺度自回归, 粗到细生成, 流式扩展, on-policy对齐]
+    note: 把具身轨迹表示为观测-动作时序交错的因果序列，用 next-scale 粗到细自回归注入尺度对齐的动作表征，配合尺度压缩的长时记忆与 on-policy 对齐奖励，实现可变长生成、有界内存下的分钟级连贯流式 rollout 与更强动作跟随。
+
+  - title: "Predicting Consequences and Reinforcing Navigation Policies with Latent World Models"
+    short: LWM
+    year: 2026
+    venue: ECCV 2026 (Spotlight)
+    category: embodied
+    links:
+      arxiv: "2608.26190"
+      project: "https://wzm206.github.io/latent-world-model-nav"
+    features: {action: true, closedloop: true}
+    tags: [潜空间兼容性预测, 机器人导航, 无标注视频学习, 世界模型内强化学习]
+    note: 不重建观测或特征，而是预测动作条件下的潜特征兼容性来直接评估动作后果（空间邻近与特征相似相关），借跨轨迹动作序列做反事实训练，可在世界模型想象中用 RL 从无关标注视频监督并提升导航策略。
