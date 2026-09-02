@@ -1308,3 +1308,15 @@ papers:
     features: {action: true, closedloop: true}
     tags: [几何世界模型, 未来点云预测, 世界动作模型]
     note: 主张以点云几何而非像素作为驾驶世界模型的状态空间，通过预训练预测未来场景几何、再由几何条件动作头预测自车轨迹，开环与闭环评测均显著优于基于图像的 WAM。
+
+  - title: "Self-Aware Active Learning Enables Continual Improvement in Autonomous Driving"
+    short: Self-Aware AL
+    org: "Dimitrios Kanoulas 团队"
+    year: 2026
+    venue: arXiv
+    category: driving
+    links:
+      arxiv: "2608.29772"
+    features: {}
+    tags: [主动学习, 自我感知, 长尾事件, 持续改进, 数据引擎]
+    note: 指出驾驶系统多从被动经验学习、缺乏「知道自己不会」的机制，罕见分布偏移与长尾事件因此导致突发失效；提出自我感知的主动学习框架，让智能体估计自身能力不足、及时求助人类，并把安全关键的偶遇转化为可学习的训练信号，实现自动驾驶系统的持续改进。

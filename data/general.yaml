@@ -91,6 +91,18 @@ papers:
     tags: [实时交互, 世界基础模型, 长视频生成]
     note: 开源实时交互世界基础模型，支持丰富的动作可控性与长时程连贯生成，探索世界模型的交互式应用范式。
 
+  - title: "Matrix-Game 3.5: Enhancing Real-Time Streaming Interactive World Models with Patch Memory"
+    short: Matrix-Game 3.5
+    org: Skywork AI
+    year: 2026
+    venue: arXiv
+    category: general
+    links:
+      arxiv: "2608.29910"
+    features: {action: true, realtime: true, longhorizon: true}
+    tags: [实时交互, 贴片记忆, 几何感知相机控制, 静动解耦, 扩散蒸馏, 世界模型系列]
+    note: Matrix-Game 3.0 的升级版，面向几何感知与长时程一致的实时流式交互世界生成，三项关键改进：(1) 统一几何感知记忆框架——patch 记忆做显式 3D 块检索、tiled-PRoPE 做投影式相机条件化，不引入任何可学习参数即可实现几何一致的相机控制与长时程场景回忆；(2) 静动解耦的世界表示——分别建模静态场景几何与动态主体，长时程生成中同时保持几何一致性与主体身份；(3) 两阶段渐进实时蒸馏——经感知流匹配（Perceptual Flow Matching）与课程式自 rollout DMD 把双向扩散模型转为少步因果生成器，支撑分钟级实时交互。训练语料统一覆盖 Unreal 仿真环境、开放世界游戏与互联网视频，在场景回忆、相机控制、主体一致性、文本驱动世界生成与稳定开放世界实时交互上均表现强劲。
+
   - title: "Qwen-RobotWorld: A Joint World Model Integrating Driving, Navigation and Manipulation"
     short: Qwen-RobotWorld
     org: Alibaba Qwen

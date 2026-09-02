@@ -266,3 +266,50 @@ papers:
     features: {action: true, closedloop: true}
     tags: [潜空间兼容性预测, 机器人导航, 无标注视频学习, 世界模型内强化学习]
     note: 不重建观测或特征，而是预测动作条件下的潜特征兼容性来直接评估动作后果（空间邻近与特征相似相关），借跨轨迹动作序列做反事实训练，可在世界模型想象中用 RL 从无关标注视频监督并提升导航策略。
+
+  - title: "RoboPhys-3D: A Comprehensive Embodied World Model Evaluation via 3D Reconstruction"
+    short: RoboPhys-3D
+    org: "Christian Claudel 团队"
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2608.28718"
+    features: {}
+    tags: [具身世界模型基准, 3D重建评测, 操作任务, 执行感知评价]
+    note: 基于 RoboTwin 2.0 的 3D 接地具身世界模型基准，覆盖 4 类场景 50 个操作任务、5,000 集与 25,000 段多视角真值视频；生成视频与真值视频走同一 3D 重建管线，从而区分重建误差与生成误差。50 项指标组织为像素保真、3D 几何一致性、状态理解、任务完成 4 层 18 个子维度，并提出 Average Full Score 及与任务成功强相关的 RoboPhyscore（与人类评价 Pearson r=0.9761）；评测 Cosmos 3 等代表性模型发现感知/ VLM 式评判会遗漏大量状态与执行层面的失败。
+
+  - title: "Hydra: A Navigation World Action Model with Discrete Latent Planning and Continuous Flow-Matching Execution"
+    short: Hydra
+    org: "Xuesu Xiao 团队"
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2608.28995"
+    features: {action: true, realtime: true, closedloop: true}
+    tags: [离散潜空间规划, 向量量化, 流匹配, 导航控制, 世界动作模型]
+    note: 针对生成模型与规划器流形脱节、候选动作须解码回像素才能评估的实时控制瓶颈，Hydra 在视觉状态、物理位姿与控制动作上建立统一潜流形，用模态专属 VQ 瓶颈压缩为运动学意图与视觉状态的离散词表，使规划器（采样与评估）原生工作在离散空间——以运动学-感知代价排序候选、全程不解码像素（Discrete Latent Planning），再用条件流匹配把离散意图映射为连续轨迹执行；在两台真实机器人上目标导向规划超越 SOTA 世界模型，闭环执行持平或超过领先反应式基础策略。
+
+  - title: "AnyWorld: Factorized Egocentric World Models for Cross-Embodiment Generalization"
+    short: AnyWorld
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2608.29242"
+    features: {action: true}
+    tags: [第一视角视频, 跨本体泛化, 因子分解, 数据增广, 人转机数据引擎]
+    note: 把单次人类交互分解为动作、相机、本体三个可控因子——动作控制捕捉运动结构、相机控制指定视角演化、目标本体上下文定义执行身体及其交互几何，无需成对 human-robot 演示即可将一段第一视角人类视频重组合成多样的机器人原生 rollout，同时保留底层动力学与物体交互；经大规模人类交互预训练+混合本体微调，生成数据可提升 RoboCasa GR1 桌面基准与真机 IRON 人形机器人操作性能，消融表明动作校准与视觉重组合二者缺一不可。
+
+  - title: "Motus2: A Self-Evolving General World Model for Dexterous Manipulation"
+    short: Motus2
+    org: "清华大学（Jun Zhu / Fan Bao 团队）"
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2608.30237"
+    features: {action: true, closedloop: true}
+    tags: [自进化世界模型, 灵巧操作, 策略-仿真器-评估器闭环, 第一视角数据缩放, 触觉]
+    note: 超越「仿真器外挂动作头」的范式，单模型共享权重暴露三个控制接口构成闭环决策-学习回路：策略（世界-动作模型）提出候选动作块、仿真器（动作条件世界模型）预测视觉后果、评估器（价值模型）评估预测结果，从而实现策略自我改进；专家演示用于动作学习，失败与次优交互则成为动力学建模与价值学习的宝贵证据。数据侧从单目第一视角视频扩展到同步双目第一视角数据再做机器人域适配，并研究全局自回归与混合记忆扩展滑动窗口上下文、引入触觉实现接触感知控制，在全仿人双目双臂灵巧手平台上验证。
