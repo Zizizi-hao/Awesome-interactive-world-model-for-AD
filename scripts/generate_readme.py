@@ -7,7 +7,6 @@ Usage:
 
 import datetime
 import re
-import subprocess
 import sys
 from pathlib import Path
 
@@ -55,16 +54,15 @@ def load_data() -> dict:
     return data
 
 
-def last_updated(data_paths: list) -> str:
-    try:
-        out = subprocess.run(
-            ["git", "log", "-1", "--format=%cs", "--", *data_paths],
-            cwd=ROOT, capture_output=True, text=True, check=True,
-        ).stdout.strip()
-        if out:
-            return out
-    except (subprocess.CalledProcessError, FileNotFoundError):
-        pass
+def last_updated(meta: dict) -> str:
+    """Read the date from data.yaml so local generation matches CI after the same commit.
+
+    Do not use `git log` on data files: generating README and committing yaml in one
+    commit makes CI see a newer commit date than the pre-commit generation.
+    """
+    explicit = meta.get("updated")
+    if explicit:
+        return str(explicit)
     return datetime.date.today().isoformat()
 
 
@@ -129,8 +127,6 @@ def main() -> None:
     categories = data["categories"]
     papers = data["papers"]
 
-    data_paths = ["data.yaml"] + [rel for rel in (data.get("includes") or [])]
-
     known = {c["id"] for c in categories}
     for p in papers:
         if p.get("category") not in known:
@@ -148,7 +144,7 @@ def main() -> None:
         "",
         meta["description"].strip(),
         "",
-        f"📊 共收录 **{len(papers)}** 篇工作 ｜ 最后更新：{last_updated(data_paths)}",
+        f"📊 共收录 **{len(papers)}** 篇工作 ｜ 最后更新：{last_updated(meta)}",
         "",
         '<p align="center">',
         '  <img src="assets/interactive-world-model.png" alt="交互式世界模型：智能体与世界模型的闭环交互" width="760">',

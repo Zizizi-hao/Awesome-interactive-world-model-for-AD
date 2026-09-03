@@ -32,14 +32,16 @@
   note: 一句话中文点评          # 必填，说明该工作的核心贡献与交互特性
 ```
 
-2. 本地重新生成 README：
+2. 把 `data.yaml` 里 `meta.updated` 改成今天的日期（README 的「最后更新」读这一行，不要用 git 提交日）。
+
+3. 本地重新生成 README：
 
 ```bash
 pip install pyyaml   # 首次需要
-python3 scripts/generate_readme.py
+python scripts/generate_readme.py
 ```
 
-3. 将修改的 `data/*.yaml`（及 `data.yaml`，如有改动）与 `README.md` 一并提交 PR。
+4. 将修改的 `data/*.yaml`、`data.yaml` 与 `README.md` 一并提交 PR。
 
 ## 收录标准
 
