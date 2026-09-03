@@ -313,3 +313,29 @@ papers:
     features: {action: true, closedloop: true}
     tags: [自进化世界模型, 灵巧操作, 策略-仿真器-评估器闭环, 第一视角数据缩放, 触觉]
     note: 超越「仿真器外挂动作头」的范式，单模型共享权重暴露三个控制接口构成闭环决策-学习回路：策略（世界-动作模型）提出候选动作块、仿真器（动作条件世界模型）预测视觉后果、评估器（价值模型）评估预测结果，从而实现策略自我改进；专家演示用于动作学习，失败与次优交互则成为动力学建模与价值学习的宝贵证据。数据侧从单目第一视角视频扩展到同步双目第一视角数据再做机器人域适配，并研究全局自回归与混合记忆扩展滑动窗口上下文、引入触觉实现接触感知控制，在全仿人双目双臂灵巧手平台上验证。
+
+  - title: "ZimaBlue: Evolving Generalizable World Action Models through Scalable Video Pre-training"
+    short: ZimaBlue
+    org: Joy Future Academy
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.00188"
+    features: {action: true, realtime: true, closedloop: true}
+    tags: [世界动作模型, 第一视角视频预训练, 跨本体, Slow-Fast]
+    note: 用大规模无动作第一视角视频学因果视觉动力学，再经跨本体 video-action 中训与目标机器人后训得到可泛化 WAM；Slow-Fast 架构在 RTX 4090 上 30Hz 闭环控制，真机零样本成功率随 12 万小时视频从 36.1% 升至 77.8%。
+
+  - title: "IMPACT: Attention Is the Interaction Map for Scalable Interaction-Aware World Model Training"
+    short: IMPACT
+    org: "清华大学 / 中科大"
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.00161"
+      project: "https://embodiedcity.github.io/IMPACT/"
+      code: "https://github.com/EmbodiedCity/IMPACT.code"
+    features: {action: true}
+    tags: [交互感知训练, 交叉注意力, 去噪监督重加权, 机械臂与人手操作]
+    note: 针对全局 MSE 让静态背景主导优化、稀疏交互区域欠监督的问题，用被操作物体 token 的交叉注意力作内部先验，经局部预测误差校准成交互图并重加权去噪损失，无需外部稠密表征、推理无额外开销。

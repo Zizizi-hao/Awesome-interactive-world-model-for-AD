@@ -8,7 +8,7 @@
 
 世界模型 (World Model) 通过学习环境的动态表征，实现对未来的预测与想象； 可交互世界模型进一步支持以动作 (action) 为条件的生成与控制， 为自动驾驶和具身智能提供数据引擎、神经仿真器与策略学习基础。 本仓库收录并整理该方向的代表性工作，按应用场景分类， 并标注每篇工作的交互能力维度。
 
-📊 共收录 **169** 篇工作 ｜ 最后更新：2026-09-02
+📊 共收录 **171** 篇工作 ｜ 最后更新：2026-09-02
 
 <p align="center">
   <img src="assets/interactive-world-model.png" alt="交互式世界模型：智能体与世界模型的闭环交互" width="760">
@@ -26,7 +26,7 @@
 ## 目录
 
 - [自动驾驶 Autonomous Driving](#自动驾驶-autonomous-driving)（111）
-- [具身智能 Embodied AI](#具身智能-embodied-ai)（26）
+- [具身智能 Embodied AI](#具身智能-embodied-ai)（28）
 - [通用 / 游戏 General / Game](#通用--游戏-general--game)（32）
 
 ## 自动驾驶 Autonomous Driving
@@ -159,6 +159,7 @@
 | **GigaBrain-WBC-0.5: A Behavior World Model for Robust Whole-Body Control with Environment Interaction** | arXiv (2026) | GigaAI | 🎮 | [论文](https://arxiv.org/abs/2608.18234) | 为人形机器人全身控制训练了一个行为世界模型，通过causal Transformer预测下一帧得状态、动作以及动作指令得分布，从而对环境对动作的影响进行建模。 |
 | **Hydra-0**: Action Flow for Generalist World Modeling and Control | arXiv (2026) | NVIDIA | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.18077) | 将机器人动作表示为像素运动（action flow）作为统一视觉接口，跨本体、任务、环境与视频骨干学习动作后果，机器人运动误差降低 90.4%、物体运动误差降低 60.2%。 |
 | **Hydra**: A Navigation World Action Model with Discrete Latent Planning and Continuous Flow-Matching Execution | arXiv (2026) | Xuesu Xiao 团队 | 🎮 ⚡ 🔁 | [论文](https://arxiv.org/abs/2608.28995) | 针对生成模型与规划器流形脱节、候选动作须解码回像素才能评估的实时控制瓶颈，Hydra 在视觉状态、物理位姿与控制动作上建立统一潜流形，用模态专属 VQ 瓶颈压缩为运动学意图与视觉状态的离散词表，使规划器（采样与评估）原生工作在离散空间——以运动学-感知代价排序候选、全程不解码像素（Discrete Latent Planning），再用条件流匹配把离散意图映射为连续轨迹执行；在两台真实机器人上目标导向规划超越 SOTA 世界模型，闭环执行持平或超过领先反应式基础策略。 |
+| **IMPACT**: Attention Is the Interaction Map for Scalable Interaction-Aware World Model Training | arXiv (2026) | 清华大学 / 中科大 | 🎮 | [论文](https://arxiv.org/abs/2609.00161) \| [项目](https://embodiedcity.github.io/IMPACT/) \| [代码](https://github.com/EmbodiedCity/IMPACT.code) | 针对全局 MSE 让静态背景主导优化、稀疏交互区域欠监督的问题，用被操作物体 token 的交叉注意力作内部先验，经局部预测误差校准成交互图并重加权去噪损失，无需外部稠密表征、推理无额外开销。 |
 | **DELE-w0.5**: Inferring Action from Future Latent State for Robotic Manipulation | arXiv (2026) | DeepLeap Research | 🎮 | [论文](https://arxiv.org/abs/2608.22067) \| [项目](https://deepleap-x.com/research/dele-w0.5) | 提出 DELE-w0.5，从预测的未来潜状态直接推断机器人动作，省去视频生成这一中间目标，建模物理世界在动作下的状态变化而非逐帧外观演化，实现更低训练成本与低延迟推理，在 640 次真机实验中取得 62.5% 全任务成功率，显著优于各 VLA 基线。 |
 | **JEPA-x**: Cross-Predictive Physics Grounding for Forecastable Latent Dynamics | arXiv (2026) | NUS | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.24044) | 亦称 XP-JEPA。训练时把视觉观测与特权物理状态当作同一动作条件轨迹的两个视图做交叉预测，约束潜在动力学更可预报；部署丢弃物理分支，多任务控制成功率从 53.6% 升至 78.2%。 |
 | **Motus2**: A Self-Evolving General World Model for Dexterous Manipulation | arXiv (2026) | 清华大学（Jun Zhu / Fan Bao 团队） | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.30237) | 超越「仿真器外挂动作头」的范式，单模型共享权重暴露三个控制接口构成闭环决策-学习回路：策略（世界-动作模型）提出候选动作块、仿真器（动作条件世界模型）预测视觉后果、评估器（价值模型）评估预测结果，从而实现策略自我改进；专家演示用于动作学习，失败与次优交互则成为动力学建模与价值学习的宝贵证据。数据侧从单目第一视角视频扩展到同步双目第一视角数据再做机器人域适配，并研究全局自回归与混合记忆扩展滑动窗口上下文、引入触觉实现接触感知控制，在全仿人双目双臂灵巧手平台上验证。 |
@@ -169,6 +170,7 @@
 | **TrAct**: Bridging Robot Control and Visual Prediction with Visual Tracks | arXiv (2026) | Stanford | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.24101) | 用视觉轨迹作为控制与预测的中间接口：VLAT 联合预测动作与轨迹，轨迹条件世界模型 rollout，再由视觉语言奖励模型选动作，仿真与真机成功率均高于动作条件世界模型。 |
 | **WALL-SS**: Scaling Long-horizon World Models via Next-Scale Autoregression | arXiv (2026) | — | 🎮 🔁 ⏳ | [论文](https://arxiv.org/abs/2608.26239) | 把具身轨迹表示为观测-动作时序交错的因果序列，用 next-scale 粗到细自回归注入尺度对齐的动作表征，配合尺度压缩的长时记忆与 on-policy 对齐奖励，实现可变长生成、有界内存下的分钟级连贯流式 rollout 与更强动作跟随。 |
 | **WorldSimProbe**: Diagnosing Simulator Faithfulness in Action-Conditioned World Models for Embodied Manipulation | arXiv (2026) | Shanghang Zhang 团队 | — | [论文](https://arxiv.org/abs/2608.09298) | 世界模型要当仿真器用，就必须通过可观测的物理契约，而不是靠观感或任务分数。 |
+| **ZimaBlue**: Evolving Generalizable World Action Models through Scalable Video Pre-training | arXiv (2026) | Joy Future Academy | 🎮 ⚡ 🔁 | [论文](https://arxiv.org/abs/2609.00188) | 用大规模无动作第一视角视频学因果视觉动力学，再经跨本体 video-action 中训与目标机器人后训得到可泛化 WAM；Slow-Fast 架构在 RTX 4090 上 30Hz 闭环控制，真机零样本成功率随 12 万小时视频从 36.1% 升至 77.8%。 |
 | **hint²**: Hierarchical World Models for Inference-Time Temporal Logic Guidance | arXiv (2026) | Purdue University | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.13678) | 用两层世界模型在推理时将 LTL 规范注入扩散策略——高层追踪自动机进展，低层用 STL 鲁棒性梯度保障局部几何安全，无需重训策略。 |
 | **τ0-VLA**: a Hierarchical Robot Foundation Model with World-Model-Guided Test-Time Computation | arXiv (2026) | Xiaowei Cai 团队 | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.16885) | 分层机器人基础模型，在测试时用世界模型引导计算分配，为困难决策步骤分配额外计算资源，提升长时程操作的可靠性与连贯性。 |
 | **Genie**: Generative Interactive Environments | ICML (2024, Best Paper) | Google DeepMind | 🎮 | [论文](https://arxiv.org/abs/2402.15391) | 从未标注视频中学习潜在动作空间，可从单张图像生成可玩的 2D 交互环境，是通用具身智能的基础性探索。 |
