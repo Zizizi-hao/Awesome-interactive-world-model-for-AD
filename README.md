@@ -8,7 +8,7 @@
 
 世界模型 (World Model) 通过学习环境的动态表征，实现对未来的预测与想象； 可交互世界模型进一步支持以动作 (action) 为条件的生成与控制， 为自动驾驶和具身智能提供数据引擎、神经仿真器与策略学习基础。 本仓库收录并整理该方向的代表性工作，按应用场景分类， 并标注每篇工作的交互能力维度。
 
-📊 共收录 **171** 篇工作 ｜ 最后更新：2026-09-03
+📊 共收录 **173** 篇工作 ｜ 最后更新：2026-09-04
 
 <p align="center">
   <img src="assets/interactive-world-model.png" alt="交互式世界模型：智能体与世界模型的闭环交互" width="760">
@@ -26,8 +26,8 @@
 ## 目录
 
 - [自动驾驶 Autonomous Driving](#自动驾驶-autonomous-driving)（111）
-- [具身智能 Embodied AI](#具身智能-embodied-ai)（28）
-- [通用 / 游戏 General / Game](#通用--游戏-general--game)（32）
+- [具身智能 Embodied AI](#具身智能-embodied-ai)（29）
+- [通用 / 游戏 General / Game](#通用--游戏-general--game)（33）
 
 ## 自动驾驶 Autonomous Driving
 
@@ -167,6 +167,7 @@
 | **Q-Learning With World Models** | arXiv (2026) | Chelsea Finn / Dorsa Sadigh 团队 | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.17163) | 把世界模型引入离策略 Q 学习——预测状态变化而非仅动作，突破此前世界模型局限于监督式策略学习的困境，提升 VLA 模型 RL 微调的样本效率。 |
 | **RoboPhys-3D**: A Comprehensive Embodied World Model Evaluation via 3D Reconstruction | arXiv (2026) | Christian Claudel 团队 | — | [论文](https://arxiv.org/abs/2608.28718) | 基于 RoboTwin 2.0 的 3D 接地具身世界模型基准，覆盖 4 类场景 50 个操作任务、5,000 集与 25,000 段多视角真值视频；生成视频与真值视频走同一 3D 重建管线，从而区分重建误差与生成误差。50 项指标组织为像素保真、3D 几何一致性、状态理解、任务完成 4 层 18 个子维度，并提出 Average Full Score 及与任务成功强相关的 RoboPhyscore（与人类评价 Pearson r=0.9761）；评测 Cosmos 3 等代表性模型发现感知/ VLM 式评判会遗漏大量状态与执行层面的失败。 |
 | **SpatialCrafter**: Single Image World Modeling with Generative 3D Proxies | arXiv (2026) | — | 🎮 ⏳ | [论文](https://arxiv.org/abs/2608.27073) \| [项目](https://fangchuan.github.io/SpatialCrafter/) | 将可探索图生场景拆解为「全局 3D 代理生成 + 外观细化」两阶段：PaSS Flow 预测空间对齐、几何一致的 3D 代理，再把视频扩散模型重构为生成式延迟细化器在其上合成高频细节，缓解幻觉与长时漂移；并构建 115K 场景的首个图生场景混合数据集。 |
+| **SA-WAM**: Spatially Aware World Action Model via Geometric Latent Diffusion | arXiv (2026) | Inria / ENS | 🎮 🔁 | [论文](https://arxiv.org/abs/2609.02531) \| [项目](https://jlopetegui98.github.io/projects/sa_wam.html) | 把度量深度经对数尺度非线性归一化映射到冻结视频 VAE 的输入域，与 RGB、本体和动作 chunk 共享同一预训练 DiT 联合去噪，无需专用 3D 编码器即可做空间感知世界-动作建模；在 RoboCasa、LIBERO-Plus 与 UR5 真机上同时提升策略成功率与未来状态预测。 |
 | **TrAct**: Bridging Robot Control and Visual Prediction with Visual Tracks | arXiv (2026) | Stanford | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.24101) | 用视觉轨迹作为控制与预测的中间接口：VLAT 联合预测动作与轨迹，轨迹条件世界模型 rollout，再由视觉语言奖励模型选动作，仿真与真机成功率均高于动作条件世界模型。 |
 | **WALL-SS**: Scaling Long-horizon World Models via Next-Scale Autoregression | arXiv (2026) | — | 🎮 🔁 ⏳ | [论文](https://arxiv.org/abs/2608.26239) | 把具身轨迹表示为观测-动作时序交错的因果序列，用 next-scale 粗到细自回归注入尺度对齐的动作表征，配合尺度压缩的长时记忆与 on-policy 对齐奖励，实现可变长生成、有界内存下的分钟级连贯流式 rollout 与更强动作跟随。 |
 | **WorldSimProbe**: Diagnosing Simulator Faithfulness in Action-Conditioned World Models for Embodied Manipulation | arXiv (2026) | Shanghang Zhang 团队 | — | [论文](https://arxiv.org/abs/2608.09298) | 世界模型要当仿真器用，就必须通过可观测的物理契约，而不是靠观感或任务分数。 |
@@ -203,6 +204,7 @@
 | **R2M-Bench**: Evaluating Revisit Memory via Relative Consistency in Interactive Video World Models | arXiv (2026) | — | — | [论文](https://arxiv.org/abs/2608.27328) \| [代码](https://github.com/AMAP-ML/R2MBench) | 指出首访-重访帧的绝对相似度会被「慢动作捷径」迷惑，提出在同一 rollout 内用间隙匹配的非重访对与短程对做相对校准的 MemoryGain 与归一化记忆比 NMR，覆盖外观、场景/物体身份、局部几何与持久状态，评测 7 个动作条件视频世界模型且与人类一致性判断相关 ρ=0.547。 |
 | **SCOPE**: Score-Isolated Agentic Optimization for Video World Models | arXiv (2026) | Yuhua Jiang 团队 | 🎮 | [论文](https://arxiv.org/abs/2608.15043) | 提出评分隔离的 Agentic 优化框架，解耦 prompt/采样器/验证器/选择器的评估，使视频世界模型在规划与具身决策中推理时优化更可靠。 |
 | **Sekai2**: From World Exploration to Interactive World Modeling | arXiv (2026) | Yongtao Ge 团队 | ⏳ | [论文](https://arxiv.org/abs/2608.09449) | 从世界探索到交互式世界建模的统一框架，支持长时程交互 rollout。 |
+| **SolarWM**: Open Data and Scalable Training for Long-Horizon Video World Models | arXiv (2026) | CUHK-SZ / NVIDIA / MSRA | 🎮 ⚡ ⏳ | [论文](https://arxiv.org/abs/2609.02886) \| [项目](https://junchao-cs.github.io/SolarWM-Web/) | 开源可交互视频世界模型全栈：1.43M 片段统一数据契约，并在 Wan2.2 / LTX-2.5 / MiniMax-H3 上做骨干原生适配；三阶段（双向适配、因果 AR、DMD）仅用 5 秒序列训练即可实时相机交互、分钟到小时级长时 rollout，并释放数据、配方与权重。 |
 | **The Evaluation Protocol Determines the Result: An Independent Reproduction of LeWorldModel on TwoRoom** | arXiv (2026) | Joyjeet Singh 团队 | — | [论文](https://arxiv.org/abs/2608.10145) | 独立复现发现评价协议决定世界模型排名，揭示评测方法论对结果的影响。 |
 | **Twin Rollouts**: Noise-Coupled Counterfactual Branching in Interactive Video World Models | arXiv (2026) | Xinran Xu 团队 | 🎮 | [论文](https://arxiv.org/abs/2608.08982) | 噪声耦合实现同一世界状态的分支式反事实 rollout，保持共享上下文一致性。 |
 | **WorldCycle**: Self-Verifiable Reinforcement Learning for Long-Horizon Video World Models | arXiv (2026) | Song Guo 团队 | ⏳ | [论文](https://arxiv.org/abs/2608.04964) | 自验证强化学习让视频世界模型在长程 rollout 中自我检测并修正错误。 |

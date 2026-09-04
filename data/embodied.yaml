@@ -339,3 +339,16 @@ papers:
     features: {action: true}
     tags: [交互感知训练, 交叉注意力, 去噪监督重加权, 机械臂与人手操作]
     note: 针对全局 MSE 让静态背景主导优化、稀疏交互区域欠监督的问题，用被操作物体 token 的交叉注意力作内部先验，经局部预测误差校准成交互图并重加权去噪损失，无需外部稠密表征、推理无额外开销。
+
+  - title: "Spatially Aware World Action Model via Geometric Latent Diffusion"
+    short: SA-WAM
+    org: Inria / ENS
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.02531"
+      project: "https://jlopetegui98.github.io/projects/sa_wam.html"
+    features: {action: true, closedloop: true}
+    tags: [世界动作模型, 几何潜空间扩散, RGB-D, 深度注入]
+    note: 把度量深度经对数尺度非线性归一化映射到冻结视频 VAE 的输入域，与 RGB、本体和动作 chunk 共享同一预训练 DiT 联合去噪，无需专用 3D 编码器即可做空间感知世界-动作建模；在 RoboCasa、LIBERO-Plus 与 UR5 真机上同时提升策略成功率与未来状态预测。
