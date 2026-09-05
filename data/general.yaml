@@ -398,3 +398,29 @@ papers:
     features: {action: true, realtime: true, longhorizon: true}
     tags: [开源世界模型, 多源数据引擎, 长时序视频, 骨干原生适配]
     note: 开源可交互视频世界模型全栈：1.43M 片段统一数据契约，并在 Wan2.2 / LTX-2.5 / MiniMax-H3 上做骨干原生适配；三阶段（双向适配、因果 AR、DMD）仅用 5 秒序列训练即可实时相机交互、分钟到小时级长时 rollout，并释放数据、配方与权重。
+
+  - title: "WorldReward: Reward Modeling for Camera-Conditioned World Models"
+    short: WorldReward
+    org: 复旦 / 腾讯混元
+    year: 2026
+    venue: arXiv
+    category: general
+    links:
+      arxiv: "2609.03952"
+      project: "https://codegoat24.github.io/WorldReward"
+    features: {}
+    tags: [奖励模型, 相机条件世界模型, 偏好对齐, RL后训练]
+    note: 用 VLM 成对偏好同时评判动作一致性与视觉质量：把长视频切成动作对齐 chunk、结构化视觉证据再投票聚合；配套 WorldReward-Bench，并作为奖励对 HY-WorldPlay 1.5 做 RL 后训练，短长时程的动作执行与画面质量均提升。
+
+  - title: "Building Pretraining Data for World Models: An Unreal Engine-Based Pipeline for Action-Conditioned Video Generation"
+    short: EchoWM-Data
+    org: Joy Future Academy
+    year: 2026
+    venue: arXiv
+    category: general
+    links:
+      arxiv: "2609.03557"
+      project: "https://echo-team-joy-future-academy-jd.github.io/Echo-1.5-Page/wm/"
+    features: {action: true}
+    tags: [合成数据, Unreal Engine, 动作条件视频, 多视角]
+    note: EchoWM 所用的 Unreal 合成数据产线：PIE 实时物理记录轨迹、MRQ 离线渲染两阶段解耦，200 卡集群产出五路同步 1080p/720p 视频及帧对齐动作、角色与相机位姿，累计数千小时动作条件预训练数据。

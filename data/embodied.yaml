@@ -352,3 +352,39 @@ papers:
     features: {action: true, closedloop: true}
     tags: [世界动作模型, 几何潜空间扩散, RGB-D, 深度注入]
     note: 把度量深度经对数尺度非线性归一化映射到冻结视频 VAE 的输入域，与 RGB、本体和动作 chunk 共享同一预训练 DiT 联合去噪，无需专用 3D 编码器即可做空间感知世界-动作建模；在 RoboCasa、LIBERO-Plus 与 UR5 真机上同时提升策略成功率与未来状态预测。
+
+  - title: "GIFT: Guided Intermediate Feature Training via Action-Oriented Structural Supervision for Robotic Manipulation"
+    short: GIFT
+    org: 中科院自动化所
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.04193"
+      project: "https://openphoenix-team.github.io/GIFT-pages"
+    features: {action: true}
+    tags: [中间特征监督, 动作充分性, 几何-可供性-目标, 世界动作模型]
+    note: 针对 VLA/WAM 视觉丰富但控制信息不足的动作充分性缺口，用几何对齐、可供性预测与目标区域重建约束中间特征；同一套监督可接到 VLA、直接动作 WAM 与逆动力学 WAM，LIBERO-Plus 零样本与 RoboCasa、真机高精度操作均有提升，且无需把辅助预测注入动作头。
+
+  - title: "Toward Unified Robot Learning: Bridging Representation, Vision-Language-Action, and World Models"
+    org: Fujitsu / CMU
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.03927"
+    features: {}
+    tags: [综述, 表征学习, VLA, 世界模型]
+    note: 综述将机器人学习沿表征理解、VLA 执行、世界模型推理三条轴统一，分析组件如何交互以及割裂带来的不确定性、OOD、跨本体、长上下文与长程规划问题，并给出面向物理接地、概率化统一系统的方向。
+
+  - title: "WISE: World-model-guided Imagination Scheduling for Efficient Post-training of Vision-Language-Action Models"
+    short: WISE
+    org: 清华大学 / BAAI
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.03681"
+    features: {action: true, closedloop: true}
+    tags: [VLA后训练, 想象调度, 世界模型, 相对策略优化]
+    note: 用世界模型做 VLA 后训练时不是全程想象，而是在交互关键状态才调用、有界多视角 rollout，并以进度/完成信号做相对评价、在真实交互上下文中更新策略；相对全量想象节省约 80% GPU 时间，π0 / π0.5 仿真与真机均更稳。
