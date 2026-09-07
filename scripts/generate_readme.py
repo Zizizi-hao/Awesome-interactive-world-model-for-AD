@@ -10,8 +10,6 @@ import re
 import sys
 from pathlib import Path
 
-import figure_generate
-
 try:
     import yaml
 except ImportError:
@@ -121,7 +119,6 @@ def github_anchor(heading: str) -> str:
 
 
 def main() -> None:
-    generate_figure.main()
     data = load_data()
     meta = data["meta"]
     categories = data["categories"]
