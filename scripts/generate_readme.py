@@ -10,7 +10,7 @@ import re
 import sys
 from pathlib import Path
 
-import generate_figure
+import figure_generate
 
 try:
     import yaml
