@@ -11,7 +11,7 @@
 📊 共收录 **178** 篇工作 ｜ 最后更新：2026-09-05
 
 <p align="center">
-  <img src="assets/interactive-world-model.png" alt="交互式世界模型：智能体与世界模型的闭环交互" width="760">
+  <img src="assets/interactive-world-model1.png" alt="交互式世界模型：智能体与世界模型的闭环交互" width="760">
 </p>
 
 ## 交互能力图例
