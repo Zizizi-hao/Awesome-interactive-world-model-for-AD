@@ -8,7 +8,7 @@
 
 世界模型 (World Model) 通过学习环境的动态表征，实现对未来的预测与想象； 可交互世界模型进一步支持以动作 (action) 为条件的生成与控制， 为自动驾驶和具身智能提供数据引擎、神经仿真器与策略学习基础。 本仓库收录并整理该方向的代表性工作，按应用场景分类， 并标注每篇工作的交互能力维度。
 
-📊 共收录 **178** 篇工作 ｜ 最后更新：2026-09-05
+📊 共收录 **179** 篇工作 ｜ 最后更新：2026-09-08
 
 <p align="center">
   <img src="assets/interactive-world-model1.png" alt="交互式世界模型：智能体与世界模型的闭环交互" width="760">
@@ -26,7 +26,7 @@
 ## 目录
 
 - [自动驾驶 Autonomous Driving](#自动驾驶-autonomous-driving)（111）
-- [具身智能 Embodied AI](#具身智能-embodied-ai)（32）
+- [具身智能 Embodied AI](#具身智能-embodied-ai)（33）
 - [通用 / 游戏 General / Game](#通用--游戏-general--game)（35）
 
 ## 自动驾驶 Autonomous Driving
@@ -169,6 +169,7 @@
 | **RoboPhys-3D**: A Comprehensive Embodied World Model Evaluation via 3D Reconstruction | arXiv (2026) | Christian Claudel 团队 | — | [论文](https://arxiv.org/abs/2608.28718) | 基于 RoboTwin 2.0 的 3D 接地具身世界模型基准，覆盖 4 类场景 50 个操作任务、5,000 集与 25,000 段多视角真值视频；生成视频与真值视频走同一 3D 重建管线，从而区分重建误差与生成误差。50 项指标组织为像素保真、3D 几何一致性、状态理解、任务完成 4 层 18 个子维度，并提出 Average Full Score 及与任务成功强相关的 RoboPhyscore（与人类评价 Pearson r=0.9761）；评测 Cosmos 3 等代表性模型发现感知/ VLM 式评判会遗漏大量状态与执行层面的失败。 |
 | **SpatialCrafter**: Single Image World Modeling with Generative 3D Proxies | arXiv (2026) | — | 🎮 ⏳ | [论文](https://arxiv.org/abs/2608.27073) \| [项目](https://fangchuan.github.io/SpatialCrafter/) | 将可探索图生场景拆解为「全局 3D 代理生成 + 外观细化」两阶段：PaSS Flow 预测空间对齐、几何一致的 3D 代理，再把视频扩散模型重构为生成式延迟细化器在其上合成高频细节，缓解幻觉与长时漂移；并构建 115K 场景的首个图生场景混合数据集。 |
 | **SA-WAM**: Spatially Aware World Action Model via Geometric Latent Diffusion | arXiv (2026) | Inria / ENS | 🎮 🔁 | [论文](https://arxiv.org/abs/2609.02531) \| [项目](https://jlopetegui98.github.io/projects/sa_wam.html) | 把度量深度经对数尺度非线性归一化映射到冻结视频 VAE 的输入域，与 RGB、本体和动作 chunk 共享同一预训练 DiT 联合去噪，无需专用 3D 编码器即可做空间感知世界-动作建模；在 RoboCasa、LIBERO-Plus 与 UR5 真机上同时提升策略成功率与未来状态预测。 |
+| **TourPhysics**: Bringing Physics to World Models for Exploration and Manipulation from a Single Image | arXiv (2026) | 复旦 / TeleAI | 🎮 🔁 ⏳ | [论文](https://arxiv.org/abs/2609.04911) | 从单图与声明式物理配置在线初始化，把 PhysOmni 从有限物理视频扩展为可持久探索与操作：每步先由仿真器算出物理与相机轨迹再生成观测，仿真状态与几何在合成期间锁定，并用参考锚定外观记忆抑制长时重访漂移。 |
 | **Toward Unified Robot Learning: Bridging Representation, Vision-Language-Action, and World Models** | arXiv (2026) | Fujitsu / CMU | — | [论文](https://arxiv.org/abs/2609.03927) | 综述将机器人学习沿表征理解、VLA 执行、世界模型推理三条轴统一，分析组件如何交互以及割裂带来的不确定性、OOD、跨本体、长上下文与长程规划问题，并给出面向物理接地、概率化统一系统的方向。 |
 | **TrAct**: Bridging Robot Control and Visual Prediction with Visual Tracks | arXiv (2026) | Stanford | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.24101) | 用视觉轨迹作为控制与预测的中间接口：VLAT 联合预测动作与轨迹，轨迹条件世界模型 rollout，再由视觉语言奖励模型选动作，仿真与真机成功率均高于动作条件世界模型。 |
 | **WALL-SS**: Scaling Long-horizon World Models via Next-Scale Autoregression | arXiv (2026) | — | 🎮 🔁 ⏳ | [论文](https://arxiv.org/abs/2608.26239) | 把具身轨迹表示为观测-动作时序交错的因果序列，用 next-scale 粗到细自回归注入尺度对齐的动作表征，配合尺度压缩的长时记忆与 on-policy 对齐奖励，实现可变长生成、有界内存下的分钟级连贯流式 rollout 与更强动作跟随。 |

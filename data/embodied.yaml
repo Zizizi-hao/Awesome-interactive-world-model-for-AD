@@ -388,3 +388,15 @@ papers:
     features: {action: true, closedloop: true}
     tags: [VLA后训练, 想象调度, 世界模型, 相对策略优化]
     note: 用世界模型做 VLA 后训练时不是全程想象，而是在交互关键状态才调用、有界多视角 rollout，并以进度/完成信号做相对评价、在真实交互上下文中更新策略；相对全量想象节省约 80% GPU 时间，π0 / π0.5 仿真与真机均更稳。
+
+  - title: "TourPhysics: Bringing Physics to World Models for Exploration and Manipulation from a Single Image"
+    short: TourPhysics
+    org: 复旦 / TeleAI
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.04911"
+    features: {action: true, closedloop: true, longhorizon: true}
+    tags: [物理仿真, 单图初始化, 长时探索, 外观记忆]
+    note: 从单图与声明式物理配置在线初始化，把 PhysOmni 从有限物理视频扩展为可持久探索与操作：每步先由仿真器算出物理与相机轨迹再生成观测，仿真状态与几何在合成期间锁定，并用参考锚定外观记忆抑制长时重访漂移。
