@@ -400,3 +400,53 @@ papers:
     features: {action: true, closedloop: true, longhorizon: true}
     tags: [物理仿真, 单图初始化, 长时探索, 外观记忆]
     note: 从单图与声明式物理配置在线初始化，把 PhysOmni 从有限物理视频扩展为可持久探索与操作：每步先由仿真器算出物理与相机轨迹再生成观测，仿真状态与几何在合成期间锁定，并用参考锚定外观记忆抑制长时重访漂移。
+
+  - title: "SyncWorld: Visual Calibration Enables World Models as Zero-Shot Simulators"
+    short: SyncWorld
+    org: UMass Amherst / Harvard
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.09155"
+    features: {action: true, closedloop: true}
+    tags: [视觉标定, 零样本仿真器, 动作-视觉映射, 测试时策略改进]
+    note: 动作在像素空间并非通用语言，相机、摆放或本体一变，同一数值动作的视觉后果就变。用展示全部可控自由度的短时视觉标定片段作为上下文，给出场景相关的动作-视觉映射，使动作条件世界模型无需再训练即可零样本充当未见环境仿真器，并可用 rollout 在测试时改进策略。
+
+  - title: "PhysReal: Learning Real-World Deformable Object Physics via Hybrid Constitutive Modeling"
+    short: PhysReal
+    org: 北京理工大学
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.07532"
+      project: "https://physreal.github.io/"
+    features: {}
+    tags: [可变形体, 混合本构, 可微MPM, 3DGS]
+    note: 从视频学习真实可变形体物理：解析专家本构提供可解释先验，神经残差补未建模响应，空间分块参数化局部材料差异，配可微 MPM 与 3DGS；课程式依次优化全局、局部与残差，用于动态重建、未来状态预测及下游操作。
+
+  - title: "TrojanWorld: Backdooring World-Model Agents via Imagination Steering"
+    short: TrojanWorld
+    org: 上海交通大学
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.07051"
+    features: {action: true, closedloop: true}
+    tags: [后门攻击, 想象劫持, 世界模型智能体, 供应链安全]
+    note: 针对预训练世界模型供应链的后门：场景中的物理物体作触发器，经决策反射诱导、干净行为锚定与因果传播，把内部想象导向攻击者指定动作；在 TD-MPC2、DreamerV3 等上触发时目标动作偏差低至 0.026，干净性能保留 ≥98.8%，触发消失后仍可能锁死在诱导行为。
+
+  - title: "WM-Craftnet: World Synesthesia Model for Generalizable and Robust Dexterous In-Hand Manipulation"
+    short: WM-Craftnet
+    org: 上海交通大学
+    year: 2026
+    venue: CoRL 2026
+    category: embodied
+    links:
+      arxiv: "2609.07002"
+      project: "https://wmcraftnet.github.io/"
+    features: {action: true, closedloop: true}
+    tags: [灵巧手内操作, 视触觉, 潜空间动力学, 真机迁移]
+    note: 从本体、深度、触觉与动作学习动作条件潜空间动力学，作为非对称 actor-critic 的循环任务上下文，而非用于潜空间想象规划；用干净深度目标监督噪声深度输入以便真机部署，九物体预训练先验可迁移到 49 物体的泛化手内旋转、扰动恢复与 sim-to-real。
