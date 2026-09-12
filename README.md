@@ -8,7 +8,7 @@
 
 世界模型 (World Model) 通过学习环境的动态表征，实现对未来的预测与想象； 可交互世界模型进一步支持以动作 (action) 为条件的生成与控制， 为自动驾驶和具身智能提供数据引擎、神经仿真器与策略学习基础。 本仓库收录并整理该方向的代表性工作，按应用场景分类， 并标注每篇工作的交互能力维度。
 
-📊 共收录 **183** 篇工作 ｜ 最后更新：2026-09-10
+📊 共收录 **186** 篇工作 ｜ 最后更新：2026-09-12
 
 <p align="center">
   <img src="assets/interactive-world-model1.png" alt="交互式世界模型：智能体与世界模型的闭环交互" width="760">
@@ -26,8 +26,8 @@
 ## 目录
 
 - [自动驾驶 Autonomous Driving](#自动驾驶-autonomous-driving)（111）
-- [具身智能 Embodied AI](#具身智能-embodied-ai)（37）
-- [通用 / 游戏 General / Game](#通用--游戏-general--game)（35）
+- [具身智能 Embodied AI](#具身智能-embodied-ai)（39）
+- [通用 / 游戏 General / Game](#通用--游戏-general--game)（36）
 
 ## 自动驾驶 Autonomous Driving
 
@@ -164,10 +164,12 @@
 | **DELE-w0.5**: Inferring Action from Future Latent State for Robotic Manipulation | arXiv (2026) | DeepLeap Research | 🎮 | [论文](https://arxiv.org/abs/2608.22067) \| [项目](https://deepleap-x.com/research/dele-w0.5) | 提出 DELE-w0.5，从预测的未来潜状态直接推断机器人动作，省去视频生成这一中间目标，建模物理世界在动作下的状态变化而非逐帧外观演化，实现更低训练成本与低延迟推理，在 640 次真机实验中取得 62.5% 全任务成功率，显著优于各 VLA 基线。 |
 | **JEPA-x**: Cross-Predictive Physics Grounding for Forecastable Latent Dynamics | arXiv (2026) | NUS | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.24044) | 亦称 XP-JEPA。训练时把视觉观测与特权物理状态当作同一动作条件轨迹的两个视图做交叉预测，约束潜在动力学更可预报；部署丢弃物理分支，多任务控制成功率从 53.6% 升至 78.2%。 |
 | **Motus2**: A Self-Evolving General World Model for Dexterous Manipulation | arXiv (2026) | 清华大学（Jun Zhu / Fan Bao 团队） | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.30237) | 超越「仿真器外挂动作头」的范式，单模型共享权重暴露三个控制接口构成闭环决策-学习回路：策略（世界-动作模型）提出候选动作块、仿真器（动作条件世界模型）预测视觉后果、评估器（价值模型）评估预测结果，从而实现策略自我改进；专家演示用于动作学习，失败与次优交互则成为动力学建模与价值学习的宝贵证据。数据侧从单目第一视角视频扩展到同步双目第一视角数据再做机器人域适配，并研究全局自回归与混合记忆扩展滑动窗口上下文、引入触觉实现接触感知控制，在全仿人双目双臂灵巧手平台上验证。 |
+| **No Free Checker: A Survey of Verifiers for Robot Policies** | arXiv (2026) | 浙江大学 | — | [论文](https://arxiv.org/abs/2609.09250) \| [代码](https://github.com/ZJUSCL/Awesome-Robot-Verifier) | 综述约 150 个机器人策略验证器（成功检测、奖励模型、运行时监控、安全滤波、时序逻辑及世界模型评测），用可用性与可信性两个坐标比较人类、规则/形式化、学习型与模型内生四类裁判，结论是可信性随可用性上升而下降，没有免费的检查器。 |
 | **PhysReal**: Learning Real-World Deformable Object Physics via Hybrid Constitutive Modeling | arXiv (2026) | 北京理工大学 | — | [论文](https://arxiv.org/abs/2609.07532) \| [项目](https://physreal.github.io/) | 从视频学习真实可变形体物理：解析专家本构提供可解释先验，神经残差补未建模响应，空间分块参数化局部材料差异，配可微 MPM 与 3DGS；课程式依次优化全局、局部与残差，用于动态重建、未来状态预测及下游操作。 |
 | **LWM**: Predicting Consequences and Reinforcing Navigation Policies with Latent World Models | ECCV (2026, Spotlight) | — | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.26190) \| [项目](https://wzm206.github.io/latent-world-model-nav) | 不重建观测或特征，而是预测动作条件下的潜特征兼容性来直接评估动作后果（空间邻近与特征相似相关），借跨轨迹动作序列做反事实训练，可在世界模型想象中用 RL 从无关标注视频监督并提升导航策略。 |
 | **Q-Learning With World Models** | arXiv (2026) | Chelsea Finn / Dorsa Sadigh 团队 | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.17163) | 把世界模型引入离策略 Q 学习——预测状态变化而非仅动作，突破此前世界模型局限于监督式策略学习的困境，提升 VLA 模型 RL 微调的样本效率。 |
 | **RoboPhys-3D**: A Comprehensive Embodied World Model Evaluation via 3D Reconstruction | arXiv (2026) | Christian Claudel 团队 | — | [论文](https://arxiv.org/abs/2608.28718) | 基于 RoboTwin 2.0 的 3D 接地具身世界模型基准，覆盖 4 类场景 50 个操作任务、5,000 集与 25,000 段多视角真值视频；生成视频与真值视频走同一 3D 重建管线，从而区分重建误差与生成误差。50 项指标组织为像素保真、3D 几何一致性、状态理解、任务完成 4 层 18 个子维度，并提出 Average Full Score 及与任务成功强相关的 RoboPhyscore（与人类评价 Pearson r=0.9761）；评测 Cosmos 3 等代表性模型发现感知/ VLM 式评判会遗漏大量状态与执行层面的失败。 |
+| **SG-JEPA**: Semigroup-JEPA: Latent Dynamics Consistency for Zero-Shot Physics Generalization | arXiv (2026) | Yale / Brown | 🎮 🔁 | [论文](https://arxiv.org/abs/2609.10464) \| [项目](https://sg-jepa.github.io) | 在 LeWorldModel 上把控制物理的参数（如重力）作为动作条件喂给时序模型，并用自回归潜空间 rollout 联合训练编码器与预测器；相对 DINO-WM，2D 开环误差最多降 2×，3D 机器人扩散策略成功率最多升 2.5×，增益主要来自编码器保留可前向传递的动力学特征。 |
 | **SpatialCrafter**: Single Image World Modeling with Generative 3D Proxies | arXiv (2026) | — | 🎮 ⏳ | [论文](https://arxiv.org/abs/2608.27073) \| [项目](https://fangchuan.github.io/SpatialCrafter/) | 将可探索图生场景拆解为「全局 3D 代理生成 + 外观细化」两阶段：PaSS Flow 预测空间对齐、几何一致的 3D 代理，再把视频扩散模型重构为生成式延迟细化器在其上合成高频细节，缓解幻觉与长时漂移；并构建 115K 场景的首个图生场景混合数据集。 |
 | **SA-WAM**: Spatially Aware World Action Model via Geometric Latent Diffusion | arXiv (2026) | Inria / ENS | 🎮 🔁 | [论文](https://arxiv.org/abs/2609.02531) \| [项目](https://jlopetegui98.github.io/projects/sa_wam.html) | 把度量深度经对数尺度非线性归一化映射到冻结视频 VAE 的输入域，与 RGB、本体和动作 chunk 共享同一预训练 DiT 联合去噪，无需专用 3D 编码器即可做空间感知世界-动作建模；在 RoboCasa、LIBERO-Plus 与 UR5 真机上同时提升策略成功率与未来状态预测。 |
 | **SyncWorld**: Visual Calibration Enables World Models as Zero-Shot Simulators | arXiv (2026) | UMass Amherst / Harvard | 🎮 🔁 | [论文](https://arxiv.org/abs/2609.09155) | 动作在像素空间并非通用语言，相机、摆放或本体一变，同一数值动作的视觉后果就变。用展示全部可控自由度的短时视觉标定片段作为上下文，给出场景相关的动作-视觉映射，使动作条件世界模型无需再训练即可零样本充当未见环境仿真器，并可用 rollout 在测试时改进策略。 |
@@ -209,6 +211,7 @@
 | **Matrix-Game 3.5**: Enhancing Real-Time Streaming Interactive World Models with Patch Memory | arXiv (2026) | Skywork AI | 🎮 ⚡ ⏳ | [论文](https://arxiv.org/abs/2608.29910) | Matrix-Game 3.0 的升级版，面向几何感知与长时程一致的实时流式交互世界生成，三项关键改进：(1) 统一几何感知记忆框架——patch 记忆做显式 3D 块检索、tiled-PRoPE 做投影式相机条件化，不引入任何可学习参数即可实现几何一致的相机控制与长时程场景回忆；(2) 静动解耦的世界表示——分别建模静态场景几何与动态主体，长时程生成中同时保持几何一致性与主体身份；(3) 两阶段渐进实时蒸馏——经感知流匹配（Perceptual Flow Matching）与课程式自 rollout DMD 把双向扩散模型转为少步因果生成器，支撑分钟级实时交互。训练语料统一覆盖 Unreal 仿真环境、开放世界游戏与互联网视频，在场景回忆、相机控制、主体一致性、文本驱动世界生成与稳定开放世界实时交互上均表现强劲。 |
 | **Persistent Computational State: A Session-Centric Runtime for Generative World Models** | arXiv (2026) | Zhen Lin 团队 | — | [论文](https://arxiv.org/abs/2607.21686) | 会话中心运行时支持分叉、回溯和重访视角，面向生成式世界模型的状态管理。 |
 | **PlayWorld**: Benchmarking World Models with Agent Players over Long-Horizon Objectives | arXiv (2026) | Hengshuang Zhao 团队 | — | [论文](https://arxiv.org/abs/2608.13552) | 用多模态 Agent Player 追求长程目标来评估世界模型的几何一致性与交互保真度。 |
+| **PWM**: Programmable World Model | arXiv (2026) | Alaya Lab | 🎮 ⏳ | [论文](https://arxiv.org/abs/2609.10540) \| [项目](https://alaya-lab.github.io/pwm) \| [代码](https://github.com/AlayaLab/pwm) | 把世界状态演化与视觉生成解耦：自然语言编译成可执行程序维护含屏外实体的全局状态，再经状态增强 3D OBB 条件化预训练视频模型做渲染；CombatStateBench 上计数/状态准确率 94%/98%，支持规则可编程、实体可控的长时可玩游戏。 |
 | **Qwen-RobotWorld**: A Joint World Model Integrating Driving, Navigation and Manipulation | arXiv (2026) | Alibaba Qwen | 🎮 | [论文](https://arxiv.org/abs/2606.17030) | 将语言作为统一动作接口，把视频世界模型扩展到自动驾驶、导航和机器人操作。 |
 | **R2M-Bench**: Evaluating Revisit Memory via Relative Consistency in Interactive Video World Models | arXiv (2026) | — | — | [论文](https://arxiv.org/abs/2608.27328) \| [代码](https://github.com/AMAP-ML/R2MBench) | 指出首访-重访帧的绝对相似度会被「慢动作捷径」迷惑，提出在同一 rollout 内用间隙匹配的非重访对与短程对做相对校准的 MemoryGain 与归一化记忆比 NMR，覆盖外观、场景/物体身份、局部几何与持久状态，评测 7 个动作条件视频世界模型且与人类一致性判断相关 ρ=0.547。 |
 | **SCOPE**: Score-Isolated Agentic Optimization for Video World Models | arXiv (2026) | Yuhua Jiang 团队 | 🎮 | [论文](https://arxiv.org/abs/2608.15043) | 提出评分隔离的 Agentic 优化框架，解耦 prompt/采样器/验证器/选择器的评估，使视频世界模型在规划与具身决策中推理时优化更可靠。 |

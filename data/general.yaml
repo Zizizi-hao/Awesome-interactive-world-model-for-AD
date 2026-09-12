@@ -424,3 +424,17 @@ papers:
     features: {action: true}
     tags: [合成数据, Unreal Engine, 动作条件视频, 多视角]
     note: EchoWM 所用的 Unreal 合成数据产线：PIE 实时物理记录轨迹、MRQ 离线渲染两阶段解耦，200 卡集群产出五路同步 1080p/720p 视频及帧对齐动作、角色与相机位姿，累计数千小时动作条件预训练数据。
+
+  - title: "Programmable World Model"
+    short: PWM
+    org: Alaya Lab
+    year: 2026
+    venue: arXiv
+    category: general
+    links:
+      arxiv: "2609.10540"
+      project: "https://alaya-lab.github.io/pwm"
+      code: "https://github.com/AlayaLab/pwm"
+    features: {action: true, longhorizon: true}
+    tags: [可编程规则, 持久世界状态, 视频渲染解耦, 可玩游戏]
+    note: 把世界状态演化与视觉生成解耦：自然语言编译成可执行程序维护含屏外实体的全局状态，再经状态增强 3D OBB 条件化预训练视频模型做渲染；CombatStateBench 上计数/状态准确率 94%/98%，支持规则可编程、实体可控的长时可玩游戏。

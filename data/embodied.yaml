@@ -450,3 +450,28 @@ papers:
     features: {action: true, closedloop: true}
     tags: [灵巧手内操作, 视触觉, 潜空间动力学, 真机迁移]
     note: 从本体、深度、触觉与动作学习动作条件潜空间动力学，作为非对称 actor-critic 的循环任务上下文，而非用于潜空间想象规划；用干净深度目标监督噪声深度输入以便真机部署，九物体预训练先验可迁移到 49 物体的泛化手内旋转、扰动恢复与 sim-to-real。
+
+  - title: "Semigroup-JEPA: Latent Dynamics Consistency for Zero-Shot Physics Generalization"
+    short: SG-JEPA
+    org: Yale / Brown
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.10464"
+      project: "https://sg-jepa.github.io"
+    features: {action: true, closedloop: true}
+    tags: [JEPA, 物理泛化, 潜空间rollout, 重力条件]
+    note: 在 LeWorldModel 上把控制物理的参数（如重力）作为动作条件喂给时序模型，并用自回归潜空间 rollout 联合训练编码器与预测器；相对 DINO-WM，2D 开环误差最多降 2×，3D 机器人扩散策略成功率最多升 2.5×，增益主要来自编码器保留可前向传递的动力学特征。
+
+  - title: "No Free Checker: A Survey of Verifiers for Robot Policies"
+    org: 浙江大学
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.09250"
+      code: "https://github.com/ZJUSCL/Awesome-Robot-Verifier"
+    features: {}
+    tags: [综述, 策略验证器, 奖励模型, 世界模型评测]
+    note: 综述约 150 个机器人策略验证器（成功检测、奖励模型、运行时监控、安全滤波、时序逻辑及世界模型评测），用可用性与可信性两个坐标比较人类、规则/形式化、学习型与模型内生四类裁判，结论是可信性随可用性上升而下降，没有免费的检查器。
