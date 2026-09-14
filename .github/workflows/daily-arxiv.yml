@@ -16,6 +16,7 @@ concurrency:
 jobs:
   scan:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v6
@@ -24,7 +25,9 @@ jobs:
       - run: pip install pyyaml
       - name: Fetch arXiv candidates
         id: fetch
-        run: python3 scripts/fetch_arxiv.py
+        run: |
+          git log -1 --format='Running commit: %H'
+          python3 -u scripts/fetch_arxiv.py
       - name: Create issue with candidates
         if: steps.fetch.outputs.has_new == 'true'
         env:
@@ -36,6 +39,7 @@ jobs:
             --label "new-papers" \
             --body-file "${{ steps.fetch.outputs.report }}"
       - name: Commit seen ids
+        if: steps.fetch.outputs.has_new == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -44,3 +48,8 @@ jobs:
             git commit -m "chore: update seen arxiv ids"
             git push
           fi
+      - name: Report incomplete scan
+        if: always() && steps.fetch.outputs.scan_status == 'partial'
+        run: |
+          echo "::error::扫描不完整。失败组与 RSS 覆盖限制见运行摘要；候选发布状态见前面的步骤。"
+          exit 1

@@ -6,6 +6,9 @@
 lookback_days: 7            # 每次扫描回溯的天数（每日运行 + 去重，窗口留余量）
 max_results_per_query: 100  # 每个 query 最多拉取的条目数
 delay_seconds: 5            # 相邻请求间隔（arXiv API 限速要求，留足余量降低 429）
+retry_attempts: 3           # 每组 API 总尝试次数；耗尽临时错误重试后停止其余 API 查询
+timeout_seconds: 60
+rss_fallback: true          # 失败时读取一次最新一期公告；始终标为扫描不完整
 abstract_chars: 400         # Issue 中摘要截断长度
 
 # 仅保留主分类在列表内的论文（空列表 = 不限制）
@@ -16,13 +19,23 @@ queries:
     search: >-
       (all:"world model" OR all:"world models") AND
       (all:"autonomous driving" OR all:"self-driving" OR all:"driving scene" OR all:"end-to-end driving")
+    # RSS 只在标题+摘要匹配：组内 OR，组间 AND；与 API all: 检索不完全等价。
+    feed_keywords:
+      - ["world model", "world models"]
+      - ["autonomous driving", "self-driving", "driving scene", "end-to-end driving"]
 
   - name: 具身智能世界模型
     search: >-
       (all:"world model" OR all:"world models") AND
       (all:"embodied" OR all:"robotic" OR all:"manipulation" OR all:"vision-language-action")
+    feed_keywords:
+      - ["world model", "world models"]
+      - ["embodied", "robotic", "robotics", "manipulation", "vision-language-action"]
 
   - name: 交互视频生成 / 游戏世界模型
     search: >-
       (all:"world model" OR all:"world models") AND
       (all:"playable" OR all:"action-conditioned" OR all:"interactive video" OR all:"game engine")
+    feed_keywords:
+      - ["world model", "world models"]
+      - ["playable", "action-conditioned", "interactive video", "game engine"]

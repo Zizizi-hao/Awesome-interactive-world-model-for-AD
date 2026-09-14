@@ -43,6 +43,23 @@ python scripts/generate_readme.py
 
 4. 将修改的 `data/*.yaml`、`data.yaml` 与 `README.md` 一并提交 PR。
 
+## 自动扫描维护
+
+配置位于 `scripts/arxiv_config.yaml`。API 临时故障耗尽重试后会停止后续 API 请求，并尝试一次官方每日 Atom 订阅源；所有请求共享间隔和 `Retry-After` 冷却时间。服务端要求等待超过 300 秒时，本轮停止请求。
+
+运行状态分为完整成功、扫描不完整、全部失败。只有完整成功且零候选时才显示“没有新候选论文”。RSS 仅覆盖最新一期公告，无法补齐 7 天窗口；它按标题和摘要中的 `feed_keywords` 匹配，分类包含交叉分类，报告中的日期为公告日期。
+
+扫描不完整时，工作流先尝试发布已获取的候选，并在 Issue 创建成功后提交已报告 ID，最后将运行标为失败。无候选时也会在运行摘要说明覆盖缺口。全部失败时不更新已报告 ID。
+
+修改检索词时，同步调整 `search` 与 `feed_keywords`（组内 OR、组间 AND）。验证命令：
+
+```bash
+python3 -m unittest discover -s tests
+python3 -u scripts/fetch_arxiv.py --dry-run
+```
+
+更新推送后，通过 **Actions → Daily arXiv scan → Run workflow → main** 新建运行。Re-run 旧任务仍使用旧提交；抓取步骤会打印实际提交号。
+
 ## 收录标准
 
 - 工作需以**可学习的动态模型**对世界进行预测/生成，并服务于自动驾驶或具身智能

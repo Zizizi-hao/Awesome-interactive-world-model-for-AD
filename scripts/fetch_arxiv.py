@@ -10,6 +10,7 @@ Usage:
 
 import argparse
 import datetime
+import http.client
 import os
 import random
 import re
@@ -21,6 +22,9 @@ import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
 from pathlib import Path
+from email.utils import parsedate_to_datetime
+
+from arxiv_feed import matches_query, parse_feed
 
 try:
     import yaml
@@ -38,15 +42,75 @@ SEEN_FILE = ROOT / "data" / "seen_arxiv_ids.txt"
 ATOM = "{http://www.w3.org/2005/Atom}"
 ARXIV_NS = "{http://arxiv.org/schemas/atom}"
 API_URL = "https://export.arxiv.org/api/query"
-# arXiv 建议在 User-Agent 中标明身份与联系方式，有助于降低被限速概率
+FEED_URL = "https://rss.arxiv.org/atom/"
 USER_AGENT = "awesome-interactive-world-models/1.0 (https://github.com/Zizizi-hao/Awesome-interactive-world-model-for-AD)"
+REQUEST_WAIT_BUDGET = 300
+_next_request_at = 0.0
+NETWORK_ERRORS = (urllib.error.URLError, TimeoutError, ConnectionError, http.client.HTTPException)
+
+
+class RequestDeferred(RuntimeError):
+    """服务端要求的冷却时间超出本轮预算；本轮不再请求其他来源。"""
+
+
+def retry_after_seconds(value: str) -> float:
+    if not value:
+        return 0
+    try:
+        return max(0, int(value.strip()))
+    except ValueError:
+        try:
+            date = parsedate_to_datetime(value)
+            if date.tzinfo is None:
+                date = date.replace(tzinfo=datetime.timezone.utc)
+            return max(0, (date - datetime.datetime.now(datetime.timezone.utc)).total_seconds())
+        except (TypeError, ValueError, OverflowError):
+            return 0
+
+
+def is_transient(error: Exception) -> bool:
+    if isinstance(error, urllib.error.HTTPError):
+        return error.code in {408, 429, 500, 502, 503, 504}
+    return isinstance(error, NETWORK_ERRORS)
+
+
+def fetch_url(url: str, retries: int = 3, timeout: int = 60, delay: float = 5) -> bytes:
+    """所有来源共享请求间隔和 Retry-After；retries 为总尝试次数。"""
+    global _next_request_at
+    if retries < 1 or timeout <= 0:
+        raise ValueError("retry_attempts 和 timeout_seconds 必须大于 0")
+    delay = max(5, delay)
+    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+    for attempt in range(1, retries + 1):
+        wait = max(0, _next_request_at - time.monotonic())
+        if wait > REQUEST_WAIT_BUDGET:
+            raise RequestDeferred(f"服务端冷却还需 {wait:.0f}s，超过本轮等待预算；停止所有后续请求")
+        if wait:
+            time.sleep(wait)
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as resp:
+                result = resp.read()
+            _next_request_at = time.monotonic() + delay
+            return result
+        except NETWORK_ERRORS as error:
+            wait = delay
+            if is_transient(error):
+                retry_after = retry_after_seconds(error.headers.get("Retry-After")) if isinstance(error, urllib.error.HTTPError) and error.headers else 0
+                wait = max(delay, retry_after, min(90, 15 * 2 ** (attempt - 1))) + random.uniform(0, 3)
+            # 最后一次失败也保留冷却期，切换来源不能绕过 Retry-After。
+            _next_request_at = time.monotonic() + wait
+            if wait > REQUEST_WAIT_BUDGET:
+                raise RequestDeferred(f"服务端要求等待 {wait:.0f}s，停止本轮所有后续请求") from error
+            if attempt == retries or not is_transient(error):
+                raise
+            print(f"请求失败（{error}），{wait:.0f}s 后重试（{attempt}/{retries - 1}）...", flush=True)
 
 
 def strip_version(arxiv_id: str) -> str:
     return re.sub(r"v\d+$", "", str(arxiv_id).strip())
 
 
-def fetch_query(search: str, max_results: int, retries: int = 5, timeout: int = 60) -> bytes:
+def fetch_query(search: str, max_results: int, retries: int = 3, timeout: int = 60, delay: float = 5) -> bytes:
     params = urllib.parse.urlencode({
         "search_query": search,
         "start": 0,
@@ -54,36 +118,18 @@ def fetch_query(search: str, max_results: int, retries: int = 5, timeout: int = 
         "sortBy": "submittedDate",
         "sortOrder": "descending",
     })
-    req = urllib.request.Request(
-        f"{API_URL}?{params}",
-        headers={"User-Agent": USER_AGENT},
-    )
-    last_err = None
-    for attempt in range(1, retries + 1):
-        try:
-            with urllib.request.urlopen(req, timeout=timeout) as resp:
-                return resp.read()
-        except urllib.error.HTTPError as e:
-            last_err = e
-            # 优先遵守服务端返回的 Retry-After，否则指数退避（15/30/60/90s）
-            retry_after = e.headers.get("Retry-After") if e.headers else None
-            wait = int(retry_after) if (retry_after or "").strip().isdigit() else min(90, 15 * 2 ** (attempt - 1))
-        except Exception as e:
-            last_err = e
-            wait = min(90, 15 * 2 ** (attempt - 1))
-        if attempt == retries:
-            raise last_err
-        wait += random.uniform(0, 3)  # 抖动，避免与共享 IP 上的其他任务同步重试
-        print(f"请求失败（{last_err}），{wait:.0f}s 后重试（{attempt}/{retries - 1}）...")
-        time.sleep(wait)
-
-
+    return fetch_url(f"{API_URL}?{params}", retries=retries, timeout=timeout, delay=delay)
 
 def parse_entries(xml_bytes: bytes) -> list:
     root = ET.fromstring(xml_bytes)
+    if root.tag != f"{ATOM}feed":
+        raise ValueError("arXiv API 返回的不是 Atom feed")
     entries = []
     for entry in root.findall(f"{ATOM}entry"):
-        raw_id = (entry.findtext(f"{ATOM}id") or "").rsplit("/", 1)[-1]
+        entry_id = entry.findtext(f"{ATOM}id") or ""
+        if "/api/errors" in entry_id:
+            raise ValueError(entry.findtext(f"{ATOM}summary") or "arXiv API 返回错误 feed")
+        raw_id = entry_id.rsplit("/", 1)[-1]
         if not raw_id:
             continue
         primary = entry.find(f"{ARXIV_NS}primary_category")
@@ -136,22 +182,41 @@ def format_authors(authors: list, limit: int = 6) -> str:
     return ", ".join(authors)
 
 
-def render_report(groups: dict, cfg: dict) -> str:
+def render_report(groups: dict, cfg: dict, failures: dict = None, sources: dict = None) -> str:
+    failures = failures or {}
+    sources = sources or {}
     total = sum(len(v) for v in groups.values())
     max_chars = cfg.get("abstract_chars", 400)
-    lines = [f"共扫描 {len(groups)} 组检索，发现 **{total}** 篇新候选论文（由 `scripts/fetch_arxiv.py` 自动生成）。", ""]
+    query_count = len(cfg.get("queries") or groups)
+    api_count = sum(sources.get(name, "API") == "API" for name in groups)
+    lines = [f"API 检索完成 **{api_count}/{query_count}** 组，发现 **{total}** 篇新候选论文（由 `scripts/fetch_arxiv.py` 自动生成）。", ""]
+    if failures:
+        lines += ["> 扫描不完整，不能根据零候选判断没有新论文。", "", "未完成的 API 检索："]
+        lines += [f"- {name}：{error}" for name, error in failures.items()]
+        lines.append("")
+    if "RSS" in sources.values():
+        lines += [
+            f"> RSS 备用结果仅覆盖最新一期公告，未完成最近 {cfg.get('lookback_days', 7)} 天的完整检索。"
+            "匹配范围为标题和摘要，分类包含交叉分类，与 API 的 all 字段和主分类筛选不同。",
+            "",
+        ]
     for name, entries in groups.items():
         if not entries:
             continue
-        lines += [f"## {name}", ""]
+        lines += [f"## {name}" + ("（RSS 备用结果）" if sources.get(name) == "RSS" else ""), ""]
         for e in entries:
             abstract = e["abstract"]
             if len(abstract) > max_chars:
                 abstract = abstract[:max_chars] + "..."
+            date_text = f"提交日期: {e['published']}"
+            category_text = f"主分类: {e['primary_category']}"
+            if e.get("date_label") == "公告日期":
+                date_text = f"公告日期: {e['announced']}"
+                category_text = "分类（含交叉分类）: " + ", ".join(e["categories"])
             lines += [
                 f"### {e['title']}",
                 f"- arXiv: https://arxiv.org/abs/{e['id']}",
-                f"- 提交日期: {e['published']} ｜ 主分类: {e['primary_category']}",
+                f"- {date_text} ｜ {category_text}",
                 f"- 作者: {format_authors(e['authors'])}",
                 f"- 摘要: {abstract}",
                 "",
@@ -164,12 +229,13 @@ def render_report(groups: dict, cfg: dict) -> str:
     return "\n".join(lines)
 
 
-def write_output(has_new: bool, report: Path = None) -> None:
+def write_output(has_new: bool, report: Path = None, scan_status: str = "success") -> None:
     out = os.environ.get("GITHUB_OUTPUT")
     if not out:
         return
     with open(out, "a", encoding="utf-8") as f:
         f.write(f"has_new={'true' if has_new else 'false'}\n")
+        f.write(f"scan_status={scan_status}\n")
         if report:
             f.write(f"report={report}\n")
 
@@ -183,54 +249,105 @@ def main() -> None:
     cutoff = (datetime.date.today() - datetime.timedelta(days=cfg.get("lookback_days", 7))).isoformat()
     cat_filter = set(cfg.get("category_filter") or [])
     max_results = cfg.get("max_results_per_query", 100)
-    delay = cfg.get("delay_seconds", 3)
+    delay = max(5, cfg.get("delay_seconds", 5))
+    retries = cfg.get("retry_attempts", 3)
+    timeout = cfg.get("timeout_seconds", 60)
+    queries = cfg.get("queries") or []
+    if not queries:
+        sys.exit("未配置 queries，无法扫描。")
 
     existing = existing_arxiv_ids()
     seen = load_seen()
     reported = set()
     groups = {}
-    new_ids = set()
+    failures = {}
+    sources = {}
+    deferred = False
 
-    for i, q in enumerate(cfg.get("queries") or []):
-        if i:
-            time.sleep(delay)
-        print(f"检索: {q['name']} ...")
-        try:
-            entries = parse_entries(fetch_query(q["search"], max_results))
-        except Exception as e:
-            # 单组检索失败（如持续被限速）不再让整个任务崩溃，跳过并继续其余检索
-            print(f"  请求失败，跳过该组（{e}）")
-            groups[q["name"]] = []
-            continue
+    def pick(entries, *, feed=False):
         picked = []
         for e in entries:
-            if e["published"] < cutoff:
+            date = e.get("announced", "") if feed else e["published"]
+            if date < cutoff:
                 continue
-            if cat_filter and e["primary_category"] not in cat_filter:
+            categories = set(e.get("categories") or []) if feed else {e["primary_category"]}
+            if cat_filter and not categories.intersection(cat_filter):
                 continue
             if e["id"] in existing or e["id"] in seen or e["id"] in reported:
                 continue
             picked.append(e)
             reported.add(e["id"])
+        return picked
+
+    print(f"请求配置：每组最多尝试 {retries} 次，读取超时 {timeout}s，请求间隔至少 {delay}s。", flush=True)
+    for i, q in enumerate(queries):
+        print(f"检索: {q['name']} ...", flush=True)
+        try:
+            entries = parse_entries(fetch_query(q["search"], max_results, retries=retries, timeout=timeout, delay=delay))
+        except (RequestDeferred, *NETWORK_ERRORS, ET.ParseError, ValueError) as error:
+            print(f"  检索失败（{error}）", flush=True)
+            failures[q["name"]] = str(error)
+            deferred = isinstance(error, RequestDeferred)
+            if deferred or is_transient(error):
+                # 一组已耗尽重试，暂时停用该 API，避免对后续查询重复施压。
+                for pending in queries[i + 1:]:
+                    failures[pending["name"]] = "API 暂不可用，本轮停止后续 API 请求"
+                break
+            continue
+        picked = pick(entries)
         groups[q["name"]] = picked
-        new_ids |= reported
-        print(f"  命中 {len(entries)} 篇，新增候选 {len(picked)} 篇")
+        sources[q["name"]] = "API"
+        print(f"  命中 {len(entries)} 篇，新增候选 {len(picked)} 篇", flush=True)
 
-    if not new_ids:
-        print("没有新候选论文。")
-        write_output(has_new=False)
-        return
+    if failures and cfg.get("rss_fallback", False) and not deferred:
+        print("尝试一次 RSS 备用来源（仅最新一期公告，无法补齐 7 天检索）。", flush=True)
+        try:
+            if not cat_filter:
+                raise ValueError("RSS 备用来源需要配置 category_filter")
+            url = FEED_URL + "+".join(sorted(cat_filter))
+            feed_entries = parse_feed(fetch_url(url, retries=1, timeout=timeout, delay=delay))
+            for q in queries:
+                if q["name"] not in failures:
+                    continue
+                # 先完成整组匹配，配置错误时不把未展示的条目加入 seen。
+                matched = [e for e in feed_entries if matches_query(e, q)]
+                groups[q["name"]] = pick(matched, feed=True)
+                sources[q["name"]] = "RSS"
+                print(f"  RSS {q['name']}：新增候选 {len(groups[q['name']])} 篇", flush=True)
+        except (RequestDeferred, *NETWORK_ERRORS, ET.ParseError, ValueError) as error:
+            print(f"  RSS 备用来源失败（{error}）", flush=True)
+            for name in failures:
+                if sources.get(name) != "RSS":
+                    failures[name] += f"；RSS 备用失败：{error}"
 
-    report = render_report(groups, cfg)
+    status = "failed" if not groups else "partial" if failures else "success"
+    report = render_report(groups, cfg, failures, sources)
+    if status == "failed":
+        print(f"::error::扫描失败：0/{len(queries)} 组获取到有效结果，无法判断是否有新论文。", flush=True)
+    elif status == "partial":
+        print("::warning::扫描不完整：部分 API 检索失败；详情见运行摘要。", flush=True)
+    elif not reported:
+        print("检索成功，没有新候选论文。", flush=True)
     if args.dry_run:
         print("\n" + report)
+        if status == "failed":
+            raise SystemExit(1)
         return
 
-    append_seen(reported)
-    report_path = Path(tempfile.gettempdir()) / "arxiv_report.md"
-    report_path.write_text(report, encoding="utf-8")
-    print(f"\n共 {len(new_ids)} 篇新候选，报告已写入: {report_path}")
-    write_output(has_new=True, report=report_path)
+    summary = os.environ.get("GITHUB_STEP_SUMMARY")
+    if summary:
+        with open(summary, "a", encoding="utf-8") as f:
+            f.write(report + "\n")
+    report_path = None
+    if reported:
+        report_path = Path(tempfile.gettempdir()) / "arxiv_report.md"
+        report_path.write_text(report, encoding="utf-8")
+        # 工作流仅在 Issue 创建成功后才提交这个本地状态文件。
+        append_seen(reported)
+        print(f"\n共 {len(reported)} 篇新候选，报告已写入: {report_path}", flush=True)
+    write_output(has_new=bool(reported), report=report_path, scan_status=status)
+    if status == "failed":
+        raise SystemExit(1)
 
 
 if __name__ == "__main__":

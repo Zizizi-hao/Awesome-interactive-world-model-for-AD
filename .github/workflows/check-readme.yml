@@ -15,6 +15,7 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install pyyaml
+      - run: python3 -m unittest discover -s tests
       - run: python3 scripts/generate_readme.py
       - name: Verify README is in sync with data.yaml
         run: |
