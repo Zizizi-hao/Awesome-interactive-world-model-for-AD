@@ -11,10 +11,12 @@ Usage:
 import argparse
 import datetime
 import os
+import random
 import re
 import sys
 import tempfile
 import time
+import urllib.error
 import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
@@ -36,13 +38,15 @@ SEEN_FILE = ROOT / "data" / "seen_arxiv_ids.txt"
 ATOM = "{http://www.w3.org/2005/Atom}"
 ARXIV_NS = "{http://arxiv.org/schemas/atom}"
 API_URL = "https://export.arxiv.org/api/query"
+# arXiv 建议在 User-Agent 中标明身份与联系方式，有助于降低被限速概率
+USER_AGENT = "awesome-interactive-world-models/1.0 (https://github.com/Zizizi-hao/Awesome-interactive-world-model-for-AD)"
 
 
 def strip_version(arxiv_id: str) -> str:
     return re.sub(r"v\d+$", "", str(arxiv_id).strip())
 
 
-def fetch_query(search: str, max_results: int, retries: int = 3) -> bytes:
+def fetch_query(search: str, max_results: int, retries: int = 5, timeout: int = 60) -> bytes:
     params = urllib.parse.urlencode({
         "search_query": search,
         "start": 0,
@@ -52,18 +56,27 @@ def fetch_query(search: str, max_results: int, retries: int = 3) -> bytes:
     })
     req = urllib.request.Request(
         f"{API_URL}?{params}",
-        headers={"User-Agent": "awesome-interactive-world-models/1.0"},
+        headers={"User-Agent": USER_AGENT},
     )
+    last_err = None
     for attempt in range(1, retries + 1):
         try:
-            with urllib.request.urlopen(req, timeout=30) as resp:
+            with urllib.request.urlopen(req, timeout=timeout) as resp:
                 return resp.read()
+        except urllib.error.HTTPError as e:
+            last_err = e
+            # 优先遵守服务端返回的 Retry-After，否则指数退避（15/30/60/90s）
+            retry_after = e.headers.get("Retry-After") if e.headers else None
+            wait = int(retry_after) if (retry_after or "").strip().isdigit() else min(90, 15 * 2 ** (attempt - 1))
         except Exception as e:
-            if attempt == retries:
-                raise
-            wait = 15 * attempt
-            print(f"请求失败（{e}），{wait}s 后重试（{attempt}/{retries - 1}）...")
-            time.sleep(wait)
+            last_err = e
+            wait = min(90, 15 * 2 ** (attempt - 1))
+        if attempt == retries:
+            raise last_err
+        wait += random.uniform(0, 3)  # 抖动，避免与共享 IP 上的其他任务同步重试
+        print(f"请求失败（{last_err}），{wait:.0f}s 后重试（{attempt}/{retries - 1}）...")
+        time.sleep(wait)
+
 
 
 def parse_entries(xml_bytes: bytes) -> list:
@@ -182,7 +195,13 @@ def main() -> None:
         if i:
             time.sleep(delay)
         print(f"检索: {q['name']} ...")
-        entries = parse_entries(fetch_query(q["search"], max_results))
+        try:
+            entries = parse_entries(fetch_query(q["search"], max_results))
+        except Exception as e:
+            # 单组检索失败（如持续被限速）不再让整个任务崩溃，跳过并继续其余检索
+            print(f"  请求失败，跳过该组（{e}）")
+            groups[q["name"]] = []
+            continue
         picked = []
         for e in entries:
             if e["published"] < cutoff:

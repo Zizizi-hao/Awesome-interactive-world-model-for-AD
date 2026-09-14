@@ -5,7 +5,7 @@
 
 lookback_days: 7            # 每次扫描回溯的天数（每日运行 + 去重，窗口留余量）
 max_results_per_query: 100  # 每个 query 最多拉取的条目数
-delay_seconds: 3            # 相邻请求间隔（arXiv API 限速要求）
+delay_seconds: 5            # 相邻请求间隔（arXiv API 限速要求，留足余量降低 429）
 abstract_chars: 400         # Issue 中摘要截断长度
 
 # 仅保留主分类在列表内的论文（空列表 = 不限制）
