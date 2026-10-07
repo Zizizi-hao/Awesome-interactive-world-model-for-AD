@@ -552,3 +552,15 @@ papers:
     features: {action: true, closedloop: true}
     tags: [强化学习后训练, 物理合理性, 动作跟随, 分布外动作]
     note: 在预训练潜空间世界模型上，用强化学习同时优化物理合理性、动作跟随和视觉保真，并用噪声驱动的分布外动作探索补专家轨迹覆盖不到的动作。作为策略评测器，平均指标提升 5.6%，并减轻 Ctrl-World 这类只见过专家动作的世界模型对策略成功率的高估。
+
+  - title: "GLaM: Training a Latent World Model over Global Spatiotemporal Memory for Active Exploration and Navigation"
+    short: GLaM
+    org: 清华大学 / EBKernel
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.14561"
+    features: {closedloop: true, longhorizon: true}
+    tags: [目标条件, 地图记忆, 路点潜变量, 物体导航]
+    note: 在全局时空地图记忆上训练目标条件潜空间世界模型，由历史地图 token、导航目标和当前位姿同时预测未来地图表征与以机器人为中心的路点潜变量。在 Habitat/HM3D 受控复现的 ObjectNav 子集上，相对复现的 BSC-Nav，成功率从 78.50% 提到 86.89%，SPL 从 47.70% 到 48.35%。

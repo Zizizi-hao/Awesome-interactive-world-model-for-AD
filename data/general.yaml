@@ -438,3 +438,16 @@ papers:
     features: {action: true, longhorizon: true}
     tags: [可编程规则, 持久世界状态, 视频渲染解耦, 可玩游戏]
     note: 把世界状态演化与视觉生成解耦：自然语言编译成可执行程序维护含屏外实体的全局状态，再经状态增强 3D OBB 条件化预训练视频模型做渲染；CombatStateBench 上计数/状态准确率 94%/98%，支持规则可编程、实体可控的长时可玩游戏。
+
+  - title: "AlayaVista: Streaming World Modeling from Panoramic States to Perspective Video"
+    short: AlayaVista
+    org: Alaya Lab
+    year: 2026
+    venue: arXiv
+    category: general
+    links:
+      arxiv: "2609.14462"
+      project: "https://alaya-lab.github.io/AlayaVista/"
+    features: {action: true, longhorizon: true}
+    tags: [全景潜状态, 视口渲染, 相机可控, 流式视频]
+    note: 把全景状态演化和当前视口渲染拆开：单张透视图像先扩成 360° 场景先验，再按相机条件逐块演化，只把请求的视口细化成视频。训练用自建 MUGEN（1318 小时、至少 4K 的真实全景视频）和 Sekai2 的全景子集，并用分块自回归与少步蒸馏支持流式生成。

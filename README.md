@@ -8,7 +8,7 @@
 
 世界模型 (World Model) 通过学习环境的动态表征，实现对未来的预测与想象； 可交互世界模型进一步支持以动作 (action) 为条件的生成与控制， 为自动驾驶和具身智能提供数据引擎、神经仿真器与策略学习基础。 本仓库收录并整理该方向的代表性工作，按应用场景分类， 并标注每篇工作的交互能力维度。
 
-📊 共收录 **192** 篇工作 ｜ 最后更新：2026-10-07
+📊 共收录 **194** 篇工作 ｜ 最后更新：2026-10-07
 
 <p align="center">
   <img src="assets/interactive-world-model1.png" alt="交互式世界模型：智能体与世界模型的闭环交互" width="760">
@@ -26,8 +26,8 @@
 ## 目录
 
 - [自动驾驶 Autonomous Driving](#自动驾驶-autonomous-driving)（111）
-- [具身智能 Embodied AI](#具身智能-embodied-ai)（45）
-- [通用 / 游戏 General / Game](#通用--游戏-general--game)（36）
+- [具身智能 Embodied AI](#具身智能-embodied-ai)（46）
+- [通用 / 游戏 General / Game](#通用--游戏-general--game)（37）
 
 ## 自动驾驶 Autonomous Driving
 
@@ -158,6 +158,7 @@
 | **FLEX-WAM**: Flexible Block-Causal World-Action Models for Long-Horizon Imagination and Planning | arXiv (2026) | NYU | 🎮 ⚡ 🔁 ⏳ | [论文](https://arxiv.org/abs/2610.05483) | 用可 KV cache 的块因果骨干同时预测未来、生成动作并在想象中规划，支持变长上下文和逐帧或逐块的无限 rollout；以前向动力学弹性约束动作响应。可作为 MCTS 的联合提议器与仿真器解长时程 PushT 和 OGBench，同一检查点在双臂真机上兼作策略与结果预测。 |
 | **Flow-Skill WM**: Flow Policies as Actions of Skill-Level World Models: Learned and Symbolic Abstractions for Long-Horizon Planning | arXiv (2026) | TU Delft | 🎮 🔁 ⏳ | [论文](https://arxiv.org/abs/2610.04767) \| [项目](https://andreumatoses.github.io/research/flow-skill-wm) | 用在完整技能片段上训练的流匹配策略的输入作为技能级动作，一次技能执行对应世界模型的一步转移，从而不必手工编写技能词表。无标签的物体中心离散码在单技能上对齐符号标签，2 到 5 个技能的任务仍保留其约一半到四分之三的成功率。 |
 | **GIFT**: Guided Intermediate Feature Training via Action-Oriented Structural Supervision for Robotic Manipulation | arXiv (2026) | 中科院自动化所 | 🎮 | [论文](https://arxiv.org/abs/2609.04193) \| [项目](https://openphoenix-team.github.io/GIFT-pages) | 针对 VLA/WAM 视觉丰富但控制信息不足的动作充分性缺口，用几何对齐、可供性预测与目标区域重建约束中间特征；同一套监督可接到 VLA、直接动作 WAM 与逆动力学 WAM，LIBERO-Plus 零样本与 RoboCasa、真机高精度操作均有提升，且无需把辅助预测注入动作头。 |
+| **GLaM**: Training a Latent World Model over Global Spatiotemporal Memory for Active Exploration and Navigation | arXiv (2026) | 清华大学 / EBKernel | 🔁 ⏳ | [论文](https://arxiv.org/abs/2609.14561) | 在全局时空地图记忆上训练目标条件潜空间世界模型，由历史地图 token、导航目标和当前位姿同时预测未来地图表征与以机器人为中心的路点潜变量。在 Habitat/HM3D 受控复现的 ObjectNav 子集上，相对复现的 BSC-Nav，成功率从 78.50% 提到 86.89%，SPL 从 47.70% 到 48.35%。 |
 | **GaussianDream++**: Efficient 3D Gaussian World Modeling for Robotic Manipulation | arXiv (2026) | Haibao Yu 团队 | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.25659) | GaussianDream 的策略原生紧凑扩展：向 VLA 骨干插入世界状态/世界预测 token，仅训练期用世界表征头解码到共享高斯基元得到当前世界与未来预测监督，静态-动态分解聚焦交互区域；推理时移除高斯解码与 rollout 路径仅留 20 个世界 token，LIBERO 达 98.6%，真机平均成功率从 29.2% 升至 52.5% 且保持高效闭环控制。 |
 | **GigaBrain-WBC-0.5: A Behavior World Model for Robust Whole-Body Control with Environment Interaction** | arXiv (2026) | GigaAI | 🎮 | [论文](https://arxiv.org/abs/2608.18234) | 为人形机器人全身控制训练了一个行为世界模型，通过causal Transformer预测下一帧得状态、动作以及动作指令得分布，从而对环境对动作的影响进行建模。 |
 | **H-JEPA**: End-to-End Learning of Hierarchical World Models for Visual Planning | arXiv (2026) | NYU / AMI | 🎮 🔁 ⏳ | [论文](https://arxiv.org/abs/2610.06805) \| [项目](https://h-jepa.com/) | 每层动作条件 JEPA 在各自潜空间预测更远的未来，上层预测作为下层子目标自上而下规划；时间尺度分离时高层丢掉快变细节。Visual AntMaze 上三层层次把成功率从 18% 提到 73%，规划计算更少，并可接到 DROID 真机视频。 |
@@ -204,6 +205,7 @@
 | **ABot-World-0**: Infinite Interactive World Rollout on a Single Desktop GPU | arXiv (2026) | Ning Guo 团队 | ⏳ | [论文](https://arxiv.org/abs/2607.19191) | 单桌面 GPU 上的无限交互式世界 rollout，演示了低资源持续交互可行性。 |
 | **Addressable Memory for Video World Models** | arXiv (2026) | Aljoša Ošep 团队 | ⏳ | [论文](https://arxiv.org/abs/2608.07408) | 可寻址视觉记忆机制，解决交互式视频世界模型中 KV cache 的视觉持久性局限。 |
 | **RLHEV**: Agentic Game Development as a Verifiable Trajectory Data Engine for Scaling World Models | arXiv (2026) | Yang You 团队 | — | [论文](https://arxiv.org/abs/2608.25518) | 认为靠爬取更多视频scaling世界模型效率低下，需要像代码智能体那样具备可验证奖励的递归数据引擎：游戏引擎编码的场景是可执行的世界规范，可密集校验碰撞、物理、可导航性与有界可玩性，故提出 RLHEV 后训练范式，将引擎信号与开发过程中的人类接受反馈结合，为空间世界模型提供长程轨迹与可靠奖励。 |
+| **AlayaVista**: Streaming World Modeling from Panoramic States to Perspective Video | arXiv (2026) | Alaya Lab | 🎮 ⏳ | [论文](https://arxiv.org/abs/2609.14462) \| [项目](https://alaya-lab.github.io/AlayaVista/) | 把全景状态演化和当前视口渲染拆开：单张透视图像先扩成 360° 场景先验，再按相机条件逐块演化，只把请求的视口细化成视频。训练用自建 MUGEN（1318 小时、至少 4K 的真实全景视频）和 Sekai2 的全景子集，并用分块自回归与少步蒸馏支持流式生成。 |
 | **AlayaWorld**: Interactive Long-Horizon World Modeling | arXiv (2026) | Zihui Gao 团队 | 🎮 ⏳ | [论文](https://arxiv.org/abs/2607.18367) | 长时程可交互视频世界建模，支持持久状态演化与玩家级交互。 |
 | **InternalVCoT**: Beyond Visual CoT: Internalized Visual Thinking for Proactive Video Reasoning | arXiv (2026) | Xiaoyu Zhu 团队 | ⏳ | [论文](https://arxiv.org/abs/2608.15869) | 将显式视觉 CoT（生成中间推理图像）内化为隐式视觉预见，在保持空间/时序推理能力的同时大幅降低推理开销。 |
 | **EchoWM-Data**: Building Pretraining Data for World Models: An Unreal Engine-Based Pipeline for Action-Conditioned Video Generation | arXiv (2026) | Joy Future Academy | 🎮 | [论文](https://arxiv.org/abs/2609.03557) \| [项目](https://echo-team-joy-future-academy-jd.github.io/Echo-1.5-Page/wm/) | EchoWM 所用的 Unreal 合成数据产线：PIE 实时物理记录轨迹、MRQ 离线渲染两阶段解耦，200 卡集群产出五路同步 1080p/720p 视频及帧对齐动作、角色与相机位姿，累计数千小时动作条件预训练数据。 |
