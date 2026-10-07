@@ -525,3 +525,30 @@ papers:
     features: {action: true, closedloop: true, longhorizon: true}
     tags: [技能级动作, 流匹配策略, 长时程规划, 潜空间世界模型]
     note: 用在完整技能片段上训练的流匹配策略的输入作为技能级动作，一次技能执行对应世界模型的一步转移，从而不必手工编写技能词表。无标签的物体中心离散码在单技能上对齐符号标签，2 到 5 个技能的任务仍保留其约一半到四分之三的成功率。
+
+  - title: "Pelican-Sim 1.0: A General World Model Simulator for Embodied Intelligence"
+    short: Pelican-Sim
+    org: X-Humanoid
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.12036"
+      project: "https://zoushilong1024.github.io/Pelican-Sim1.0/"
+      code: "https://github.com/Open-X-Humanoid/Pelican-Sim1.0"
+    features: {action: true, closedloop: true}
+    tags: [跨本体仿真器, 统一动作空间, 稀疏MoE, 策略评测]
+    note: 用 28 维统一动作和相机对齐的动作视频注入，配合稀疏 MoE，在约一百万条真机与仿真轨迹上预测未来观测。四步自回归蒸馏后，在 RoboTwin 上把每任务 50 条示教增广到再加 500 条生成轨迹，策略成功率从 70% 升至 93%，并可做策略排序、动作选择和想象中的策略改进。
+
+  - title: "PAVXploreRL: Physical-Action-Visual World Model Reinforcement Learning with Action Exploration"
+    short: PAVXploreRL
+    org: 中山大学 / SUTD
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2607.16602"
+      code: "https://github.com/Social-AI-Studio/PAVXploreRL"
+    features: {action: true, closedloop: true}
+    tags: [强化学习后训练, 物理合理性, 动作跟随, 分布外动作]
+    note: 在预训练潜空间世界模型上，用强化学习同时优化物理合理性、动作跟随和视觉保真，并用噪声驱动的分布外动作探索补专家轨迹覆盖不到的动作。作为策略评测器，平均指标提升 5.6%，并减轻 Ctrl-World 这类只见过专家动作的世界模型对策略成功率的高估。

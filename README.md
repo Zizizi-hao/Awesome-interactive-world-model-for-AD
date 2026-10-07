@@ -8,7 +8,7 @@
 
 世界模型 (World Model) 通过学习环境的动态表征，实现对未来的预测与想象； 可交互世界模型进一步支持以动作 (action) 为条件的生成与控制， 为自动驾驶和具身智能提供数据引擎、神经仿真器与策略学习基础。 本仓库收录并整理该方向的代表性工作，按应用场景分类， 并标注每篇工作的交互能力维度。
 
-📊 共收录 **190** 篇工作 ｜ 最后更新：2026-10-07
+📊 共收录 **192** 篇工作 ｜ 最后更新：2026-10-07
 
 <p align="center">
   <img src="assets/interactive-world-model1.png" alt="交互式世界模型：智能体与世界模型的闭环交互" width="760">
@@ -26,7 +26,7 @@
 ## 目录
 
 - [自动驾驶 Autonomous Driving](#自动驾驶-autonomous-driving)（111）
-- [具身智能 Embodied AI](#具身智能-embodied-ai)（43）
+- [具身智能 Embodied AI](#具身智能-embodied-ai)（45）
 - [通用 / 游戏 General / Game](#通用--游戏-general--game)（36）
 
 ## 自动驾驶 Autonomous Driving
@@ -168,6 +168,8 @@
 | **JEPA-x**: Cross-Predictive Physics Grounding for Forecastable Latent Dynamics | arXiv (2026) | NUS | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.24044) | 亦称 XP-JEPA。训练时把视觉观测与特权物理状态当作同一动作条件轨迹的两个视图做交叉预测，约束潜在动力学更可预报；部署丢弃物理分支，多任务控制成功率从 53.6% 升至 78.2%。 |
 | **Motus2**: A Self-Evolving General World Model for Dexterous Manipulation | arXiv (2026) | 清华大学（Jun Zhu / Fan Bao 团队） | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.30237) | 超越「仿真器外挂动作头」的范式，单模型共享权重暴露三个控制接口构成闭环决策-学习回路：策略（世界-动作模型）提出候选动作块、仿真器（动作条件世界模型）预测视觉后果、评估器（价值模型）评估预测结果，从而实现策略自我改进；专家演示用于动作学习，失败与次优交互则成为动力学建模与价值学习的宝贵证据。数据侧从单目第一视角视频扩展到同步双目第一视角数据再做机器人域适配，并研究全局自回归与混合记忆扩展滑动窗口上下文、引入触觉实现接触感知控制，在全仿人双目双臂灵巧手平台上验证。 |
 | **No Free Checker: A Survey of Verifiers for Robot Policies** | arXiv (2026) | 浙江大学 | — | [论文](https://arxiv.org/abs/2609.09250) \| [代码](https://github.com/ZJUSCL/Awesome-Robot-Verifier) | 综述约 150 个机器人策略验证器（成功检测、奖励模型、运行时监控、安全滤波、时序逻辑及世界模型评测），用可用性与可信性两个坐标比较人类、规则/形式化、学习型与模型内生四类裁判，结论是可信性随可用性上升而下降，没有免费的检查器。 |
+| **PAVXploreRL**: Physical-Action-Visual World Model Reinforcement Learning with Action Exploration | arXiv (2026) | 中山大学 / SUTD | 🎮 🔁 | [论文](https://arxiv.org/abs/2607.16602) \| [代码](https://github.com/Social-AI-Studio/PAVXploreRL) | 在预训练潜空间世界模型上，用强化学习同时优化物理合理性、动作跟随和视觉保真，并用噪声驱动的分布外动作探索补专家轨迹覆盖不到的动作。作为策略评测器，平均指标提升 5.6%，并减轻 Ctrl-World 这类只见过专家动作的世界模型对策略成功率的高估。 |
+| **Pelican-Sim**: Pelican-Sim 1.0: A General World Model Simulator for Embodied Intelligence | arXiv (2026) | X-Humanoid | 🎮 🔁 | [论文](https://arxiv.org/abs/2609.12036) \| [项目](https://zoushilong1024.github.io/Pelican-Sim1.0/) \| [代码](https://github.com/Open-X-Humanoid/Pelican-Sim1.0) | 用 28 维统一动作和相机对齐的动作视频注入，配合稀疏 MoE，在约一百万条真机与仿真轨迹上预测未来观测。四步自回归蒸馏后，在 RoboTwin 上把每任务 50 条示教增广到再加 500 条生成轨迹，策略成功率从 70% 升至 93%，并可做策略排序、动作选择和想象中的策略改进。 |
 | **PhysReal**: Learning Real-World Deformable Object Physics via Hybrid Constitutive Modeling | arXiv (2026) | 北京理工大学 | — | [论文](https://arxiv.org/abs/2609.07532) \| [项目](https://physreal.github.io/) | 从视频学习真实可变形体物理：解析专家本构提供可解释先验，神经残差补未建模响应，空间分块参数化局部材料差异，配可微 MPM 与 3DGS；课程式依次优化全局、局部与残差，用于动态重建、未来状态预测及下游操作。 |
 | **LWM**: Predicting Consequences and Reinforcing Navigation Policies with Latent World Models | ECCV (2026, Spotlight) | — | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.26190) \| [项目](https://wzm206.github.io/latent-world-model-nav) | 不重建观测或特征，而是预测动作条件下的潜特征兼容性来直接评估动作后果（空间邻近与特征相似相关），借跨轨迹动作序列做反事实训练，可在世界模型想象中用 RL 从无关标注视频监督并提升导航策略。 |
 | **Q-Learning With World Models** | arXiv (2026) | Chelsea Finn / Dorsa Sadigh 团队 | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.17163) | 把世界模型引入离策略 Q 学习——预测状态变化而非仅动作，突破此前世界模型局限于监督式策略学习的困境，提升 VLA 模型 RL 微调的样本效率。 |
