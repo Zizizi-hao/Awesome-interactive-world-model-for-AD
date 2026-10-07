@@ -8,7 +8,7 @@
 
 世界模型 (World Model) 通过学习环境的动态表征，实现对未来的预测与想象； 可交互世界模型进一步支持以动作 (action) 为条件的生成与控制， 为自动驾驶和具身智能提供数据引擎、神经仿真器与策略学习基础。 本仓库收录并整理该方向的代表性工作，按应用场景分类， 并标注每篇工作的交互能力维度。
 
-📊 共收录 **194** 篇工作 ｜ 最后更新：2026-10-07
+📊 共收录 **198** 篇工作 ｜ 最后更新：2026-10-08
 
 <p align="center">
   <img src="assets/interactive-world-model1.png" alt="交互式世界模型：智能体与世界模型的闭环交互" width="760">
@@ -26,7 +26,7 @@
 ## 目录
 
 - [自动驾驶 Autonomous Driving](#自动驾驶-autonomous-driving)（111）
-- [具身智能 Embodied AI](#具身智能-embodied-ai)（46）
+- [具身智能 Embodied AI](#具身智能-embodied-ai)（50）
 - [通用 / 游戏 General / Game](#通用--游戏-general--game)（37）
 
 ## 自动驾驶 Autonomous Driving
@@ -167,6 +167,7 @@
 | **IMPACT**: Attention Is the Interaction Map for Scalable Interaction-Aware World Model Training | arXiv (2026) | 清华大学 / 中科大 | 🎮 | [论文](https://arxiv.org/abs/2609.00161) \| [项目](https://embodiedcity.github.io/IMPACT/) \| [代码](https://github.com/EmbodiedCity/IMPACT.code) | 针对全局 MSE 让静态背景主导优化、稀疏交互区域欠监督的问题，用被操作物体 token 的交叉注意力作内部先验，经局部预测误差校准成交互图并重加权去噪损失，无需外部稠密表征、推理无额外开销。 |
 | **DELE-w0.5**: Inferring Action from Future Latent State for Robotic Manipulation | arXiv (2026) | DeepLeap Research | 🎮 | [论文](https://arxiv.org/abs/2608.22067) \| [项目](https://deepleap-x.com/research/dele-w0.5) | 提出 DELE-w0.5，从预测的未来潜状态直接推断机器人动作，省去视频生成这一中间目标，建模物理世界在动作下的状态变化而非逐帧外观演化，实现更低训练成本与低延迟推理，在 640 次真机实验中取得 62.5% 全任务成功率，显著优于各 VLA 基线。 |
 | **JEPA-x**: Cross-Predictive Physics Grounding for Forecastable Latent Dynamics | arXiv (2026) | NUS | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.24044) | 亦称 XP-JEPA。训练时把视觉观测与特权物理状态当作同一动作条件轨迹的两个视图做交叉预测，约束潜在动力学更可预报；部署丢弃物理分支，多任务控制成功率从 53.6% 升至 78.2%。 |
+| **Mem-World**: Memory-Augmented Action-Conditioned World Models for Persistent Robot Manipulation | arXiv (2026) | 大连理工大学 / 三星北京 | 🎮 🔁 ⏳ | [论文](https://arxiv.org/abs/2606.18960) | 多视角动作条件操作世界模型。腕部相机遮挡和快速运动使当前帧不够用，它用腕部视角的 4D 表面元记住历史观测，再按未来动作检索该看哪几帧。相对 Ctrl-World，策略评测与真机成绩的皮尔逊相关提高 14.5%；用生成轨迹做数据增广后，长时程成功率从 58% 到 72%。 |
 | **Motus2**: A Self-Evolving General World Model for Dexterous Manipulation | arXiv (2026) | 清华大学（Jun Zhu / Fan Bao 团队） | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.30237) | 超越「仿真器外挂动作头」的范式，单模型共享权重暴露三个控制接口构成闭环决策-学习回路：策略（世界-动作模型）提出候选动作块、仿真器（动作条件世界模型）预测视觉后果、评估器（价值模型）评估预测结果，从而实现策略自我改进；专家演示用于动作学习，失败与次优交互则成为动力学建模与价值学习的宝贵证据。数据侧从单目第一视角视频扩展到同步双目第一视角数据再做机器人域适配，并研究全局自回归与混合记忆扩展滑动窗口上下文、引入触觉实现接触感知控制，在全仿人双目双臂灵巧手平台上验证。 |
 | **No Free Checker: A Survey of Verifiers for Robot Policies** | arXiv (2026) | 浙江大学 | — | [论文](https://arxiv.org/abs/2609.09250) \| [代码](https://github.com/ZJUSCL/Awesome-Robot-Verifier) | 综述约 150 个机器人策略验证器（成功检测、奖励模型、运行时监控、安全滤波、时序逻辑及世界模型评测），用可用性与可信性两个坐标比较人类、规则/形式化、学习型与模型内生四类裁判，结论是可信性随可用性上升而下降，没有免费的检查器。 |
 | **PAVXploreRL**: Physical-Action-Visual World Model Reinforcement Learning with Action Exploration | arXiv (2026) | 中山大学 / SUTD | 🎮 🔁 | [论文](https://arxiv.org/abs/2607.16602) \| [代码](https://github.com/Social-AI-Studio/PAVXploreRL) | 在预训练潜空间世界模型上，用强化学习同时优化物理合理性、动作跟随和视觉保真，并用噪声驱动的分布外动作探索补专家轨迹覆盖不到的动作。作为策略评测器，平均指标提升 5.6%，并减轻 Ctrl-World 这类只见过专家动作的世界模型对策略成功率的高估。 |
@@ -187,7 +188,10 @@
 | **WALL-SS**: Scaling Long-horizon World Models via Next-Scale Autoregression | arXiv (2026) | — | 🎮 🔁 ⏳ | [论文](https://arxiv.org/abs/2608.26239) | 把具身轨迹表示为观测-动作时序交错的因果序列，用 next-scale 粗到细自回归注入尺度对齐的动作表征，配合尺度压缩的长时记忆与 on-policy 对齐奖励，实现可变长生成、有界内存下的分钟级连贯流式 rollout 与更强动作跟随。 |
 | **WISE**: World-model-guided Imagination Scheduling for Efficient Post-training of Vision-Language-Action Models | arXiv (2026) | 清华大学 / BAAI | 🎮 🔁 | [论文](https://arxiv.org/abs/2609.03681) | 用世界模型做 VLA 后训练时不是全程想象，而是在交互关键状态才调用、有界多视角 rollout，并以进度/完成信号做相对评价、在真实交互上下文中更新策略；相对全量想象节省约 80% GPU 时间，π0 / π0.5 仿真与真机均更稳。 |
 | **WM-Craftnet**: World Synesthesia Model for Generalizable and Robust Dexterous In-Hand Manipulation | CoRL (2026) | 上海交通大学 | 🎮 🔁 | [论文](https://arxiv.org/abs/2609.07002) \| [项目](https://wmcraftnet.github.io/) | 从本体、深度、触觉与动作学习动作条件潜空间动力学，作为非对称 actor-critic 的循环任务上下文，而非用于潜空间想象规划；用干净深度目标监督噪声深度输入以便真机部署，九物体预训练先验可迁移到 49 物体的泛化手内旋转、扰动恢复与 sim-to-real。 |
+| **Actionable WM**: World Models for Embodied Intelligence: From Plausible to Controllable to Actionable | arXiv (2026) | HKUST(GZ) / NTU | — | [论文](https://arxiv.org/abs/2609.16697) | 用合理、可控、可行动三级整理具身世界模型：先保住任务相关结构，再预测干预如何改变该结构，最后把预测变成规划、学习或评测上可测量的收益。评的是预测有没有改善闭环行为，和按架构分类的世界动作模型综述互补。 |
+| **WAM Survey**: World-Action Models for Robot Learning and Control: A Survey | arXiv (2026) | MBZUAI | — | [论文](https://arxiv.org/abs/2609.16074) \| [项目](https://rcl-robotics.github.io/Awesome-World-Action-Models/) | 把世界动作模型从普通世界模型、基于模型的强化学习和只做反应的 VLA 里划出来，按表征、转移、动作接口、训练和数据整理，并覆盖操作、导航和自动驾驶的评测协议。 |
 | **WorldSimProbe**: Diagnosing Simulator Faithfulness in Action-Conditioned World Models for Embodied Manipulation | arXiv (2026) | Shanghang Zhang 团队 | — | [论文](https://arxiv.org/abs/2608.09298) | 世界模型要当仿真器用，就必须通过可观测的物理契约，而不是靠观感或任务分数。 |
+| **XPACE**: Joint World and Action Modeling from Heterogeneous Experience | arXiv (2026) | 小鹏机器人 | 🎮 🔁 | [论文](https://arxiv.org/abs/2609.17372) \| [项目](https://xpeng-robotics.github.io/xpace/) | 同一个视频骨干兼做两件事：和语言一起预测动作与未来视频，以及给定骨架控制和相机位姿时只做视觉推演。约 5000 小时无动作视频、人类示范和 IRON 遥操作一起训练，仿真器再合成偏离后恢复的轨迹微调策略。IRON 上三个任务平均成功率 68.3%（DreamZero 40%，GR00T 6.7%，每任务 20 次）；另一组任务上，恢复数据微调把平均成功率从 61.7% 提到 86.7%。 |
 | **ZimaBlue**: Evolving Generalizable World Action Models through Scalable Video Pre-training | arXiv (2026) | Joy Future Academy | 🎮 ⚡ 🔁 | [论文](https://arxiv.org/abs/2609.00188) | 用大规模无动作第一视角视频学因果视觉动力学，再经跨本体 video-action 中训与目标机器人后训得到可泛化 WAM；Slow-Fast 架构在 RTX 4090 上 30Hz 闭环控制，真机零样本成功率随 12 万小时视频从 36.1% 升至 77.8%。 |
 | **hint²**: Hierarchical World Models for Inference-Time Temporal Logic Guidance | arXiv (2026) | Purdue University | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.13678) | 用两层世界模型在推理时将 LTL 规范注入扩散策略——高层追踪自动机进展，低层用 STL 鲁棒性梯度保障局部几何安全，无需重训策略。 |
 | **τ0-VLA**: a Hierarchical Robot Foundation Model with World-Model-Guided Test-Time Computation | arXiv (2026) | Xiaowei Cai 团队 | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.16885) | 分层机器人基础模型，在测试时用世界模型引导计算分配，为困难决策步骤分配额外计算资源，提升长时程操作的可靠性与连贯性。 |

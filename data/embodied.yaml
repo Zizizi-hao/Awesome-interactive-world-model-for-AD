@@ -564,3 +564,53 @@ papers:
     features: {closedloop: true, longhorizon: true}
     tags: [目标条件, 地图记忆, 路点潜变量, 物体导航]
     note: 在全局时空地图记忆上训练目标条件潜空间世界模型，由历史地图 token、导航目标和当前位姿同时预测未来地图表征与以机器人为中心的路点潜变量。在 Habitat/HM3D 受控复现的 ObjectNav 子集上，相对复现的 BSC-Nav，成功率从 78.50% 提到 86.89%，SPL 从 47.70% 到 48.35%。
+
+  - title: "Mem-World: Memory-Augmented Action-Conditioned World Models for Persistent Robot Manipulation"
+    short: Mem-World
+    org: 大连理工大学 / 三星北京
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2606.18960"
+    features: {action: true, closedloop: true, longhorizon: true}
+    tags: [腕部记忆, 4D表面元, 动作条件视频, 策略评测]
+    note: 多视角动作条件操作世界模型。腕部相机遮挡和快速运动使当前帧不够用，它用腕部视角的 4D 表面元记住历史观测，再按未来动作检索该看哪几帧。相对 Ctrl-World，策略评测与真机成绩的皮尔逊相关提高 14.5%；用生成轨迹做数据增广后，长时程成功率从 58% 到 72%。
+
+  - title: "XPACE: Joint World and Action Modeling from Heterogeneous Experience"
+    short: XPACE
+    org: 小鹏机器人
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.17372"
+      project: "https://xpeng-robotics.github.io/xpace/"
+    features: {action: true, closedloop: true}
+    tags: [视频动作模型, 异构经验, 世界仿真器, 恢复轨迹]
+    note: 同一个视频骨干兼做两件事：和语言一起预测动作与未来视频，以及给定骨架控制和相机位姿时只做视觉推演。约 5000 小时无动作视频、人类示范和 IRON 遥操作一起训练，仿真器再合成偏离后恢复的轨迹微调策略。IRON 上三个任务平均成功率 68.3%（DreamZero 40%，GR00T 6.7%，每任务 20 次）；另一组任务上，恢复数据微调把平均成功率从 61.7% 提到 86.7%。
+
+  - title: "World-Action Models for Robot Learning and Control: A Survey"
+    short: WAM Survey
+    org: MBZUAI
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.16074"
+      project: "https://rcl-robotics.github.io/Awesome-World-Action-Models/"
+    features: {}
+    tags: [综述, 世界动作模型, 动作接口, 评测协议]
+    note: 把世界动作模型从普通世界模型、基于模型的强化学习和只做反应的 VLA 里划出来，按表征、转移、动作接口、训练和数据整理，并覆盖操作、导航和自动驾驶的评测协议。
+
+  - title: "World Models for Embodied Intelligence: From Plausible to Controllable to Actionable"
+    short: Actionable WM
+    org: HKUST(GZ) / NTU
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.16697"
+    features: {}
+    tags: [综述, 能力阶梯, 干预预测, 闭环收益]
+    note: 用合理、可控、可行动三级整理具身世界模型：先保住任务相关结构，再预测干预如何改变该结构，最后把预测变成规划、学习或评测上可测量的收益。评的是预测有没有改善闭环行为，和按架构分类的世界动作模型综述互补。
