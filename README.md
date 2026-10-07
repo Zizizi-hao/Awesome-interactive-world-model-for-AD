@@ -8,7 +8,7 @@
 
 世界模型 (World Model) 通过学习环境的动态表征，实现对未来的预测与想象； 可交互世界模型进一步支持以动作 (action) 为条件的生成与控制， 为自动驾驶和具身智能提供数据引擎、神经仿真器与策略学习基础。 本仓库收录并整理该方向的代表性工作，按应用场景分类， 并标注每篇工作的交互能力维度。
 
-📊 共收录 **186** 篇工作 ｜ 最后更新：2026-09-12
+📊 共收录 **190** 篇工作 ｜ 最后更新：2026-10-07
 
 <p align="center">
   <img src="assets/interactive-world-model1.png" alt="交互式世界模型：智能体与世界模型的闭环交互" width="760">
@@ -26,7 +26,7 @@
 ## 目录
 
 - [自动驾驶 Autonomous Driving](#自动驾驶-autonomous-driving)（111）
-- [具身智能 Embodied AI](#具身智能-embodied-ai)（39）
+- [具身智能 Embodied AI](#具身智能-embodied-ai)（43）
 - [通用 / 游戏 General / Game](#通用--游戏-general--game)（36）
 
 ## 自动驾驶 Autonomous Driving
@@ -155,9 +155,12 @@
 | **WorldSync**: Do Robotic World Models Really Follow Actions? Diagnosing and Aligning Action-Conditioned Generation for Policy Learning | arXiv (2026) | Shanghang Zhang 团队 | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.24885) | 用 WorldEcho 在专家外动作上联合测视觉完整性与 SE(3) 轨迹对齐，再用 WorldSync 从分布覆盖、表示锚定与干预效应对齐三方面校准生成，使世界模型更能作为策略改进的仿真器。 |
 | **DreamLedger**: Execution-Settled Credit Files for World-Model Imagination in Robot Decision Loops | arXiv (2026) | University of Florida | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.23863) | 把世界模型想象的可靠性做成按工况、区域与预测时域记账的执行结算信用档案，使用前门控、事后对照现实结算，减少未兑现想象依赖且每笔花费可审计回放。 |
 | **FACT**: Failure-Aware Causal Training for World-Action Models | arXiv (2026) | Xiaolong Wang 团队 | — | [论文](https://arxiv.org/abs/2608.10232) | 失败感知因果训练，显式建模动作-后果因果关系以纠正世界模型的乐观偏差。 |
+| **FLEX-WAM**: Flexible Block-Causal World-Action Models for Long-Horizon Imagination and Planning | arXiv (2026) | NYU | 🎮 ⚡ 🔁 ⏳ | [论文](https://arxiv.org/abs/2610.05483) | 用可 KV cache 的块因果骨干同时预测未来、生成动作并在想象中规划，支持变长上下文和逐帧或逐块的无限 rollout；以前向动力学弹性约束动作响应。可作为 MCTS 的联合提议器与仿真器解长时程 PushT 和 OGBench，同一检查点在双臂真机上兼作策略与结果预测。 |
+| **Flow-Skill WM**: Flow Policies as Actions of Skill-Level World Models: Learned and Symbolic Abstractions for Long-Horizon Planning | arXiv (2026) | TU Delft | 🎮 🔁 ⏳ | [论文](https://arxiv.org/abs/2610.04767) \| [项目](https://andreumatoses.github.io/research/flow-skill-wm) | 用在完整技能片段上训练的流匹配策略的输入作为技能级动作，一次技能执行对应世界模型的一步转移，从而不必手工编写技能词表。无标签的物体中心离散码在单技能上对齐符号标签，2 到 5 个技能的任务仍保留其约一半到四分之三的成功率。 |
 | **GIFT**: Guided Intermediate Feature Training via Action-Oriented Structural Supervision for Robotic Manipulation | arXiv (2026) | 中科院自动化所 | 🎮 | [论文](https://arxiv.org/abs/2609.04193) \| [项目](https://openphoenix-team.github.io/GIFT-pages) | 针对 VLA/WAM 视觉丰富但控制信息不足的动作充分性缺口，用几何对齐、可供性预测与目标区域重建约束中间特征；同一套监督可接到 VLA、直接动作 WAM 与逆动力学 WAM，LIBERO-Plus 零样本与 RoboCasa、真机高精度操作均有提升，且无需把辅助预测注入动作头。 |
 | **GaussianDream++**: Efficient 3D Gaussian World Modeling for Robotic Manipulation | arXiv (2026) | Haibao Yu 团队 | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.25659) | GaussianDream 的策略原生紧凑扩展：向 VLA 骨干插入世界状态/世界预测 token，仅训练期用世界表征头解码到共享高斯基元得到当前世界与未来预测监督，静态-动态分解聚焦交互区域；推理时移除高斯解码与 rollout 路径仅留 20 个世界 token，LIBERO 达 98.6%，真机平均成功率从 29.2% 升至 52.5% 且保持高效闭环控制。 |
 | **GigaBrain-WBC-0.5: A Behavior World Model for Robust Whole-Body Control with Environment Interaction** | arXiv (2026) | GigaAI | 🎮 | [论文](https://arxiv.org/abs/2608.18234) | 为人形机器人全身控制训练了一个行为世界模型，通过causal Transformer预测下一帧得状态、动作以及动作指令得分布，从而对环境对动作的影响进行建模。 |
+| **H-JEPA**: End-to-End Learning of Hierarchical World Models for Visual Planning | arXiv (2026) | NYU / AMI | 🎮 🔁 ⏳ | [论文](https://arxiv.org/abs/2610.06805) \| [项目](https://h-jepa.com/) | 每层动作条件 JEPA 在各自潜空间预测更远的未来，上层预测作为下层子目标自上而下规划；时间尺度分离时高层丢掉快变细节。Visual AntMaze 上三层层次把成功率从 18% 提到 73%，规划计算更少，并可接到 DROID 真机视频。 |
 | **Hydra-0**: Action Flow for Generalist World Modeling and Control | arXiv (2026) | NVIDIA | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.18077) | 将机器人动作表示为像素运动（action flow）作为统一视觉接口，跨本体、任务、环境与视频骨干学习动作后果，机器人运动误差降低 90.4%、物体运动误差降低 60.2%。 |
 | **Hydra**: A Navigation World Action Model with Discrete Latent Planning and Continuous Flow-Matching Execution | arXiv (2026) | Xuesu Xiao 团队 | 🎮 ⚡ 🔁 | [论文](https://arxiv.org/abs/2608.28995) | 针对生成模型与规划器流形脱节、候选动作须解码回像素才能评估的实时控制瓶颈，Hydra 在视觉状态、物理位姿与控制动作上建立统一潜流形，用模态专属 VQ 瓶颈压缩为运动学意图与视觉状态的离散词表，使规划器（采样与评估）原生工作在离散空间——以运动学-感知代价排序候选、全程不解码像素（Discrete Latent Planning），再用条件流匹配把离散意图映射为连续轨迹执行；在两台真实机器人上目标导向规划超越 SOTA 世界模型，闭环执行持平或超过领先反应式基础策略。 |
 | **IMPACT**: Attention Is the Interaction Map for Scalable Interaction-Aware World Model Training | arXiv (2026) | 清华大学 / 中科大 | 🎮 | [论文](https://arxiv.org/abs/2609.00161) \| [项目](https://embodiedcity.github.io/IMPACT/) \| [代码](https://github.com/EmbodiedCity/IMPACT.code) | 针对全局 MSE 让静态背景主导优化、稀疏交互区域欠监督的问题，用被操作物体 token 的交叉注意力作内部先验，经局部预测误差校准成交互图并重加权去噪损失，无需外部稠密表征、推理无额外开销。 |
@@ -169,6 +172,7 @@
 | **LWM**: Predicting Consequences and Reinforcing Navigation Policies with Latent World Models | ECCV (2026, Spotlight) | — | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.26190) \| [项目](https://wzm206.github.io/latent-world-model-nav) | 不重建观测或特征，而是预测动作条件下的潜特征兼容性来直接评估动作后果（空间邻近与特征相似相关），借跨轨迹动作序列做反事实训练，可在世界模型想象中用 RL 从无关标注视频监督并提升导航策略。 |
 | **Q-Learning With World Models** | arXiv (2026) | Chelsea Finn / Dorsa Sadigh 团队 | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.17163) | 把世界模型引入离策略 Q 学习——预测状态变化而非仅动作，突破此前世界模型局限于监督式策略学习的困境，提升 VLA 模型 RL 微调的样本效率。 |
 | **RoboPhys-3D**: A Comprehensive Embodied World Model Evaluation via 3D Reconstruction | arXiv (2026) | Christian Claudel 团队 | — | [论文](https://arxiv.org/abs/2608.28718) | 基于 RoboTwin 2.0 的 3D 接地具身世界模型基准，覆盖 4 类场景 50 个操作任务、5,000 集与 25,000 段多视角真值视频；生成视频与真值视频走同一 3D 重建管线，从而区分重建误差与生成误差。50 项指标组织为像素保真、3D 几何一致性、状态理解、任务完成 4 层 18 个子维度，并提出 Average Full Score 及与任务成功强相关的 RoboPhyscore（与人类评价 Pearson r=0.9761）；评测 Cosmos 3 等代表性模型发现感知/ VLM 式评判会遗漏大量状态与执行层面的失败。 |
+| **SUAVE**: Unified Video-Action Models via Masked Diffusion | arXiv (2026) | Toyota Research Institute | 🎮 🔁 | [论文](https://arxiv.org/abs/2610.04009) | 把语言、视频和动作都做成共享序列中的离散 token，推理时掩不同位置即可分别作为世界模型、策略或视频-动作模型。真机一次前向同时生成子目标图像和约 1 秒动作块，闭环约 2.5 Hz；机器人视频预训练加人类视频共训提升零样本鲁棒性。 |
 | **SG-JEPA**: Semigroup-JEPA: Latent Dynamics Consistency for Zero-Shot Physics Generalization | arXiv (2026) | Yale / Brown | 🎮 🔁 | [论文](https://arxiv.org/abs/2609.10464) \| [项目](https://sg-jepa.github.io) | 在 LeWorldModel 上把控制物理的参数（如重力）作为动作条件喂给时序模型，并用自回归潜空间 rollout 联合训练编码器与预测器；相对 DINO-WM，2D 开环误差最多降 2×，3D 机器人扩散策略成功率最多升 2.5×，增益主要来自编码器保留可前向传递的动力学特征。 |
 | **SpatialCrafter**: Single Image World Modeling with Generative 3D Proxies | arXiv (2026) | — | 🎮 ⏳ | [论文](https://arxiv.org/abs/2608.27073) \| [项目](https://fangchuan.github.io/SpatialCrafter/) | 将可探索图生场景拆解为「全局 3D 代理生成 + 外观细化」两阶段：PaSS Flow 预测空间对齐、几何一致的 3D 代理，再把视频扩散模型重构为生成式延迟细化器在其上合成高频细节，缓解幻觉与长时漂移；并构建 115K 场景的首个图生场景混合数据集。 |
 | **SA-WAM**: Spatially Aware World Action Model via Geometric Latent Diffusion | arXiv (2026) | Inria / ENS | 🎮 🔁 | [论文](https://arxiv.org/abs/2609.02531) \| [项目](https://jlopetegui98.github.io/projects/sa_wam.html) | 把度量深度经对数尺度非线性归一化映射到冻结视频 VAE 的输入域，与 RGB、本体和动作 chunk 共享同一预训练 DiT 联合去噪，无需专用 3D 编码器即可做空间感知世界-动作建模；在 RoboCasa、LIBERO-Plus 与 UR5 真机上同时提升策略成功率与未来状态预测。 |

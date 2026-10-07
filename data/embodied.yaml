@@ -475,3 +475,53 @@ papers:
     features: {}
     tags: [综述, 策略验证器, 奖励模型, 世界模型评测]
     note: 综述约 150 个机器人策略验证器（成功检测、奖励模型、运行时监控、安全滤波、时序逻辑及世界模型评测），用可用性与可信性两个坐标比较人类、规则/形式化、学习型与模型内生四类裁判，结论是可信性随可用性上升而下降，没有免费的检查器。
+
+  - title: "H-JEPA: End-to-End Learning of Hierarchical World Models for Visual Planning"
+    short: H-JEPA
+    org: NYU / AMI
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2610.06805"
+      project: "https://h-jepa.com/"
+    features: {action: true, closedloop: true, longhorizon: true}
+    tags: [分层JEPA, 多时间尺度, 自上而下规划, 视觉规划]
+    note: 每层动作条件 JEPA 在各自潜空间预测更远的未来，上层预测作为下层子目标自上而下规划；时间尺度分离时高层丢掉快变细节。Visual AntMaze 上三层层次把成功率从 18% 提到 73%，规划计算更少，并可接到 DROID 真机视频。
+
+  - title: "FLEX-WAM: Flexible Block-Causal World-Action Models for Long-Horizon Imagination and Planning"
+    short: FLEX-WAM
+    org: NYU
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2610.05483"
+    features: {action: true, realtime: true, closedloop: true, longhorizon: true}
+    tags: [块因果, 视频动作模型, 流式推理, 想象中规划]
+    note: 用可 KV cache 的块因果骨干同时预测未来、生成动作并在想象中规划，支持变长上下文和逐帧或逐块的无限 rollout；以前向动力学弹性约束动作响应。可作为 MCTS 的联合提议器与仿真器解长时程 PushT 和 OGBench，同一检查点在双臂真机上兼作策略与结果预测。
+
+  - title: "SUAVE: Unified Video-Action Models via Masked Diffusion"
+    short: SUAVE
+    org: Toyota Research Institute
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2610.04009"
+    features: {action: true, closedloop: true}
+    tags: [掩码扩散, 统一词表, 视频动作模型, 语言条件]
+    note: 把语言、视频和动作都做成共享序列中的离散 token，推理时掩不同位置即可分别作为世界模型、策略或视频-动作模型。真机一次前向同时生成子目标图像和约 1 秒动作块，闭环约 2.5 Hz；机器人视频预训练加人类视频共训提升零样本鲁棒性。
+
+  - title: "Flow Policies as Actions of Skill-Level World Models: Learned and Symbolic Abstractions for Long-Horizon Planning"
+    short: Flow-Skill WM
+    org: TU Delft
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2610.04767"
+      project: "https://andreumatoses.github.io/research/flow-skill-wm"
+    features: {action: true, closedloop: true, longhorizon: true}
+    tags: [技能级动作, 流匹配策略, 长时程规划, 潜空间世界模型]
+    note: 用在完整技能片段上训练的流匹配策略的输入作为技能级动作，一次技能执行对应世界模型的一步转移，从而不必手工编写技能词表。无标签的物体中心离散码在单技能上对齐符号标签，2 到 5 个技能的任务仍保留其约一半到四分之三的成功率。
