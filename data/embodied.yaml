@@ -1223,3 +1223,41 @@ papers:
     features: {action: true, closedloop: true, longhorizon: true}
     tags: [多视角, 帧级动作, 位姿记忆, 策略仿真]
     note: 从 1.5B Stable Video Diffusion 微调成多视角动作条件世界模型，用位姿条件的记忆检索维持长时程。在 DROID（约 9.5 万条轨迹、564 个场景）上训练，新场景和新相机布置下可展开超过 20 秒。验证集 256 段 10 秒轨迹上，第三人称 FVD 为 97.4，单视角版本为 127.5，IRASim 单视角为 138.1。想象里筛出的成功轨迹用来监督微调 π0.5，陌生指令和物体上的成功率从 38.7% 到 83.4%。成功与否由人工判断。指令跟随与真机接近，但会低估底层执行成功率。
+
+  - title: "AVL-JEPA: Preventing Causal Dynamics Information Collapse in Joint Embedding Predictive Architecture World Models"
+    short: AVL-JEPA
+    org: 中南大学 / 燕山大学
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2610.03587"
+    features: {action: true, closedloop: true}
+    tags: [因果动力学, JEPA, 视觉干扰, 闭环规划]
+    note: JEPA 可以保住高维视觉信息，同时丢掉动作造成的物理变化。AVL 用已执行动作锚定动力学，再把受视觉干扰的潜预测对齐到干净预测，动作头保持冻结。高斯输入噪声下，PushT 成功率从 15.3% 到 81.5%，TwoRoom 从 65.7% 到 88.7%。干净的 OGBench Cube 从 73.2% 到 78.2%。
+
+  - title: "DeltaWorld: Physically Consistent Interactive World Simulators via Action-Conditioned Latent Increment Learning"
+    short: DeltaWorld
+    org: Imprintx Robotics / 国网冀北电力科学研究院 / 华北电力科学研究院 / 中国科学院自动化研究所
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2610.02691"
+    features: {action: true, longhorizon: true}
+    tags: [潜增量, 动作条件, 交互对齐, 操作仿真]
+    note: 不直接预测下一帧潜状态，而是预测动作引起的潜变量增量并加回当前状态，交互区域用反事实掩码加重监督。IWS 五项任务、两个视角上，FVD 从 264.52 降到 231.98，LPIPS 从 0.0661 降到 0.0490。自采的三台机器人、四项任务上，FVD 从 168.98 降到 90.31。评测是动作条件视频预测。
+
+  - title: "Rethinking World-Action Model for Compositional and In-Context Robotic Manipulation"
+    short: ViGAR
+    org: 北京大学 / AgiBot / CocoMatrix
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2610.02368"
+      project: "https://dagroup-pku.github.io/ViGAR"
+      code: "https://github.com/DAGroup-PKU/ViGAR"
+    features: {action: true, closedloop: true, longhorizon: true}
+    tags: [视觉子目标, 世界动作模型, 组合操作, 上下文]
+    note: 先预测下一子任务的视觉子目标，再在该子目标条件下同时生成未来画面和动作，两部分共用预训练世界模型。RoboTwin Clean 82.00%、Random 67.02%，平均 74.51%，4D-WAM 平均 61.65%。同一 Cosmos3-Nano 骨干去掉视觉子目标后，Random 为 22.46%。真机是 AgiBot A2 上的五个长程组合任务。

@@ -1448,3 +1448,15 @@ papers:
     features: {action: true}
     tags: [互惠响应, Level-k, 世界动作模型, NAVSIM]
     note: 自车和其他交通参与者互相作为条件响应者，Level-k 的动作 DiT 交换策略 token，并共用未来驾驶世界的表示。NAVSIM navtest 共 12,146 个场景，PDMS 90.6，比骨干 DriveLaW 高 1.5，比 ReWorld 高 0.2。推理深度从 Level-1 到 Level-4，PDMS 从 90.03 到 90.64。按交互强度分组后，相对 DriveLaW 的优势从无交互的 1.52 增到关键交互的 4.59。
+
+  - title: "SymRegFlow: Symmetry-Regularized Flow Matching for Video World Models"
+    short: SymRegFlow
+    org: 清华大学 / 博世 / 中国科学院大学
+    year: 2026
+    venue: arXiv
+    category: driving
+    links:
+      arxiv: "2610.02726"
+    features: {}
+    tags: [对称正则, 连续视角, 多视角, 流匹配]
+    note: 微调多视角驾驶视频世界模型。几何扭曲得到噪声锚，再用跨锚去噪一致性做对称正则，训练时没有新视角真值画面。nuScenes 30 个验证场景的中点视角上，联合生成 FVD 为 158.62，对照里最低的 DiST-4D 为 231.95。源条件推理的 FID 为 19.22，FreeVS 为 20.60。条件是相机位姿。
