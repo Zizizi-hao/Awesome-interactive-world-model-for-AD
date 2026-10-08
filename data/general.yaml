@@ -580,3 +580,17 @@ papers:
     features: {action: true, closedloop: true}
     tags: [离散格子, 想象练习, 实机游戏, Geometry Dash]
     note: 用大约 2.3 小时的 Geometry Dash 录屏学一个动作条件的离散格子世界模型，再只在冻结的模型展开里用 PPO 改控制器，不再碰实机。Stereo Madness 上，三个种子的存活帧数从行为克隆的 120.2、130.6、156.0 升到 280.1、280.4、308.8。留出的社区关卡从大约 100 帧升到 266.7 到 342.8。部署时不做画面生成，消费级 GPU 上采集到动作的循环是 60 Hz。动力学模型的视觉 token 准确率只有 29.58%。
+
+  - title: "ROWBench: Do Video Models Render What the Program Specifies?"
+    short: PROWBench
+    org: Alaya Lab
+    year: 2026
+    venue: arXiv
+    category: general
+    links:
+      arxiv: "2610.02205"
+      project: "https://alaya-lab.github.io/PROWBench"
+      code: "https://github.com/AlayaLab/PROWBench"
+    features: {}
+    tags: [可编程世界, 程序事件, 长时记忆, 视频基准]
+    note: 170 个由程序生成的回合、600 段代理视频。引擎记下实体状态和带时间戳的事件，包括镜头外的事件，再检查生成视频有没有把这些事件画出来。指标是实体控制、长时记忆、逻辑–画面对齐和交互成功率。

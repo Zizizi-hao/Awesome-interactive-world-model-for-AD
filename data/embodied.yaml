@@ -1133,3 +1133,80 @@ papers:
     features: {action: true, closedloop: true}
     tags: [物体中心, 潜空间图, JEPA, PushT]
     note: 物体槽上建随时间变化的潜图，再按邻居关系和历史记忆做自回归预测。PushT 上只用 6×128 个 token 达到 90.70%，DINO-WM 用 196×384 为 91.33%。同样的 6×128 设置下，比 OC-JEPA 高 14.70 个百分点，比 C-JEPA 高 2.03。CLEVRER 上，SAVi 编码器的反事实问句准确率比 C-JEPA 高 15.26 个百分点。
+
+  - title: "Completion Aware Guidance for World Action Models"
+    short: CAG
+    org: 首尔大学 / KAIST
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2610.01559"
+    features: {action: true, closedloop: true}
+    tags: [采样引导, 任务完成, 短块控制, 世界动作模型]
+    note: 短块控制会让世界–动作模型反复选看起来合理的局部延续，把完成任务所需要的状态转移丢掉。CAG 是免训练的采样引导，骨干没有重训。RoboTwin 2.0 子集上成功率从 64% 到 70%，零样本仿真从 69% 到 75%，任务未完成的想象从 79% 降到 40%。
+
+  - title: "FutureWorlds: Learning Robotic World Models from Alternative Futures"
+    short: FutureWorlds
+    org: 香港科技大学（广州） / 香港中文大学 / 腾讯 / 中国科学技术大学 / 北京大学
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2610.01019"
+      code: "https://github.com/Alexander-wu/FutureWorlds"
+    features: {action: true}
+    tags: [候选未来, 有界记忆, 相对质量, 机器人视频]
+    note: 用多样化束搜索造出不同的未来，每条候选保留自己的有界记忆，再按相对质量更新世界模型。32 帧预测的 LPIPS 相对各数据集上最强基线，RT-1 降 14.78%，BridgeV2 降 20.84%，RoboCasa 降 9.12%。固定评测配置下，再做 200 次 MemSPO 更新还能继续提高，并支持超出训练时域的预测。光流和物体状态也更稳。
+
+  - title: "CF-JEPA: Improving Robustness of JEPA World Models via Controllability Factorization"
+    short: CF-JEPA
+    org: 佐治亚理工学院 / 佐治亚理工研究院
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2610.00727"
+    features: {action: true, closedloop: true}
+    tags: [可控分解, JEPA, 视觉干扰, 潜空间]
+    note: 把 JEPA 潜空间拆成可控和不可控两部分，规划只用可控部分。两个视觉干扰下，LeWM 在全部任务上坍缩；Reacher 上 SMWM 成功率 0.10，CF-JEPA 为 0.48。干扰再增加时，SMWM 的 PushT 和 TwoRoom 从 0.86、0.98 掉到 0.27、0.46，CF-JEPA 维持 0.57 和 0.82。
+
+  - title: "Token-World: World Modeling in Vision-Language Model Token Space for Robot Manipulation"
+    short: Token-World
+    org: 北京大学 / 南方科技大学 / 香港科技大学 / MUKA
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2610.00575"
+      project: "https://chuyaofu.github.io/Token-World/"
+    features: {action: true, closedloop: true}
+    tags: [视觉语言token, 紧凑状态, 策略仿真, 动作条件]
+    note: 在压缩后的视觉–语言模型 token 上做动作条件动力学，再映回策略用的表示，不先生成 RGB 再重新编码。闭环里，模拟成功率与参考环境的相关从 Ctrl-World 的 0.583 到 0.794。长程展开时特征保真和动作一致性下降更慢。代码将放出。
+
+  - title: "JEPA-TTT: Persistent Test-Time Training of Latent World Models for Planning under Dynamics Shifts"
+    short: JEPA-TTT
+    org: 本田研究院 / 约翰斯·霍普金斯大学
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2610.00722"
+      project: "https://jepa-ttt.github.io/"
+    features: {action: true, closedloop: true}
+    tags: [测试时训练, 动力学偏移, JEPA, 潜预测器]
+    note: 测试时只更新预训练 JEPA 的潜动力学预测器，编码器和奖励头冻住，更新跨回合累积。四个连续控制环境、八种动力学偏移上，500 个测试回合后，自回归潜预测误差平均降 83%，规划成绩比冻结的 JEPA 高 153%。规划不需要目标图像或在线环境奖励。
+
+  - title: "Ego2Act: Evaluating Goal-Directed Manipulation in Egocentric Video Generation"
+    short: Ego2Act
+    org: MBZUAI / 南洋理工大学 / 北卡罗来纳大学教堂山分校
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2610.01092"
+      project: "https://ego2act.github.io"
+      code: "https://github.com/ego2act/ego2act"
+    features: {}
+    tags: [第一人称, 目标导向, 多步操作, 视频基准]
+    note: 110 个真实任务、2640 段视频。输入是起始画面和高层目标，平均要超过五步，人类成功执行的中位时长 20.4 秒。最高的 Seedance-2.0 总分只有 64.0。自动评判与人类共识的相关为 0.69，标注者之间的 ICC 为 0.86。常见失败是跳过或只做完部分步骤，后面的步骤因此缺少该有的状态。
