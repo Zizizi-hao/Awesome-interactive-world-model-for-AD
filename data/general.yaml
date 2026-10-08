@@ -513,3 +513,15 @@ papers:
     features: {action: true}
     tags: [相机可控, 少步自回归, 开源流水线, 流式推理]
     note: 把双向文生视频模型做成相机可控的少步自回归世界模型，流水线覆盖数据、可控微调、自回归训练、少步蒸馏和流式推理，并在 Wan2.1-T2V-1.3B 与 HY1.5-TI2V-8B 上跑通。单张 A800 上、不计 VAE，首帧延迟 Wan2.1 从 269 秒降到 1.137 秒，HY1.5 从 771 秒降到 3.446 秒。
+
+  - title: "OneWorld: Learning Consistent Physics Across Actions in World Models"
+    short: OneWorld
+    org: 武汉大学
+    year: 2026
+    venue: arXiv
+    category: general
+    links:
+      arxiv: "2609.30946"
+    features: {action: true}
+    tags: [共享物理机制, 反事实未来, 跨动作一致性, 流模型]
+    note: 让同一初始场景下、不同动作产生的未来共用一个潜在物理机制。机制解释器从每条动作–结果分支推断机制分布，再合成这些分支能否共用一种物理的证据，用来约束流训练和采样。推方块、推绳子、倒水三个环境里，跨干预的共享世界差距相对 ACWM-DiT 平均下降 84.3%，单条预测的 M-MSE 约好 7.7×10⁻⁴。代码将放出。

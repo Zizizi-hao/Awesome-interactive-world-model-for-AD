@@ -907,3 +907,40 @@ papers:
     features: {}
     tags: [评测综述, 闭环优势, 基准缺口, 世界模型对比]
     note: 统计 2017 至 2026 年 160 个已核验基准。138 个不区分模型族，只有 11 个直接对比视觉–语言–动作策略和世界模型，只有 4 个把预测执行成动作。作者写明贡献与所在单位的职务无关。
+
+  - title: "DyMD: Preserving Interaction Dynamics through Distribution Matching Distillation in Few-Step Video World Models"
+    short: DyMD
+    org: 北京航空航天大学 / 京东未来研究院
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.31349"
+    features: {action: true}
+    tags: [少步蒸馏, 交互动力学, 分布匹配, 视频世界模型]
+    note: 把 14B 机器人视频老师蒸馏成四步、1.3B 的学生，推理时不加额外模块。它按当前展开与示范视频的时间相似度调整重加噪，并给更难拟合的强运动样本加大评论器损失。相对普通分布匹配蒸馏，R-Bench 任务遵循高 9.6 个百分点，PAI-Bench-G 的 Domain 高 5.1；作为下游规划骨干，两个 WorldArena 任务的平均成功率从 16% 到 34%。
+
+  - title: "Streaming-WAM: Action-Conditioned World-Action Model for Asynchronous Robot Manipulation"
+    short: Streaming-WAM
+    org: 上海交通大学 / 山东大学 / 华东理工大学 / 理想汽车
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.28927"
+      code: "https://github.com/SJTU-DENG-Lab/Streaming-WAM"
+    features: {action: true, closedloop: true}
+    tags: [异步控制, 已提交动作, 视频动作联合, 流式推理]
+    note: 机器人执行已经提交的动作时，同时预测后续画面和剩余动作。已提交动作既是下一段动作的固定前缀，也是视频专家的条件。LIBERO 平均成功率 98.35%，单条回合从 Fast-WAM 的 13.40 秒降到 4.58 秒。真机盖章任务从同步 Joint-WAM 的 90 秒降到 38 秒。
+
+  - title: "What Matters in Designing World Action Models: An Empirical Study"
+    short: WAM Design
+    org: 三星机器人 / 三星北京研发
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.24048"
+    features: {}
+    tags: [设计消融, 因果结构, 潜表示, 训练目标]
+    note: 在同一框架里比较六种视频–动作因果结构、八种潜表示和四种训练目标，基准为 RoboCasa-GR1、LIBERO 和 LIBERO-Plus，并用 DROID 做离线动作预测。把未来内容加噪时动作变化不到 1%；把未来时间倒过来，分布外成功率下降 24.24% 到 32.37%。帧间潜表示利于分布内，逐帧潜表示在分布外更稳。分布内时，辅助的世界建模目标整体拉低成绩。
