@@ -705,3 +705,39 @@ papers:
     features: {}
     tags: [综述, 视频世界模型, 策略评测, 物理幻觉]
     note: 把视频世界模型在机器人中的用法收成造数据、强化学习中的动力学与奖励、策略打分和想象中规划四类，并指出画面真实仍会违反物理、指令跟随不稳，以及训练和推理成本过高。
+
+  - title: "WM-VS: Progress-Aligned World Models for Closed-Loop Visual Servoing"
+    short: WM-VS
+    org: 上海交通大学 / 中国矿业大学
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.20892"
+    features: {action: true, closedloop: true}
+    tags: [视觉伺服, 进度对齐, 潜空间转移, 误差收缩]
+    note: 用离线目标区域对应关系定义带符号的四维伺服坐标，先让动作条件的潜空间转移对齐这个坐标，再训练关节速度策略。真机七自由度、只看 RGB 的 30 次试验里，角点误差都降到初始值的 10% 以内，结束时仍满足的有 25/30；拿掉未来误差对齐后，这个比例掉到 26.67%。进度信号与未参与训练的 AprilTag 角点误差相关，Spearman ρ 为 0.8778。
+
+  - title: "Adaptive Rollout Truncation Based on Epistemic Uncertainty for Efficient Offline World Model Training"
+    short: Rollout Truncation
+    org: TUM
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.21482"
+    features: {action: true, longhorizon: true}
+    tags: [认知不确定性, 展开截断, 离线训练, 足式机器人]
+    note: 多步自回归能拉长世界模型的预测，但固定展开长度在模型还不准时会放大早期错误并浪费计算。热身之后，认知不确定性超过阈值就截断这次展开。在 ANYmal-D 上，预测精度与固定长度和 RWM-U 相当，展开计算大约少 72%。
+
+  - title: "Benchmarking World Models for Continual Learning on Compositional Tasks"
+    short: Continual WM Bench
+    org: Oxford
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.22055"
+    features: {}
+    tags: [持续学习, 组合任务, 知识复用, 操作基准]
+    note: 操作世界模型的持续学习基准。课程末尾的新任务由已见任务的动作因素和感知因素重新组合，从而把学得快和会不会复用已学动力学拆开。模块化动力学比常规持续学习方法更平衡复用和遗忘，但没有一种方法把这个问题做完。

@@ -8,7 +8,7 @@
 
 世界模型 (World Model) 通过学习环境的动态表征，实现对未来的预测与想象； 可交互世界模型进一步支持以动作 (action) 为条件的生成与控制， 为自动驾驶和具身智能提供数据引擎、神经仿真器与策略学习基础。 本仓库收录并整理该方向的代表性工作，按应用场景分类， 并标注每篇工作的交互能力维度。
 
-📊 共收录 **207** 篇工作 ｜ 最后更新：2026-10-08
+📊 共收录 **211** 篇工作 ｜ 最后更新：2026-10-08
 
 <p align="center">
   <img src="assets/interactive-world-model1.png" alt="交互式世界模型：智能体与世界模型的闭环交互" width="760">
@@ -25,8 +25,8 @@
 
 ## 目录
 
-- [自动驾驶 Autonomous Driving](#自动驾驶-autonomous-driving)（111）
-- [具身智能 Embodied AI](#具身智能-embodied-ai)（57）
+- [自动驾驶 Autonomous Driving](#自动驾驶-autonomous-driving)（112）
+- [具身智能 Embodied AI](#具身智能-embodied-ai)（60）
 - [通用 / 游戏 General / Game](#通用--游戏-general--game)（39）
 
 ## 自动驾驶 Autonomous Driving
@@ -124,6 +124,7 @@
 | **World Models as Adversaries: Multi-Agent Self-Play Fine-Tuning for Robust Motion Planning** | arXiv (2026) | Wei Ma 团队 | — | [论文](https://arxiv.org/abs/2607.10630) | 将预测世界模型转化为角色化对手，通过反事实信用分配学习稀疏对抗联盟。 |
 | **WorldDrive**: Bridging Scene Generation and Planning via Unifying Vision and Motion Representation | arXiv (2026) | Jianbing Shen 团队 | — | [论文](https://arxiv.org/abs/2603.14948) | 轨迹感知驾驶世界模型统一视觉与运动表征，未来感知奖励器选优轨迹。 |
 | **Xiaomi Auto World Model: A Joint World Model Integrating Reconstruction and Generation for Autonomous Driving** | arXiv (2026) | Xiaomi | 🔁 | [论文](https://arxiv.org/abs/2605.18137) | 整合 WorldRec 前馈重建与 WorldGen 因果视频生成，构建联合世界模型支撑闭环仿真。 |
+| **ZYT-World**: A Real-Time Controllable World Model for Closed-Loop Autonomous-Driving Simulation | arXiv (2026) | 卓驭 | 🎮 🔁 ⏳ | [论文](https://arxiv.org/abs/2609.21712) \| [项目](https://zyt-aim.github.io/ZYT-World/) | 按实车混合相机组原生生成四路超过 180° 的鱼眼和三路针孔，各自保持分辨率；自车运动、相机几何和交通参与者的框、朝向、灯色一起作为条件。40 步双向老师蒸馏成每帧只去噪一次的因果生成器，两张 GPU 上七路 720p 以 4 FPS 流式输出。可插拔记忆让车沿另一条轨迹回到同一地点时场景身份仍在；内部测试集上一步模型保住老师 90% 以上的 PSNR 和 SSIM，生成器快 107.7 倍。 |
 | **muSync-GS**: Physics-Synchronized Driving Video Synthesis for Weather and Geometric Road Hazards | arXiv (2026) | Zilin Bian 团队 | — | [论文](https://arxiv.org/abs/2608.04412) | 将降水、轮胎摩擦、路面高程与车辆动力学耦合，实现物理同步的驾驶视频合成。 |
 | **AD-R1**: Closed-Loop Reinforcement Learning for End-to-End Autonomous Driving with Impartial World Models | arXiv (2025) | Jianbing Shen 团队 | 🔁 | [论文](https://arxiv.org/abs/2511.20325) | 通过反事实合成构造危险结果，将世界模型作为内部 critic 进行策略闭环后训练。 |
 | **GAIA-2**: A Controllable Multi-View Generative World Model for Autonomous Driving | arXiv (2025) | Wayve | 🎮 | [论文](https://arxiv.org/abs/2503.20523) | 多视角可控驾驶世界模型，支持对天气、地理、交通流等场景属性的细粒度控制，为 AV 系统提供神经仿真环境。 |
@@ -149,7 +150,9 @@
 
 | 论文 | 发表 | 机构 | 交互能力 | 链接 | 一句话点评 |
 | :--- | :--- | :--- | :---: | :--- | :--- |
+| **Rollout Truncation**: Adaptive Rollout Truncation Based on Epistemic Uncertainty for Efficient Offline World Model Training | arXiv (2026) | TUM | 🎮 ⏳ | [论文](https://arxiv.org/abs/2609.21482) | 多步自回归能拉长世界模型的预测，但固定展开长度在模型还不准时会放大早期错误并浪费计算。热身之后，认知不确定性超过阈值就截断这次展开。在 ANYmal-D 上，预测精度与固定长度和 RWM-U 相当，展开计算大约少 72%。 |
 | **AnyWorld**: Factorized Egocentric World Models for Cross-Embodiment Generalization | arXiv (2026) | — | 🎮 | [论文](https://arxiv.org/abs/2608.29242) | 把单次人类交互分解为动作、相机、本体三个可控因子——动作控制捕捉运动结构、相机控制指定视角演化、目标本体上下文定义执行身体及其交互几何，无需成对 human-robot 演示即可将一段第一视角人类视频重组合成多样的机器人原生 rollout，同时保留底层动力学与物体交互；经大规模人类交互预训练+混合本体微调，生成数据可提升 RoboCasa GR1 桌面基准与真机 IRON 人形机器人操作性能，消融表明动作校准与视觉重组合二者缺一不可。 |
+| **Continual WM Bench**: Benchmarking World Models for Continual Learning on Compositional Tasks | arXiv (2026) | Oxford | — | [论文](https://arxiv.org/abs/2609.22055) | 操作世界模型的持续学习基准。课程末尾的新任务由已见任务的动作因素和感知因素重新组合，从而把学得快和会不会复用已学动力学拆开。模块化动力学比常规持续学习方法更平衡复用和遗忘，但没有一种方法把这个问题做完。 |
 | **CLAP**: Cross-Embodiment Video World Models are Zero-Shot Physical Simulators | arXiv (2026) | — | 🎮 | [论文](https://arxiv.org/abs/2608.27406) \| [项目](https://omni-clap.github.io) | 用末端位姿、语言指令与潜动作统一异构动作空间，以课程式跨本体训练先从无标注互联网视频学物理先验、再接地到真实动作空间做零样本部署，在 DROID 等环境逼近或超越单本体 SOTA，代码与模型全部开源。 |
 | **CausalNav**: Reliability-Certified Causal World Models for Control under Physical-Parameter Shift | arXiv (2026) | Jun Shen 团队 | — | [论文](https://arxiv.org/abs/2608.07809) | 物理参数变化下可靠性认证的因果世界模型，用于导航控制。 |
 | **DexTouch-WM**: Learning Action-Conditioned Tactile World Models from Human Touch for Dexterous Robot Manipulation | arXiv (2026) | HKUST(GZ) / Xspark AI | 🎮 🔁 | [论文](https://arxiv.org/abs/2609.20649) | 人和灵巧手使用同一布局的压阻触觉阵列，人手动作重定向到机器人动作空间后，按动作同时预测未来图像和双手触觉。机器人数据固定为 5 小时，人类触摸加到 100 小时后，任务并不相同的留出机器人视觉、几何和接触预测都会变好，并可当作策略评测环境和合成轨迹来源。 |
@@ -194,6 +197,7 @@
 | **WALL-SS**: Scaling Long-horizon World Models via Next-Scale Autoregression | arXiv (2026) | — | 🎮 🔁 ⏳ | [论文](https://arxiv.org/abs/2608.26239) | 把具身轨迹表示为观测-动作时序交错的因果序列，用 next-scale 粗到细自回归注入尺度对齐的动作表征，配合尺度压缩的长时记忆与 on-policy 对齐奖励，实现可变长生成、有界内存下的分钟级连贯流式 rollout 与更强动作跟随。 |
 | **WISE**: World-model-guided Imagination Scheduling for Efficient Post-training of Vision-Language-Action Models | arXiv (2026) | 清华大学 / BAAI | 🎮 🔁 | [论文](https://arxiv.org/abs/2609.03681) | 用世界模型做 VLA 后训练时不是全程想象，而是在交互关键状态才调用、有界多视角 rollout，并以进度/完成信号做相对评价、在真实交互上下文中更新策略；相对全量想象节省约 80% GPU 时间，π0 / π0.5 仿真与真机均更稳。 |
 | **WM-Craftnet**: World Synesthesia Model for Generalizable and Robust Dexterous In-Hand Manipulation | CoRL (2026) | 上海交通大学 | 🎮 🔁 | [论文](https://arxiv.org/abs/2609.07002) \| [项目](https://wmcraftnet.github.io/) | 从本体、深度、触觉与动作学习动作条件潜空间动力学，作为非对称 actor-critic 的循环任务上下文，而非用于潜空间想象规划；用干净深度目标监督噪声深度输入以便真机部署，九物体预训练先验可迁移到 49 物体的泛化手内旋转、扰动恢复与 sim-to-real。 |
+| **WM-VS**: Progress-Aligned World Models for Closed-Loop Visual Servoing | arXiv (2026) | 上海交通大学 / 中国矿业大学 | 🎮 🔁 | [论文](https://arxiv.org/abs/2609.20892) | 用离线目标区域对应关系定义带符号的四维伺服坐标，先让动作条件的潜空间转移对齐这个坐标，再训练关节速度策略。真机七自由度、只看 RGB 的 30 次试验里，角点误差都降到初始值的 10% 以内，结束时仍满足的有 25/30；拿掉未来误差对齐后，这个比例掉到 26.67%。进度信号与未参与训练的 AprilTag 角点误差相关，Spearman ρ 为 0.8778。 |
 | **Actionable WM**: World Models for Embodied Intelligence: From Plausible to Controllable to Actionable | arXiv (2026) | HKUST(GZ) / NTU | — | [论文](https://arxiv.org/abs/2609.16697) | 用合理、可控、可行动三级整理具身世界模型：先保住任务相关结构，再预测干预如何改变该结构，最后把预测变成规划、学习或评测上可测量的收益。评的是预测有没有改善闭环行为，和按架构分类的世界动作模型综述互补。 |
 | **WAM Survey**: World-Action Models for Robot Learning and Control: A Survey | arXiv (2026) | MBZUAI | — | [论文](https://arxiv.org/abs/2609.16074) \| [项目](https://rcl-robotics.github.io/Awesome-World-Action-Models/) | 把世界动作模型从普通世界模型、基于模型的强化学习和只做反应的 VLA 里划出来，按表征、转移、动作接口、训练和数据整理，并覆盖操作、导航和自动驾驶的评测协议。 |
 | **WorldContact**: A Contact-Centric World Model for Scalable Robot Learning | arXiv (2026) | UBC / Style3D | 🎮 ⏳ | [论文](https://arxiv.org/abs/2609.19600) | 从少量高质量轨迹学习购物袋这类软物体的接触动力学，用比数值仿真器更大的时间步预测顶点状态，从而避开为防穿透而必须使用的小步长。单张 H100 上状态 rollout 约快 10 倍；用扩出的数据微调已有策略后，提袋子的单次成功率从 65% 到 95%，并直接部署到真机。 |

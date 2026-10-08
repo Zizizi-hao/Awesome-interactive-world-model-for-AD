@@ -1320,3 +1320,16 @@ papers:
     features: {}
     tags: [主动学习, 自我感知, 长尾事件, 持续改进, 数据引擎]
     note: 指出驾驶系统多从被动经验学习、缺乏「知道自己不会」的机制，罕见分布偏移与长尾事件因此导致突发失效；提出自我感知的主动学习框架，让智能体估计自身能力不足、及时求助人类，并把安全关键的偶遇转化为可学习的训练信号，实现自动驾驶系统的持续改进。
+
+  - title: "ZYT-World: A Real-Time Controllable World Model for Closed-Loop Autonomous-Driving Simulation"
+    short: ZYT-World
+    org: 卓驭
+    year: 2026
+    venue: arXiv
+    category: driving
+    links:
+      arxiv: "2609.21712"
+      project: "https://zyt-aim.github.io/ZYT-World/"
+    features: {action: true, closedloop: true, longhorizon: true}
+    tags: [鱼眼针孔, 一步生成, 闭环仿真, 重访记忆]
+    note: 按实车混合相机组原生生成四路超过 180° 的鱼眼和三路针孔，各自保持分辨率；自车运动、相机几何和交通参与者的框、朝向、灯色一起作为条件。40 步双向老师蒸馏成每帧只去噪一次的因果生成器，两张 GPU 上七路 720p 以 4 FPS 流式输出。可插拔记忆让车沿另一条轨迹回到同一地点时场景身份仍在；内部测试集上一步模型保住老师 90% 以上的 PSNR 和 SSIM，生成器快 107.7 倍。
