@@ -1083,3 +1083,53 @@ papers:
     features: {action: true, closedloop: true}
     tags: [各向异性正则, JEPA, 规划几何, LeWM]
     note: 预测器和欧氏规划器不动，只把各向同性高斯目标换成可学习的对角协方差。四个环境的规划成功率都高于 LeWM：TwoRoom 87% 到 93%，Reacher 86% 到 89%，PushT 96% 到 97%，Cube 74% 到 79%。Cube 上潜代价与任务代价的 Spearman 相关从 0.15 到 0.91，PushT 从 0.65 到 0.92。
+
+  - title: "Social-WM: Safety-Aware Latent World Models for Robot Social Navigation"
+    short: Social-WM
+    org: 理海大学
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.40177"
+    features: {action: true, closedloop: true}
+    tags: [社交导航, 可执行动作, 潜动力学, 行人碰撞]
+    note: 从第一人称 RGB 学动作条件的潜动力学，预测的是指令实际造成的未来，而不是名义动作。部署时用逆动力学估计这条动作能不能真的执行，名义动作和可执行动作的差当作安全信号。Social-HM3D 成功率 63.77%，行人碰撞 21.67%，相对 NavThinker 的碰撞率低 44.6%。零样本转到 Social-MP3D，成功率 54.15%，行人碰撞 23.34%。不用行人跟踪、特权人体状态或在线强化学习。
+
+  - title: "Dream4ACT: A Shared Visual Action Interface for Multi-Embodiment Video-Action Modeling"
+    short: Dream4ACT
+    org: 北京人形机器人创新中心 / 北京理工大学 / 哈尔滨工业大学（深圳） / 香港大学 / 中国矿业大学（北京）
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.40153"
+      project: "https://dream4act.github.io/"
+    features: {action: true, closedloop: true}
+    tags: [动作视图, 多具身, 视频动作模型, RoboTwin]
+    note: 把目标关节构型画成固定形状的动作视图，和 RGB 一起做前向动力学、逆动力学和联合生成，再用 URDF 无训练地收回可执行关节目标。RoboTwin 2.0 干净场景 90.50%、随机场景 87.46%，平均 88.98%。另一个单独训练的检查点在 TriWorldBench 上为 65.66，这和 CausalWM 所报的 9 月 11 日总分榜不是同一次评测。四个真机平台上，两个共有任务的成功率在 85.0% 到 90.0%。
+
+  - title: "The Planning Limits of Latent World Models"
+    short: Planning Limits
+    org: 墨尔本大学
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.39235"
+    features: {}
+    tags: [可规划范围, 冻结骨干, 展开长度, 潜世界模型]
+    note: 在五个冻结视觉骨干上测动作条件预测器还能规划多远。按五步展开训练时，动作排序只在目标位于未来 5 到 10 个控制步时可靠，而任务目标在 16 到 53 步之外。预测器放大 81 倍或把训练展开加长，都没有拉开这个范围。换成完美的真仿真器，目标从展开末端再往前 5 步移到 20 步时，成功率从 92% 降到 41%。纯想象成功 23%，带反馈的模型预测控制 30%，想象到目标处 47%，近处专家子目标 76%。在可规划范围内，从视觉–语言–动作策略提出的 8 个动作里挑选，16 个任务的成功率从 65% 到 77%。V-JEPA 2.1 最稳。
+
+  - title: "World-as-Graph: Relational World Modeling Through Latent Space Graphs"
+    short: World-as-Graph
+    org: RMIT / 莫纳什大学 / 墨尔本大学
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.38927"
+      code: "https://github.com/Scarlett-Yyq/World-as-Graph"
+    features: {action: true, closedloop: true}
+    tags: [物体中心, 潜空间图, JEPA, PushT]
+    note: 物体槽上建随时间变化的潜图，再按邻居关系和历史记忆做自回归预测。PushT 上只用 6×128 个 token 达到 90.70%，DINO-WM 用 196×384 为 91.33%。同样的 6×128 设置下，比 OC-JEPA 高 14.70 个百分点，比 C-JEPA 高 2.03。CLEVRER 上，SAVi 编码器的反事实问句准确率比 C-JEPA 高 15.26 个百分点。

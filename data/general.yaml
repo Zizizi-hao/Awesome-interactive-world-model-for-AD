@@ -566,3 +566,17 @@ papers:
     features: {action: true, realtime: true, closedloop: true, longhorizon: true}
     tags: [键鼠控制, 消费级显卡, 游戏视频, 实时扩散]
     note: 1.28B 扩散世界模型，用约 10 万小时、数百款游戏的键鼠对齐视频预训练，按完整键盘和鼠标生成。时间压缩 4 倍，60 FPS 画面对应 15 个潜帧/秒。RTX 4090 上 720P INT8 为 72.88 潜帧/秒，360P INT8 为 275.84。他们把 30 潜帧/秒当作实时线，720P INT8 从 RTX 5060 Ti 往上都能过。
+
+  - title: "DashVMC: Real-Time Discrete World Model Control in Geometry Dash"
+    short: DashVMC
+    org: INSA Rouen
+    year: 2026
+    venue: arXiv
+    category: general
+    links:
+      arxiv: "2609.40003"
+      project: "https://tariolle.github.io/dash-vmc/"
+      code: "https://github.com/Tariolle/dash-vmc"
+    features: {action: true, closedloop: true}
+    tags: [离散格子, 想象练习, 实机游戏, Geometry Dash]
+    note: 用大约 2.3 小时的 Geometry Dash 录屏学一个动作条件的离散格子世界模型，再只在冻结的模型展开里用 PPO 改控制器，不再碰实机。Stereo Madness 上，三个种子的存活帧数从行为克隆的 120.2、130.6、156.0 升到 280.1、280.4、308.8。留出的社区关卡从大约 100 帧升到 266.7 到 342.8。部署时不做画面生成，消费级 GPU 上采集到动作的循环是 60 Hz。动力学模型的视觉 token 准确率只有 29.58%。

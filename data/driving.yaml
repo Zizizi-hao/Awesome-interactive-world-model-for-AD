@@ -1435,3 +1435,16 @@ papers:
     features: {action: true, closedloop: true}
     tags: [轨迹条件JEPA, 结果监督, 候选打分, NAVSIM]
     note: 打分器是轨迹条件的 JEPA：每条候选轨迹预测一个状态，分数从该状态读出。仿真给所有候选标结果，真实日志里的未来只在训练时锚定已执行的那一条。全部 12,146 个 NAVSIM 测试场景上，v2 为 93.0 EPDMS，v1 为 94.0 PDMS。去掉惯性重排后是 91.4 EPDMS，同一评测下 DrivoR 为 90.7。把候选状态随机对调，PDMS 从 94.19 降到 79.73。Bench2Drive 上改过输入的系统为 73.27 Driving Score、成功率 46.36%，对照方法的训练数据和接口并不对齐。LeWM 和规划预算固定时，OGBench-Cube 成功率从 68.91% 到 73.64%。
+
+  - title: "ReWAM: Reciprocal World Action Models for Interactive Autonomous Driving"
+    short: Reciprocal WAM
+    org: 香港科技大学（广州） / 零跑 / 香港科技大学
+    year: 2026
+    venue: arXiv
+    category: driving
+    links:
+      arxiv: "2609.39245"
+      code: "https://github.com/LeapWM/rewam"
+    features: {action: true}
+    tags: [互惠响应, Level-k, 世界动作模型, NAVSIM]
+    note: 自车和其他交通参与者互相作为条件响应者，Level-k 的动作 DiT 交换策略 token，并共用未来驾驶世界的表示。NAVSIM navtest 共 12,146 个场景，PDMS 90.6，比骨干 DriveLaW 高 1.5，比 ReWorld 高 0.2。推理深度从 Level-1 到 Level-4，PDMS 从 90.03 到 90.64。按交互强度分组后，相对 DriveLaW 的优势从无交互的 1.52 增到关键交互的 4.59。
