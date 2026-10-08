@@ -806,3 +806,67 @@ papers:
     features: {}
     tags: [三视角一致性, 头腕相机, 双臂操作, 评测基准]
     note: 2026 年 9 月 23 日发布的头相机与左右腕相机一致性基准，评三路视频是否在描述同一次操作；与 CausalWM 所报的 9 月 11 日总分榜不是同一套评测。500 条回合、50 个 RoboTwin 2.0 双臂任务、19 项指标，汇总为 TWB-Score。
+
+  - title: "InternW0: A Foundational Physical World Model for Efficient Real-World Interactions"
+    short: InternW0
+    org: 上海人工智能实验室
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.27656"
+      project: "https://internrobotics.github.io/internw0"
+    features: {action: true, closedloop: true}
+    tags: [异步双频, 视频动作, 接触后训练, 科学操作]
+    note: 视频专家按较慢节拍预测未来画面，动作专家用新观测改写缓存的视频上下文，不必每次出动作都重算整段未来；接触任务在后训练中加入力和触觉。训练约 7,200 小时。RoboTwin 2.0 Clean2Random 上干净场景 83.20%、随机场景 68.0%，平均 75.60%。五个真机任务各 15 次：工业零件 82.7%，15 步金属有机框架流程进度 68.4%，移液进度 65.3%。
+
+  - title: "PointCast: One World Model for Rigid, Articulated, and Deformable Object Manipulation"
+    short: PointCast
+    org: 明尼苏达大学
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.28393"
+      project: "https://pointcast-wm.github.io"
+    features: {action: true, closedloop: true}
+    tags: [点集动力学, 身份保持, 软体关节, 模型预测控制]
+    note: 用物体和末端上的三维点做状态，每个点保持身份并按自己的轨迹受监督。同一套 19.8M 扩散 Transformer 和训练配方覆盖刚体、布料、绳子和多关节柜，每种体制单独存一个权重。仿真展开误差在布料、绳子、柜子上最好；真机 PGND 六类里四类最低，且六类都好于原模型。冻住后放进采样式模型预测控制，推姿态误差 1.39 cm，拖绳子 Chamfer 1.71 cm。
+
+  - title: "EA-WM: Event-Aware Generative World Model with Structured Kinematic-to-Visual Action Fields"
+    short: EA-WM
+    org: 中关村人工智能研究院 / 中国科学技术大学 / 复旦大学
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2605.06192"
+      code: "https://github.com/Shownx-c/EA-WM"
+    features: {action: true}
+    tags: [运动学动作场, 事件门控, 视频生成, WorldArena]
+    note: 在 Wan2.2 上生成机器人未来视频。动作经正运动学和相机投影画成画面里的骨架、夹爪、末端热图和姿态轴，再用帧差潜变量把门控到正在变化的区域。WorldArena 上 P3CScore 为 76.60，CogVideoX 为 71.08；轨迹准确度 0.430 对 0.353。换成数值动作后同一分数掉到 70.97。构建动作场需要机器人模型和相机标定。
+
+  - title: "Generalizable Robotic Insertion with World Models"
+    short: InsertionWM
+    org: NVIDIA / 加州大学圣地亚哥分校
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.28258"
+    features: {action: true, closedloop: true}
+    tags: [视觉世界模型, 装配插入, 零样本泛化, TD-MPC2]
+    note: 在 TD-MPC2 上接腕部深度和本体感觉，用学到的潜动力学做插入规划。一个模型训到 90 种几何各异的装配，未见物体零样本成功率 56%，无模型基线 7%；已见装配 55.0%。实验只在仿真中。
+
+  - title: "Frozen Flows Forget: Diagnosing and Restoring Lost Motion in a Latent-flow World Model"
+    short: DART
+    org: 清华大学深圳国际研究生院 / 上海交通大学 / 武汉理工大学
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.28414"
+      code: "https://github.com/Mangkhut160/icassp2027"
+    features: {}
+    tags: [运动坍缩, 解码监督, 像素误差, 冻结潜空间]
+    note: 冻结自监督潜空间、只训一条流时，开环展开会把场景停住，或把物体在少数几步里瞬移；像素 L1 会奖励静止。DART 保持编码器冻结，只在解码后的画面和区域特征上重训这条流。100 条 LIBERO 示范上，一种随机种子的运动集中度从 0.345 降到 0.145，总运动量从 26 升到 69，L1 从 10.311 降到 9.944。
