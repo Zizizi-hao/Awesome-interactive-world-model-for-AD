@@ -614,3 +614,43 @@ papers:
     features: {}
     tags: [综述, 能力阶梯, 干预预测, 闭环收益]
     note: 用合理、可控、可行动三级整理具身世界模型：先保住任务相关结构，再预测干预如何改变该结构，最后把预测变成规划、学习或评测上可测量的收益。评的是预测有没有改善闭环行为，和按架构分类的世界动作模型综述互补。
+
+  - title: "StrucPhysVideo: Learning Physical Dynamics from Structured Captions and Robot Actions"
+    short: StrucPhysVideo
+    org: 西湖大学
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.18430"
+      project: "https://westlakedi-awomo.github.io/StrucPhysVideo-Page/"
+      code: "https://github.com/westlakedi-awomo/StrucPhysVideo"
+    features: {action: true, longhorizon: true}
+    tags: [物理标注, 文图到视频, 末端动作, 少步蒸馏]
+    note: TI2V 用结构化物理标注做文图到视频，在 Physics-IQ Verified 上得分 45.5%，比 Cosmos3-Super-Image2Video 高 2.8 个百分点。IA2V 再按机器人末端命令做因果自回归，四步去噪即可增量 rollout；AgiBot 配对诊断上 PSNR 23.89。
+
+  - title: "PointZero: 3D Point Track Completion for Learning Transferable 3D Dynamics"
+    short: PointZero
+    org: CMU / Columbia / NVIDIA
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.19142"
+      project: "https://pointzero-wm.github.io/"
+    features: {action: true}
+    tags: [三维点轨迹, 无动作预训练, 可迁移动力学, 末端位姿]
+    note: 用三维点轨迹补全预训练可迁移的三维动力学，不需要机器人动作标签。给定一张 RGB-D 和稀疏局部轨迹，补全所有观测点的未来轨迹；再用末端位姿微调成动作条件动力学，在 PGND 上超过基线。继续微调去预测动作和三维轨迹时，7 个仿真与真机操作任务里 6 个超过或打平基线。
+
+  - title: "TACO: TActile World Model as a Self-COrrector for Scalable Robot Policy Post-Training"
+    short: TACO
+    org: 北京大学 / AI² Robotics
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2607.02840"
+      project: "https://taco-wm.github.io/"
+    features: {closedloop: true}
+    tags: [视触觉, 接触纠正, VLA后训练, 力序列]
+    note: 用时间 RoPE 同时去噪未来视频和力序列，想象接触失败附近的纠正片段，再标出可执行动作，用来给接触丰富任务的 VLA 做后训练。六个真机任务上，相对基础策略成功率绝对提高 44%。

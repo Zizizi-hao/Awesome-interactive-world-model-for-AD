@@ -451,3 +451,16 @@ papers:
     features: {action: true, longhorizon: true}
     tags: [全景潜状态, 视口渲染, 相机可控, 流式视频]
     note: 把全景状态演化和当前视口渲染拆开：单张透视图像先扩成 360° 场景先验，再按相机条件逐块演化，只把请求的视口细化成视频。训练用自建 MUGEN（1318 小时、至少 4K 的真实全景视频）和 Sekai2 的全景子集，并用分块自回归与少步蒸馏支持流式生成。
+
+  - title: "Zing-0.5: Toward Playable Worlds with Real-Time Joint Action and Text Control"
+    short: Zing-0.5
+    org: 涌跃智能
+    year: 2026
+    venue: arXiv
+    category: general
+    links:
+      arxiv: "2609.17909"
+      code: "https://github.com/seedleap/zing-world-model"
+    features: {action: true, realtime: true, closedloop: true, longhorizon: true}
+    tags: [可玩世界, 键盘控制, 在线文本, 实时流式]
+    note: 5B 自回归世界模型把键盘幅度和在线文本放进同一条序列，四步生成加流式缓存，832×480 达 24 FPS。158 个 WBench 导航案例上总分 81.0、一致性 88.5，文本可以在导航过程中改事件而不重开生成。
