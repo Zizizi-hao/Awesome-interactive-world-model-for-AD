@@ -741,3 +741,55 @@ papers:
     features: {}
     tags: [持续学习, 组合任务, 知识复用, 操作基准]
     note: 操作世界模型的持续学习基准。课程末尾的新任务由已见任务的动作因素和感知因素重新组合，从而把学得快和会不会复用已学动力学拆开。模块化动力学比常规持续学习方法更平衡复用和遗忘，但没有一种方法把这个问题做完。
+
+  - title: "D-JEPA: A Decision-Aligned Latent World Model"
+    short: D-JEPA
+    org: Nebulis Lab
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.24749"
+      project: "https://nebulis-lab.com/D-JEPA/"
+    features: {action: true, closedloop: true}
+    tags: [决策对齐, JEPA, 候选排序, 潜空间规划]
+    note: 潜空间里离目标更近不等于这个动作会执行得更好。它用已经发生的结果学习少数候选未来之间的决策顺序，再写回 JEPA 的未来表示，使规划仍可按潜空间距离进行。PushT 成功率 87.89%，RoboTwin 平均提高 15.04 个点，真机任务提高 17 个点，并在自动驾驶场景中做了动作选择。
+
+  - title: "CausalWM: Causal Chain-of-Thought Reasoning for Embodied World Model"
+    short: CausalWM
+    org: Aether AI
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.23184"
+      project: "https://aetherlabsai.github.io/CausalWM/"
+      code: "https://github.com/AetherLabsAI/CausalWM"
+    features: {action: true}
+    tags: [因果链, 光流, 三维点图, 视频预测]
+    note: 16B 具身视频世界模型先预测光流，再预测三维点图，最后预测未来画面，前一步结果固定为后一步的上下文。训练用了约 3.1 万小时具身数据。2026 年 9 月 11 日的 TriWorldBench 上，36 个已公开模型里以 66.04 排第一，比第二名高 0.50。
+
+  - title: "DexTacWAM: A Visuo-Tactile World-Action Model for Dexterous Manipulation"
+    short: DexTacWAM
+    org: UIUC / UC Berkeley
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.24976"
+      project: "https://dextacwam.github.io/"
+    features: {action: true, closedloop: true}
+    tags: [视触觉, 指尖编码, 世界动作模型, 灵巧手]
+    note: 每根指尖的触觉各自编码后注入视频扩散世界模型，同时预测视觉和接触演化并生成动作。22 自由度双臂的六个接触任务上平均 70.6，最强视觉基线 38.0；夹子任务 60 对 10。拿掉触觉演化、只保留触觉条件后，四项任务平均从 74.7 掉到 26.6。约每个任务 100 条示范即可把预训练视频模型接到触觉。
+
+  - title: "Imagine-RL: Residual-Confidence-Guided Cross-Attention for World-Model-Augmented VLA Reinforcement Learning"
+    short: Imagine-RL
+    org: KAIST / 中科院计算所
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.24033"
+    features: {action: true, closedloop: true}
+    tags: [视觉力矩, 冻结世界模型, 噪声空间强化学习, 预测残差]
+    note: 在 LeWorldModel 上扩展出的视觉–力矩世界模型在强化学习时保持冻结，按动作块预测未来视觉和力矩；评论器用历史预测残差决定信多少这些未来。四个真机任务、每项 50 次，只用 100 条强化学习轨迹，平均成功率比 DSRL 高 23.6%，比 VLA 基线高 60%。

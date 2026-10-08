@@ -8,7 +8,7 @@
 
 世界模型 (World Model) 通过学习环境的动态表征，实现对未来的预测与想象； 可交互世界模型进一步支持以动作 (action) 为条件的生成与控制， 为自动驾驶和具身智能提供数据引擎、神经仿真器与策略学习基础。 本仓库收录并整理该方向的代表性工作，按应用场景分类， 并标注每篇工作的交互能力维度。
 
-📊 共收录 **211** 篇工作 ｜ 最后更新：2026-10-08
+📊 共收录 **219** 篇工作 ｜ 最后更新：2026-10-08
 
 <p align="center">
   <img src="assets/interactive-world-model1.png" alt="交互式世界模型：智能体与世界模型的闭环交互" width="760">
@@ -25,9 +25,9 @@
 
 ## 目录
 
-- [自动驾驶 Autonomous Driving](#自动驾驶-autonomous-driving)（112）
-- [具身智能 Embodied AI](#具身智能-embodied-ai)（60）
-- [通用 / 游戏 General / Game](#通用--游戏-general--game)（39）
+- [自动驾驶 Autonomous Driving](#自动驾驶-autonomous-driving)（114）
+- [具身智能 Embodied AI](#具身智能-embodied-ai)（64）
+- [通用 / 游戏 General / Game](#通用--游戏-general--game)（41）
 
 ## 自动驾驶 Autonomous Driving
 
@@ -65,6 +65,7 @@
 | **E2E-CDiff**: End-to-end Conditional Diffusion for Realistic and Controllable Visual Traffic Scenario Generation | arXiv (2026) | Philip S Yu 团队 | 🎮 | [论文](https://arxiv.org/abs/2607.18637) | 前视条件联合去噪运动状态与低层控制，支持碰撞规避/碰撞引导的交互场景生成。 |
 | **ECoSim**: Data Efficient Fine-Tuning for Controllable Traffic Simulation | arXiv (2026) | Masayoshi Tomizuka 团队 | — | [论文](https://arxiv.org/abs/2607.00545) | FiLM 层轻量适配预训练交通模型，<1% 数据实现多模态可控仿真。 |
 | **EditSSC**: Toward Editable Semantic Occupancy Scenes with Unconditional Diffusion Models | arXiv (2026) | Alexandre Boulch 团队 | — | [论文](https://arxiv.org/abs/2606.09273) | 将 3D 语义占据重整为 BEV 图像，用现成潜扩散网络实现可编辑占据场景生成。 |
+| **EditWM**: Event-Decomposed World Modeling with Incremental Correction for End-to-End Autonomous Driving | arXiv (2026) | HKUST / 南方科技大学 | 🎮 | [论文](https://arxiv.org/abs/2609.22317) | 先预测平时的场景演化并冻住该预测器，再对事件造成的偏差做有门控、有幅度限制的修正，修正后的特征给候选轨迹打分。全部 12,146 个 NAVSIM navtest 场景上，专家轨迹条件下的未来特征误差比只做常规预测低 5.35%，83.54% 的场景有改进，规划得分 91.05 EPDMS。 |
 | **Ego-Dynamics-Augmented World Model for Autonomous Driving with Zero-Shot Cross-Chassis Adaptation** | arXiv (2026) | Chen Lv 团队 | — | [论文](https://arxiv.org/abs/2607.13410) | 显式自车动力学先验解耦 BEV 世界模型，支持零样本跨底盘迁移。 |
 | **EvoDrive**: Pareto Evolution for Safety-Critical Autonomous Driving via Self-Improving LLM Agents | arXiv (2026) | Wei Ma 团队 | — | [论文](https://arxiv.org/abs/2606.03678) | 仿真锚定 actor-critic + 自演化评估器路由，帕累托档案保持攻击-真实权衡。 |
 | **FlashDrive**: Flash Vision-Language-Action Inference for Autonomous Driving | arXiv (2026) | Zhijian Liu 团队 | ⚡ | [论文](https://arxiv.org/abs/2608.12932) | 算法-系统协同压缩 VLA 四级瓶颈，10B 模型从 1.4Hz 提升至 6.6Hz。 |
@@ -99,6 +100,7 @@
 | **Real2Sim**: A Physics-driven and Editable Gaussian Splatting Framework for Autonomous Driving Scenes | arXiv (2026) | Ruimin Ke 团队 | — | [论文](https://arxiv.org/abs/2605.13591) | 4DGS + 可微物质点法，支持实例级编辑与碰撞后轨迹的物理感知驾驶场景合成。 |
 | **RealWeather**: Realistic and Scene-Faithful Weather Translation with Driving World Models | arXiv (2026) | Guanbin Li 团队 | — | [论文](https://arxiv.org/abs/2608.02953) | 渐进真实度自举 + 场景保真强化学习优化，实现驾驶世界模型的双向天气迁移。 |
 | **RealityBridge**: Bridging Editable 3D Gaussian Splatting Driving Simulations and Real-World Videos | arXiv (2026) | Guanbin Li 团队 | — | [论文](https://arxiv.org/abs/2606.16278) | 视频基础模型 + GateNet 自适应注入，将编辑后的 3DGS 渲染还原为真实驾驶视频。 |
+| **Relational LAW**: Relationally Grounded Latent World Models for Autonomous Driving | arXiv (2026) | Freiburg / Esslingen | 🎮 | [论文](https://arxiv.org/abs/2609.24626) | 在 LAW 上用 nuScenes 三维标注做成以交通参与者为中心的场景图，只在训练时把视觉潜状态对齐这张图的关系嵌入。推理时场景图和三维标注都丢掉。相对重训的 LAW，轨迹 L2 从 0.661 降到 0.622，碰撞率从 0.456 降到 0.217；结构化场景图优于无结构的文字描述。 |
 | **Risk-Controllable Multi-View Diffusion for Driving Scenario Generation** | arXiv (2026) | Jinhua Zhao 团队 | — | [论文](https://arxiv.org/abs/2603.11534) | 风险等级 + 物理风险建模驱动多视角扩散，区域感知 DPO 聚焦动态区。 |
 | **RiskFlow**: Fast and Faithful Safety-Critical Traffic Scenario Generation | arXiv (2026) | Guofa Li 团队 | — | [论文](https://arxiv.org/abs/2606.06423) | 动作空间传输 + JVP 目标单次前向生成，输出空间引导关键智能体冒险。 |
 | **SPHINX**: First Explain, Then Explore | arXiv (2026) | My T. Thai 团队 | — | [论文](https://arxiv.org/abs/2606.17482) | 先用可解释 AI 分析策略失败再定向生成对抗场景，提升鲁棒性。 |
@@ -155,6 +157,9 @@
 | **Continual WM Bench**: Benchmarking World Models for Continual Learning on Compositional Tasks | arXiv (2026) | Oxford | — | [论文](https://arxiv.org/abs/2609.22055) | 操作世界模型的持续学习基准。课程末尾的新任务由已见任务的动作因素和感知因素重新组合，从而把学得快和会不会复用已学动力学拆开。模块化动力学比常规持续学习方法更平衡复用和遗忘，但没有一种方法把这个问题做完。 |
 | **CLAP**: Cross-Embodiment Video World Models are Zero-Shot Physical Simulators | arXiv (2026) | — | 🎮 | [论文](https://arxiv.org/abs/2608.27406) \| [项目](https://omni-clap.github.io) | 用末端位姿、语言指令与潜动作统一异构动作空间，以课程式跨本体训练先从无标注互联网视频学物理先验、再接地到真实动作空间做零样本部署，在 DROID 等环境逼近或超越单本体 SOTA，代码与模型全部开源。 |
 | **CausalNav**: Reliability-Certified Causal World Models for Control under Physical-Parameter Shift | arXiv (2026) | Jun Shen 团队 | — | [论文](https://arxiv.org/abs/2608.07809) | 物理参数变化下可靠性认证的因果世界模型，用于导航控制。 |
+| **CausalWM**: Causal Chain-of-Thought Reasoning for Embodied World Model | arXiv (2026) | Aether AI | 🎮 | [论文](https://arxiv.org/abs/2609.23184) \| [项目](https://aetherlabsai.github.io/CausalWM/) \| [代码](https://github.com/AetherLabsAI/CausalWM) | 16B 具身视频世界模型先预测光流，再预测三维点图，最后预测未来画面，前一步结果固定为后一步的上下文。训练用了约 3.1 万小时具身数据。2026 年 9 月 11 日的 TriWorldBench 上，36 个已公开模型里以 66.04 排第一，比第二名高 0.50。 |
+| **D-JEPA**: A Decision-Aligned Latent World Model | arXiv (2026) | Nebulis Lab | 🎮 🔁 | [论文](https://arxiv.org/abs/2609.24749) \| [项目](https://nebulis-lab.com/D-JEPA/) | 潜空间里离目标更近不等于这个动作会执行得更好。它用已经发生的结果学习少数候选未来之间的决策顺序，再写回 JEPA 的未来表示，使规划仍可按潜空间距离进行。PushT 成功率 87.89%，RoboTwin 平均提高 15.04 个点，真机任务提高 17 个点，并在自动驾驶场景中做了动作选择。 |
+| **DexTacWAM**: A Visuo-Tactile World-Action Model for Dexterous Manipulation | arXiv (2026) | UIUC / UC Berkeley | 🎮 🔁 | [论文](https://arxiv.org/abs/2609.24976) \| [项目](https://dextacwam.github.io/) | 每根指尖的触觉各自编码后注入视频扩散世界模型，同时预测视觉和接触演化并生成动作。22 自由度双臂的六个接触任务上平均 70.6，最强视觉基线 38.0；夹子任务 60 对 10。拿掉触觉演化、只保留触觉条件后，四项任务平均从 74.7 掉到 26.6。约每个任务 100 条示范即可把预训练视频模型接到触觉。 |
 | **DexTouch-WM**: Learning Action-Conditioned Tactile World Models from Human Touch for Dexterous Robot Manipulation | arXiv (2026) | HKUST(GZ) / Xspark AI | 🎮 🔁 | [论文](https://arxiv.org/abs/2609.20649) | 人和灵巧手使用同一布局的压阻触觉阵列，人手动作重定向到机器人动作空间后，按动作同时预测未来图像和双手触觉。机器人数据固定为 5 小时，人类触摸加到 100 小时后，任务并不相同的留出机器人视觉、几何和接触预测都会变好，并可当作策略评测环境和合成轨迹来源。 |
 | **WorldSync**: Do Robotic World Models Really Follow Actions? Diagnosing and Aligning Action-Conditioned Generation for Policy Learning | arXiv (2026) | Shanghang Zhang 团队 | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.24885) | 用 WorldEcho 在专家外动作上联合测视觉完整性与 SE(3) 轨迹对齐，再用 WorldSync 从分布覆盖、表示锚定与干预效应对齐三方面校准生成，使世界模型更能作为策略改进的仿真器。 |
 | **DreamLedger**: Execution-Settled Credit Files for World-Model Imagination in Robot Decision Loops | arXiv (2026) | University of Florida | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.23863) | 把世界模型想象的可靠性做成按工况、区域与预测时域记账的执行结算信用档案，使用前门控、事后对照现实结算，减少未兑现想象依赖且每笔花费可审计回放。 |
@@ -169,6 +174,7 @@
 | **Hydra-0**: Action Flow for Generalist World Modeling and Control | arXiv (2026) | NVIDIA | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.18077) | 将机器人动作表示为像素运动（action flow）作为统一视觉接口，跨本体、任务、环境与视频骨干学习动作后果，机器人运动误差降低 90.4%、物体运动误差降低 60.2%。 |
 | **Hydra**: A Navigation World Action Model with Discrete Latent Planning and Continuous Flow-Matching Execution | arXiv (2026) | Xuesu Xiao 团队 | 🎮 ⚡ 🔁 | [论文](https://arxiv.org/abs/2608.28995) | 针对生成模型与规划器流形脱节、候选动作须解码回像素才能评估的实时控制瓶颈，Hydra 在视觉状态、物理位姿与控制动作上建立统一潜流形，用模态专属 VQ 瓶颈压缩为运动学意图与视觉状态的离散词表，使规划器（采样与评估）原生工作在离散空间——以运动学-感知代价排序候选、全程不解码像素（Discrete Latent Planning），再用条件流匹配把离散意图映射为连续轨迹执行；在两台真实机器人上目标导向规划超越 SOTA 世界模型，闭环执行持平或超过领先反应式基础策略。 |
 | **IMPACT**: Attention Is the Interaction Map for Scalable Interaction-Aware World Model Training | arXiv (2026) | 清华大学 / 中科大 | 🎮 | [论文](https://arxiv.org/abs/2609.00161) \| [项目](https://embodiedcity.github.io/IMPACT/) \| [代码](https://github.com/EmbodiedCity/IMPACT.code) | 针对全局 MSE 让静态背景主导优化、稀疏交互区域欠监督的问题，用被操作物体 token 的交叉注意力作内部先验，经局部预测误差校准成交互图并重加权去噪损失，无需外部稠密表征、推理无额外开销。 |
+| **Imagine-RL**: Residual-Confidence-Guided Cross-Attention for World-Model-Augmented VLA Reinforcement Learning | arXiv (2026) | KAIST / 中科院计算所 | 🎮 🔁 | [论文](https://arxiv.org/abs/2609.24033) | 在 LeWorldModel 上扩展出的视觉–力矩世界模型在强化学习时保持冻结，按动作块预测未来视觉和力矩；评论器用历史预测残差决定信多少这些未来。四个真机任务、每项 50 次，只用 100 条强化学习轨迹，平均成功率比 DSRL 高 23.6%，比 VLA 基线高 60%。 |
 | **DELE-w0.5**: Inferring Action from Future Latent State for Robotic Manipulation | arXiv (2026) | DeepLeap Research | 🎮 | [论文](https://arxiv.org/abs/2608.22067) \| [项目](https://deepleap-x.com/research/dele-w0.5) | 提出 DELE-w0.5，从预测的未来潜状态直接推断机器人动作，省去视频生成这一中间目标，建模物理世界在动作下的状态变化而非逐帧外观演化，实现更低训练成本与低延迟推理，在 640 次真机实验中取得 62.5% 全任务成功率，显著优于各 VLA 基线。 |
 | **JEPA-x**: Cross-Predictive Physics Grounding for Forecastable Latent Dynamics | arXiv (2026) | NUS | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.24044) | 亦称 XP-JEPA。训练时把视觉观测与特权物理状态当作同一动作条件轨迹的两个视图做交叉预测，约束潜在动力学更可预报；部署丢弃物理分支，多任务控制成功率从 53.6% 升至 78.2%。 |
 | **Mem-World**: Memory-Augmented Action-Conditioned World Models for Persistent Robot Manipulation | arXiv (2026) | 大连理工大学 / 三星北京 | 🎮 🔁 ⏳ | [论文](https://arxiv.org/abs/2606.18960) | 多视角动作条件操作世界模型。腕部相机遮挡和快速运动使当前帧不够用，它用腕部视角的 4D 表面元记住历史观测，再按未来动作检索该看哪几帧。相对 Ctrl-World，策略评测与真机成绩的皮尔逊相关提高 14.5%；用生成轨迹做数据增广后，长时程成功率从 58% 到 72%。 |
@@ -229,10 +235,12 @@
 | **Distilling Physical Priors into Streaming World Models** | arXiv (2026) | Yihao Liu 团队 | ⏳ | [论文](https://arxiv.org/abs/2608.07981) | 将物理先验蒸馏到流式世界模型，改善长程 rollout 的物理一致性。 |
 | **From Generation to Simulation: How Far Are World Models from Being True Simulators?** | arXiv (2026) | Tong Wang 等 | — | [论文](https://arxiv.org/abs/2608.23070) \| [项目](https://github.com/AtongWang/world-model-simulators) | 以传统仿真器的八项能力为外部标尺，系统评估生成式世界模型距离真正仿真器的差距，梳理潜空间动力学、视频生成与联合嵌入预测三条技术路线并映射 200 篇代表性工作，指出状态反馈是最被忽视的短板，并给出六个研究方向。 |
 | **GAUGE**: A Measurement-Grounded Benchmark for Physical Fidelity in Simulation Engines and Video World Models | arXiv (2026) | Weinan Zhang 团队 | — | [论文](https://arxiv.org/abs/2608.05948) | 测量驱动的物理保真度基准，诊断仿真引擎与视频世界模型的物理一致性。 |
+| **HappyWorld-Bench** | arXiv (2026) | 阿里巴巴 / 智源 | — | [论文](https://arxiv.org/abs/2609.24308) | 评测生成世界在探索、交互和修改之后是否仍然可靠，用六级能力统一视频、空间和具身系统，并以物理因果、内容因果和穿模等检查动作有没有带来该有的后果。 |
 | **HelloWorld**: Enabling Socially Interactive Characters in Video World Models | arXiv (2026) | Yoichi Sato 团队 | — | [论文](https://arxiv.org/abs/2608.05070) | 首次在视频世界模型中实现用户与虚拟角色间的社交交互。 |
 | **LpWM**: A Case for Sparse Representations in World Models | arXiv (2026) | NYU / AMI Labs | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.22764) \| [代码](https://github.com/YilunKuang/lpworldmodel) | 论证稀疏表征是世界模型更有利的几何结构：用 RDMReg 正则化 JEPA 学习非负稀疏潜码，在 PushT 上以更低的预测器复杂度实现规划成功率最高提升 57%，且学到的表征呈模式分解的可解释结构。 |
 | **MASS**: Multiplayer World Models with Authoritative Shared State | arXiv (2026) | Boxin Shi 团队 | — | [论文](https://arxiv.org/abs/2608.06257) | 权威共享状态的多玩家世界模型，解决多智能体状态同步问题。 |
 | **Matrix-Game 3.5**: Enhancing Real-Time Streaming Interactive World Models with Patch Memory | arXiv (2026) | Skywork AI | 🎮 ⚡ ⏳ | [论文](https://arxiv.org/abs/2608.29910) | Matrix-Game 3.0 的升级版，面向几何感知与长时程一致的实时流式交互世界生成，三项关键改进：(1) 统一几何感知记忆框架——patch 记忆做显式 3D 块检索、tiled-PRoPE 做投影式相机条件化，不引入任何可学习参数即可实现几何一致的相机控制与长时程场景回忆；(2) 静动解耦的世界表示——分别建模静态场景几何与动态主体，长时程生成中同时保持几何一致性与主体身份；(3) 两阶段渐进实时蒸馏——经感知流匹配（Perceptual Flow Matching）与课程式自 rollout DMD 把双向扩散模型转为少步因果生成器，支撑分钟级实时交互。训练语料统一覆盖 Unreal 仿真环境、开放世界游戏与互联网视频，在场景回忆、相机控制、主体一致性、文本驱动世界生成与稳定开放世界实时交互上均表现强劲。 |
+| **NeuIDO**: Neural Intrinsic Dynamics Operator for Physics-Informed 4D World Models | ECCV (2026) | 上海交通大学 / 厦门大学 | — | [论文](https://arxiv.org/abs/2609.24313) | 把世界建模写成从视频观测到本构函数的神经算子，而不是把材料定律从外面规定进仿真器。零样本即可从视频推断动力学，复杂场景再用少样本低秩适应对齐；共享的动力学基底跨场景复用。 |
 | **Persistent Computational State: A Session-Centric Runtime for Generative World Models** | arXiv (2026) | Zhen Lin 团队 | — | [论文](https://arxiv.org/abs/2607.21686) | 会话中心运行时支持分叉、回溯和重访视角，面向生成式世界模型的状态管理。 |
 | **PlayWorld**: Benchmarking World Models with Agent Players over Long-Horizon Objectives | arXiv (2026) | Hengshuang Zhao 团队 | — | [论文](https://arxiv.org/abs/2608.13552) | 用多模态 Agent Player 追求长程目标来评估世界模型的几何一致性与交互保真度。 |
 | **PWM**: Programmable World Model | arXiv (2026) | Alaya Lab | 🎮 ⏳ | [论文](https://arxiv.org/abs/2609.10540) \| [项目](https://alaya-lab.github.io/pwm) \| [代码](https://github.com/AlayaLab/pwm) | 把世界状态演化与视觉生成解耦：自然语言编译成可执行程序维护含屏外实体的全局状态，再经状态增强 3D OBB 条件化预训练视频模型做渲染；CombatStateBench 上计数/状态准确率 94%/98%，支持规则可编程、实体可控的长时可玩游戏。 |

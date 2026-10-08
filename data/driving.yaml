@@ -1333,3 +1333,27 @@ papers:
     features: {action: true, closedloop: true, longhorizon: true}
     tags: [鱼眼针孔, 一步生成, 闭环仿真, 重访记忆]
     note: 按实车混合相机组原生生成四路超过 180° 的鱼眼和三路针孔，各自保持分辨率；自车运动、相机几何和交通参与者的框、朝向、灯色一起作为条件。40 步双向老师蒸馏成每帧只去噪一次的因果生成器，两张 GPU 上七路 720p 以 4 FPS 流式输出。可插拔记忆让车沿另一条轨迹回到同一地点时场景身份仍在；内部测试集上一步模型保住老师 90% 以上的 PSNR 和 SSIM，生成器快 107.7 倍。
+
+  - title: "EditWM: Event-Decomposed World Modeling with Incremental Correction for End-to-End Autonomous Driving"
+    short: EditWM
+    org: HKUST / 南方科技大学
+    year: 2026
+    venue: arXiv
+    category: driving
+    links:
+      arxiv: "2609.22317"
+    features: {action: true}
+    tags: [事件分解, 增量修正, 轨迹打分, NAVSIM]
+    note: 先预测平时的场景演化并冻住该预测器，再对事件造成的偏差做有门控、有幅度限制的修正，修正后的特征给候选轨迹打分。全部 12,146 个 NAVSIM navtest 场景上，专家轨迹条件下的未来特征误差比只做常规预测低 5.35%，83.54% 的场景有改进，规划得分 91.05 EPDMS。
+
+  - title: "Relationally Grounded Latent World Models for Autonomous Driving"
+    short: Relational LAW
+    org: Freiburg / Esslingen
+    year: 2026
+    venue: arXiv
+    category: driving
+    links:
+      arxiv: "2609.24626"
+    features: {action: true}
+    tags: [场景图, 特权监督, 潜空间对齐, nuScenes]
+    note: 在 LAW 上用 nuScenes 三维标注做成以交通参与者为中心的场景图，只在训练时把视觉潜状态对齐这张图的关系嵌入。推理时场景图和三维标注都丢掉。相对重训的 LAW，轨迹 L2 从 0.661 降到 0.622，碰撞率从 0.456 降到 0.217；结构化场景图优于无结构的文字描述。

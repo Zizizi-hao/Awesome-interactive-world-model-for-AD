@@ -477,3 +477,26 @@ papers:
     features: {action: true, realtime: true, closedloop: true, longhorizon: true}
     tags: [可控视频底座, 连续动作, 相机轨迹, 实时流式]
     note: 从 Wan2.2-TI2V-5B 改出的 5B 可控视频底座。给定文字或第一帧，再按逐帧相机轨迹、64 维连续动作、本体编号，以及可插入 rollout 中途的文字事件预测后续画面。因果形态在单张 L20 上以 832×480、24 FPS 流式生成，动作接口留给驾驶和机器人数据后训练。
+
+  - title: "NeuIDO: Neural Intrinsic Dynamics Operator for Physics-Informed 4D World Models"
+    short: NeuIDO
+    org: 上海交通大学 / 厦门大学
+    year: 2026
+    venue: ECCV 2026
+    category: general
+    links:
+      arxiv: "2609.24313"
+    features: {}
+    tags: [神经算子, 本构动力学, 四维预测, 少样本适应]
+    note: 把世界建模写成从视频观测到本构函数的神经算子，而不是把材料定律从外面规定进仿真器。零样本即可从视频推断动力学，复杂场景再用少样本低秩适应对齐；共享的动力学基底跨场景复用。
+
+  - title: "HappyWorld-Bench"
+    org: 阿里巴巴 / 智源
+    year: 2026
+    venue: arXiv
+    category: general
+    links:
+      arxiv: "2609.24308"
+    features: {}
+    tags: [交互基准, 六级能力, 物理因果, 重访一致性]
+    note: 评测生成世界在探索、交互和修改之后是否仍然可靠，用六级能力统一视频、空间和具身系统，并以物理因果、内容因果和穿模等检查动作有没有带来该有的后果。
