@@ -654,3 +654,54 @@ papers:
     features: {closedloop: true}
     tags: [视触觉, 接触纠正, VLA后训练, 力序列]
     note: 用时间 RoPE 同时去噪未来视频和力序列，想象接触失败附近的纠正片段，再标出可执行动作，用来给接触丰富任务的 VLA 做后训练。六个真机任务上，相对基础策略成功率绝对提高 44%。
+
+  - title: "WorldContact: A Contact-Centric World Model for Scalable Robot Learning"
+    short: WorldContact
+    org: UBC / Style3D
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.19600"
+    features: {action: true, longhorizon: true}
+    tags: [接触中心, 可变形物体, 大时间步, 数据增广]
+    note: 从少量高质量轨迹学习购物袋这类软物体的接触动力学，用比数值仿真器更大的时间步预测顶点状态，从而避开为防穿透而必须使用的小步长。单张 H100 上状态 rollout 约快 10 倍；用扩出的数据微调已有策略后，提袋子的单次成功率从 65% 到 95%，并直接部署到真机。
+
+  - title: "DexTouch-WM: Learning Action-Conditioned Tactile World Models from Human Touch for Dexterous Robot Manipulation"
+    short: DexTouch-WM
+    org: HKUST(GZ) / Xspark AI
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.20649"
+    features: {action: true, closedloop: true}
+    tags: [人类触摸, 双手触觉, 动作条件, 灵巧操作]
+    note: 人和灵巧手使用同一布局的压阻触觉阵列，人手动作重定向到机器人动作空间后，按动作同时预测未来图像和双手触觉。机器人数据固定为 5 小时，人类触摸加到 100 小时后，任务并不相同的留出机器人视觉、几何和接触预测都会变好，并可当作策略评测环境和合成轨迹来源。
+
+  - title: "PhysCoRe: Physics-Corrected Residual World Models for Material-Aware Deformable Dynamics"
+    short: PhysCoRe
+    org: Georgia Tech
+    year: 2026
+    venue: CoRL 2026
+    category: embodied
+    links:
+      arxiv: "2607.20653"
+      project: "https://lunarlab-gatech.github.io/PhysCoRe-website/"
+      code: "https://github.com/lunarlab-gatech/PhysCoRe"
+    features: {action: true, closedloop: true}
+    tags: [物质点法, 材料估计, 残差校正, 软物体]
+    note: 可微物质点法仿真器负责基本物理，一个网络从画面估计每个粒子的弹性，另一个网络修正仿真器的系统性偏差。对新物体可以在线辨认材料，预测越没把握的区域越值得再去接触；真机软物体操作序列上的预测精度超过已有基线。
+
+  - title: "Robotic Video World Models: A Survey of Applications, Research Challenges, Future Directions"
+    short: Robot Video WM Survey
+    org: Princeton
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2601.07823"
+      code: "https://github.com/irom-princeton/awesome-robotics-video-world-model-papers"
+    features: {}
+    tags: [综述, 视频世界模型, 策略评测, 物理幻觉]
+    note: 把视频世界模型在机器人中的用法收成造数据、强化学习中的动力学与奖励、策略打分和想象中规划四类，并指出画面真实仍会违反物理、指令跟随不稳，以及训练和推理成本过高。

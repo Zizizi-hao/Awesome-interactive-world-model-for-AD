@@ -464,3 +464,16 @@ papers:
     features: {action: true, realtime: true, closedloop: true, longhorizon: true}
     tags: [可玩世界, 键盘控制, 在线文本, 实时流式]
     note: 5B 自回归世界模型把键盘幅度和在线文本放进同一条序列，四步生成加流式缓存，832×480 达 24 FPS。158 个 WBench 导航案例上总分 81.0、一致性 88.5，文本可以在导航过程中改事件而不重开生成。
+
+  - title: "Astronex-World 1.0: Real-Time Interactive World Model Foundation"
+    short: Astronex-World
+    org: Astronex Robotics
+    year: 2026
+    venue: arXiv
+    category: general
+    links:
+      arxiv: "2609.20034"
+      code: "https://github.com/Astronex-Robotics/Astronex-World"
+    features: {action: true, realtime: true, closedloop: true, longhorizon: true}
+    tags: [可控视频底座, 连续动作, 相机轨迹, 实时流式]
+    note: 从 Wan2.2-TI2V-5B 改出的 5B 可控视频底座。给定文字或第一帧，再按逐帧相机轨迹、64 维连续动作、本体编号，以及可插入 rollout 中途的文字事件预测后续画面。因果形态在单张 L20 上以 832×480、24 FPS 流式生成，动作接口留给驾驶和机器人数据后训练。
