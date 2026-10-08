@@ -525,3 +525,30 @@ papers:
     features: {action: true}
     tags: [共享物理机制, 反事实未来, 跨动作一致性, 流模型]
     note: 让同一初始场景下、不同动作产生的未来共用一个潜在物理机制。机制解释器从每条动作–结果分支推断机制分布，再合成这些分支能否共用一种物理的证据，用来约束流训练和采样。推方块、推绳子、倒水三个环境里，跨干预的共享世界差距相对 ACWM-DiT 平均下降 84.3%，单条预测的 M-MSE 约好 7.7×10⁻⁴。代码将放出。
+
+  - title: "OPIS: An Input-Grounded Benchmark for Multi-Object Memory in Video World Models"
+    short: OPIS
+    org: 中国科学技术大学 / 中国科学院自动化研究所 / 香港科技大学 / Infrec
+    year: 2026
+    venue: arXiv
+    category: general
+    links:
+      arxiv: "2609.35052"
+      code: "https://github.com/SSStarain/OPIS"
+    features: {}
+    tags: [物体记忆, 输入锚定, 基准, 视频世界模型]
+    note: 记忆评测固定在初始画面里的物体实例上，不使用生成历史、参考视频或挑选的重访视角。500 例，覆盖真实、机器人和游戏，标注 12672 个刚体、铰接体和可变形物体。八个模型的 OPIS 分在 48.65 到 56.01。参考物体从不到 20 个增到 40 个以上时，身份分从 40.22 降到 23.11。数据在 https://huggingface.co/datasets/Kirito-Lab/OPIS-dataset 。
+
+  - title: "WorldAttention: An Efficient Attention Architecture for Interactive Video World Models"
+    short: WorldAttention
+    org: 香港科技大学 / 阿里巴巴达摩院 / 浙江大学 / 湖畔实验室
+    year: 2026
+    venue: arXiv
+    category: general
+    links:
+      arxiv: "2609.34606"
+      project: "https://alibaba-damo-academy.github.io/WorldAttention"
+      code: "https://github.com/alibaba-damo-academy/WorldAttention"
+    features: {realtime: true, longhorizon: true}
+    tags: [稀疏注意力, 分层缓存, 交互视频, 文本指令]
+    note: 给自回归扩散的文本条件交互视频模型做混合稀疏注意力和分层 KV 缓存，避免滑窗丢掉历史，也避免全历史缓存撑满显存。单张 H100 上 22.0 FPS。定制核相对 FlashAttention-3 加速 14.02 倍，加上分层缓存后端到端 2.21 倍。VBench-Long 主体一致性 0.9472，InterVBench 0.9668。

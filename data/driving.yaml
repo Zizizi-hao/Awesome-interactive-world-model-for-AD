@@ -1383,3 +1383,41 @@ papers:
     features: {action: true, realtime: true, closedloop: true, longhorizon: true}
     tags: [闭环仿真, 动作条件视频, 实时生成, Cosmos]
     note: 从 Cosmos 中训、后训成动作条件的自回归驾驶视频世界模型，约 2.1 万小时。生成条件是过去画面、仿真器状态和当前驾驶动作，并与 Alpamayo 1、AlpaSim 闭环。2B 单相机在一张 GB300 上以 720p 达到 68 FPS；四相机版本用 16 张卡达到 105 FPS。由此后训的约 2B 世界–动作模型，在 Physical AI NuRec 上把碰撞率从 Alpamayo 1.5（约 10B）的 6.9% 降到 4.2%。
+
+  - title: "AD-E2E-JEPA: A Joint-Embedding Predictive Architecture For End-to-End Autonomous Driving"
+    short: AD-E2E-JEPA
+    org: 纽约大学 / AMI
+    year: 2026
+    venue: arXiv
+    category: driving
+    links:
+      arxiv: "2609.34085"
+      code: "https://github.com/HaoranZhuExplorer/AD-E2E-JEPA"
+    features: {action: true}
+    tags: [JEPA, 零样本规划, 目标图像, NAVSIM]
+    note: 动作条件的 JEPA 不训练驾驶策略，用未来图像当目标，在轨迹词表里零样本选轨迹。可学习投影把规划用的 patch 减到 1/16、维度减到 1/4，推理约快 100 倍，8 帧展开、256 条候选大约 0.8 秒。平均 20 米外的目标，256 条候选时位移误差 4.0 米，8192 条时 2.8 米。NAVSIM v2 在 100 个场景上的零样本规划为 67.3/72.9 EPDMS（带安全乘积项）和 84.1/86.5 EPDMS†；自监督投影再用于模仿学习，EPDMS 从 80.2 到 85.4。
+
+  - title: "MomWorld: Momentum-Aware Latent World Model for Long-Horizon Autonomous Driving"
+    short: MomWorld
+    org: 南洋理工大学 / 北京交通大学 / 中北大学 / 大连理工大学 / 清华大学
+    year: 2026
+    venue: arXiv
+    category: driving
+    links:
+      arxiv: "2609.33737"
+      code: "https://github.com/modaxiansheng/MomWorld"
+    features: {action: true, longhorizon: true}
+    tags: [场景动量, 长时程规划, 流匹配, nuScenes]
+    note: 把场景动量和位形一起往未来滚：可学习的持续性留下稳定趋势，场景条件更新未来动力学，突变时用门控清掉旧动量。动量条件的流匹配再把基准轨迹对齐到预测的场景演化。nuScenes 上相对 MomAD，1–6 秒平均碰撞率降 12.2%；6 秒处 L2 从 2.45 米到 2.31 米，碰撞率从 2.13% 到 1.97%。
+
+  - title: "VehDyn: A Driving World Model Benchmark for Vehicle Dynamics"
+    short: VehDyn
+    org: 得克萨斯大学奥斯汀分校 / 加州大学伯克利分校
+    year: 2026
+    venue: arXiv
+    category: driving
+    links:
+      arxiv: "2609.33264"
+    features: {}
+    tags: [车辆动力学, 基准, CarSim, 视频世界模型]
+    note: 用 CARLA 画面配 CarSim 多体动力学，10080 组全因子配置，同步记录位置、速度和姿态，评 12 个驾驶视频世界模型的轨迹、运动学和动力学一致性。10/12 的轨迹指标已在真值 20% 以内，动力学一致性没有模型达到真值的 92%，画质和动力学得分只弱相关。DrivingWorld 最高，其后是 Cosmos 3 Nano 和 LTX-Video 2.5。数据和指标在接收后放出。

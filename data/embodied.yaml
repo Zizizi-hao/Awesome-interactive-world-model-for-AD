@@ -944,3 +944,78 @@ papers:
     features: {}
     tags: [设计消融, 因果结构, 潜表示, 训练目标]
     note: 在同一框架里比较六种视频–动作因果结构、八种潜表示和四种训练目标，基准为 RoboCasa-GR1、LIBERO 和 LIBERO-Plus，并用 DROID 做离线动作预测。把未来内容加噪时动作变化不到 1%；把未来时间倒过来，分布外成功率下降 24.24% 到 32.37%。帧间潜表示利于分布内，逐帧潜表示在分布外更稳。分布内时，辅助的世界建模目标整体拉低成绩。
+
+  - title: "DeltaWAM: Change-Centric Visual Foresight via Delta Tokens for an Efficient World-Action Model"
+    short: DeltaWAM
+    org: 复旦大学 / 中佛罗里达大学 / 南加州大学
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.33177"
+      code: "https://github.com/deltawam/DeltaWAM"
+    features: {action: true, closedloop: true}
+    tags: [差分token, 世界动作模型, DINO, LIBERO]
+    note: 每帧只预测一个 DINO 特征差分 token，当前帧的 DINO 特征作空间锚，再交给流匹配动作专家。LIBERO 成功率 92.8%；把完整未来 DINO 特征喂给策略会掉到 79.0%。LIBERO-Pro 扰动下平均 17.85%，对照方法接近 0。0.725B，每个动作块 142.1 ms，峰值显存 3.86 GB。
+
+  - title: "Devol-ONE: One Autoregressive Mixture of Transformers to Unify Vision-Language-Action and Latent World Modeling"
+    short: Devol-ONE
+    org: Devol Robots
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.32193"
+    features: {action: true, closedloop: true}
+    tags: [混合Transformer, V-JEPA, 潜状态展开, LIBERO]
+    note: 视觉语言流、由 V-JEPA 初始化的动力学流和动作专家在每一层互相注意，训练时就用模型自己滚出来的潜状态。LIBERO 平均成功率 98.4%，未在扰动数据上微调的 LIBERO-Plus 为 71.4%。34 个 RoboTwin 2.0 任务上 Clean 61.1%、Randomized 63.7%。另有 Flexiv 单臂和双臂真机。
+
+  - title: "From World Models to World Action Models: Rethinking Next-State Prediction"
+    short: CF-WAM
+    org: 中国科学院自动化研究所 / 中国科学院大学 / 引望
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.34414"
+    features: {action: true, closedloop: true}
+    tags: [下一状态, 多投影监督, 跨具身, 世界动作模型]
+    note: 同一段动作条件未来被抽成视觉、语义、几何和交互投影，再监督同一个世界–动作模型，人和机器人的经验可以进入同一套状态转移。RoboCasa-GR1 平均成功率 82.50%，LIBERO-Plus 82.65%，真机最高 84.00%。代码和数据计划在接收后放出。
+
+  - title: "HapticWorld: an Interactive World Simulator with Real-time Torque Feedback"
+    short: HapticWorld
+    org: 蚂蚁集团 / 伊利诺伊大学厄巴纳-香槟分校 / 斯坦福大学 / NVIDIA
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.31924"
+      project: "https://haptic-world.github.io/"
+    features: {action: true, closedloop: true}
+    tags: [关节力矩, 交互仿真, 接触操作, 示范采集]
+    note: 交互式世界模型同时预测关节力矩，并在采集时把力矩反馈给操作者。三个接触任务上，力矩反馈把采集吞吐平均提高到 1.6 倍。用它生成的示范训出的策略，真机 54/60，接近真机示范的 56/60，高于纯视觉基线的 19/60。模型内测到的成功率和真机接近。
+
+  - title: "Scope-WM: Scoped Computation for Efficient Visual World Models"
+    short: Scope-WM
+    org: 苏州大学 / 复旦大学
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.33218"
+      code: "https://github.com/ChunZheng2022/Scope-WM"
+    features: {action: true, closedloop: true}
+    tags: [稀疏动力学, 模型预测控制, DINO-WM, Push-T]
+    note: 只对和预测有关的潜变量 token 做完整动力学，其余 token 用前景状态及其变化的摘要更新，规划时复用已经搜到的好动作序列。Push-T 上峰值显存和规划时间分别是稠密 DINO-WM 的 18.1% 和 14.3%，规划加速 6.97 倍。
+
+  - title: "Hamiltonian JEPA: Action-Conditioned World Models with an Inherited Control State"
+    short: Hamiltonian JEPA
+    org: 特拉维夫大学
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.33497"
+    features: {action: true, closedloop: true}
+    tags: [端口哈密顿, JEPA, 控制状态, 像素规划]
+    note: 感知编码和控制状态拆开：控制状态是感知编码里一块固定的正交切片，再用端口–哈密顿动力学滚动。从端口转置读回已执行动作，这个读出等于投影到端口方向上的展开误差。最多训练 10 个 epoch。OGB-Cube 成功率 91.9%，对照的动作解码 Delta-JEPA 为 79.3%。
