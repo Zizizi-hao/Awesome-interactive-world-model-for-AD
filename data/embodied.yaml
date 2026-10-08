@@ -1019,3 +1019,67 @@ papers:
     features: {action: true, closedloop: true}
     tags: [端口哈密顿, JEPA, 控制状态, 像素规划]
     note: 感知编码和控制状态拆开：控制状态是感知编码里一块固定的正交切片，再用端口–哈密顿动力学滚动。从端口转置读回已执行动作，这个读出等于投影到端口方向上的展开误差。最多训练 10 个 epoch。OGB-Cube 成功率 91.9%，对照的动作解码 Delta-JEPA 为 79.3%。
+
+  - title: "Rethinking Representations for World-Action Modeling"
+    short: ReWAM
+    org: 华中科技大学 / 地平线 / D-Robotics
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.38163"
+    features: {action: true, closedloop: true}
+    tags: [表示瓶颈, DINO, 世界动作模型, RoboTwin]
+    note: 在同一套世界–动作模型里比较表示：没有生成式视频预训练时，原始 DINO 特征在 RoboTwin 2.0 上优于 Video-VAE 潜变量，尽管像素重建更差。ReWAM 把 DINO 特征收成紧凑世界状态，只有动作损失的梯度进入这个瓶颈。RoboTwin 2.0 成功率 93.6%。RoboDojo 上约 600 小时具身预训练，平均分 12.29，成功率 8.28%。
+
+  - title: "Direct Experience World-Model Optimization: Learning the World Beyond Action Imitation"
+    short: DEWO
+    org: 哈尔滨工业大学 / 大连理工大学 / 南方科技大学
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.37398"
+    features: {action: true, closedloop: true}
+    tags: [部署后学习, 成功失败配对, 分类器无关引导, 灵巧操作]
+    note: 部署之后继续用看到的画面更新世界模型，而不只模仿动作。它在交互转折点配对成功和失败的后续，用来做分类器无关引导。五个 DexJoCo 任务上，三种世界–动作模型的平均成功率都上升。Wuji 和 Sharpa 的四个真机任务、3×3 网格里，两轮部署学习后，至少有一次初始成功的格子从 51.0% 到 71.7%。
+
+  - title: "One from Infinity: Actualizing Futures from Pretrained World Models into Robot Actions"
+    short: RoboActualizer
+    org: 加州大学伯克利分校
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.36413"
+      project: "https://zhao-sq.github.io/RoboActualizer/"
+      code: "https://github.com/7mare/RoboActualizer"
+    features: {action: true, closedloop: true}
+    tags: [冻结编码器, 潜状态实际化, V-JEPA, 小参数量]
+    note: 冻结 V-JEPA 2.1 编码器，上面用 60M 的实际化器同时预测未来潜状态和动作。LIBERO 平均成功率 98.0%。只在 LIBERO 示范上训练、不做扰动增强时，LIBERO-Plus 为 63.1%，Fast-WAM（6.02B 可训练参数）为 51.5%。单卡峰值显存 32 GB，推理 39 ms。可训练参数最多少约 100 倍。
+
+  - title: "Beyond a Single Latent Space: A Dual-Latent World Model for Long-Horizon Planning"
+    short: Dual-WM
+    org: 南京大学 / 上海交通大学 / 深圳先进技术研究院 / 深圳理工大学
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.37644"
+      code: "https://github.com/DeLin1001/Dual-WM-Official"
+    features: {action: true, closedloop: true, longhorizon: true}
+    tags: [双潜空间, 宏动作, 长时程规划, 加权展开]
+    note: 低层潜空间做细粒度动作转移，高层用学到的宏动作做长程子目标。五个目标条件视觉控制任务上，目标偏移 50 步时平均成功率从 75.9% 到 84.4%，100 步时从 61.4% 到 69.5%。偏移 100 步时相对 LeWM 高 30.8 个百分点。
+
+  - title: "Anisotropic Representations Improve Planning in JEPA World Models"
+    short: AnisoWM
+    org: 首尔大学 / 梨花女子大学
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.37441"
+      project: "https://rkdrn79.github.io/AnisoWM-page/"
+    features: {action: true, closedloop: true}
+    tags: [各向异性正则, JEPA, 规划几何, LeWM]
+    note: 预测器和欧氏规划器不动，只把各向同性高斯目标换成可学习的对角协方差。四个环境的规划成功率都高于 LeWM：TwoRoom 87% 到 93%，Reacher 86% 到 89%，PushT 96% 到 97%，Cube 74% 到 79%。Cube 上潜代价与任务代价的 Spearman 相关从 0.15 到 0.91，PushT 从 0.65 到 0.92。

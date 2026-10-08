@@ -1421,3 +1421,17 @@ papers:
     features: {}
     tags: [车辆动力学, 基准, CarSim, 视频世界模型]
     note: 用 CARLA 画面配 CarSim 多体动力学，10080 组全因子配置，同步记录位置、速度和姿态，评 12 个驾驶视频世界模型的轨迹、运动学和动力学一致性。10/12 的轨迹指标已在真值 20% 以内，动力学一致性没有模型达到真值的 92%，画质和动力学得分只弱相关。DrivingWorld 最高，其后是 Cosmos 3 Nano 和 LTX-Video 2.5。数据和指标在接收后放出。
+
+  - title: "Outcome-Grounded World Modeling for Autonomous Driving"
+    short: World4Scorer
+    org: 清华大学智能产业研究院 / 香港科技大学（广州） / 浙江大学 / 长安汽车
+    year: 2026
+    venue: arXiv
+    category: driving
+    links:
+      arxiv: "2609.36438"
+      project: "https://guobapei.github.io/World4Scorer/"
+      code: "https://github.com/GuobaPei/World4Scorer"
+    features: {action: true, closedloop: true}
+    tags: [轨迹条件JEPA, 结果监督, 候选打分, NAVSIM]
+    note: 打分器是轨迹条件的 JEPA：每条候选轨迹预测一个状态，分数从该状态读出。仿真给所有候选标结果，真实日志里的未来只在训练时锚定已执行的那一条。全部 12,146 个 NAVSIM 测试场景上，v2 为 93.0 EPDMS，v1 为 94.0 PDMS。去掉惯性重排后是 91.4 EPDMS，同一评测下 DrivoR 为 90.7。把候选状态随机对调，PDMS 从 94.19 降到 79.73。Bench2Drive 上改过输入的系统为 73.27 Driving Score、成功率 46.36%，对照方法的训练数据和接口并不对齐。LeWM 和规划预算固定时，OGBench-Cube 成功率从 68.91% 到 73.64%。
