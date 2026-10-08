@@ -1369,3 +1369,17 @@ papers:
     features: {action: true}
     tags: [规划相关潜空间, 非对称耦合, 扩散规划, NAVSIM]
     note: JEPA 式潜世界模型预测多步视觉和自车状态，这些未来直接作为扩散规划器的条件。规划梯度只更新共享编码器，预测器被截断梯度，只用预测损失训练。推理只看当前前视图，纯模仿学习，没有强化学习和外部分数器。NAVSIM v1 为 89.9 PDMS，更大的 ViT-L 为 90.4；v2 单阶段 90.0 EPDMS。
+
+  - title: "NVIDIA OmniDreams: Real-Time Generative World Model for Closed-Loop Autonomous Vehicle Simulation"
+    short: OmniDreams
+    org: NVIDIA
+    year: 2026
+    venue: arXiv
+    category: driving
+    links:
+      arxiv: "2606.03159"
+      project: "https://research.nvidia.com/labs/sil/projects/omnidreams-blog/"
+      code: "https://github.com/nv-tlabs/omni-dreams"
+    features: {action: true, realtime: true, closedloop: true, longhorizon: true}
+    tags: [闭环仿真, 动作条件视频, 实时生成, Cosmos]
+    note: 从 Cosmos 中训、后训成动作条件的自回归驾驶视频世界模型，约 2.1 万小时。生成条件是过去画面、仿真器状态和当前驾驶动作，并与 Alpamayo 1、AlpaSim 闭环。2B 单相机在一张 GB300 上以 720p 达到 68 FPS；四相机版本用 16 张卡达到 105 FPS。由此后训的约 2B 世界–动作模型，在 Physical AI NuRec 上把碰撞率从 Alpamayo 1.5（约 10B）的 6.9% 降到 4.2%。

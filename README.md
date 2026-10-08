@@ -8,7 +8,7 @@
 
 世界模型 (World Model) 通过学习环境的动态表征，实现对未来的预测与想象； 可交互世界模型进一步支持以动作 (action) 为条件的生成与控制， 为自动驾驶和具身智能提供数据引擎、神经仿真器与策略学习基础。 本仓库收录并整理该方向的代表性工作，按应用场景分类， 并标注每篇工作的交互能力维度。
 
-📊 共收录 **227** 篇工作 ｜ 最后更新：2026-10-08
+📊 共收录 **231** 篇工作 ｜ 最后更新：2026-10-08
 
 <p align="center">
   <img src="assets/interactive-world-model1.png" alt="交互式世界模型：智能体与世界模型的闭环交互" width="760">
@@ -25,8 +25,8 @@
 
 ## 目录
 
-- [自动驾驶 Autonomous Driving](#自动驾驶-autonomous-driving)（115）
-- [具身智能 Embodied AI](#具身智能-embodied-ai)（70）
+- [自动驾驶 Autonomous Driving](#自动驾驶-autonomous-driving)（116）
+- [具身智能 Embodied AI](#具身智能-embodied-ai)（73）
 - [通用 / 游戏 General / Game](#通用--游戏-general--game)（42）
 
 ## 自动驾驶 Autonomous Driving
@@ -89,6 +89,7 @@
 | **MDrive**: Benchmarking Closed-Loop Cooperative Driving for End-to-End Multi-agent Systems | arXiv (2026) | Jiaqi Ma 团队 | 🔁 | [论文](https://arxiv.org/abs/2605.10904) | 225 场景的闭环协同驾驶基准，揭示多智能体感知共享与协商的收益与局限。 |
 | **Map-Agnostic Interactive Safety-Critical Scenario Generation via Multi-Objective Tree Search** | arXiv (2026) | Chen Sun 团队 | — | [论文](https://arxiv.org/abs/2603.03978) | MCTS + UCB/LCB 混合策略，地图无关 SUMO 微观模型生成交互场景。 |
 | **Mitigating Compounding Error via Video Representation Regularization** | arXiv (2026) | Yisen Wang 团队 | ⏳ | [论文](https://arxiv.org/abs/2607.27036) | 揭示自回归视频世界模型误差累积与表示维度坍塌的关联，提出表示正则化稳定长程生成。 |
+| **OmniDreams**: NVIDIA OmniDreams: Real-Time Generative World Model for Closed-Loop Autonomous Vehicle Simulation | arXiv (2026) | NVIDIA | 🎮 ⚡ 🔁 ⏳ | [论文](https://arxiv.org/abs/2606.03159) \| [项目](https://research.nvidia.com/labs/sil/projects/omnidreams-blog/) \| [代码](https://github.com/nv-tlabs/omni-dreams) | 从 Cosmos 中训、后训成动作条件的自回归驾驶视频世界模型，约 2.1 万小时。生成条件是过去画面、仿真器状态和当前驾驶动作，并与 Alpamayo 1、AlpaSim 闭环。2B 单相机在一张 GB300 上以 720p 达到 68 FPS；四相机版本用 16 张卡达到 105 FPS。由此后训的约 2B 世界–动作模型，在 Physical AI NuRec 上把碰撞率从 Alpamayo 1.5（约 10B）的 6.9% 降到 4.2%。 |
 | **OWMDrive**: Causality-Aware End-to-End Autonomous Driving via 4D Occupancy World Model | arXiv (2026) | Yunfeng Ai 团队 | — | [论文](https://arxiv.org/abs/2606.30421) | 占据世界模型多步预测作为扩散规划先验，显式建模时空因果依赖。 |
 | **OccDirector**: Language-Guided Behavior and Interaction Generation in 4D Occupancy Space | arXiv (2026) | Jianbing Shen 团队 | ⏳ | [论文](https://arxiv.org/abs/2604.22240) | 由自然语言脚本生成 4D occupancy 中的连续多车行为，history-prefix anchoring 保持长时序一致性。 |
 | **PCASim**: Promptable Closed-loop Adversarial Simulation for Urban Traffic Environment | arXiv (2026) | Bin Jiang 团队 | 🔁 | [论文](https://arxiv.org/abs/2605.15654) | LLM 整合知识/数据/对抗驱动 + RL 训练安全智能体，对抗场景与策略协同进化。 |
@@ -159,10 +160,12 @@
 | **CLAP**: Cross-Embodiment Video World Models are Zero-Shot Physical Simulators | arXiv (2026) | — | 🎮 | [论文](https://arxiv.org/abs/2608.27406) \| [项目](https://omni-clap.github.io) | 用末端位姿、语言指令与潜动作统一异构动作空间，以课程式跨本体训练先从无标注互联网视频学物理先验、再接地到真实动作空间做零样本部署，在 DROID 等环境逼近或超越单本体 SOTA，代码与模型全部开源。 |
 | **CausalNav**: Reliability-Certified Causal World Models for Control under Physical-Parameter Shift | arXiv (2026) | Jun Shen 团队 | — | [论文](https://arxiv.org/abs/2608.07809) | 物理参数变化下可靠性认证的因果世界模型，用于导航控制。 |
 | **CausalWM**: Causal Chain-of-Thought Reasoning for Embodied World Model | arXiv (2026) | Aether AI | 🎮 | [论文](https://arxiv.org/abs/2609.23184) \| [项目](https://aetherlabsai.github.io/CausalWM/) \| [代码](https://github.com/AetherLabsAI/CausalWM) | 16B 具身视频世界模型先预测光流，再预测三维点图，最后预测未来画面，前一步结果固定为后一步的上下文。训练用了约 3.1 万小时具身数据。2026 年 9 月 11 日的 TriWorldBench 上，36 个已公开模型里以 66.04 排第一，比第二名高 0.50。 |
+| **ContactWorld**: What Representations Matter for Vision-Tactile Latent World Models in Contact-Rich Manipulation | arXiv (2026) | 普渡大学 / 得克萨斯农工大学 | — | [论文](https://arxiv.org/abs/2606.13877) \| [项目](https://contact-world.github.io) | 固定世界模型和规划器，只比较视觉与触觉的表示。12 个接触任务上，点云规划成功率 32.1%，腕部和前方 RGB 为 20.7% 和 22.0%；点云加结构化触觉力场为 36.1%。真机 900 次，覆盖六个任务、两台机器人和三种触觉。环境和脚本计划在发表后放出。 |
 | **D-JEPA**: A Decision-Aligned Latent World Model | arXiv (2026) | Nebulis Lab | 🎮 🔁 | [论文](https://arxiv.org/abs/2609.24749) \| [项目](https://nebulis-lab.com/D-JEPA/) | 潜空间里离目标更近不等于这个动作会执行得更好。它用已经发生的结果学习少数候选未来之间的决策顺序，再写回 JEPA 的未来表示，使规划仍可按潜空间距离进行。PushT 成功率 87.89%，RoboTwin 平均提高 15.04 个点，真机任务提高 17 个点，并在自动驾驶场景中做了动作选择。 |
 | **DexTacWAM**: A Visuo-Tactile World-Action Model for Dexterous Manipulation | arXiv (2026) | UIUC / UC Berkeley | 🎮 🔁 | [论文](https://arxiv.org/abs/2609.24976) \| [项目](https://dextacwam.github.io/) | 每根指尖的触觉各自编码后注入视频扩散世界模型，同时预测视觉和接触演化并生成动作。22 自由度双臂的六个接触任务上平均 70.6，最强视觉基线 38.0；夹子任务 60 对 10。拿掉触觉演化、只保留触觉条件后，四项任务平均从 74.7 掉到 26.6。约每个任务 100 条示范即可把预训练视频模型接到触觉。 |
 | **DexTouch-WM**: Learning Action-Conditioned Tactile World Models from Human Touch for Dexterous Robot Manipulation | arXiv (2026) | HKUST(GZ) / Xspark AI | 🎮 🔁 | [论文](https://arxiv.org/abs/2609.20649) | 人和灵巧手使用同一布局的压阻触觉阵列，人手动作重定向到机器人动作空间后，按动作同时预测未来图像和双手触觉。机器人数据固定为 5 小时，人类触摸加到 100 小时后，任务并不相同的留出机器人视觉、几何和接触预测都会变好，并可当作策略评测环境和合成轨迹来源。 |
 | **WorldSync**: Do Robotic World Models Really Follow Actions? Diagnosing and Aligning Action-Conditioned Generation for Policy Learning | arXiv (2026) | Shanghang Zhang 团队 | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.24885) | 用 WorldEcho 在专家外动作上联合测视觉完整性与 SE(3) 轨迹对齐，再用 WorldSync 从分布覆盖、表示锚定与干预效应对齐三方面校准生成，使世界模型更能作为策略改进的仿真器。 |
+| **WM Eval Survey**: Do World Models Make Better Robots? A Survey of Evaluation Benchmarks for Predictive Embodied Intelligence | arXiv (2026) | UC Berkeley / BITS Pilani | — | [论文](https://arxiv.org/abs/2609.29669) | 统计 2017 至 2026 年 160 个已核验基准。138 个不区分模型族，只有 11 个直接对比视觉–语言–动作策略和世界模型，只有 4 个把预测执行成动作。作者写明贡献与所在单位的职务无关。 |
 | **DreamLedger**: Execution-Settled Credit Files for World-Model Imagination in Robot Decision Loops | arXiv (2026) | University of Florida | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.23863) | 把世界模型想象的可靠性做成按工况、区域与预测时域记账的执行结算信用档案，使用前门控、事后对照现实结算，减少未兑现想象依赖且每笔花费可审计回放。 |
 | **EA-WM**: Event-Aware Generative World Model with Structured Kinematic-to-Visual Action Fields | arXiv (2026) | 中关村人工智能研究院 / 中国科学技术大学 / 复旦大学 | 🎮 | [论文](https://arxiv.org/abs/2605.06192) \| [代码](https://github.com/Shownx-c/EA-WM) | 在 Wan2.2 上生成机器人未来视频。动作经正运动学和相机投影画成画面里的骨架、夹爪、末端热图和姿态轴，再用帧差潜变量把门控到正在变化的区域。WorldArena 上 P3CScore 为 76.60，CogVideoX 为 71.08；轨迹准确度 0.430 对 0.353。换成数值动作后同一分数掉到 70.97。构建动作场需要机器人模型和相机标定。 |
 | **FACT**: Failure-Aware Causal Training for World-Action Models | arXiv (2026) | Xiaolong Wang 团队 | — | [论文](https://arxiv.org/abs/2608.10232) | 失败感知因果训练，显式建模动作-后果因果关系以纠正世界模型的乐观偏差。 |
@@ -207,6 +210,7 @@
 | **TrAct**: Bridging Robot Control and Visual Prediction with Visual Tracks | arXiv (2026) | Stanford | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.24101) | 用视觉轨迹作为控制与预测的中间接口：VLAT 联合预测动作与轨迹，轨迹条件世界模型 rollout，再由视觉语言奖励模型选动作，仿真与真机成功率均高于动作条件世界模型。 |
 | **Tri-View Bench**: TriWorldBench: A Tri-View Consistency Perspective on Embodied World Models | arXiv (2026) | 北京大学 / 清华大学 / 上海人工智能实验室 | — | [论文](https://arxiv.org/abs/2609.26314) \| [代码](https://github.com/TriWorldBench/TriWorldBench) | 2026 年 9 月 23 日发布的头相机与左右腕相机一致性基准，评三路视频是否在描述同一次操作；与 CausalWM 所报的 9 月 11 日总分榜不是同一套评测。500 条回合、50 个 RoboTwin 2.0 双臂任务、19 项指标，汇总为 TWB-Score。 |
 | **TrojanWorld**: Backdooring World-Model Agents via Imagination Steering | arXiv (2026) | 上海交通大学 | 🎮 🔁 | [论文](https://arxiv.org/abs/2609.07051) | 针对预训练世界模型供应链的后门：场景中的物理物体作触发器，经决策反射诱导、干净行为锚定与因果传播，把内部想象导向攻击者指定动作；在 TD-MPC2、DreamerV3 等上触发时目标动作偏差低至 0.026，干净性能保留 ≥98.8%，触发消失后仍可能锁死在诱导行为。 |
+| **NWM History**: Visual Representation and History Modeling for Navigation World Models | arXiv (2026) | 克莱姆森大学 | 🎮 ⏳ | [论文](https://arxiv.org/abs/2609.29555) | 在同一个条件流 Transformer 里比较五种冻结视觉表征。重建最好的是 PAE-L（DINO 0.069），直接预测最好的是 RAE-B，长程展开最好的是 V-JEPA。Cached-Linear 在 64 帧历史、120 个候选上把延迟从 51.67 秒降到 7.15 秒，峰值显存从 34.63 GiB 降到 5.35 GiB；128 帧时全局注意力显存溢出，它仍约为 7.19 秒。轨迹误差没有因此全面下降。 |
 | **WALL-SS**: Scaling Long-horizon World Models via Next-Scale Autoregression | arXiv (2026) | — | 🎮 🔁 ⏳ | [论文](https://arxiv.org/abs/2608.26239) | 把具身轨迹表示为观测-动作时序交错的因果序列，用 next-scale 粗到细自回归注入尺度对齐的动作表征，配合尺度压缩的长时记忆与 on-policy 对齐奖励，实现可变长生成、有界内存下的分钟级连贯流式 rollout 与更强动作跟随。 |
 | **WISE**: World-model-guided Imagination Scheduling for Efficient Post-training of Vision-Language-Action Models | arXiv (2026) | 清华大学 / BAAI | 🎮 🔁 | [论文](https://arxiv.org/abs/2609.03681) | 用世界模型做 VLA 后训练时不是全程想象，而是在交互关键状态才调用、有界多视角 rollout，并以进度/完成信号做相对评价、在真实交互上下文中更新策略；相对全量想象节省约 80% GPU 时间，π0 / π0.5 仿真与真机均更稳。 |
 | **WM-Craftnet**: World Synesthesia Model for Generalizable and Robust Dexterous In-Hand Manipulation | CoRL (2026) | 上海交通大学 | 🎮 🔁 | [论文](https://arxiv.org/abs/2609.07002) \| [项目](https://wmcraftnet.github.io/) | 从本体、深度、触觉与动作学习动作条件潜空间动力学，作为非对称 actor-critic 的循环任务上下文，而非用于潜空间想象规划；用干净深度目标监督噪声深度输入以便真机部署，九物体预训练先验可迁移到 49 物体的泛化手内旋转、扰动恢复与 sim-to-real。 |

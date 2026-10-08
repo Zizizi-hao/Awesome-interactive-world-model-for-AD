@@ -870,3 +870,40 @@ papers:
     features: {}
     tags: [运动坍缩, 解码监督, 像素误差, 冻结潜空间]
     note: 冻结自监督潜空间、只训一条流时，开环展开会把场景停住，或把物体在少数几步里瞬移；像素 L1 会奖励静止。DART 保持编码器冻结，只在解码后的画面和区域特征上重训这条流。100 条 LIBERO 示范上，一种随机种子的运动集中度从 0.345 降到 0.145，总运动量从 26 升到 69，L1 从 10.311 降到 9.944。
+
+  - title: "ContactWorld: What Representations Matter for Vision-Tactile Latent World Models in Contact-Rich Manipulation"
+    short: ContactWorld
+    org: 普渡大学 / 得克萨斯农工大学
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2606.13877"
+      project: "https://contact-world.github.io"
+    features: {}
+    tags: [视触觉表征, 接触操作, 点云, 力场]
+    note: 固定世界模型和规划器，只比较视觉与触觉的表示。12 个接触任务上，点云规划成功率 32.1%，腕部和前方 RGB 为 20.7% 和 22.0%；点云加结构化触觉力场为 36.1%。真机 900 次，覆盖六个任务、两台机器人和三种触觉。环境和脚本计划在发表后放出。
+
+  - title: "Visual Representation and History Modeling for Navigation World Models"
+    short: NWM History
+    org: 克莱姆森大学
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.29555"
+    features: {action: true, longhorizon: true}
+    tags: [导航世界模型, 视觉表征, 历史复用, 多候选规划]
+    note: 在同一个条件流 Transformer 里比较五种冻结视觉表征。重建最好的是 PAE-L（DINO 0.069），直接预测最好的是 RAE-B，长程展开最好的是 V-JEPA。Cached-Linear 在 64 帧历史、120 个候选上把延迟从 51.67 秒降到 7.15 秒，峰值显存从 34.63 GiB 降到 5.35 GiB；128 帧时全局注意力显存溢出，它仍约为 7.19 秒。轨迹误差没有因此全面下降。
+
+  - title: "Do World Models Make Better Robots? A Survey of Evaluation Benchmarks for Predictive Embodied Intelligence"
+    short: WM Eval Survey
+    org: UC Berkeley / BITS Pilani
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.29669"
+    features: {}
+    tags: [评测综述, 闭环优势, 基准缺口, 世界模型对比]
+    note: 统计 2017 至 2026 年 160 个已核验基准。138 个不区分模型族，只有 11 个直接对比视觉–语言–动作策略和世界模型，只有 4 个把预测执行成动作。作者写明贡献与所在单位的职务无关。
