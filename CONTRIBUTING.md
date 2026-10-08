@@ -1,10 +1,12 @@
 # 贡献指南
 
+**简体中文** | [English](CONTRIBUTING.en.md)
+
 感谢贡献！本仓库采用「数据与展示分离」的架构：
 
 - [`data.yaml`](data.yaml) —— 数据入口，包含元信息、分类定义，并通过 `includes` 引用各分类文件
 - [`data/`](data/) —— 论文条目按分类拆分存放（`driving.yaml` / `embodied.yaml` / `general.yaml`）
-- `README.md` —— 由脚本自动生成，**请勿手动编辑**
+- [`README.md`](README.md) / [`README.en.md`](README.en.md) —— 中英文主页，由脚本同时生成，**请勿手动编辑**
 
 ## 添加/修改条目
 
@@ -15,6 +17,7 @@
 - title: "论文完整标题"        # 必填
   short: 简称                  # 可选，用于表格中加粗显示
   org: 机构名                  # 可选
+  org_en: Organization name    # org 含中文时必填；org 已为英文时可省略
   year: 2025                   # 必填，首次发表年份（表格中统一以 (year) 显示）
   venue: 会议/期刊名           # 必填，未正式发表填 arXiv；无需带年份
   category: driving            # 必填，见下方分类 id
@@ -30,18 +33,30 @@
     longhorizon: true          # 长时序一致性
   tags: [标签1, 标签2]          # 可选，自由关键词
   note: 一句话中文点评          # 必填，说明该工作的核心贡献与交互特性
+  note_en: English summary     # 必填，与中文点评保持相同信息、数字与限定条件
 ```
 
 2. 把 `data.yaml` 里 `meta.updated` 改成今天的日期（README 的「最后更新」读这一行，不要用 git 提交日）。
 
-3. 本地重新生成 README：
+3. 本地同时重新生成中英文 README：
 
 ```bash
 pip install pyyaml   # 首次需要
 python scripts/generate_readme.py
 ```
 
-4. 将修改的 `data/*.yaml`、`data.yaml` 与 `README.md` 一并提交 PR。
+4. 将修改的 `data/*.yaml`、`data.yaml`、`README.md` 与 `README.en.md` 一并提交 PR。CI 会检查两版是否与数据同步；缺少英文点评或机构翻译时，生成脚本会指出对应条目。
+
+首页介绍的英文翻译位于 `data.yaml` 的 `meta.subtitle_en` 和 `meta.description_en`；分类英文名使用 `name_en`。更新介绍或点评时，请同步修改对应译文。
+
+如需更新两版的每月论文统计图，运行：
+
+```bash
+pip install matplotlib
+python scripts/generate_monthly_chart.py
+```
+
+月份取自 arXiv 编号，截止月份取自 `meta.updated`。将生成的两张 `assets/monthly-paper-counts*.png` 一并提交。
 
 ## 自动扫描维护
 

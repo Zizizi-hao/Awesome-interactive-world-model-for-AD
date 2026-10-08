@@ -15,6 +15,7 @@ papers:
     features: {action: true}
     tags: [世界基础模型, 物理AI, 仿真数据生成]
     note: 面向物理 AI 的世界基础模型平台，提供可动作条件化的预训练世界模型，服务于自动驾驶与机器人的后训练。
+    note_en: "A world foundation model platform for physical AI, providing pretrained world models that can be conditioned on actions for post-training in autonomous driving and robotics."
 
   - title: "Mastering Diverse Domains through World Models"
     short: DreamerV3
@@ -28,6 +29,7 @@ papers:
     features: {action: true, closedloop: true}
     tags: [世界模型强化学习, 通用算法]
     note: 通用世界模型强化学习算法，单一超参数配置横跨多领域任务，首次实现从零开始在 Minecraft 中收集钻石。
+    note_en: "A general world-model reinforcement learning algorithm that uses a single hyperparameter configuration across tasks in diverse domains and is the first to collect diamonds from scratch in Minecraft."
 
   - title: "TD-MPC2: Scalable, Robust World Models for Continuous Control"
     short: TD-MPC2
@@ -41,6 +43,7 @@ papers:
     features: {action: true, closedloop: true}
     tags: [连续控制, 模型预测控制, 可扩展]
     note: 可扩展的隐式世界模型 + 模型预测控制框架，单套超参数在 80+ 连续控制任务上取得鲁棒表现。
+    note_en: "A scalable framework combining implicit world models with model predictive control, delivering robust performance on 80+ continuous-control tasks with a single set of hyperparameters."
 
   - title: "Diffusion for World Modeling: Visual Details Matter in Atari"
     short: DIAMOND
@@ -54,6 +57,7 @@ papers:
     features: {action: true, realtime: true, closedloop: true}
     tags: [扩散世界模型, Atari, 神经游戏引擎]
     note: 基于扩散模型的世界模型与 RL 智能体，刷新 Atari 100k 基准，并可实时运行可玩的 CS:GO 神经引擎。
+    note_en: "A diffusion-based world model and RL agent that advances the Atari 100k benchmark and can run a playable CS:GO neural engine in real time."
 
   - title: "Diffusion Models Are Real-Time Game Engines"
     short: GameNGen
@@ -66,10 +70,12 @@ papers:
     features: {action: true, realtime: true}
     tags: [神经游戏引擎, DOOM, 实时生成]
     note: 基于扩散模型的神经游戏引擎，在单张 TPU 上以 20FPS 实时运行 DOOM，人类评测难以区分其与真实引擎。
+    note_en: "A diffusion-based neural game engine that runs DOOM in real time at 20 FPS on a single TPU, with human evaluators finding it difficult to distinguish from the real engine."
 
   - title: "WorldDreamer: Towards General World Models for Video Generation via Predicting Masked Tokens"
     short: WorldDreamer
     org: "Yu Qiao 团队"
+    org_en: "Yu Qiao's team"
     year: 2024
     venue: arXiv
     category: general
@@ -78,6 +84,7 @@ papers:
     features: {}
     tags: [掩码预测, 多领域泛化, 视频生成]
     note: 通过预测掩码 token 构建通用世界模型，在图像预测、动作条件预测与文本到视频生成间统一建模。
+    note_en: "Builds a general world model by predicting masked tokens, unifying image prediction, action-conditioned prediction, and text-to-video generation."
 
   - title: "Matrix-Game: Interactive World Foundation Model"
     short: Matrix-Game
@@ -90,6 +97,7 @@ papers:
     features: {action: true, realtime: true, longhorizon: true}
     tags: [实时交互, 世界基础模型, 长视频生成]
     note: 开源实时交互世界基础模型，支持丰富的动作可控性与长时程连贯生成，探索世界模型的交互式应用范式。
+    note_en: "An open-source world foundation model for real-time interaction, supporting rich action controllability and coherent long-horizon generation while exploring interactive applications of world models."
 
   - title: "Matrix-Game 3.5: Enhancing Real-Time Streaming Interactive World Models with Patch Memory"
     short: Matrix-Game 3.5
@@ -102,6 +110,7 @@ papers:
     features: {action: true, realtime: true, longhorizon: true}
     tags: [实时交互, 贴片记忆, 几何感知相机控制, 静动解耦, 扩散蒸馏, 世界模型系列]
     note: Matrix-Game 3.0 的升级版，面向几何感知与长时程一致的实时流式交互世界生成，三项关键改进：(1) 统一几何感知记忆框架——patch 记忆做显式 3D 块检索、tiled-PRoPE 做投影式相机条件化，不引入任何可学习参数即可实现几何一致的相机控制与长时程场景回忆；(2) 静动解耦的世界表示——分别建模静态场景几何与动态主体，长时程生成中同时保持几何一致性与主体身份；(3) 两阶段渐进实时蒸馏——经感知流匹配（Perceptual Flow Matching）与课程式自 rollout DMD 把双向扩散模型转为少步因果生成器，支撑分钟级实时交互。训练语料统一覆盖 Unreal 仿真环境、开放世界游戏与互联网视频，在场景回忆、相机控制、主体一致性、文本驱动世界生成与稳定开放世界实时交互上均表现强劲。
+    note_en: "An upgrade to Matrix-Game 3.0 for geometry-aware, long-horizon-consistent real-time streaming interactive world generation, with three key improvements: (1) a unified geometry-aware memory framework, using patch memory for explicit 3D block retrieval and tiled-PRoPE for projective camera conditioning, enabling geometrically consistent camera control and long-horizon scene recall without introducing any learnable parameters; (2) a world representation that separates static and dynamic components, modeling static scene geometry and dynamic subjects separately to preserve both geometric consistency and subject identity over long-horizon generation; (3) two-stage progressive real-time distillation, using Perceptual Flow Matching and curriculum-based self-rollout DMD to convert a bidirectional diffusion model into a few-step causal generator for minute-scale real-time interaction. The training corpus jointly covers Unreal simulation environments, open-world games, and internet videos, with strong performance in scene recall, camera control, subject consistency, text-driven world generation, and stable real-time open-world interaction."
 
   - title: "Qwen-RobotWorld: A Joint World Model Integrating Driving, Navigation and Manipulation"
     short: Qwen-RobotWorld
@@ -114,10 +123,12 @@ papers:
     features: {action: true}
     tags: [语言动作接口, 跨领域世界模型, 视频世界模型]
     note: 将语言作为统一动作接口，把视频世界模型扩展到自动驾驶、导航和机器人操作。
+    note_en: "Uses language as a unified action interface to extend video world models to autonomous driving, navigation, and robotic manipulation."
 
   - title: "GAUGE: A Measurement-Grounded Benchmark for Physical Fidelity in Simulation Engines and Video World Models"
     short: GAUGE
     org: "Weinan Zhang 团队"
+    org_en: "Weinan Zhang's team"
     year: 2026
     venue: arXiv
     category: general
@@ -126,9 +137,11 @@ papers:
     features: {}
     tags: [物理保真度, 基准测试, 测量驱动]
     note: 测量驱动的物理保真度基准，诊断仿真引擎与视频世界模型的物理一致性。
+    note_en: "A measurement-grounded benchmark for physical fidelity that diagnoses physical consistency in simulation engines and video world models."
 
   - title: "The Evaluation Protocol Determines the Result: An Independent Reproduction of LeWorldModel on TwoRoom"
     org: "Joyjeet Singh 团队"
+    org_en: "Joyjeet Singh's team"
     year: 2026
     venue: arXiv
     category: general
@@ -137,9 +150,11 @@ papers:
     features: {}
     tags: [评价协议, 复现研究, 世界模型基准]
     note: 独立复现发现评价协议决定世界模型排名，揭示评测方法论对结果的影响。
+    note_en: "An independent reproduction finds that evaluation protocols determine world-model rankings, revealing the effect of evaluation methodology on results."
 
   - title: "Diagnosing JEPA World Models with Action-Conditioned Predictive Consistency"
     org: "Qi Tian 团队"
+    org_en: "Qi Tian's team"
     year: 2026
     venue: arXiv
     category: general
@@ -148,9 +163,11 @@ papers:
     features: {action: true}
     tags: [JEPA, 动作条件预测, 诊断]
     note: 用动作条件预测一致性诊断 JEPA 世界模型的表示质量。
+    note_en: "Diagnoses the representation quality of JEPA world models through action-conditioned predictive consistency."
 
   - title: "A Unifying Perspective on Causal World Models: From Observations to Representations to Structure"
     org: "Fabrizio Russo 团队"
+    org_en: "Fabrizio Russo's team"
     year: 2026
     venue: arXiv
     category: general
@@ -159,10 +176,12 @@ papers:
     features: {}
     tags: [因果世界模型, 统一视角, OOD泛化]
     note: 从因果视角统一世界模型的观测、表示与结构，分析 OOD 泛化与干预推理。
+    note_en: "Unifies observations, representations, and structure in world models from a causal perspective, analyzing OOD generalization and intervention reasoning."
 
   - title: "Twin Rollouts: Noise-Coupled Counterfactual Branching in Interactive Video World Models"
     short: Twin Rollouts
     org: "Xinran Xu 团队"
+    org_en: "Xinran Xu's team"
     year: 2026
     venue: arXiv
     category: general
@@ -171,10 +190,12 @@ papers:
     features: {action: true}
     tags: [反事实分支, 噪声耦合, 交互视频世界模型]
     note: 噪声耦合实现同一世界状态的分支式反事实 rollout，保持共享上下文一致性。
+    note_en: "Uses noise coupling for branching counterfactual rollouts from the same world state while preserving consistency in the shared context."
 
   - title: "WorldDirector: Building Controllable World Simulators with Persistent Dynamic Memory"
     short: WorldDirector
     org: "Qifeng Chen 团队"
+    org_en: "Qifeng Chen's team"
     year: 2026
     venue: arXiv
     category: general
@@ -183,10 +204,12 @@ papers:
     features: {}
     tags: [持久记忆, 视角探索, 可控世界模型]
     note: 持久动态对象记忆 + 无限制视角探索的可控视频世界模型框架。
+    note_en: "A controllable video world-model framework combining persistent dynamic-object memory with unrestricted viewpoint exploration."
 
   - title: "HelloWorld: Enabling Socially Interactive Characters in Video World Models"
     short: HelloWorld
     org: "Yoichi Sato 团队"
+    org_en: "Yoichi Sato's team"
     year: 2026
     venue: arXiv
     category: general
@@ -195,10 +218,12 @@ papers:
     features: {}
     tags: [社交交互, 虚拟角色, 视频世界模型]
     note: 首次在视频世界模型中实现用户与虚拟角色间的社交交互。
+    note_en: "The first to enable social interaction between users and virtual characters in video world models."
 
   - title: "MASS: Multiplayer World Models with Authoritative Shared State"
     short: MASS
     org: "Boxin Shi 团队"
+    org_en: "Boxin Shi's team"
     year: 2026
     venue: arXiv
     category: general
@@ -207,9 +232,11 @@ papers:
     features: {}
     tags: [多玩家, 共享状态, 状态同步]
     note: 权威共享状态的多玩家世界模型，解决多智能体状态同步问题。
+    note_en: "A multiplayer world model with authoritative shared state that addresses state synchronization across multiple agents."
 
   - title: "Addressable Memory for Video World Models"
     org: "Aljoša Ošep 团队"
+    org_en: "Aljoša Ošep's team"
     year: 2026
     venue: arXiv
     category: general
@@ -218,9 +245,11 @@ papers:
     features: {longhorizon: true}
     tags: [可寻址记忆, 视觉持久性, KV cache]
     note: 可寻址视觉记忆机制，解决交互式视频世界模型中 KV cache 的视觉持久性局限。
+    note_en: "An addressable visual-memory mechanism that addresses the limitations of KV caches in preserving visual persistence in interactive video world models."
 
   - title: "Persistent Computational State: A Session-Centric Runtime for Generative World Models"
     org: "Zhen Lin 团队"
+    org_en: "Zhen Lin's team"
     year: 2026
     venue: arXiv
     category: general
@@ -229,10 +258,12 @@ papers:
     features: {}
     tags: [会话运行时, 分叉回溯, 状态管理]
     note: 会话中心运行时支持分叉、回溯和重访视角，面向生成式世界模型的状态管理。
+    note_en: "A session-centric runtime supporting branching, backtracking, and viewpoint revisits for state management in generative world models."
 
   - title: "AlayaWorld: Interactive Long-Horizon World Modeling"
     short: AlayaWorld
     org: "Zihui Gao 团队"
+    org_en: "Zihui Gao's team"
     year: 2026
     venue: arXiv
     category: general
@@ -241,10 +272,12 @@ papers:
     features: {action: true, longhorizon: true}
     tags: [长时程交互, 持久状态, 视频世界模型]
     note: 长时程可交互视频世界建模，支持持久状态演化与玩家级交互。
+    note_en: "Long-horizon interactive video world modeling that supports persistent state evolution and player-level interaction."
 
   - title: "ABot-World-0: Infinite Interactive World Rollout on a Single Desktop GPU"
     short: ABot-World-0
     org: "Ning Guo 团队"
+    org_en: "Ning Guo's team"
     year: 2026
     venue: arXiv
     category: general
@@ -253,10 +286,12 @@ papers:
     features: {longhorizon: true}
     tags: [无限rollout, 低资源, 交互世界]
     note: 单桌面 GPU 上的无限交互式世界 rollout，演示了低资源持续交互可行性。
+    note_en: "Infinite interactive world rollouts on a single desktop GPU, demonstrating the feasibility of continuous interaction with limited resources."
 
   - title: "Sekai2: From World Exploration to Interactive World Modeling"
     short: Sekai2
     org: "Yongtao Ge 团队"
+    org_en: "Yongtao Ge's team"
     year: 2026
     venue: arXiv
     category: general
@@ -265,10 +300,12 @@ papers:
     features: {longhorizon: true}
     tags: [世界探索, 交互建模, 长时程rollout]
     note: 从世界探索到交互式世界建模的统一框架，支持长时程交互 rollout。
+    note_en: "A unified framework from world exploration to interactive world modeling that supports long-horizon interactive rollouts."
 
   - title: "WorldCycle: Self-Verifiable Reinforcement Learning for Long-Horizon Video World Models"
     short: WorldCycle
     org: "Song Guo 团队"
+    org_en: "Song Guo's team"
     year: 2026
     venue: arXiv
     category: general
@@ -277,9 +314,11 @@ papers:
     features: {longhorizon: true}
     tags: [自验证强化学习, 长程rollout, 错误修正]
     note: 自验证强化学习让视频世界模型在长程 rollout 中自我检测并修正错误。
+    note_en: "Self-verifiable reinforcement learning enables video world models to detect and correct their own errors during long-horizon rollouts."
 
   - title: "Distilling Physical Priors into Streaming World Models"
     org: "Yihao Liu 团队"
+    org_en: "Yihao Liu's team"
     year: 2026
     venue: arXiv
     category: general
@@ -288,10 +327,12 @@ papers:
     features: {longhorizon: true}
     tags: [物理先验, 流式世界模型, 蒸馏]
     note: 将物理先验蒸馏到流式世界模型，改善长程 rollout 的物理一致性。
+    note_en: "Distills physical priors into streaming world models to improve physical consistency in long-horizon rollouts."
 
   - title: "Beyond Visual CoT: Internalized Visual Thinking for Proactive Video Reasoning"
     short: InternalVCoT
     org: "Xiaoyu Zhu 团队"
+    org_en: "Xiaoyu Zhu's team"
     year: 2026
     venue: arXiv
     category: general
@@ -300,10 +341,12 @@ papers:
     features: {longhorizon: true}
     tags: [视觉思维链, 内化推理, 视频推理, 多模态大模型]
     note: 将显式视觉 CoT（生成中间推理图像）内化为隐式视觉预见，在保持空间/时序推理能力的同时大幅降低推理开销。
+    note_en: "Internalizes explicit visual CoT, which generates intermediate reasoning images, into implicit visual foresight, substantially reducing inference overhead while retaining spatial and temporal reasoning capabilities."
 
   - title: "SCOPE: Score-Isolated Agentic Optimization for Video World Models"
     short: SCOPE
     org: "Yuhua Jiang 团队"
+    org_en: "Yuhua Jiang's team"
     year: 2026
     venue: arXiv
     category: general
@@ -312,10 +355,12 @@ papers:
     features: {action: true}
     tags: [推理时优化, 评分隔离, 视频世界模型, 具身决策]
     note: 提出评分隔离的 Agentic 优化框架，解耦 prompt/采样器/验证器/选择器的评估，使视频世界模型在规划与具身决策中推理时优化更可靠。
+    note_en: "Proposes a score-isolated agentic optimization framework that decouples the evaluation of prompts, samplers, verifiers, and selectors, making inference-time optimization of video world models more reliable for planning and embodied decision-making."
 
   - title: "PlayWorld: Benchmarking World Models with Agent Players over Long-Horizon Objectives"
     short: PlayWorld
     org: "Hengshuang Zhao 团队"
+    org_en: "Hengshuang Zhao's team"
     year: 2026
     venue: arXiv
     category: general
@@ -324,9 +369,11 @@ papers:
     features: {}
     tags: [Agent Player, 长程目标, 基准测试]
     note: 用多模态 Agent Player 追求长程目标来评估世界模型的几何一致性与交互保真度。
+    note_en: "Uses multimodal Agent Players pursuing long-horizon objectives to evaluate the geometric consistency and interaction fidelity of world models."
 
   - title: "From Generation to Simulation: How Far Are World Models from Being True Simulators?"
     org: "Tong Wang 等"
+    org_en: "Tong Wang et al."
     year: 2026
     venue: arXiv
     category: general
@@ -336,6 +383,7 @@ papers:
     features: {}
     tags: [综述, 仿真器能力评估, 世界模型]
     note: 以传统仿真器的八项能力为外部标尺，系统评估生成式世界模型距离真正仿真器的差距，梳理潜空间动力学、视频生成与联合嵌入预测三条技术路线并映射 200 篇代表性工作，指出状态反馈是最被忽视的短板，并给出六个研究方向。
+    note_en: "Uses eight capabilities of traditional simulators as external criteria to systematically assess the gap between generative world models and true simulators. It organizes three technical approaches, latent-space dynamics, video generation, and joint-embedding prediction, maps 200 representative works, identifies state feedback as the most neglected weakness, and proposes six research directions."
 
   - title: "LpWM: A Case for Sparse Representations in World Models"
     short: LpWM
@@ -349,10 +397,12 @@ papers:
     features: {action: true, closedloop: true}
     tags: [稀疏表征, JEPA, 潜空间动力学, 规划]
     note: 论证稀疏表征是世界模型更有利的几何结构：用 RDMReg 正则化 JEPA 学习非负稀疏潜码，在 PushT 上以更低的预测器复杂度实现规划成功率最高提升 57%，且学到的表征呈模式分解的可解释结构。
+    note_en: "Argues that sparse representations provide more favorable geometry for world models: RDMReg regularizes JEPA to learn nonnegative sparse latent codes, improving planning success rates on PushT by up to 57% with lower predictor complexity, while the learned representations exhibit an interpretable structure decomposed into modes."
 
   - title: "4DStreamCtrl: Interactive Video Generation with Online 4D Control"
     short: 4DStreamCtrl
     org: "Yixin Zhu 团队"
+    org_en: "Yixin Zhu's team"
     year: 2026
     venue: arXiv
     category: general
@@ -361,10 +411,12 @@ papers:
     features: {action: true, realtime: true, longhorizon: true}
     tags: [3D点轨迹, 相机-物体联合控制, 流式生成, 因果蒸馏, 可交互视频生成]
     note: 把相机运动、物体轨迹与深度统一为单一 3D 点轨迹表征，单模型一次前向即联合完成相机/物体控制、深度编辑与运动迁移；从野外视频挖掘 3D 运动监督构建 OpenVidHD-Motion3D，借时间可分离的几何运动编码器蒸馏为因果流式学生模型，4 步去噪生成任意长视频，单卡 480p 达 20 FPS 并在数百帧内保持时序一致，首次实现可交互的 4D 可控流式生成。
+    note_en: "Unifies camera motion, object trajectories, and depth in a single 3D point-trajectory representation, allowing one model to jointly perform camera and object control, depth editing, and motion transfer in a single forward pass. It mines 3D motion supervision from in-the-wild videos to build OpenVidHD-Motion3D and uses a temporally separable geometric motion encoder to distill a causal streaming student model. Four denoising steps generate videos of arbitrary length, reaching 20 FPS at 480p on a single GPU while maintaining temporal consistency over hundreds of frames, enabling interactive 4D-controllable streaming generation for the first time."
 
   - title: "Agentic Game Development as a Verifiable Trajectory Data Engine for Scaling World Models"
     short: RLHEV
     org: "Yang You 团队"
+    org_en: "Yang You's team"
     year: 2026
     venue: arXiv
     category: general
@@ -373,6 +425,7 @@ papers:
     features: {}
     tags: [数据引擎, 可验证奖励, 游戏开发, RL后训练, 长程轨迹]
     note: 认为靠爬取更多视频scaling世界模型效率低下，需要像代码智能体那样具备可验证奖励的递归数据引擎：游戏引擎编码的场景是可执行的世界规范，可密集校验碰撞、物理、可导航性与有界可玩性，故提出 RLHEV 后训练范式，将引擎信号与开发过程中的人类接受反馈结合，为空间世界模型提供长程轨迹与可靠奖励。
+    note_en: "Argues that scaling world models by scraping more videos is inefficient and calls for a recursive data engine with verifiable rewards, as in coding agents. Game-engine-encoded scenes are executable world specifications that allow dense checks of collisions, physics, navigability, and bounded playability. It therefore proposes RLHEV post-training, combining engine signals with human acceptance feedback during development to provide spatial world models with long-horizon trajectories and reliable rewards."
 
   - title: "R2M-Bench: Evaluating Revisit Memory via Relative Consistency in Interactive Video World Models"
     short: R2M-Bench
@@ -385,10 +438,12 @@ papers:
     features: {}
     tags: [重访记忆基准, 相对一致性, 慢动作捷径, 交互式视频世界模型]
     note: 指出首访-重访帧的绝对相似度会被「慢动作捷径」迷惑，提出在同一 rollout 内用间隙匹配的非重访对与短程对做相对校准的 MemoryGain 与归一化记忆比 NMR，覆盖外观、场景/物体身份、局部几何与持久状态，评测 7 个动作条件视频世界模型且与人类一致性判断相关 ρ=0.547。
+    note_en: "Shows that absolute similarity between first-visit and revisit frames can be misled by a 'slow-motion shortcut'. It proposes MemoryGain and the normalized memory ratio NMR, calibrated relatively using gap-matched non-revisit pairs and short-range pairs within the same rollout. The benchmark covers appearance, scene and object identity, local geometry, and persistent state, evaluates 7 action-conditioned video world models, and correlates with human consistency judgments at rho=0.547."
 
   - title: "SolarWM: Open Data and Scalable Training for Long-Horizon Video World Models"
     short: SolarWM
     org: "Li Jiang 团队"
+    org_en: "Li Jiang's team"
     year: 2026
     venue: arXiv
     category: general
@@ -398,10 +453,12 @@ papers:
     features: {action: true, realtime: true, longhorizon: true}
     tags: [开源世界模型, 多源数据引擎, 长时序视频, 骨干原生适配]
     note: 开源可交互视频世界模型全栈：1.43M 片段统一数据契约，并在 Wan2.2 / LTX-2.5 / MiniMax-H3 上做骨干原生适配；三阶段（双向适配、因果 AR、DMD）仅用 5 秒序列训练即可实时相机交互、分钟到小时级长时 rollout，并释放数据、配方与权重。
+    note_en: "An open-source full stack for interactive video world models: a unified data contract for 1.43M clips and backbone-native adaptation on Wan2.2 / LTX-2.5 / MiniMax-H3. Three training stages, bidirectional adaptation, causal AR, and DMD, use only 5-second training sequences to enable real-time camera interaction and long-horizon rollouts lasting minutes to hours, with data, recipes, and weights released."
 
   - title: "WorldReward: Reward Modeling for Camera-Conditioned World Models"
     short: WorldReward
     org: 复旦 / 腾讯混元
+    org_en: "Fudan University / Tencent Hunyuan"
     year: 2026
     venue: arXiv
     category: general
@@ -411,6 +468,7 @@ papers:
     features: {}
     tags: [奖励模型, 相机条件世界模型, 偏好对齐, RL后训练]
     note: 用 VLM 成对偏好同时评判动作一致性与视觉质量：把长视频切成动作对齐 chunk、结构化视觉证据再投票聚合；配套 WorldReward-Bench，并作为奖励对 HY-WorldPlay 1.5 做 RL 后训练，短长时程的动作执行与画面质量均提升。
+    note_en: "Uses pairwise VLM preferences to jointly assess action consistency and visual quality: it divides long videos into action-aligned chunks, structures the visual evidence, and aggregates votes. It includes WorldReward-Bench and serves as the reward for RL post-training of HY-WorldPlay 1.5, improving action execution and visual quality over both short and long horizons."
 
   - title: "Building Pretraining Data for World Models: An Unreal Engine-Based Pipeline for Action-Conditioned Video Generation"
     short: EchoWM-Data
@@ -424,6 +482,7 @@ papers:
     features: {action: true}
     tags: [合成数据, Unreal Engine, 动作条件视频, 多视角]
     note: EchoWM 所用的 Unreal 合成数据产线：PIE 实时物理记录轨迹、MRQ 离线渲染两阶段解耦，200 卡集群产出五路同步 1080p/720p 视频及帧对齐动作、角色与相机位姿，累计数千小时动作条件预训练数据。
+    note_en: "The Unreal synthetic-data pipeline used by EchoWM separates real-time physical trajectory recording with PIE from offline rendering with MRQ. A 200-GPU cluster produces five synchronized streams of 1080p/720p video with frame-aligned actions, character poses, and camera poses, totaling thousands of hours of action-conditioned pretraining data."
 
   - title: "Programmable World Model"
     short: PWM
@@ -438,6 +497,7 @@ papers:
     features: {action: true, longhorizon: true}
     tags: [可编程规则, 持久世界状态, 视频渲染解耦, 可玩游戏]
     note: 把世界状态演化与视觉生成解耦：自然语言编译成可执行程序维护含屏外实体的全局状态，再经状态增强 3D OBB 条件化预训练视频模型做渲染；CombatStateBench 上计数/状态准确率 94%/98%，支持规则可编程、实体可控的长时可玩游戏。
+    note_en: "Decouples world-state evolution from visual generation: natural language is compiled into executable programs that maintain a global state including off-screen entities, and a pretrained video model conditioned on state-augmented 3D OBBs renders the result. Counting and state accuracies on CombatStateBench are 94% and 98%, supporting long-horizon playable games with programmable rules and controllable entities."
 
   - title: "AlayaVista: Streaming World Modeling from Panoramic States to Perspective Video"
     short: AlayaVista
@@ -451,10 +511,12 @@ papers:
     features: {action: true, longhorizon: true}
     tags: [全景潜状态, 视口渲染, 相机可控, 流式视频]
     note: 把全景状态演化和当前视口渲染拆开：单张透视图像先扩成 360° 场景先验，再按相机条件逐块演化，只把请求的视口细化成视频。训练用自建 MUGEN（1318 小时、至少 4K 的真实全景视频）和 Sekai2 的全景子集，并用分块自回归与少步蒸馏支持流式生成。
+    note_en: "Separates panoramic-state evolution from rendering the current viewport: a single perspective image is first expanded into a 360-degree scene prior, evolved chunk by chunk under camera conditioning, and only the requested viewport is refined into video. Training uses the self-built MUGEN dataset, with 1318 hours of real panoramic video at at least 4K resolution, and the panoramic subset of Sekai2, with chunked autoregression and few-step distillation supporting streaming generation."
 
   - title: "Zing-0.5: Toward Playable Worlds with Real-Time Joint Action and Text Control"
     short: Zing-0.5
     org: 涌跃智能
+    org_en: "Seedleap.ai"
     year: 2026
     venue: arXiv
     category: general
@@ -464,6 +526,7 @@ papers:
     features: {action: true, realtime: true, closedloop: true, longhorizon: true}
     tags: [可玩世界, 键盘控制, 在线文本, 实时流式]
     note: 5B 自回归世界模型把键盘幅度和在线文本放进同一条序列，四步生成加流式缓存，832×480 达 24 FPS。158 个 WBench 导航案例上总分 81.0、一致性 88.5，文本可以在导航过程中改事件而不重开生成。
+    note_en: "A 5B autoregressive world model places keyboard input magnitudes and online text in the same sequence, combining four-step generation with a streaming cache to reach 24 FPS at 832 x 480. It achieves an overall score of 81.0 and consistency of 88.5 on 158 WBench navigation cases; text can alter events during navigation without restarting generation."
 
   - title: "Astronex-World 1.0: Real-Time Interactive World Model Foundation"
     short: Astronex-World
@@ -477,10 +540,12 @@ papers:
     features: {action: true, realtime: true, closedloop: true, longhorizon: true}
     tags: [可控视频底座, 连续动作, 相机轨迹, 实时流式]
     note: 从 Wan2.2-TI2V-5B 改出的 5B 可控视频底座。给定文字或第一帧，再按逐帧相机轨迹、64 维连续动作、本体编号，以及可插入 rollout 中途的文字事件预测后续画面。因果形态在单张 L20 上以 832×480、24 FPS 流式生成，动作接口留给驾驶和机器人数据后训练。
+    note_en: "A 5B controllable video backbone adapted from Wan2.2-TI2V-5B. Given text or an initial frame, it predicts subsequent visuals using per-frame camera trajectories, 64-dimensional continuous actions, embodiment IDs, and textual events that can be inserted midway through a rollout. Its causal form streams at 832 x 480 and 24 FPS on a single L20, with the action interface reserved for post-training on driving and robotics data."
 
   - title: "NeuIDO: Neural Intrinsic Dynamics Operator for Physics-Informed 4D World Models"
     short: NeuIDO
     org: 上海交通大学 / 厦门大学
+    org_en: "Shanghai Jiao Tong University / Xiamen University"
     year: 2026
     venue: ECCV 2026
     category: general
@@ -489,9 +554,11 @@ papers:
     features: {}
     tags: [神经算子, 本构动力学, 四维预测, 少样本适应]
     note: 把世界建模写成从视频观测到本构函数的神经算子，而不是把材料定律从外面规定进仿真器。零样本即可从视频推断动力学，复杂场景再用少样本低秩适应对齐；共享的动力学基底跨场景复用。
+    note_en: "Formulates world modeling as a neural operator from video observations to constitutive functions, rather than externally prescribing material laws in a simulator. It infers dynamics from video in zero-shot settings and uses few-shot low-rank adaptation for alignment in complex scenes; a shared dynamics basis is reused across scenes."
 
   - title: "HappyWorld-Bench"
     org: 阿里巴巴 / 智源
+    org_en: "Alibaba / BAAI"
     year: 2026
     venue: arXiv
     category: general
@@ -500,10 +567,12 @@ papers:
     features: {}
     tags: [交互基准, 六级能力, 物理因果, 重访一致性]
     note: 评测生成世界在探索、交互和修改之后是否仍然可靠，用六级能力统一视频、空间和具身系统，并以物理因果、内容因果和穿模等检查动作有没有带来该有的后果。
+    note_en: "Evaluates whether generated worlds remain reliable after exploration, interaction, and modification. Six capability levels unify video, spatial, and embodied systems, with checks of physical causality, content causality, and interpenetration to assess whether actions produce the expected consequences."
 
   - title: "minWM: A Full-Stack Open-Source Framework for Real-Time Interactive Video World Models"
     short: minWM
     org: 生数 / 清华大学
+    org_en: "Shengshu AI / Tsinghua University"
     year: 2026
     venue: arXiv
     category: general
@@ -513,10 +582,12 @@ papers:
     features: {action: true}
     tags: [相机可控, 少步自回归, 开源流水线, 流式推理]
     note: 把双向文生视频模型做成相机可控的少步自回归世界模型，流水线覆盖数据、可控微调、自回归训练、少步蒸馏和流式推理，并在 Wan2.1-T2V-1.3B 与 HY1.5-TI2V-8B 上跑通。单张 A800 上、不计 VAE，首帧延迟 Wan2.1 从 269 秒降到 1.137 秒，HY1.5 从 771 秒降到 3.446 秒。
+    note_en: "Turns bidirectional text-to-video models into camera-controllable, few-step autoregressive world models. The pipeline covers data, controllable fine-tuning, autoregressive training, few-step distillation, and streaming inference, and runs on Wan2.1-T2V-1.3B and HY1.5-TI2V-8B. On a single A800, excluding the VAE, first-frame latency falls from 269 seconds to 1.137 seconds for Wan2.1 and from 771 seconds to 3.446 seconds for HY1.5."
 
   - title: "OneWorld: Learning Consistent Physics Across Actions in World Models"
     short: OneWorld
     org: 武汉大学
+    org_en: "Wuhan University"
     year: 2026
     venue: arXiv
     category: general
@@ -525,10 +596,12 @@ papers:
     features: {action: true}
     tags: [共享物理机制, 反事实未来, 跨动作一致性, 流模型]
     note: 让同一初始场景下、不同动作产生的未来共用一个潜在物理机制。机制解释器从每条动作–结果分支推断机制分布，再合成这些分支能否共用一种物理的证据，用来约束流训练和采样。推方块、推绳子、倒水三个环境里，跨干预的共享世界差距相对 ACWM-DiT 平均下降 84.3%，单条预测的 M-MSE 约好 7.7×10⁻⁴。代码将放出。
+    note_en: "Makes futures produced by different actions from the same initial scene share a latent physical mechanism. A mechanism interpreter infers a mechanism distribution from each action-outcome branch and combines evidence of whether the branches can share the same physics to constrain flow training and sampling. Across block pushing, rope pushing, and water pouring, the shared-world gap across interventions falls by an average of 84.3% relative to ACWM-DiT, while single-prediction M-MSE improves by about 7.7×10⁻⁴. Code will be released."
 
   - title: "OPIS: An Input-Grounded Benchmark for Multi-Object Memory in Video World Models"
     short: OPIS
     org: 中国科学技术大学 / 中国科学院自动化研究所 / 香港科技大学 / Infrec
+    org_en: "University of Science and Technology of China / Institute of Automation, Chinese Academy of Sciences / Hong Kong University of Science and Technology / Infrec"
     year: 2026
     venue: arXiv
     category: general
@@ -538,10 +611,12 @@ papers:
     features: {}
     tags: [物体记忆, 输入锚定, 基准, 视频世界模型]
     note: 记忆评测固定在初始画面里的物体实例上，不使用生成历史、参考视频或挑选的重访视角。500 例，覆盖真实、机器人和游戏，标注 12672 个刚体、铰接体和可变形物体。八个模型的 OPIS 分在 48.65 到 56.01。参考物体从不到 20 个增到 40 个以上时，身份分从 40.22 降到 23.11。数据在 https://huggingface.co/datasets/Kirito-Lab/OPIS-dataset 。
+    note_en: "Anchors memory evaluation to object instances in the initial frame, without using generated history, reference videos, or selected revisit viewpoints. It contains 500 cases spanning real-world, robotics, and game settings, with annotations for 12672 rigid, articulated, and deformable objects. OPIS scores for eight models range from 48.65 to 56.01. When reference objects increase from fewer than 20 to more than 40, the identity score falls from 40.22 to 23.11. Data: https://huggingface.co/datasets/Kirito-Lab/OPIS-dataset ."
 
   - title: "WorldAttention: An Efficient Attention Architecture for Interactive Video World Models"
     short: WorldAttention
     org: 香港科技大学 / 阿里巴巴达摩院 / 浙江大学 / 湖畔实验室
+    org_en: "Hong Kong University of Science and Technology / Alibaba DAMO Academy / Zhejiang University / Hupan Lab"
     year: 2026
     venue: arXiv
     category: general
@@ -552,6 +627,7 @@ papers:
     features: {realtime: true, longhorizon: true}
     tags: [稀疏注意力, 分层缓存, 交互视频, 文本指令]
     note: 给自回归扩散的文本条件交互视频模型做混合稀疏注意力和分层 KV 缓存，避免滑窗丢掉历史，也避免全历史缓存撑满显存。单张 H100 上 22.0 FPS。定制核相对 FlashAttention-3 加速 14.02 倍，加上分层缓存后端到端 2.21 倍。VBench-Long 主体一致性 0.9472，InterVBench 0.9668。
+    note_en: "Uses hybrid sparse attention and hierarchical KV caching for autoregressive diffusion-based, text-conditioned interactive video models, avoiding both history loss from sliding windows and GPU memory exhaustion from caching the full history. It reaches 22.0 FPS on a single H100. Custom kernels achieve a 14.02× speedup over FlashAttention-3, while hierarchical caching brings the end-to-end speedup to 2.21×. Subject consistency is 0.9472 on VBench-Long and 0.9668 on InterVBench."
 
   - title: "Waypoint-1.5: A Real-Time Video World Model for Consumer Hardware"
     short: Waypoint-1.5
@@ -566,6 +642,7 @@ papers:
     features: {action: true, realtime: true, closedloop: true, longhorizon: true}
     tags: [键鼠控制, 消费级显卡, 游戏视频, 实时扩散]
     note: 1.28B 扩散世界模型，用约 10 万小时、数百款游戏的键鼠对齐视频预训练，按完整键盘和鼠标生成。时间压缩 4 倍，60 FPS 画面对应 15 个潜帧/秒。RTX 4090 上 720P INT8 为 72.88 潜帧/秒，360P INT8 为 275.84。他们把 30 潜帧/秒当作实时线，720P INT8 从 RTX 5060 Ti 往上都能过。
+    note_en: "A 1.28B diffusion world model pretrained on approximately 100000 hours of keyboard-and-mouse-aligned video from hundreds of games, generating under full keyboard and mouse inputs. Temporal compression is 4×, so 60 FPS visuals correspond to 15 latent frames per second. On an RTX 4090, 720P INT8 reaches 72.88 latent frames per second and 360P INT8 reaches 275.84. The authors use 30 latent frames per second as the real-time threshold, which 720P INT8 meets on GPUs from the RTX 5060 Ti upward."
 
   - title: "DashVMC: Real-Time Discrete World Model Control in Geometry Dash"
     short: DashVMC
@@ -580,6 +657,7 @@ papers:
     features: {action: true, closedloop: true}
     tags: [离散格子, 想象练习, 实机游戏, Geometry Dash]
     note: 用大约 2.3 小时的 Geometry Dash 录屏学一个动作条件的离散格子世界模型，再只在冻结的模型展开里用 PPO 改控制器，不再碰实机。Stereo Madness 上，三个种子的存活帧数从行为克隆的 120.2、130.6、156.0 升到 280.1、280.4、308.8。留出的社区关卡从大约 100 帧升到 266.7 到 342.8。部署时不做画面生成，消费级 GPU 上采集到动作的循环是 60 Hz。动力学模型的视觉 token 准确率只有 29.58%。
+    note_en: "Learns an action-conditioned discrete-grid world model from approximately 2.3 hours of Geometry Dash screen recordings, then improves the controller with PPO solely in rollouts of the frozen model, without further interaction with the real game. On Stereo Madness, survival frames across three seeds rise from behavior cloning's 120.2, 130.6, and 156.0 to 280.1, 280.4, and 308.8. On held-out community levels, survival rises from approximately 100 frames to between 266.7 and 342.8. Deployment does not generate images; the capture-to-action loop runs at 60 Hz on a consumer GPU. The dynamics model's visual-token accuracy is only 29.58%."
 
   - title: "ROWBench: Do Video Models Render What the Program Specifies?"
     short: PROWBench
@@ -594,10 +672,12 @@ papers:
     features: {}
     tags: [可编程世界, 程序事件, 长时记忆, 视频基准]
     note: 170 个由程序生成的回合、600 段代理视频。引擎记下实体状态和带时间戳的事件，包括镜头外的事件，再检查生成视频有没有把这些事件画出来。指标是实体控制、长时记忆、逻辑–画面对齐和交互成功率。
+    note_en: "Contains 170 program-generated episodes and 600 proxy videos. The engine records entity states and timestamped events, including off-screen events, then checks whether generated videos render those events. Metrics cover entity control, long-term memory, logic-to-visual alignment, and interaction success rate."
 
   - title: "Tracking Is Not Permanence: What Video World Models Keep of a Hidden Object"
     short: Not Permanence
     org: 慕尼黑工业大学
+    org_en: "Technical University of Munich"
     year: 2026
     venue: arXiv
     category: general
@@ -606,10 +686,12 @@ papers:
     features: {}
     tags: [物体恒存, 遮挡, V-JEPA, 信念探测]
     note: 冻结的 V-JEPA 2 预测器在物体被挡住后约 0.3 秒就把它丢掉，同一编码器仍能读出它在不在。只训预测器 3000 步，容器内物体的信念从 0.05 到 1.00。IntPhys-2019 从 84.2% 到 93.3%，不用容器的课程也能抬高这个分数。
+    note_en: "A frozen V-JEPA 2 predictor loses an object approximately 0.3 seconds after it becomes occluded, while the same encoder can still indicate whether it is present. Training only the predictor for 3000 steps increases belief in an object inside a container from 0.05 to 1.00. IntPhys-2019 improves from 84.2% to 93.3%; a curriculum without containers can also raise this score."
 
   - title: "World Models' Last Exam in Physics"
     short: WM Last Exam
     org: Einsia.AI / 北京大学 / 清华大学
+    org_en: "Einsia.AI / Peking University / Tsinghua University"
     year: 2026
     venue: arXiv
     category: general
@@ -619,3 +701,4 @@ papers:
     features: {}
     tags: [物理一致性, 可测量, 视频基准, 多领域]
     note: 40 个可测量物理任务、8 个视频模型、1280 段视频。最高的 Seedance 总分 57.76。合成参考视频上，测量模块的物理分为 97.53。输入是起始画面和提示词。
+    note_en: "Includes 40 measurable physics tasks, 8 video models, and 1280 videos. Seedance achieves the highest overall score at 57.76. On synthetic reference videos, the measurement module's physics score is 97.53. Inputs are an initial frame and a prompt."

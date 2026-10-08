@@ -4,6 +4,8 @@
 
 # Awesome Interactive World Models
 
+**简体中文** | [English](README.en.md)
+
 > 面向自动驾驶与具身智能的可交互世界模型
 
 世界模型 (World Model) 通过学习环境的动态表征，实现对未来的预测与想象； 可交互世界模型进一步支持以动作 (action) 为条件的生成与控制， 为自动驾驶和具身智能提供数据引擎、神经仿真器与策略学习基础。 本仓库收录并整理该方向的代表性工作，按应用场景分类， 并标注每篇工作的交互能力维度。
@@ -327,7 +329,7 @@
 
 ## 如何贡献
 
-欢迎通过 Issue / PR 补充或修正条目。论文条目按分类存放在 [`data/`](data/) 目录下（入口为 [`data.yaml`](data.yaml)），请只修改这些数据文件，并运行 `python3 scripts/generate_readme.py` 重新生成本文件，字段规范见 [`CONTRIBUTING.md`](CONTRIBUTING.md)。
+欢迎通过 Issue / PR 补充或修正条目。论文条目按分类存放在 [`data/`](data/) 目录下（入口为 [`data.yaml`](data.yaml)），请在数据文件中维护中英文点评，并运行 `python3 scripts/generate_readme.py` 同时重新生成中英文 README，字段规范见 [`CONTRIBUTING.md`](CONTRIBUTING.md)。
 
 ## License
 

@@ -17,9 +17,13 @@ jobs:
       - run: pip install pyyaml
       - run: python3 -m unittest discover -s tests
       - run: python3 scripts/generate_readme.py
-      - name: Verify README is in sync with data.yaml
+      - name: Verify both READMEs are in sync with data.yaml
         run: |
-          if ! git diff --exit-code README.md; then
-            echo "::error::README.md is out of sync. Run 'python3 scripts/generate_readme.py' and commit the result."
+          if ! git ls-files --error-unmatch -- README.md README.en.md > /dev/null 2>&1; then
+            echo "::error::Commit both generated READMEs: README.md and README.en.md."
+            exit 1
+          fi
+          if ! git diff --exit-code -- README.md README.en.md; then
+            echo "::error::READMEs are out of sync. Run 'python3 scripts/generate_readme.py' and commit both results."
             exit 1
           fi

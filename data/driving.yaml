@@ -15,6 +15,7 @@ papers:
     features: {action: true}
     tags: [视频生成, 文本可控, 场景生成]
     note: 驾驶世界模型的开山之作之一，以视频/文本/动作为输入生成真实驾驶场景，支持对自车行为与场景要素的细粒度控制。
+    note_en: "One of the pioneering driving world models, it generates realistic driving scenes from video, text, and actions, supporting fine-grained control over ego behavior and scene elements."
 
   - title: "GAIA-2: A Controllable Multi-View Generative World Model for Autonomous Driving"
     short: GAIA-2
@@ -27,10 +28,12 @@ papers:
     features: {action: true}
     tags: [多视角, 视频生成, 场景属性可控]
     note: 多视角可控驾驶世界模型，支持对天气、地理、交通流等场景属性的细粒度控制，为 AV 系统提供神经仿真环境。
+    note_en: "A controllable multi-view driving world model that supports fine-grained control over scene attributes such as weather, geography, and traffic flow, providing a neural simulation environment for AV systems."
 
   - title: "DriveDreamer: Towards Real-world-driven World Models for Autonomous Driving"
     short: DriveDreamer
     org: GigaAI / 清华大学
+    org_en: "GigaAI / Tsinghua University"
     year: 2023
     venue: ICLR 2024
     category: driving
@@ -41,10 +44,12 @@ papers:
     features: {action: true}
     tags: [真实数据驱动, 结构化条件控制]
     note: 首个由真实驾驶数据驱动的世界模型，利用 HDMap、3D 框等结构化交通条件实现可控视频生成。
+    note_en: "The first world model driven by real driving data, using structured traffic conditions such as HD maps and 3D boxes for controllable video generation."
 
   - title: "Driving into the Future: Multiview Visual Forecasting and Planning with World Model for Autonomous Driving"
     short: Drive-WM
     org: 上海人工智能实验室 / 清华大学
+    org_en: "Shanghai AI Laboratory / Tsinghua University"
     year: 2023
     venue: CVPR 2024
     category: driving
@@ -54,10 +59,12 @@ papers:
     features: {action: true, closedloop: true}
     tags: [多视角预测, 规划]
     note: 基于世界模型的多视角未来预测与规划框架，首次在 nuScenes 上实现基于生成式世界模型的闭环规划。
+    note_en: "A world-model-based framework for multi-view future prediction and planning, achieving closed-loop planning with a generative world model on nuScenes for the first time."
 
   - title: "Vista: A Generalizable Driving World Model with High Fidelity and Versatile Controllability"
     short: Vista
     org: OpenDriveLab / 上海人工智能实验室
+    org_en: "OpenDriveLab / Shanghai AI Laboratory"
     year: 2024
     venue: NeurIPS 2024
     category: driving
@@ -66,10 +73,12 @@ papers:
     features: {action: true, longhorizon: true}
     tags: [高保真, 动作可控, 奖励预测]
     note: 高保真、可泛化的驾驶世界模型，同时支持动作级与高层语义级控制，并可直接预测奖励信号用于策略优化。
+    note_en: "A high-fidelity, generalizable driving world model supporting both action-level and high-level semantic control, with direct reward prediction for policy optimization."
 
   - title: "OccWorld: Learning a 3D Occupancy World Model for Autonomous Driving"
     short: OccWorld
     org: 清华大学
+    org_en: "Tsinghua University"
     year: 2023
     venue: ECCV 2024
     category: driving
@@ -79,10 +88,12 @@ papers:
     features: {}
     tags: [3D占用栅格, 联合预测]
     note: 基于 3D 占用栅格的世界模型，在统一框架内联合预测未来场景演化与自车轨迹，无需高精地图与人工标注。
+    note_en: "A 3D occupancy-grid world model that jointly predicts future scene evolution and ego trajectories in a unified framework, without HD maps or manual annotations."
 
   - title: "Generalized Predictive Model for Autonomous Driving"
     short: GenAD
     org: OpenDriveLab / 上海人工智能实验室
+    org_en: "OpenDriveLab / Shanghai AI Laboratory"
     year: 2024
     venue: CVPR 2024 (Highlight)
     category: driving
@@ -92,6 +103,7 @@ papers:
     features: {}
     tags: [大规模视频预训练, 未来预测]
     note: 面向自动驾驶的大规模视频预测模型，通过未来帧预测任务学习驾驶场景中的世界知识。
+    note_en: "A large-scale video prediction model for autonomous driving that learns world knowledge in driving scenes through future-frame prediction."
 
   - title: "MagicDrive: Street View Generation with Diverse 3D Geometry Control"
     short: MagicDrive
@@ -105,10 +117,12 @@ papers:
     features: {}
     tags: [街景生成, 3D几何控制, 数据增强]
     note: 支持 BEV 地图、3D 框、相机位姿等多源几何控制的街景生成方法，可用于下游感知任务的 3D 数据增强。
+    note_en: "A street-view generation method supporting multiple geometric controls, including BEV maps, 3D boxes, and camera poses, for 3D data augmentation in downstream perception tasks."
 
   - title: "DriveArena: A Closed-loop Generative Simulation Platform for Autonomous Driving"
     short: DriveArena
     org: 上海人工智能实验室
+    org_en: "Shanghai AI Laboratory"
     year: 2024
     venue: arXiv
     category: driving
@@ -117,6 +131,7 @@ papers:
     features: {action: true, closedloop: true}
     tags: [生成式仿真, 闭环评测]
     note: 全生成式闭环驾驶仿真平台，智能体可在完全由世界模型生成的环境中持续交互与评测。
+    note_en: "A fully generative closed-loop driving simulation platform in which agents can continuously interact and be evaluated in environments generated entirely by a world model."
 
   - title: "DrivingSphere: Building a High-fidelity 4D World for Closed-loop Simulation"
     short: DrivingSphere
@@ -129,10 +144,12 @@ papers:
     features: {closedloop: true}
     tags: [4D世界, 闭环仿真, 多视角渲染]
     note: 以 occupancy 表示静态环境、actor bank 表示动态参与者，渲染高保真多视角视频支持视觉端到端闭环评测。
+    note_en: "Uses occupancy to represent static environments and an actor bank for dynamic participants, rendering high-fidelity multi-view videos for visual end-to-end closed-loop evaluation."
 
   - title: "Cam2Sim: Neural Scenario Reconstruction for Closed-Loop Autonomous Driving Simulation"
     short: Cam2Sim
     org: "Andrea Stocco 团队"
+    org_en: "Andrea Stocco team"
     year: 2026
     venue: arXiv
     category: driving
@@ -141,10 +158,12 @@ papers:
     features: {closedloop: true}
     tags: [场景重建, 高斯泼溅, 闭环仿真]
     note: 把真实驾驶录像重建为可闭环执行的 CARLA 场景，结合高斯泼溅渲染缩小仿真视觉差距。
+    note_en: "Reconstructs real driving videos into CARLA scenarios that support closed-loop execution, using Gaussian splatting rendering to reduce the visual simulation gap."
 
   - title: "DecoupleGS: Interactive 3D Gaussian Splatting for End-to-End Autonomous Driving Testing"
     short: DecoupleGS
     org: "Haotian Shi 团队"
+    org_en: "Haotian Shi team"
     year: 2026
     venue: arXiv
     category: driving
@@ -153,9 +172,11 @@ papers:
     features: {realtime: true, closedloop: true}
     tags: [高斯泼溅, 传感器仿真, 闭环测试]
     note: 解耦动静高斯泼溅，为端到端自动驾驶提供高保真实时闭环传感器仿真平台。
+    note_en: "Decouples static and dynamic Gaussian splatting to provide a high-fidelity, real-time closed-loop sensor simulation platform for end-to-end autonomous driving."
 
   - title: "Point as Skeleton: Accumulated Point Cloud Enhanced Autoregressive Generation for Closed-Loop AD Simulation"
     org: "Junchi Yan 团队"
+    org_en: "Junchi Yan team"
     year: 2026
     venue: arXiv
     category: driving
@@ -164,9 +185,11 @@ papers:
     features: {closedloop: true}
     tags: [点云条件, 扩散生成, 闭环仿真]
     note: 点云骨架条件 + Reset-and-Roll 扩散推理，实现状态更新式闭环驾驶视频生成。
+    note_en: "Combines point-cloud skeleton conditioning with Reset-and-Roll diffusion inference for closed-loop driving video generation with state updates."
 
   - title: "A Risk-Field Enhanced Closed-Loop Digital Twin Framework for Autonomous Driving Safety Validation"
     org: "Yongzhi Liu 团队"
+    org_en: "Yongzhi Liu team"
     year: 2026
     venue: arXiv
     category: driving
@@ -175,10 +198,12 @@ papers:
     features: {closedloop: true}
     tags: [数字孪生, 风险场, 安全验证]
     note: 风险场驱动的闭环数字孪生框架，统一障碍、车道偏离、碰撞时间等风险用于策略训练。
+    note_en: "A risk-field-driven closed-loop digital twin framework that unifies risks from obstacles, lane departure, and time to collision for policy training."
 
   - title: "CommonRoad-Game: A Human-in-the-Loop Simulation Framework for Autonomous Driving"
     short: CommonRoad-Game
     org: "Youran Wang 团队"
+    org_en: "Youran Wang team"
     year: 2026
     venue: arXiv
     category: driving
@@ -187,10 +212,12 @@ papers:
     features: {closedloop: true}
     tags: [人在回路, 仿真框架, 交互式场景生成]
     note: 轻量级人机闭环驾驶仿真框架，多线程同步支持交互式场景生成与规划测试。
+    note_en: "A lightweight human-in-the-loop driving simulation framework using multithreaded synchronization for interactive scenario generation and planning tests."
 
   - title: "MDrive: Benchmarking Closed-Loop Cooperative Driving for End-to-End Multi-agent Systems"
     short: MDrive
     org: "Jiaqi Ma 团队"
+    org_en: "Jiaqi Ma team"
     year: 2026
     venue: arXiv
     category: driving
@@ -199,10 +226,12 @@ papers:
     features: {closedloop: true}
     tags: [多智能体, 协同驾驶, 基准测试]
     note: 225 场景的闭环协同驾驶基准，揭示多智能体感知共享与协商的收益与局限。
+    note_en: "A closed-loop cooperative driving benchmark with 225 scenarios that reveals the benefits and limitations of perception sharing and negotiation among multiple agents."
 
   - title: "UnsDrive: Towards Robust End-to-End Autonomous Driving in Unstructured Scenes"
     short: UnsDrive
     org: "Yunfeng Ai 团队"
+    org_en: "Yunfeng Ai team"
     year: 2026
     venue: arXiv
     category: driving
@@ -211,9 +240,11 @@ papers:
     features: {closedloop: true}
     tags: [非结构化场景, 端到端规划, 闭环仿真]
     note: 面向矿区非结构化场景的端到端规划器，含未知空间占据表示与 MineLoop 闭环仿真器。
+    note_en: "An end-to-end planner for unstructured mining scenes, including an unknown-space occupancy representation and the MineLoop closed-loop simulator."
 
   - title: "CMU-Drive and V2V-VLA: Cooperative Multi-agent Unified Driving with Reasoning Benchmark"
     org: "Stephen F. Smith 团队"
+    org_en: "Stephen F. Smith team"
     year: 2026
     venue: arXiv
     category: driving
@@ -222,10 +253,12 @@ papers:
     features: {closedloop: true}
     tags: [车车协同, VLA, 基准测试]
     note: 首个多车协同闭环端到端驾驶基准与 V2V-VLA 模型，联合生成动作、航点、推理与通信。
+    note_en: "The first multi-vehicle cooperative closed-loop end-to-end driving benchmark and the V2V-VLA model, jointly generating actions, waypoints, reasoning, and communication."
 
   - title: "From Driving Videos to Simulatable Scenarios"
     short: D-V2S
     org: "Antonio Manuel López 团队"
+    org_en: "Antonio Manuel López team"
     year: 2026
     venue: arXiv
     category: driving
@@ -234,6 +267,7 @@ papers:
     features: {}
     tags: [场景重建, VLM, 脚本生成]
     note: VLM 生成场景描述 + LLM 转可执行脚本，实现 90% 语义元素覆盖的视频到可仿真场景转换。
+    note_en: "Combines VLM-generated scene descriptions with LLM conversion to executable scripts, converting videos into simulatable scenarios with 90% semantic-element coverage."
 
   - title: "CausalDrive: Real-time Causal World Models for Autonomous Driving"
     short: CausalDrive
@@ -246,6 +280,7 @@ papers:
     features: {action: true, realtime: true}
     tags: [因果世界模型, 实时生成, NPC行为建模]
     note: 仅用初始图像、自车轨迹和宏观社会学提示让模型自主生成周车反应的实时因果视频世界模型。
+    note_en: "A real-time causal video world model that autonomously generates surrounding vehicles' responses using only an initial image, ego trajectories, and macrosociological prompts."
 
   - title: "Xiaomi Auto World Model: A Joint World Model Integrating Reconstruction and Generation for Autonomous Driving"
     org: Xiaomi
@@ -257,10 +292,12 @@ papers:
     features: {closedloop: true}
     tags: [重建+生成, 联合世界模型, 闭环仿真]
     note: 整合 WorldRec 前馈重建与 WorldGen 因果视频生成，构建联合世界模型支撑闭环仿真。
+    note_en: "Integrates WorldRec feed-forward reconstruction and WorldGen causal video generation into a joint world model supporting closed-loop simulation."
 
   - title: "RLGF: Reinforcement Learning with Geometric Feedback for Autonomous Driving Video Generation"
     short: RLGF
     org: "Jianbing Shen 团队"
+    org_en: "Jianbing Shen team"
     year: 2025
     venue: arXiv
     category: driving
@@ -269,10 +306,12 @@ papers:
     features: {}
     tags: [强化学习, 几何反馈, 视频生成]
     note: 感知模型产生层级几何反馈对视频扩散模型进行强化学习优化，并提出 GeoScores 评价体系。
+    note_en: "Uses hierarchical geometric feedback from perception models to optimize video diffusion models with reinforcement learning, and introduces the GeoScores evaluation framework."
 
   - title: "AnyScene: Towards Highly Controllable Driving Scene Generation at Anywhere and Beyond"
     short: AnyScene
     org: "Benjin Zhu 团队"
+    org_en: "Benjin Zhu team"
     year: 2026
     venue: arXiv
     category: driving
@@ -281,10 +320,12 @@ papers:
     features: {}
     tags: [占据生成, BEV布局, 多视角视频]
     note: 以占据为中心的统一框架，从 BEV 布局自回归生成占据序列与多视角驾驶视频。
+    note_en: "An occupancy-centric unified framework that autoregressively generates occupancy sequences and multi-view driving videos from BEV layouts."
 
   - title: "muSync-GS: Physics-Synchronized Driving Video Synthesis for Weather and Geometric Road Hazards"
     short: muSync-GS
     org: "Zilin Bian 团队"
+    org_en: "Zilin Bian team"
     year: 2026
     venue: arXiv
     category: driving
@@ -293,10 +334,12 @@ papers:
     features: {}
     tags: [物理同步, 天气特效, 视频合成]
     note: 将降水、轮胎摩擦、路面高程与车辆动力学耦合，实现物理同步的驾驶视频合成。
+    note_en: "Couples precipitation, tire friction, road elevation, and vehicle dynamics for physically synchronized driving video synthesis."
 
   - title: "RealWeather: Realistic and Scene-Faithful Weather Translation with Driving World Models"
     short: RealWeather
     org: "Guanbin Li 团队"
+    org_en: "Guanbin Li team"
     year: 2026
     venue: arXiv
     category: driving
@@ -305,10 +348,12 @@ papers:
     features: {}
     tags: [天气迁移, 强化学习, 世界模型]
     note: 渐进真实度自举 + 场景保真强化学习优化，实现驾驶世界模型的双向天气迁移。
+    note_en: "Combines progressive realism bootstrapping and scene-faithful reinforcement learning optimization for bidirectional weather translation with driving world models."
 
   - title: "FrozenDrive: Zero-Shot Text-Guided Driving Scene Generation with Parameter-Free Frozen Diffusion"
     short: FrozenDrive
     org: "Kuk-Jin Yoon 团队"
+    org_en: "Kuk-Jin Yoon team"
     year: 2026
     venue: arXiv
     category: driving
@@ -317,10 +362,12 @@ papers:
     features: {}
     tags: [文本引导, 冻结扩散, 多视角一致]
     note: 冻结扩散骨干 + 知识保持时空注意力，零样本生成多视角一致驾驶场景。
+    note_en: "Combines a frozen diffusion backbone with knowledge-preserving spatiotemporal attention for zero-shot generation of multi-view-consistent driving scenes."
 
   - title: "HERMES++: Toward a Unified Driving World Model for 3D Scene Understanding and Generation"
     short: HERMES++
     org: "Xiang Bai 团队"
+    org_en: "Xiang Bai team"
     year: 2026
     venue: arXiv
     category: driving
@@ -329,10 +376,12 @@ papers:
     features: {}
     tags: [场景理解, 几何预测, BEV]
     note: 统一 3D 场景理解与未来几何预测的驾驶世界模型，采用 BEV + LLM 增强世界查询。
+    note_en: "A driving world model unifying 3D scene understanding and future geometry prediction, using BEV and LLM-enhanced world queries."
 
   - title: "EditSSC: Toward Editable Semantic Occupancy Scenes with Unconditional Diffusion Models"
     short: EditSSC
     org: "Alexandre Boulch 团队"
+    org_en: "Alexandre Boulch team"
     year: 2026
     venue: arXiv
     category: driving
@@ -341,10 +390,12 @@ papers:
     features: {}
     tags: [语义占据, 场景编辑, 扩散模型]
     note: 将 3D 语义占据重整为 BEV 图像，用现成潜扩散网络实现可编辑占据场景生成。
+    note_en: "Reorganizes 3D semantic occupancy as BEV images and uses an off-the-shelf latent diffusion network to generate editable occupancy scenes."
 
   - title: "DrivePTS: A Progressive Learning Framework for Driving Scene Generation"
     short: DrivePTS
     org: "Cheng Lu 团队"
+    org_en: "Cheng Lu team"
     year: 2026
     venue: arXiv
     category: driving
@@ -353,9 +404,11 @@ papers:
     features: {}
     tags: [场景生成, 渐进学习, 多视角描述]
     note: 渐进学习解耦几何条件依赖，VLM 多视角描述 + 频率结构损失提升场景生成保真度。
+    note_en: "Uses progressive learning to decouple dependencies on geometric conditions, with VLM multi-view descriptions and a frequency-structure loss improving scene-generation fidelity."
 
   - title: "Mitigating Compounding Error via Video Representation Regularization"
     org: "Yisen Wang 团队"
+    org_en: "Yisen Wang team"
     year: 2026
     venue: arXiv
     category: driving
@@ -364,10 +417,12 @@ papers:
     features: {longhorizon: true}
     tags: [误差累积, 表示正则化, 长程生成]
     note: 揭示自回归视频世界模型误差累积与表示维度坍塌的关联，提出表示正则化稳定长程生成。
+    note_en: "Reveals a link between error accumulation and representation dimensional collapse in autoregressive video world models, and introduces representation regularization to stabilize long-horizon generation."
 
   - title: "DriveWeaver: Point-Conditioned Video Inpainting for Controllable Vehicle Insertion in Autonomous Driving Simulation"
     short: DriveWeaver
     org: "Li Zhang 团队"
+    org_en: "Li Zhang team"
     year: 2026
     venue: arXiv
     category: driving
@@ -376,9 +431,11 @@ papers:
     features: {}
     tags: [视频修复, 车辆插入, 3DGS]
     note: 点云条件视频修复实现可控车辆插入，并提取 3DGS 支持实时渲染。
+    note_en: "Uses point-cloud-conditioned video inpainting for controllable vehicle insertion, and extracts 3DGS for real-time rendering."
 
   - title: "Long-term Traffic Scene Prediction via Polynomial Representations in Autonomous Driving"
     org: "Yue Yao 团队"
+    org_en: "Yue Yao team"
     year: 2026
     venue: arXiv
     category: driving
@@ -387,10 +444,12 @@ papers:
     features: {longhorizon: true}
     tags: [长期预测, 多项式表示, 扩散生成]
     note: 多项式轨迹与地图表示 + 扩散生成，提升长期交通场景预测的泛化与运动学合理性。
+    note_en: "Combines polynomial trajectory and map representations with diffusion generation to improve generalization and kinematic plausibility in long-term traffic-scene prediction."
 
   - title: "E2E-CDiff: End-to-end Conditional Diffusion for Realistic and Controllable Visual Traffic Scenario Generation"
     short: E2E-CDiff
     org: "Philip S Yu 团队"
+    org_en: "Philip S Yu team"
     year: 2026
     venue: arXiv
     category: driving
@@ -399,10 +458,12 @@ papers:
     features: {action: true}
     tags: [条件扩散, 交互场景生成, 碰撞引导]
     note: 前视条件联合去噪运动状态与低层控制，支持碰撞规避/碰撞引导的交互场景生成。
+    note_en: "Jointly denoises motion states and low-level controls under forward-view conditioning, supporting interactive scenario generation for collision avoidance or collision guidance."
 
   - title: "OLiDM: Object-aware LiDAR Diffusion Models for Autonomous Driving"
     short: OLiDM
     org: "Jianbing Shen 团队"
+    org_en: "Jianbing Shen team"
     year: 2024
     venue: arXiv
     category: driving
@@ -411,6 +472,7 @@ papers:
     features: {}
     tags: [LiDAR生成, 对象感知, 扩散模型]
     note: 从场景级生成下沉到对象-场景联合生成，验证生成 LiDAR 对 3D 检测等下游任务的增益。
+    note_en: "Moves from scene-level generation to joint object-scene generation, demonstrating benefits of generated LiDAR for downstream tasks such as 3D detection."
 
   - title: "Instant NuRec: Feed-Forward 3D Gaussian Reconstruction for Driving Scene Simulation"
     short: Instant NuRec
@@ -423,10 +485,12 @@ papers:
     features: {closedloop: true}
     tags: [3DGS重建, 前馈, 场景仿真]
     note: 单次前馈将多视角驾驶日志转为可仿真 3DGS 世界，1.5 秒重建且兼容闭环。
+    note_en: "Converts multi-view driving logs into a simulatable 3DGS world in a single feed-forward pass, with reconstruction in 1.5 seconds and closed-loop compatibility."
 
   - title: "Real2Sim: A Physics-driven and Editable Gaussian Splatting Framework for Autonomous Driving Scenes"
     short: Real2Sim
     org: "Ruimin Ke 团队"
+    org_en: "Ruimin Ke team"
     year: 2026
     venue: arXiv
     category: driving
@@ -435,10 +499,12 @@ papers:
     features: {}
     tags: [4DGS, 物理仿真, 场景编辑]
     note: 4DGS + 可微物质点法，支持实例级编辑与碰撞后轨迹的物理感知驾驶场景合成。
+    note_en: "Combines 4DGS with a differentiable material point method for physics-aware driving-scene synthesis, supporting instance-level editing and post-collision trajectories."
 
   - title: "RealityBridge: Bridging Editable 3D Gaussian Splatting Driving Simulations and Real-World Videos"
     short: RealityBridge
     org: "Guanbin Li 团队"
+    org_en: "Guanbin Li team"
     year: 2026
     venue: arXiv
     category: driving
@@ -447,9 +513,11 @@ papers:
     features: {}
     tags: [3DGS, 视频基础模型, 真实感增强]
     note: 视频基础模型 + GateNet 自适应注入，将编辑后的 3DGS 渲染还原为真实驾驶视频。
+    note_en: "Combines a video foundation model with adaptive GateNet injection to turn edited 3DGS renderings into realistic driving videos."
 
   - title: "Towards Physically Consistent 4D Scene Reconstruction for Closed-loop Autonomous Driving Simulation"
     org: "Shengbo Eben Li 团队"
+    org_en: "Shengbo Eben Li team"
     year: 2026
     venue: arXiv
     category: driving
@@ -458,10 +526,12 @@ papers:
     features: {closedloop: true}
     tags: [4D重建, 物理一致性, 闭环仿真]
     note: 正交投影梯度 + 时间正则化解决静态-动态参数信用分配，实现物理一致 4D 重建。
+    note_en: "Uses orthogonal projected gradients and temporal regularization to address credit assignment between static and dynamic parameters, enabling physically consistent 4D reconstruction."
 
   - title: "GEM: Gaussian Evolution Model for Occupancy Forecasting and Motion Planning"
     short: GEM
     org: "Saurabh Bagchi 团队"
+    org_en: "Saurabh Bagchi team"
     year: 2026
     venue: arXiv
     category: driving
@@ -470,10 +540,12 @@ papers:
     features: {}
     tags: [高斯占据, 连续4D, 运动规划]
     note: 非自回归连续 4D 高斯占据世界模型，支持任意时刻查询与运动规划。
+    note_en: "A non-autoregressive continuous 4D Gaussian occupancy world model supporting queries at arbitrary times and motion planning."
 
   - title: "Sensor2Sensor: Cross-Embodiment Sensor Conversion for Autonomous Driving"
     short: Sensor2Sensor
     org: "Chiyu Max Jiang 团队"
+    org_en: "Chiyu Max Jiang team"
     year: 2026
     venue: arXiv
     category: driving
@@ -482,10 +554,12 @@ papers:
     features: {}
     tags: [传感器转换, 跨具身, 多模态生成]
     note: 生成式范式将网络单目行车视频转换为多视角相机 + 激光雷达多模态传感器数据。
+    note_en: "A generative approach that converts monocular driving videos from the web into multimodal sensor data comprising multi-view cameras and LiDAR."
 
   - title: "GSDrive: Reinforcing Driving Policies by Multi-mode Future Trajectory Probing with 3D Gaussian Splatting Environment"
     short: GSDrive
     org: "Zufeng Zhang 团队"
+    org_en: "Zufeng Zhang team"
     year: 2026
     venue: arXiv
     category: driving
@@ -494,10 +568,12 @@ papers:
     features: {closedloop: true}
     tags: [3DGS环境, 强化学习, 轨迹探测]
     note: 3DGS 可微环境中多模态轨迹探测，将仿真回报转为密集奖励塑造端到端策略。
+    note_en: "Probes multimodal trajectories in a differentiable 3DGS environment, converting simulation returns into dense rewards to shape end-to-end policies."
 
   - title: "DLWM: Dual Latent World Models enable Holistic Gaussian-centric Pre-training in Autonomous Driving"
     short: DLWM
     org: "Shaojie Shen 团队"
+    org_en: "Shaojie Shen team"
     year: 2026
     venue: arXiv
     category: driving
@@ -506,10 +582,12 @@ papers:
     features: {}
     tags: [双潜世界模型, 高斯表示, 预训练]
     note: 双潜世界模型（占据流 + 规划流）实现高斯中心式自动驾驶预训练。
+    note_en: "Uses dual latent world models, with occupancy and planning streams, for Gaussian-centric autonomous-driving pre-training."
 
   - title: "OWMDrive: Causality-Aware End-to-End Autonomous Driving via 4D Occupancy World Model"
     short: OWMDrive
     org: "Yunfeng Ai 团队"
+    org_en: "Yunfeng Ai team"
     year: 2026
     venue: arXiv
     category: driving
@@ -518,10 +596,12 @@ papers:
     features: {}
     tags: [占据世界模型, 因果建模, 扩散规划]
     note: 占据世界模型多步预测作为扩散规划先验，显式建模时空因果依赖。
+    note_en: "Uses multi-step occupancy-world-model predictions as priors for diffusion planning, explicitly modeling spatiotemporal causal dependencies."
 
   - title: "DynamicVGGT: Learning Dynamic Point Maps for 4D Scene Reconstruction in Autonomous Driving"
     short: DynamicVGGT
     org: "Xiangyang Xue 团队"
+    org_en: "Xiangyang Xue team"
     year: 2026
     venue: arXiv
     category: driving
@@ -530,10 +610,12 @@ papers:
     features: {}
     tags: [4D重建, 点图, 动态场景]
     note: 扩展 VGGT 至动态 4D，联合预测当前与未来点图并引入运动感知注意力。
+    note_en: "Extends VGGT to dynamic 4D, jointly predicting current and future point maps and introducing motion-aware attention."
 
   - title: "DriveFix: Spatio-Temporally Coherent Driving Scene Restoration"
     short: DriveFix
     org: "Qi Guo 团队"
+    org_en: "Qi Guo team"
     year: 2026
     venue: arXiv
     category: driving
@@ -542,10 +624,12 @@ papers:
     features: {}
     tags: [场景修复, 时空一致, 扩散Transformer]
     note: 交错扩散 Transformer 建模时序依赖与跨相机一致性，实现 4D 驾驶场景修复。
+    note_en: "Uses an interleaved diffusion Transformer to model temporal dependencies and cross-camera consistency for 4D driving-scene restoration."
 
   - title: "L2D2-GS: Learning to Densify for Feedforward Dynamic Gaussian Scene Reconstruction"
     short: L2D2-GS
     org: "Wen Gao 团队"
+    org_en: "Wen Gao team"
     year: 2026
     venue: arXiv
     category: driving
@@ -554,9 +638,11 @@ papers:
     features: {}
     tags: [动态高斯, 前馈重建, 增密策略]
     note: 自监督增密策略 + 几何正则化，实现高效前馈动态城市高斯重建。
+    note_en: "Combines self-supervised densification with geometric regularization for efficient feed-forward dynamic urban Gaussian reconstruction."
 
   - title: "Physics-Aware 3D Gaussian Editing for Driving Scene Generation"
     org: "Rui Ma 团队"
+    org_en: "Rui Ma team"
     year: 2026
     venue: arXiv
     category: driving
@@ -565,10 +651,12 @@ papers:
     features: {}
     tags: [3DGS编辑, 物理感知, 道路几何插入]
     note: 单图驱动道路几何插入并耦合车辆动力学，实现物理感知的 3DGS 编辑。
+    note_en: "Uses a single image to drive road-geometry insertion and couples it with vehicle dynamics for physics-aware 3DGS editing."
 
   - title: "RS2AD-LiDAR: End-to-End Autonomous Driving LiDAR Data Generation from Roadside Sensor Observations"
     short: RS2AD-LiDAR
     org: "Keqiang Li 团队"
+    org_en: "Keqiang Li team"
     year: 2026
     venue: arXiv
     category: driving
@@ -577,10 +665,12 @@ papers:
     features: {}
     tags: [LiDAR生成, 路侧感知, 跨视角]
     note: 从路侧传感器观测生成端到端自动驾驶可用 LiDAR 数据。
+    note_en: "Generates LiDAR data usable for end-to-end autonomous driving from roadside sensor observations."
 
   - title: "DriveCache: Action-Aware Caching for Driving World Model Inference"
     short: DriveCache
     org: "Jianchun Yang 团队"
+    org_en: "Jianchun Yang team"
     year: 2026
     venue: arXiv
     category: driving
@@ -589,10 +679,12 @@ papers:
     features: {action: true}
     tags: [推理加速, 动作感知缓存, 扩散驾驶生成]
     note: 针对扩散驾驶世界模型的动作感知 KV 缓存策略，在多步去噪中复用空间不变特征，显著提升生成吞吐量。
+    note_en: "An action-aware KV caching strategy for diffusion driving world models that reuses spatially invariant features across multi-step denoising, substantially improving generation throughput."
 
   - title: "GaussianDWM++: Language-Grounded 3D Gaussian Driving World Model for Unified Scene Understanding, Editing, and Multi-Modal Generation"
     short: GaussianDWM++
     org: "Tianchen Deng 团队"
+    org_en: "Tianchen Deng team"
     year: 2026
     venue: arXiv
     category: driving
@@ -601,10 +693,12 @@ papers:
     features: {action: true}
     tags: [3DGS驾驶世界模型, 语言接地, 4D编辑, 场景理解]
     note: 语言接地的 3D 高斯驾驶世界模型，统一场景理解、语言推理、可控 4D 编辑与多模态生成，弥补现有方法缺乏显式 3D 表示的不足。
+    note_en: "A language-grounded 3D Gaussian driving world model unifying scene understanding, language reasoning, controllable 4D editing, and multimodal generation, addressing the lack of explicit 3D representations in existing methods."
 
   - title: "Nexus: Decoupled Diffusion Sparks Adaptive Scene Generation"
     short: Nexus
     org: "Hongyang Li 团队"
+    org_en: "Hongyang Li team"
     year: 2025
     venue: arXiv
     category: driving
@@ -613,10 +707,12 @@ papers:
     features: {}
     tags: [解耦扩散, 自适应场景生成, 行为建模]
     note: 解耦扩散实现自适应场景生成，用于行为层面的交互式场景建模。
+    note_en: "Uses decoupled diffusion for adaptive scene generation and interactive scene modeling at the behavioral level."
 
   - title: "Omega: Optimization-Guided Diffusion for Interactive Scene Generation"
     short: Omega
     org: "Hongyang Li 团队"
+    org_en: "Hongyang Li team"
     year: 2025
     venue: arXiv
     category: driving
@@ -625,10 +721,12 @@ papers:
     features: {}
     tags: [优化引导, 扩散模型, 交互场景生成]
     note: 用优化引导扩散生成可交互场景，强化交互约束下的场景生成质量。
+    note_en: "Uses optimization-guided diffusion to generate interactive scenes, improving generation quality under interaction constraints."
 
   - title: "OccDirector: Language-Guided Behavior and Interaction Generation in 4D Occupancy Space"
     short: OccDirector
     org: "Jianbing Shen 团队"
+    org_en: "Jianbing Shen team"
     year: 2026
     venue: arXiv
     category: driving
@@ -637,10 +735,12 @@ papers:
     features: {longhorizon: true}
     tags: [语言引导, 占据空间, 多车行为生成]
     note: 由自然语言脚本生成 4D occupancy 中的连续多车行为，history-prefix anchoring 保持长时序一致性。
+    note_en: "Generates continuous multi-vehicle behaviors in 4D occupancy from natural-language scripts, using history-prefix anchoring to maintain long-term temporal consistency."
 
   - title: "World Engine: Towards the Era of Post-Training for Autonomous Driving"
     short: World Engine
     org: "Hongyang Li 团队"
+    org_en: "Hongyang Li team"
     year: 2026
     venue: arXiv
     category: driving
@@ -649,9 +749,11 @@ papers:
     features: {closedloop: true}
     tags: [环境重建, 安全关键场景, 后训练]
     note: 从真实日志重建高保真交互环境并外推安全关键变体，驱动策略后训练。
+    note_en: "Reconstructs high-fidelity interactive environments from real logs and extrapolates safety-critical variants to drive policy post-training."
 
   - title: "World Models as Adversaries: Multi-Agent Self-Play Fine-Tuning for Robust Motion Planning"
     org: "Wei Ma 团队"
+    org_en: "Wei Ma team"
     year: 2026
     venue: arXiv
     category: driving
@@ -660,10 +762,12 @@ papers:
     features: {}
     tags: [对抗世界模型, 自博弈, 运动规划]
     note: 将预测世界模型转化为角色化对手，通过反事实信用分配学习稀疏对抗联盟。
+    note_en: "Turns predictive world models into role-based adversaries, using counterfactual credit assignment to learn sparse adversarial coalitions."
 
   - title: "PHASE: Heterogeneous Self-Play for Realistic Highway Traffic Simulation"
     short: PHASE
     org: "Xiaoyu Huang 团队"
+    org_en: "Xiaoyu Huang team"
     year: 2026
     venue: arXiv
     category: driving
@@ -672,9 +776,11 @@ papers:
     features: {}
     tags: [自博弈, 高速交通, 行为仿真]
     note: 上下文感知的异构自博弈策略，零样本迁移至 512 个真实高速交互场景。
+    note_en: "Context-aware heterogeneous self-play policies with zero-shot transfer to 512 real highway interaction scenarios."
 
   - title: "Scaling Self-Play for End-to-End Driving"
     org: "Liam Paull 团队"
+    org_en: "Liam Paull team"
     year: 2026
     venue: arXiv
     category: driving
@@ -683,10 +789,12 @@ papers:
     features: {closedloop: true}
     tags: [自博弈, 像素级仿真, 端到端驾驶]
     note: 高吞吐像素级自博弈仿真器 + DAgger 蒸馏特权教师，无需人类轨迹监督。
+    note_en: "Combines a high-throughput pixel-level self-play simulator with DAgger distillation of privileged teachers, without human trajectory supervision."
 
   - title: "ECoSim: Data Efficient Fine-Tuning for Controllable Traffic Simulation"
     short: ECoSim
     org: "Masayoshi Tomizuka 团队"
+    org_en: "Masayoshi Tomizuka team"
     year: 2026
     venue: arXiv
     category: driving
@@ -695,9 +803,11 @@ papers:
     features: {}
     tags: [交通仿真, 轻量微调, 可控生成]
     note: FiLM 层轻量适配预训练交通模型，<1% 数据实现多模态可控仿真。
+    note_en: "Uses FiLM layers to lightly adapt pre-trained traffic models, achieving multimodal controllable simulation with <1% of the data."
 
   - title: "Proposal-Conditioned Latent Diffusion for Closed-Loop Traffic Scenario Generation"
     org: "Steven Peters 团队"
+    org_en: "Steven Peters team"
     year: 2026
     venue: arXiv
     category: driving
@@ -706,10 +816,12 @@ papers:
     features: {closedloop: true}
     tags: [条件扩散, 场景生成, 安全关键行为]
     note: 实例中心上下文 + 多模态提案先验的条件扩散，测试时引导塑造安全关键行为。
+    note_en: "Conditional diffusion with instance-centric context and multimodal proposal priors, using test-time guidance to shape safety-critical behaviors."
 
   - title: "TrafficDiffuser: Top-down Traffic Scenario Generation via Joint Initial-Goal Diffusion and Trajectory Infilling"
     short: TrafficDiffuser
     org: "Sebastian Fischmeister 团队"
+    org_en: "Sebastian Fischmeister team"
     year: 2026
     venue: arXiv
     category: driving
@@ -718,10 +830,12 @@ papers:
     features: {}
     tags: [场景生成, 轨迹填充, 扩散模型]
     note: 联合建模初始-目标状态对的高层场景生成，将轨迹生成降维为填充问题。
+    note_en: "High-level scenario generation that jointly models initial-goal state pairs, reducing trajectory generation to an infilling problem."
 
   - title: "AD-R1: Closed-Loop Reinforcement Learning for End-to-End Autonomous Driving with Impartial World Models"
     short: AD-R1
     org: "Jianbing Shen 团队"
+    org_en: "Jianbing Shen team"
     year: 2025
     venue: arXiv
     category: driving
@@ -730,10 +844,12 @@ papers:
     features: {closedloop: true}
     tags: [闭环强化学习, 反事实合成, 世界模型Critic]
     note: 通过反事实合成构造危险结果，将世界模型作为内部 critic 进行策略闭环后训练。
+    note_en: "Constructs hazardous outcomes through counterfactual synthesis, using the world model as an internal critic for closed-loop policy post-training."
 
   - title: "BrainWAM: Action-Space Coordination of Semantic Priors and Predictive Dynamics for Autonomous Driving"
     short: BrainWAM
     org: "Zhaoxiang Zhang 团队"
+    org_en: "Zhaoxiang Zhang team"
     year: 2026
     venue: arXiv
     category: driving
@@ -742,10 +858,12 @@ papers:
     features: {}
     tags: [WAM, 语义推理, 预测动力学]
     note: 结构化动作空间协调语义推理与预测世界建模两条专门化通路，取得 NAVSIM SOTA。
+    note_en: "Uses a structured action space to coordinate specialized pathways for semantic reasoning and predictive world modeling, achieving state-of-the-art results on NAVSIM."
 
   - title: "SimWAM: A Simple World Action Model for End-to-End Autonomous Driving"
     short: SimWAM
     org: "Xiang Bai 团队"
+    org_en: "Xiang Bai team"
     year: 2026
     venue: arXiv
     category: driving
@@ -754,10 +872,12 @@ papers:
     features: {}
     tags: [WAM, 视频监督, 端到端驾驶]
     note: 训练时未来视频监督 + 隔离注意力掩码，推理无需生成视频，达 91.5 PDMS。
+    note_en: "Combines future-video supervision during training with isolating attention masks; inference requires no video generation and achieves 91.5 PDMS."
 
   - title: "4D-WAM: 4D Consistent World Modeling for Autonomous Driving"
     short: 4D-WAM
     org: "Zhiwei Xiong 团队"
+    org_en: "Zhiwei Xiong team"
     year: 2026
     venue: arXiv
     category: driving
@@ -766,10 +886,12 @@ papers:
     features: {}
     tags: [WAM, 4D一致性, 规划]
     note: 几何基础模型提供 4D 一致性监督，决策导向时间步采样强化规划。
+    note_en: "Uses a geometry foundation model to provide 4D-consistency supervision, with decision-oriented timestep sampling strengthening planning."
 
   - title: "DriveWAM: Video Generative Priors Enable Scalable World-Action Modeling for Autonomous Driving"
     short: DriveWAM
     org: "Li Jiang 团队"
+    org_en: "Li Jiang's team"
     year: 2026
     venue: arXiv
     category: driving
@@ -778,10 +900,12 @@ papers:
     features: {action: true}
     tags: [WAM, 视频扩散, 自回归策略]
     note: 预训练视频扩散 Transformer 适配为自回归视频-动作策略，场景演化语义引导。
+    note_en: "Adapts a pre-trained video diffusion Transformer into an autoregressive video-action policy, guided by scene-evolution semantics."
 
   - title: "CLEAR: Closed-Loop Reinforcement Learning at Scale for End-to-End Autonomous Driving"
     short: CLEAR
     org: "Fatih Porikli 团队"
+    org_en: "Fatih Porikli team"
     year: 2026
     venue: arXiv
     category: driving
@@ -790,10 +914,12 @@ papers:
     features: {closedloop: true}
     tags: [闭环强化学习, 残差策略, 大规模训练]
     note: 残差航点策略 + 异构仿真流水线，取得 Bench2Drive 与 CARLA longest6 SOTA。
+    note_en: "Combines a residual waypoint policy with a heterogeneous simulation pipeline, achieving state-of-the-art results on Bench2Drive and CARLA longest6."
 
   - title: "GraphWorld: Long-Horizon Planning with World Models for End-to-End Autonomous Driving"
     short: GraphWorld
     org: "Yadan Luo 团队"
+    org_en: "Yadan Luo team"
     year: 2026
     venue: arXiv
     category: driving
@@ -802,10 +928,12 @@ papers:
     features: {longhorizon: true}
     tags: [交互图, 长程规划, 世界模型]
     note: 自车中心交互图 + 世界状态条件规划，降低碰撞率提升长程规划。
+    note_en: "Combines ego-centric interaction graphs with world-state-conditioned planning to reduce collisions and improve long-horizon planning."
 
   - title: "IDOL: Inverse-Dynamics-Guided Future Prediction for End-to-End Autonomous Driving"
     short: IDOL
     org: "Dongmei Li 团队"
+    org_en: "Dongmei Li team"
     year: 2026
     venue: arXiv
     category: driving
@@ -814,10 +942,12 @@ papers:
     features: {}
     tags: [逆动力学, 未来预测, 轨迹优化]
     note: 逆动力学桥接未来预测与轨迹优化，将场景演化转为可执行运动增量。
+    note_en: "Uses inverse dynamics to bridge future prediction and trajectory optimization, translating scene evolution into executable motion increments."
 
   - title: "Dreamer-SAC: Off-Policy Learning in Latent World Models for Sample-Efficient Autonomous Driving"
     short: Dreamer-SAC
     org: "Xi Xiong 团队"
+    org_en: "Xi Xiong team"
     year: 2026
     venue: arXiv
     category: driving
@@ -826,9 +956,11 @@ papers:
     features: {action: true}
     tags: [潜世界模型, SAC, 样本效率]
     note: 循环状态空间世界模型 + 离策略 SAC + n 步估计，提升自动驾驶样本效率。
+    note_en: "Combines a recurrent state-space world model, off-policy SAC, and n-step estimation to improve sample efficiency in autonomous driving."
 
   - title: "Ego-Dynamics-Augmented World Model for Autonomous Driving with Zero-Shot Cross-Chassis Adaptation"
     org: "Chen Lv 团队"
+    org_en: "Chen Lv team"
     year: 2026
     venue: arXiv
     category: driving
@@ -837,10 +969,12 @@ papers:
     features: {}
     tags: [动力学先验, 跨底盘迁移, BEV世界模型]
     note: 显式自车动力学先验解耦 BEV 世界模型，支持零样本跨底盘迁移。
+    note_en: "Uses explicit ego-dynamics priors to decouple a BEV world model, supporting zero-shot transfer across chassis."
 
   - title: "CoWorld-VLA: Thinking in a Multi-Expert World Model for Autonomous Driving"
     short: CoWorld-VLA
     org: "Gong Che 团队"
+    org_en: "Gong Che team"
     year: 2026
     venue: arXiv
     category: driving
@@ -849,10 +983,12 @@ papers:
     features: {}
     tags: [VLA, 专家Token, 扩散规划]
     note: 四类专家 token（交互/几何/演化/轨迹）+ 扩散层级融合规划器。
+    note_en: "Combines four types of expert tokens, for interaction, geometry, evolution, and trajectories, with a diffusion-based hierarchical-fusion planner."
 
   - title: "WCog-VLA: A Dual-Level World-Cognitive Vision-Language-Action Model for End-to-End Autonomous Driving"
     short: WCog-VLA
     org: "Binyang Song 团队"
+    org_en: "Binyang Song team"
     year: 2026
     venue: arXiv
     category: driving
@@ -861,10 +997,12 @@ papers:
     features: {}
     tags: [VLA, 世界认知, 博弈推理]
     note: 语义级世界认知 + 生成级世界演化双层级，博弈链式推理与多智能体轨迹生成。
+    note_en: "Combines semantic-level world cognition and generative-level world evolution, with game-theoretic chain reasoning and multi-agent trajectory generation."
 
   - title: "HyWorldVLA: A Vision-Language-Action Model with Hybrid World Modeling for Autonomous Driving"
     short: HyWorldVLA
     org: "Liulong Ma 团队"
+    org_en: "Liulong Ma team"
     year: 2026
     venue: arXiv
     category: driving
@@ -873,10 +1011,12 @@ papers:
     features: {}
     tags: [VLA, 混合世界模型, 噪声鲁棒性]
     note: 像素级监督与潜表征学习统一的混合世界 VLA，首个噪声鲁棒性分析。
+    note_en: "A hybrid world VLA unifying pixel-level supervision and latent representation learning, with the first noise-robustness analysis."
 
   - title: "PLAN-S: Bridging Planning with Latent Style Dynamics for Autonomous Driving World Models"
     short: PLAN-S
     org: "Xinhu Zheng 团队"
+    org_en: "Xinhu Zheng team"
     year: 2026
     venue: arXiv
     category: driving
@@ -885,10 +1025,12 @@ papers:
     features: {}
     tags: [风格动力学, 语义代价图, 规划]
     note: 从潜表示解码风格条件四通道语义代价图，桥接潜世界模型与规划。
+    note_en: "Decodes style-conditioned four-channel semantic cost maps from latent representations, bridging latent world models and planning."
 
   - title: "WorldDrive: Bridging Scene Generation and Planning via Unifying Vision and Motion Representation"
     short: WorldDrive
     org: "Jianbing Shen 团队"
+    org_en: "Jianbing Shen team"
     year: 2026
     venue: arXiv
     category: driving
@@ -897,10 +1039,12 @@ papers:
     features: {}
     tags: [轨迹感知, 视觉-运动表征, 规划]
     note: 轨迹感知驾驶世界模型统一视觉与运动表征，未来感知奖励器选优轨迹。
+    note_en: "A trajectory-aware driving world model unifying visual and motion representations, with a future-aware reward model selecting trajectories."
 
   - title: "LWDrive: Layer-Wise World-Model-Guided Vision-Language Model Planning for Autonomous Driving"
     short: LWDrive
     org: "Guofa Li 团队"
+    org_en: "Guofa Li team"
     year: 2026
     venue: arXiv
     category: driving
@@ -909,10 +1053,12 @@ papers:
     features: {}
     tags: [VLM规划, 层级精修, 未来帧监督]
     note: VLM 粗规划 + 前瞻级联规划器逐层精修，注入未来帧生成监督。
+    note_en: "Combines VLM coarse planning with a foresight-based cascaded planner for layer-wise refinement, incorporating future-frame generation supervision."
 
   - title: "FlashDrive: Flash Vision-Language-Action Inference for Autonomous Driving"
     short: FlashDrive
     org: "Zhijian Liu 团队"
+    org_en: "Zhijian Liu team"
     year: 2026
     venue: arXiv
     category: driving
@@ -921,10 +1067,12 @@ papers:
     features: {realtime: true}
     tags: [VLA, 推理加速, 算法-系统协同]
     note: 算法-系统协同压缩 VLA 四级瓶颈，10B 模型从 1.4Hz 提升至 6.6Hz。
+    note_en: "Uses algorithm-system co-design to compress four levels of VLA bottlenecks, increasing the inference speed of a 10B model from 1.4 Hz to 6.6 Hz."
 
   - title: "TerraTransfer: Learning End-to-End Driving Policies Without Expert Demonstrations"
     short: TerraTransfer
     org: "Wei Zhan 团队"
+    org_en: "Wei Zhan team"
     year: 2026
     venue: arXiv
     category: driving
@@ -933,10 +1081,12 @@ papers:
     features: {closedloop: true}
     tags: [自博弈预训练, 无示教, 策略学习]
     note: 矢量仿真自博弈预训练 + 视觉骨干潜空间对齐，无需专家示教即可学习驾驶。
+    note_en: "Combines self-play pre-training in vector simulation with latent-space alignment of a visual backbone, learning driving policies without expert demonstrations."
 
   - title: "BeyondSight: Object Permanence for End-to-End Autonomous Driving"
     short: BeyondSight
     org: "Steven L. Waslander 团队"
+    org_en: "Steven L. Waslander team"
     year: 2026
     venue: arXiv
     category: driving
@@ -945,9 +1095,11 @@ papers:
     features: {}
     tags: [物体恒存性, 遮挡, 预测规划]
     note: 解耦存在性与可观测性，时序传播 actor 查询实现遮挡下的感知预测规划。
+    note_en: "Decouples existence from observability, using temporal propagation of actor queries for perception, prediction, and planning under occlusion."
 
   - title: "Toward the Cognitive-Physical Limits of Embodied Intelligence through a World-Model-Centric Autonomous Racing Agent"
     org: "Chen Lv 团队"
+    org_en: "Chen Lv team"
     year: 2026
     venue: arXiv
     category: driving
@@ -956,10 +1108,12 @@ papers:
     features: {closedloop: true}
     tags: [竞速, 认知-物理边界, 闭环精修]
     note: 从极限成败学习预测世界模型，256.3km/h 下闭环精修认知-物理边界。
+    note_en: "Learns a predictive world model from successes and failures at the limits, refining cognitive-physical boundaries in closed loop at 256.3 km/h."
 
   - title: "SAGE: Steerable Adversarial Scenario Generation through Test-Time Preference Alignment"
     short: SAGE
     org: "Jian Sun 团队"
+    org_en: "Jian Sun team"
     year: 2025
     venue: arXiv
     category: driving
@@ -968,10 +1122,12 @@ papers:
     features: {}
     tags: [对抗生成, 偏好对齐, 测试时调节]
     note: 将对抗性与真实性作为可权衡软偏好，测试时模型权重插值连续调节攻击强度。
+    note_en: "Treats adversariality and realism as soft preferences that can be traded off, continuously adjusting attack strength through test-time model-weight interpolation."
 
   - title: "ADV-0: Closed-Loop Min-Max Adversarial Training for Long-Tail Robustness in Autonomous Driving"
     short: ADV-0
     org: "Jian Sun 团队"
+    org_en: "Jian Sun team"
     year: 2026
     venue: arXiv
     category: driving
@@ -980,10 +1136,12 @@ papers:
     features: {closedloop: true}
     tags: [对抗训练, 零和博弈, 长尾鲁棒性]
     note: 零和马尔可夫博弈 + 迭代偏好学习逼近最优对手分布，attacker-defender 共演化。
+    note_en: "Combines a zero-sum Markov game with iterative preference learning to approximate the optimal adversary distribution, with attacker-defender co-evolution."
 
   - title: "AlignADV: Learnability-Guided Adversarial Training for Safe Autonomous Driving"
     short: AlignADV
     org: "Jian Sun 团队"
+    org_en: "Jian Sun team"
     year: 2026
     venue: arXiv
     category: driving
@@ -992,10 +1150,12 @@ papers:
     features: {}
     tags: [对抗训练, 偏好对齐, 课程学习]
     note: 偏好对齐生成可解决场景 + 行为指纹能力预测，动态课程采样降低 40.6% 训练步。
+    note_en: "Combines preference-aligned generation of solvable scenarios with capability prediction from behavioral fingerprints, reducing training steps by 40.6% through dynamic curriculum sampling."
 
   - title: "EvoDrive: Pareto Evolution for Safety-Critical Autonomous Driving via Self-Improving LLM Agents"
     short: EvoDrive
     org: "Wei Ma 团队"
+    org_en: "Wei Ma team"
     year: 2026
     venue: arXiv
     category: driving
@@ -1004,10 +1164,12 @@ papers:
     features: {}
     tags: [帕累托演化, LLM智能体, 安全关键场景]
     note: 仿真锚定 actor-critic + 自演化评估器路由，帕累托档案保持攻击-真实权衡。
+    note_en: "Combines a simulation-anchored actor-critic with self-evolving evaluator routing, using a Pareto archive to preserve the attack-realism trade-off."
 
   - title: "LLM-attacker: Using LLMs to Identify Adversarial Drivers for Testing Autonomous Vehicles"
     short: LLM-attacker
     org: "Ye Tian 团队"
+    org_en: "Ye Tian team"
     year: 2025
     venue: arXiv
     category: driving
@@ -1016,9 +1178,11 @@ papers:
     features: {}
     tags: [LLM, 对抗测试, 攻击者选择]
     note: 多个 LLM agent 识别最适合作为攻击者的交通参与者，再优化其轨迹形成迭代反馈。
+    note_en: "Uses multiple LLM agents to identify traffic participants most suitable as attackers, then optimizes their trajectories to form iterative feedback."
 
   - title: "Seeking to Collide: Generating Adversarial Trajectories for Testing Autonomous Vehicles"
     org: "Ye Tian 团队"
+    org_en: "Ye Tian team"
     year: 2025
     venue: arXiv
     category: driving
@@ -1027,10 +1191,12 @@ papers:
     features: {}
     tags: [对抗轨迹, 意图推断, 在线检索]
     note: 根据当前状态推断危险意图，生成可行的对抗轨迹，以 intent-planner memory 支持在线检索。
+    note_en: "Infers hazardous intentions from the current state and generates feasible adversarial trajectories, with intent-planner memory supporting online retrieval."
 
   - title: "CCFM: Collision-Constrained Flow Matching for Safety-Critical Scenario Generation"
     short: CCFM
     org: "Ruwen Qin 团队"
+    org_en: "Ruwen Qin team"
     year: 2026
     venue: arXiv
     category: driving
@@ -1039,10 +1205,12 @@ papers:
     features: {}
     tags: [流匹配, 碰撞约束, 场景生成]
     note: 硬约束定义四类碰撞，流匹配 + 高斯-牛顿投影保证碰撞类型可控。
+    note_en: "Defines four collision types with hard constraints, combining flow matching and Gauss-Newton projection to ensure controllable collision types."
 
   - title: "RiskFlow: Fast and Faithful Safety-Critical Traffic Scenario Generation"
     short: RiskFlow
     org: "Guofa Li 团队"
+    org_en: "Guofa Li team"
     year: 2026
     venue: arXiv
     category: driving
@@ -1051,10 +1219,12 @@ papers:
     features: {}
     tags: [流匹配, 安全关键, 快速生成]
     note: 动作空间传输 + JVP 目标单次前向生成，输出空间引导关键智能体冒险。
+    note_en: "Uses action-space transport and a JVP objective for single-forward-pass generation, with output-space guidance encouraging risk-taking by critical agents."
 
   - title: "PCASim: Promptable Closed-loop Adversarial Simulation for Urban Traffic Environment"
     short: PCASim
     org: "Bin Jiang 团队"
+    org_en: "Bin Jiang team"
     year: 2026
     venue: arXiv
     category: driving
@@ -1063,10 +1233,12 @@ papers:
     features: {closedloop: true}
     tags: [闭环对抗, LLM, 强化学习]
     note: LLM 整合知识/数据/对抗驱动 + RL 训练安全智能体，对抗场景与策略协同进化。
+    note_en: "An LLM integrates knowledge-, data-, and adversarial-driven approaches, while RL trains safety agents, enabling adversarial scenarios and policies to co-evolve."
 
   - title: "KG-ASG: Collision-Knowledge-Guided Closed-Loop Adversarial Scenario Generation"
     short: KG-ASG
     org: "Qiang Liu 团队"
+    org_en: "Qiang Liu team"
     year: 2026
     venue: arXiv
     category: driving
@@ -1075,10 +1247,12 @@ papers:
     features: {closedloop: true}
     tags: [碰撞知识库, 对抗场景生成, 闭环]
     note: 碰撞知识库 + 碰撞专家推断主辅对手角色，主-支撑单碰撞体推理。
+    note_en: "Combines a collision knowledge base with a collision expert to infer primary and supporting adversary roles, using primary-support single-collider reasoning."
 
   - title: "ScenePilot: Controllable Boundary-Driven Critical Scenario Generation"
     short: ScenePilot
     org: "Cheng-zhong Xu 团队"
+    org_en: "Cheng-zhong Xu team"
     year: 2026
     venue: arXiv
     category: driving
@@ -1087,10 +1261,12 @@ papers:
     features: {}
     tags: [约束优化, 关键场景, RSS]
     note: RSS 物理可行性 + 在线风险预测器的约束多目标强化学习，生成边界带场景。
+    note_en: "Uses constrained multi-objective reinforcement learning with RSS physical feasibility and an online risk predictor to generate scenarios in a boundary band."
 
   - title: "CARS: Learning Responsibility-Attributed Adversarial Scenarios for Testing Autonomous Vehicles"
     short: CARS
     org: "Cheng Wang 团队"
+    org_en: "Cheng Wang team"
     year: 2026
     venue: arXiv
     category: driving
@@ -1099,9 +1275,11 @@ papers:
     features: {}
     tags: [责任归因, 对抗场景, 法规对齐]
     note: 上下文感知对手选择 + 生成对抗策略，碰撞场景可归责且法规对齐。
+    note_en: "Combines context-aware adversary selection with adversarial policy generation, producing collision scenarios with responsibility attribution and regulatory alignment."
 
   - title: "Conditional Flow-VAE for Safety-Critical Traffic Scenario Generation"
     org: "Raquel Urtasun 团队"
+    org_en: "Raquel Urtasun team"
     year: 2026
     venue: arXiv
     category: driving
@@ -1110,10 +1288,12 @@ papers:
     features: {}
     tags: [流匹配, VAE, 安全关键场景]
     note: 条件潜流匹配将名义场景分布匹配为安全关键 rollout。
+    note_en: "Uses conditional latent flow matching to transform nominal scenario distributions into safety-critical rollouts."
 
   - title: "TrafficAlign: Aligning Large Language Models for Traffic Scenario Generation"
     short: TrafficAlign
     org: "Tianyi Zhang 团队"
+    org_en: "Tianyi Zhang team"
     year: 2026
     venue: arXiv
     category: driving
@@ -1122,9 +1302,11 @@ papers:
     features: {}
     tags: [LLM对齐, 场景生成, 视频合成]
     note: 基于真实视频合成场景并验证对齐 LLM，生成场景使三模型碰撞率提升 10.8%。
+    note_en: "Synthesizes scenarios from real videos and uses validation to align an LLM; the generated scenarios increase collision rates for three models by 10.8%."
 
   - title: "Scenario Generation for Testing of Autonomous Driving Systems Using Real-World Failure Records"
     org: "Chuchu Fan 团队"
+    org_en: "Chuchu Fan team"
     year: 2026
     venue: arXiv
     category: driving
@@ -1133,10 +1315,12 @@ papers:
     features: {}
     tags: [真实事故, LLM, 测试场景]
     note: 从 NHTSA 真实事故记录的类别与上下文信息出发，用 LLM 生成可执行测试场景。
+    note_en: "Uses categories and contextual information from NHTSA real-world crash records as inputs to an LLM that generates executable test scenarios."
 
   - title: "AnchorDrive: LLM Scenario Rollout with Anchor-Guided Diffusion Regeneration"
     short: AnchorDrive
     org: "Chen Xiong 团队"
+    org_en: "Chen Xiong team"
     year: 2026
     venue: arXiv
     category: driving
@@ -1145,10 +1329,12 @@ papers:
     features: {}
     tags: [LLM推演, 锚点引导, 扩散再生成]
     note: LLM 闭环驾驶员智能体生成锚点 + 扩散再生成完整轨迹，兼顾可控与真实。
+    note_en: "Uses LLM closed-loop driver agents to generate anchors, followed by diffusion regeneration of complete trajectories, balancing controllability and realism."
 
   - title: "SaFeR: Safety-Critical Scenario Generation via Feasibility-Constrained Token Resampling"
     short: SaFeR
     org: "Jianxun Cui 团队"
+    org_en: "Jianxun Cui team"
     year: 2026
     venue: arXiv
     category: driving
@@ -1157,9 +1343,11 @@ papers:
     features: {}
     tags: [Token重采样, 可行性约束, 对抗场景]
     note: 离散下一 token 预测 + 差分注意力 + 最大可行域约束的重采样生成对抗场景。
+    note_en: "Generates adversarial scenarios through discrete next-token prediction, differential attention, and resampling constrained by a maximal feasible region."
 
   - title: "Map-Agnostic Interactive Safety-Critical Scenario Generation via Multi-Objective Tree Search"
     org: "Chen Sun 团队"
+    org_en: "Chen Sun team"
     year: 2026
     venue: arXiv
     category: driving
@@ -1168,9 +1356,11 @@ papers:
     features: {}
     tags: [树搜索, 地图无关, 交互场景]
     note: MCTS + UCB/LCB 混合策略，地图无关 SUMO 微观模型生成交互场景。
+    note_en: "Combines MCTS with a hybrid UCB/LCB strategy, using a map-agnostic SUMO microscopic model to generate interactive scenarios."
 
   - title: "Safety-Centered Scenario Generation for Autonomous Vehicles"
     org: "Aliasghar Moj Arab 团队"
+    org_en: "Aliasghar Moj Arab team"
     year: 2026
     venue: arXiv
     category: driving
@@ -1179,10 +1369,12 @@ papers:
     features: {}
     tags: [HARA, ISO 26262, 参数化场景]
     note: HARA 驱动的参数化安全场景框架，映射 ISO 26262 安全目标。
+    note_en: "A HARA-driven parameterized safety-scenario framework that maps ISO 26262 safety goals."
 
   - title: "Dynasto: Validity-Aware Dynamic-Static Parameter Optimization for Autonomous Driving Testing"
     short: Dynasto
     org: "Foutse Khomh 团队"
+    org_en: "Foutse Khomh team"
     year: 2026
     venue: arXiv
     category: driving
@@ -1191,10 +1383,12 @@ papers:
     features: {}
     tags: [参数优化, RL对手, 有效性校验]
     note: RL 对手 + 时序逻辑有效性 + 遗传算法搜索初始条件，有效失败率提升 60-70%。
+    note_en: "Combines RL adversaries, temporal-logic validity, and genetic-algorithm search for initial conditions, increasing the valid failure rate by 60-70%."
 
   - title: "STADA: Specification-based Testing for Autonomous Driving Agents"
     short: STADA
     org: "Matthew B. Dwyer 团队"
+    org_en: "Matthew B. Dwyer team"
     year: 2026
     venue: arXiv
     category: driving
@@ -1203,9 +1397,11 @@ papers:
     features: {}
     tags: [形式规范, 场景生成, 覆盖率]
     note: 从 LTLf 形式规范系统生成所有初始场景与续延，覆盖率为最佳基线 2 倍。
+    note_en: "Systematically generates all initial scenarios and continuations from LTLf formal specifications, with twice the coverage of the best baseline."
 
   - title: "Risk-Controllable Multi-View Diffusion for Driving Scenario Generation"
     org: "Jinhua Zhao 团队"
+    org_en: "Jinhua Zhao team"
     year: 2026
     venue: arXiv
     category: driving
@@ -1214,9 +1410,11 @@ papers:
     features: {}
     tags: [风险可控, 多视角扩散, DPO]
     note: 风险等级 + 物理风险建模驱动多视角扩散，区域感知 DPO 聚焦动态区。
+    note_en: "Uses risk levels and physical risk modeling to drive multi-view diffusion, with region-aware DPO focusing on dynamic regions."
 
   - title: "Threat-guided Policy-aware Scene Perturbation for Safe Autonomous Driving with Online Reinforcement Learning"
     org: "Zongzhang Zhang 团队"
+    org_en: "Zongzhang Zhang team"
     year: 2026
     venue: arXiv
     category: driving
@@ -1225,10 +1423,12 @@ papers:
     features: {}
     tags: [威胁引导, 场景扰动, 在线强化学习]
     note: 策略感知场景编码器选择关键物体扰动，威胁引导生成高训练价值安全场景。
+    note_en: "A policy-aware scene encoder selects critical objects to perturb, with threat-guided generation producing safety scenarios of high training value."
 
   - title: "SPHINX: First Explain, Then Explore"
     short: SPHINX
     org: "My T. Thai 团队"
+    org_en: "My T. Thai team"
     year: 2026
     venue: arXiv
     category: driving
@@ -1237,10 +1437,12 @@ papers:
     features: {}
     tags: [可解释AI, 对抗场景, 失败分析]
     note: 先用可解释 AI 分析策略失败再定向生成对抗场景，提升鲁棒性。
+    note_en: "First uses explainable AI to analyze policy failures, then generates targeted adversarial scenarios to improve robustness."
 
   - title: "WorldLens: Full-Spectrum Evaluations of Driving World Models in Real World"
     short: WorldLens
     org: "Ziwei Liu 团队"
+    org_en: "Ziwei Liu team"
     year: 2025
     venue: arXiv
     category: driving
@@ -1249,10 +1451,12 @@ papers:
     features: {}
     tags: [世界模型评价, 多维基准, 人类偏好]
     note: 从生成、重建、动作跟随、下游任务和人类偏好五个方面评价驾驶世界模型。
+    note_en: "Evaluates driving world models along five dimensions: generation, reconstruction, action following, downstream tasks, and human preferences."
 
   - title: "DriveCombo: Benchmarking Compositional Traffic Rule Reasoning in Autonomous Driving"
     short: DriveCombo
     org: "Kaicheng Yu 团队"
+    org_en: "Kaicheng Yu team"
     year: 2026
     venue: arXiv
     category: driving
@@ -1261,10 +1465,12 @@ papers:
     features: {}
     tags: [交通规则推理, 基准测试, 组合泛化]
     note: 组合式交通规则推理基准，评估驾驶系统对复杂规则的理解能力。
+    note_en: "A compositional traffic-rule reasoning benchmark evaluating driving systems' understanding of complex rules."
 
   - title: "VIScore: Diagnosing Planning-Relevant Quality in Latent World Models"
     short: VIScore
     org: "Morgan Levine 团队"
+    org_en: "Morgan Levine team"
     year: 2026
     venue: arXiv
     category: driving
@@ -1273,9 +1479,11 @@ papers:
     features: {}
     tags: [潜世界模型, 规划质量, 评价]
     note: 诊断潜世界模型中与规划相关的质量问题的评价分数。
+    note_en: "An evaluation score diagnosing planning-relevant quality issues in latent world models."
 
   - title: "How Can Driving World Models Do Counterfactual Prediction?"
     org: "Ziran Wang 团队"
+    org_en: "Ziran Wang team"
     year: 2026
     venue: arXiv
     category: driving
@@ -1284,9 +1492,11 @@ papers:
     features: {}
     tags: [反事实预测, 因果可识别性, 分析]
     note: 形式化驾驶世界模型作为反事实仿真器的条件，分析因果可识别性与估计偏差。
+    note_en: "Formalizes the conditions under which driving world models can serve as counterfactual simulators, analyzing causal identifiability and estimation bias."
   
   - title: "DA-WAM: Decision-Aligned Future Latents for Driving World Models"
     org: "HKUST Jun Ma 团队"
+    org_en: "HKUST Jun Ma team"
     year: 2026
     venue: arXiv
     category: driving
@@ -1295,6 +1505,7 @@ papers:
     features: {action: true}
     tags: [JEPA, 对齐轨迹与未来表征，世界动作模型]
     note: 通过将轨迹与未来表征对齐，从而提高驾驶世界模型的性能。
+    note_en: "Improves driving-world-model performance by aligning trajectories with future representations."
 
   - title: "GeoWAM: Visual Geometry World Action Models for Autonomous Driving"
     short: GeoWAM
@@ -1308,10 +1519,12 @@ papers:
     features: {action: true, closedloop: true}
     tags: [几何世界模型, 未来点云预测, 世界动作模型]
     note: 主张以点云几何而非像素作为驾驶世界模型的状态空间，通过预训练预测未来场景几何、再由几何条件动作头预测自车轨迹，开环与闭环评测均显著优于基于图像的 WAM。
+    note_en: "Advocates using point-cloud geometry as the state space of driving world models rather than pixels. Pre-training predicts future scene geometry, and a geometry-conditioned action head then predicts ego trajectories; both open-loop and closed-loop evaluations significantly outperform image-based WAMs."
 
   - title: "Self-Aware Active Learning Enables Continual Improvement in Autonomous Driving"
     short: Self-Aware AL
     org: "Dimitrios Kanoulas 团队"
+    org_en: "Dimitrios Kanoulas team"
     year: 2026
     venue: arXiv
     category: driving
@@ -1320,10 +1533,12 @@ papers:
     features: {}
     tags: [主动学习, 自我感知, 长尾事件, 持续改进, 数据引擎]
     note: 指出驾驶系统多从被动经验学习、缺乏「知道自己不会」的机制，罕见分布偏移与长尾事件因此导致突发失效；提出自我感知的主动学习框架，让智能体估计自身能力不足、及时求助人类，并把安全关键的偶遇转化为可学习的训练信号，实现自动驾驶系统的持续改进。
+    note_en: "Observes that driving systems mostly learn from passive experience and lack a mechanism for recognizing what they cannot do, leading to abrupt failures under rare distribution shifts and long-tail events. Proposes a self-aware active-learning framework that lets agents estimate their own capability gaps, seek timely human assistance, and turn incidental safety-critical encounters into learnable training signals for continual improvement."
 
   - title: "ZYT-World: A Real-Time Controllable World Model for Closed-Loop Autonomous-Driving Simulation"
     short: ZYT-World
     org: 卓驭
+    org_en: "ZYT"
     year: 2026
     venue: arXiv
     category: driving
@@ -1333,10 +1548,12 @@ papers:
     features: {action: true, closedloop: true, longhorizon: true}
     tags: [鱼眼针孔, 一步生成, 闭环仿真, 重访记忆]
     note: 按实车混合相机组原生生成四路超过 180° 的鱼眼和三路针孔，各自保持分辨率；自车运动、相机几何和交通参与者的框、朝向、灯色一起作为条件。40 步双向老师蒸馏成每帧只去噪一次的因果生成器，两张 GPU 上七路 720p 以 4 FPS 流式输出。可插拔记忆让车沿另一条轨迹回到同一地点时场景身份仍在；内部测试集上一步模型保住老师 90% 以上的 PSNR 和 SSIM，生成器快 107.7 倍。
+    note_en: "Natively generates the vehicle's mixed camera rig: four fisheye views each exceeding 180 degrees and three pinhole views, preserving each camera's resolution. Conditioning combines ego motion, camera geometry, and traffic participants' boxes, headings, and traffic-light colors. A 40-step bidirectional teacher is distilled into a causal generator with one denoising step per frame, streaming seven 720p views at 4 FPS on two GPUs. Plug-and-play memory preserves scene identity when the vehicle returns to the same location along a different trajectory. On an internal test set, the one-step model retains more than 90% of the teacher's PSNR and SSIM, and the generator is 107.7 times faster."
 
   - title: "EditWM: Event-Decomposed World Modeling with Incremental Correction for End-to-End Autonomous Driving"
     short: EditWM
     org: HKUST / 南方科技大学
+    org_en: "HKUST / Southern University of Science and Technology"
     year: 2026
     venue: arXiv
     category: driving
@@ -1345,6 +1562,7 @@ papers:
     features: {action: true}
     tags: [事件分解, 增量修正, 轨迹打分, NAVSIM]
     note: 先预测平时的场景演化并冻住该预测器，再对事件造成的偏差做有门控、有幅度限制的修正，修正后的特征给候选轨迹打分。全部 12,146 个 NAVSIM navtest 场景上，专家轨迹条件下的未来特征误差比只做常规预测低 5.35%，83.54% 的场景有改进，规划得分 91.05 EPDMS。
+    note_en: "First predicts routine scene evolution and freezes the predictor, then applies gated, magnitude-limited corrections to event-induced deviations; the corrected features score candidate trajectories. Across all 12,146 NAVSIM navtest scenarios, future-feature error under expert-trajectory conditioning is 5.35% lower than with routine prediction alone, 83.54% of scenarios improve, and the planning score is 91.05 EPDMS."
 
   - title: "Relationally Grounded Latent World Models for Autonomous Driving"
     short: Relational LAW
@@ -1357,10 +1575,12 @@ papers:
     features: {action: true}
     tags: [场景图, 特权监督, 潜空间对齐, nuScenes]
     note: 在 LAW 上用 nuScenes 三维标注做成以交通参与者为中心的场景图，只在训练时把视觉潜状态对齐这张图的关系嵌入。推理时场景图和三维标注都丢掉。相对重训的 LAW，轨迹 L2 从 0.661 降到 0.622，碰撞率从 0.456 降到 0.217；结构化场景图优于无结构的文字描述。
+    note_en: "Builds traffic-participant-centric scene graphs from nuScenes 3D annotations on top of LAW, aligning visual latent states with the graphs' relational embeddings only during training. Scene graphs and 3D annotations are discarded at inference. Relative to retrained LAW, trajectory L2 decreases from 0.661 to 0.622 and the collision rate from 0.456 to 0.217; structured scene graphs outperform unstructured text descriptions."
 
   - title: "ForeDrive: Foresight-Guided End-to-End Autonomous Driving with a Planning-Relevant Latent World Model"
     short: ForeDrive
     org: 华中科技大学 / 上海造孚 / 同济大学
+    org_en: "Huazhong University of Science and Technology / Shanghai Zaofu / Tongji University"
     year: 2026
     venue: arXiv
     category: driving
@@ -1369,6 +1589,7 @@ papers:
     features: {action: true}
     tags: [规划相关潜空间, 非对称耦合, 扩散规划, NAVSIM]
     note: JEPA 式潜世界模型预测多步视觉和自车状态，这些未来直接作为扩散规划器的条件。规划梯度只更新共享编码器，预测器被截断梯度，只用预测损失训练。推理只看当前前视图，纯模仿学习，没有强化学习和外部分数器。NAVSIM v1 为 89.9 PDMS，更大的 ViT-L 为 90.4；v2 单阶段 90.0 EPDMS。
+    note_en: "A JEPA-style latent world model predicts multi-step visual and ego states, which directly condition a diffusion planner. Planning gradients update only the shared encoder; gradients to the predictor are stopped, and the predictor is trained only with the prediction loss. Inference uses only the current front view, with pure imitation learning, no reinforcement learning, and no external scorer. NAVSIM v1 results are 89.9 PDMS, or 90.4 with the larger ViT-L; single-stage v2 achieves 90.0 EPDMS."
 
   - title: "NVIDIA OmniDreams: Real-Time Generative World Model for Closed-Loop Autonomous Vehicle Simulation"
     short: OmniDreams
@@ -1383,10 +1604,12 @@ papers:
     features: {action: true, realtime: true, closedloop: true, longhorizon: true}
     tags: [闭环仿真, 动作条件视频, 实时生成, Cosmos]
     note: 从 Cosmos 中训、后训成动作条件的自回归驾驶视频世界模型，约 2.1 万小时。生成条件是过去画面、仿真器状态和当前驾驶动作，并与 Alpamayo 1、AlpaSim 闭环。2B 单相机在一张 GB300 上以 720p 达到 68 FPS；四相机版本用 16 张卡达到 105 FPS。由此后训的约 2B 世界–动作模型，在 Physical AI NuRec 上把碰撞率从 Alpamayo 1.5（约 10B）的 6.9% 降到 4.2%。
+    note_en: "Uses mid-training and post-training of Cosmos over approximately 21,000 hours to produce an action-conditioned autoregressive driving-video world model. Generation is conditioned on past images, simulator states, and current driving actions, and runs in closed loop with Alpamayo 1 and AlpaSim. The 2B single-camera model reaches 68 FPS at 720p on one GB300; the four-camera version reaches 105 FPS on 16 GPUs. An approximately 2B world-action model post-trained with it reduces the collision rate on Physical AI NuRec from 6.9% for Alpamayo 1.5 (approximately 10B) to 4.2%."
 
   - title: "AD-E2E-JEPA: A Joint-Embedding Predictive Architecture For End-to-End Autonomous Driving"
     short: AD-E2E-JEPA
     org: 纽约大学 / AMI
+    org_en: "New York University / AMI"
     year: 2026
     venue: arXiv
     category: driving
@@ -1396,10 +1619,12 @@ papers:
     features: {action: true}
     tags: [JEPA, 零样本规划, 目标图像, NAVSIM]
     note: 动作条件的 JEPA 不训练驾驶策略，用未来图像当目标，在轨迹词表里零样本选轨迹。可学习投影把规划用的 patch 减到 1/16、维度减到 1/4，推理约快 100 倍，8 帧展开、256 条候选大约 0.8 秒。平均 20 米外的目标，256 条候选时位移误差 4.0 米，8192 条时 2.8 米。NAVSIM v2 在 100 个场景上的零样本规划为 67.3/72.9 EPDMS（带安全乘积项）和 84.1/86.5 EPDMS†；自监督投影再用于模仿学习，EPDMS 从 80.2 到 85.4。
+    note_en: "An action-conditioned JEPA uses future images as targets and selects trajectories zero-shot from a trajectory vocabulary, without training a driving policy. A learnable projection reduces planning patches to 1/16 and their dimensions to 1/4, making inference approximately 100 times faster; an 8-frame rollout with 256 candidates takes approximately 0.8 seconds. For goals averaging over 20 meters away, displacement error is 4.0 meters with 256 candidates and 2.8 meters with 8192. On 100 NAVSIM v2 scenarios, zero-shot planning achieves 67.3/72.9 EPDMS (with the safety product term) and 84.1/86.5 EPDMS†; reusing the self-supervised projection for imitation learning increases EPDMS from 80.2 to 85.4."
 
   - title: "MomWorld: Momentum-Aware Latent World Model for Long-Horizon Autonomous Driving"
     short: MomWorld
     org: 南洋理工大学 / 北京交通大学 / 中北大学 / 大连理工大学 / 清华大学
+    org_en: "Nanyang Technological University / Beijing Jiaotong University / North University of China / Dalian University of Technology / Tsinghua University"
     year: 2026
     venue: arXiv
     category: driving
@@ -1409,10 +1634,12 @@ papers:
     features: {action: true, longhorizon: true}
     tags: [场景动量, 长时程规划, 流匹配, nuScenes]
     note: 把场景动量和位形一起往未来滚：可学习的持续性留下稳定趋势，场景条件更新未来动力学，突变时用门控清掉旧动量。动量条件的流匹配再把基准轨迹对齐到预测的场景演化。nuScenes 上相对 MomAD，1–6 秒平均碰撞率降 12.2%；6 秒处 L2 从 2.45 米到 2.31 米，碰撞率从 2.13% 到 1.97%。
+    note_en: "Rolls scene momentum and configuration forward together: learnable persistence retains stable trends, scene-conditioned updates adjust future dynamics, and gates clear old momentum at abrupt changes. Momentum-conditioned flow matching then aligns reference trajectories with predicted scene evolution. On nuScenes, average collision rate over 1-6 seconds decreases by 12.2% relative to MomAD; at 6 seconds, L2 decreases from 2.45 meters to 2.31 meters and collision rate from 2.13% to 1.97%."
 
   - title: "VehDyn: A Driving World Model Benchmark for Vehicle Dynamics"
     short: VehDyn
     org: 得克萨斯大学奥斯汀分校 / 加州大学伯克利分校
+    org_en: "The University of Texas at Austin / University of California, Berkeley"
     year: 2026
     venue: arXiv
     category: driving
@@ -1421,10 +1648,12 @@ papers:
     features: {}
     tags: [车辆动力学, 基准, CarSim, 视频世界模型]
     note: 用 CARLA 画面配 CarSim 多体动力学，10080 组全因子配置，同步记录位置、速度和姿态，评 12 个驾驶视频世界模型的轨迹、运动学和动力学一致性。10/12 的轨迹指标已在真值 20% 以内，动力学一致性没有模型达到真值的 92%，画质和动力学得分只弱相关。DrivingWorld 最高，其后是 Cosmos 3 Nano 和 LTX-Video 2.5。数据和指标在接收后放出。
+    note_en: "Pairs CARLA images with CarSim multibody dynamics in 10080 full-factorial configurations, synchronously recording position, velocity, and pose, and evaluates trajectory, kinematic, and dynamics consistency for 12 driving-video world models. Trajectory metrics for 10/12 models are already within 20% of ground truth, but no model reaches 92% of ground-truth dynamics consistency; visual quality and dynamics scores are only weakly correlated. DrivingWorld ranks highest, followed by Cosmos 3 Nano and LTX-Video 2.5. Data and metrics will be released after acceptance."
 
   - title: "Outcome-Grounded World Modeling for Autonomous Driving"
     short: World4Scorer
     org: 清华大学智能产业研究院 / 香港科技大学（广州） / 浙江大学 / 长安汽车
+    org_en: "Institute for AI Industry Research, Tsinghua University / HKUST (Guangzhou) / Zhejiang University / Changan Automobile"
     year: 2026
     venue: arXiv
     category: driving
@@ -1435,10 +1664,12 @@ papers:
     features: {action: true, closedloop: true}
     tags: [轨迹条件JEPA, 结果监督, 候选打分, NAVSIM]
     note: 打分器是轨迹条件的 JEPA：每条候选轨迹预测一个状态，分数从该状态读出。仿真给所有候选标结果，真实日志里的未来只在训练时锚定已执行的那一条。全部 12,146 个 NAVSIM 测试场景上，v2 为 93.0 EPDMS，v1 为 94.0 PDMS。去掉惯性重排后是 91.4 EPDMS，同一评测下 DrivoR 为 90.7。把候选状态随机对调，PDMS 从 94.19 降到 79.73。Bench2Drive 上改过输入的系统为 73.27 Driving Score、成功率 46.36%，对照方法的训练数据和接口并不对齐。LeWM 和规划预算固定时，OGBench-Cube 成功率从 68.91% 到 73.64%。
+    note_en: "The scorer is a trajectory-conditioned JEPA: it predicts a state for each candidate trajectory and reads the score from that state. Simulation labels outcomes for all candidates, while the future from real logs anchors only the executed trajectory during training. Across all 12,146 NAVSIM test scenarios, it achieves 93.0 EPDMS on v2 and 94.0 PDMS on v1. Without inertia reranking, it achieves 91.4 EPDMS, compared with 90.7 for DrivoR under the same evaluation. Randomly swapping candidate states reduces PDMS from 94.19 to 79.73. On Bench2Drive, the system with modified inputs achieves a 73.27 Driving Score and a 46.36% success rate; the compared methods' training data and interfaces are not aligned. With LeWM and the planning budget fixed, OGBench-Cube success rate increases from 68.91% to 73.64%."
 
   - title: "ReWAM: Reciprocal World Action Models for Interactive Autonomous Driving"
     short: Reciprocal WAM
     org: 香港科技大学（广州） / 零跑 / 香港科技大学
+    org_en: "HKUST (Guangzhou) / Leapmotor / HKUST"
     year: 2026
     venue: arXiv
     category: driving
@@ -1448,10 +1679,12 @@ papers:
     features: {action: true}
     tags: [互惠响应, Level-k, 世界动作模型, NAVSIM]
     note: 自车和其他交通参与者互相作为条件响应者，Level-k 的动作 DiT 交换策略 token，并共用未来驾驶世界的表示。NAVSIM navtest 共 12,146 个场景，PDMS 90.6，比骨干 DriveLaW 高 1.5，比 ReWorld 高 0.2。推理深度从 Level-1 到 Level-4，PDMS 从 90.03 到 90.64。按交互强度分组后，相对 DriveLaW 的优势从无交互的 1.52 增到关键交互的 4.59。
+    note_en: "The ego vehicle and other traffic participants act as mutually conditioned responders. Level-k action DiTs exchange policy tokens and share representations of the future driving world. Across 12,146 NAVSIM navtest scenarios, PDMS is 90.6, exceeding the DriveLaW backbone by 1.5 and ReWorld by 0.2. Increasing inference depth from Level-1 to Level-4 raises PDMS from 90.03 to 90.64. When grouped by interaction intensity, the advantage over DriveLaW increases from 1.52 for no interaction to 4.59 for critical interactions."
 
   - title: "SymRegFlow: Symmetry-Regularized Flow Matching for Video World Models"
     short: SymRegFlow
     org: 清华大学 / 博世 / 中国科学院大学
+    org_en: "Tsinghua University / Bosch / University of Chinese Academy of Sciences"
     year: 2026
     venue: arXiv
     category: driving
@@ -1460,10 +1693,12 @@ papers:
     features: {}
     tags: [对称正则, 连续视角, 多视角, 流匹配]
     note: 微调多视角驾驶视频世界模型。几何扭曲得到噪声锚，再用跨锚去噪一致性做对称正则，训练时没有新视角真值画面。nuScenes 30 个验证场景的中点视角上，联合生成 FVD 为 158.62，对照里最低的 DiST-4D 为 231.95。源条件推理的 FID 为 19.22，FreeVS 为 20.60。条件是相机位姿。
+    note_en: "Fine-tunes a multi-view driving-video world model. Geometric warping produces noise anchors, and cross-anchor denoising consistency provides symmetry regularization, without ground-truth novel-view images during training. At midpoint views in 30 nuScenes validation scenes, joint generation achieves 158.62 FVD, compared with 231.95 for DiST-4D, the lowest among the compared baselines. Source-conditioned inference achieves 19.22 FID, compared with 20.60 for FreeVS. Conditioning uses camera poses."
 
   - title: "GeoWM: Efficient Direct World Modeling in Explicit Geometry"
     short: GeoWM
     org: 华为诺亚方舟实验室
+    org_en: "Huawei Noah's Ark Lab"
     year: 2026
     venue: arXiv
     category: driving
@@ -1472,3 +1707,4 @@ papers:
     features: {longhorizon: true}
     tags: [显式几何, 直接时程, 深度预测, 相机运动]
     note: 直接预测指定时程的深度和三维几何，不递归滚画面。KITTI 长时程 AbsRel 从 Cosmos-3 的 21.2 到 17.4。DOMINO 全时程从 20.5 到 9.6，同数据训练的 VGGT-World 为 24.6。任意时程推理都是 0.11 秒。条件是预测出的相机运动，机器人动作条件留作后续。
+    note_en: "Directly predicts depth and 3D geometry at a specified horizon, without recursively rolling out images. Long-horizon AbsRel on KITTI decreases from 21.2 for Cosmos-3 to 17.4. Across all horizons on DOMINO, it decreases from 20.5 to 9.6, compared with 24.6 for VGGT-World trained on the same data. Inference takes 0.11 seconds at any horizon. Conditioning uses predicted camera motion; robot-action conditioning is left for future work."

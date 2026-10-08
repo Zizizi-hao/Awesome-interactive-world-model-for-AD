@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="800" viewBox="0 0 1600 800" font-family="Arial, Helvetica, sans-serif">
+  <title>Interactive world models: from prediction to closed-loop decisions</title>
+  <desc>Observations enter an action-conditioned world model. Imagined futures support planning and policy learning. Selected actions are executed in the real environment, whose observations and rewards update the history. Predictions are distinct from real feedback.</desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#ffffff"/><stop offset="1" stop-color="#f3f8ff"/></linearGradient>
+    <linearGradient id="world" x2="1" y2="1"><stop stop-color="#182f49"/><stop offset="1" stop-color="#244963"/></linearGradient>
+    <marker id="blue" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10" fill="#3478ee"/></marker>
+    <marker id="gray" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10" fill="#8a9cb0"/></marker>
+    <marker id="teal" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10" fill="#14a7a0"/></marker>
+    <marker id="green" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10" fill="#20a783"/></marker>
+    <g id="road">
+      <rect width="72" height="72" rx="5" fill="#e6eff6" stroke="#d9e6f1"/>
+      <rect x="7" y="2" width="58" height="68" rx="3" fill="#81929f"/>
+      <path d="M26 5V67M47 5V67" stroke="#e9eff3" stroke-dasharray="10 7"/>
+      <rect x="17" y="22" width="9" height="19" rx="3" fill="#e39a73" stroke="#eef2f5"/>
+      <rect x="51" y="12" width="9" height="18" rx="3" fill="#b6c9d7" stroke="#eef2f5"/>
+      <rect x="49" y="40" width="11" height="22" rx="3" fill="#3478ee" stroke="#eef2f5"/>
+      <path d="M52 47H57" stroke="#c6e3ff" stroke-width="3"/>
+    </g>
+  </defs>
+  <rect width="1600" height="800" fill="url(#bg)"/>
+  <rect x="54" y="35" width="5" height="46" rx="2" fill="#3478ee"/>
+  <text x="76" y="49" fill="#4279bd" font-size="13" font-weight="700" letter-spacing="2">CONCEPTUAL OVERVIEW</text>
+  <text x="76" y="101" fill="#182f49" font-size="36" font-weight="700">Interactive world models: from prediction to closed-loop decisions</text>
+  <text x="76" y="140" fill="#697e97" font-size="20">Predict action-conditioned futures; use imagination for planning, policy learning, and real interaction.</text>
+  <rect x="1256" y="34" width="290" height="34" rx="17" fill="#edf3fb"/>
+  <text x="1401" y="56" text-anchor="middle" fill="#617e9f" font-size="12" font-weight="700">AD / EMBODIED / GENERAL</text>
+
+  <path d="M1402 216V184H662V215" fill="none" stroke="#3478ee" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#blue)"/>
+  <rect x="901" y="166" width="269" height="34" rx="17" fill="#f6faff" stroke="#dce8fa"/>
+  <text x="1035" y="188" text-anchor="middle" fill="#326dc3" font-size="16" font-weight="700">Candidate actions</text>
+
+  <rect x="54" y="216" width="280" height="384" rx="19" fill="#ffffff" stroke="#d9e5f3"/>
+  <text x="77" y="245" fill="#748aa5" font-size="13" font-weight="700" letter-spacing="1">01 / OBSERVATION</text>
+  <text x="77" y="286" fill="#182f49" font-size="24" font-weight="700">Current observations</text>
+  <rect x="76" y="333" width="236" height="133" rx="10" fill="#dceef9"/>
+  <path d="M76 400L129 376L177 392L234 366L312 397V445H76Z" fill="#b8d1c1"/>
+  <path d="M76 445L159 382H227L312 445V466H76Z" fill="#596b7d"/>
+  <path d="M187 390L201 464" stroke="#eaf0f4" stroke-width="5" stroke-dasharray="13 13"/>
+  <rect x="172" y="402" width="38" height="17" rx="3" fill="#819cb0" stroke="#3d586e" stroke-width="2"/>
+  <path d="M148 465L157 452H230L238 465Z" fill="#3478ee"/>
+  <rect x="85" y="342" width="80" height="24" rx="6" fill="#ffffff"/>
+  <circle cx="99" cy="354" r="3" fill="#20a783"/>
+  <text x="108" y="358" font-size="10" fill="#597590" font-weight="700">OBSERVED</text>
+  <text x="77" y="495" fill="#182f49" font-size="20" font-weight="700">Observations &amp; history</text>
+  <text x="77" y="525" fill="#697e97" font-size="18">Images · states · past actions</text>
+  <rect x="77" y="546" width="178" height="30" rx="15" fill="#edf3fb"/>
+  <text x="166" y="566" text-anchor="middle" fill="#527592" font-size="15">o≤t / a&lt;t</text>
+
+  <rect x="366" y="216" width="390" height="384" rx="20" fill="url(#world)" stroke="#4d7394"/>
+  <text x="389" y="245" fill="#7cd3e0" font-size="13" font-weight="700" letter-spacing="1">02 / WORLD MODEL</text>
+  <text x="389" y="286" fill="#ffffff" font-size="27" font-weight="700">Interactive world model</text>
+  <text x="389" y="315" fill="#b2c5d8" font-size="17">Learn action-conditioned dynamics</text>
+  <rect x="389" y="342" width="154" height="130" rx="13" fill="#24455f" stroke="#40637e"/>
+  <text x="466" y="364" text-anchor="middle" fill="#d0e4f3" font-size="16" font-weight="700">Scene features</text>
+  <g fill="#61b1c1">
+    <rect x="405" y="377" width="20" height="16" rx="3"/><rect x="431" y="377" width="20" height="16" rx="3"/><rect x="457" y="377" width="20" height="16" rx="3"/><rect x="483" y="377" width="20" height="16" rx="3"/><rect x="509" y="377" width="15" height="16" rx="3"/>
+    <rect x="405" y="398" width="20" height="16" rx="3"/><rect x="431" y="398" width="20" height="16" rx="3"/><rect x="457" y="398" width="20" height="16" rx="3"/><rect x="483" y="398" width="20" height="16" rx="3"/><rect x="509" y="398" width="15" height="16" rx="3"/>
+    <rect x="405" y="419" width="20" height="16" rx="3"/><rect x="431" y="419" width="20" height="16" rx="3"/><rect x="457" y="419" width="20" height="16" rx="3"/><rect x="483" y="419" width="20" height="16" rx="3"/><rect x="509" y="419" width="15" height="16" rx="3"/>
+    <rect x="405" y="440" width="20" height="16" rx="3"/><rect x="431" y="440" width="20" height="16" rx="3"/><rect x="457" y="440" width="20" height="16" rx="3"/><rect x="483" y="440" width="20" height="16" rx="3"/><rect x="509" y="440" width="15" height="16" rx="3"/>
+  </g>
+  <path d="M549 406H570" fill="none" stroke="#20b6b2" stroke-width="2" marker-end="url(#teal)"/>
+  <rect x="579" y="342" width="154" height="130" rx="13" fill="#294960" stroke="#4b6c86"/>
+  <text x="656" y="363" text-anchor="middle" fill="#d0e4f3" font-size="15" font-weight="700">Future dynamics</text>
+  <g stroke="#537d92" fill="none"><path d="M607 391L635 383L663 391L691 406L663 422L635 429L607 422L635 383L635 429L663 391L607 422M607 391L663 422"/></g>
+  <g fill="#77c7d0" stroke="#a6dce3"><circle cx="607" cy="391" r="4"/><circle cx="635" cy="383" r="4"/><circle cx="663" cy="391" r="4"/><circle cx="691" cy="406" r="4"/><circle cx="663" cy="422" r="4"/><circle cx="635" cy="429" r="4"/><circle cx="607" cy="422" r="4"/></g>
+  <rect x="605" y="445" width="103" height="18" rx="9" fill="#19364e"/>
+  <text x="656" y="458" text-anchor="middle" fill="#b2d8e8" font-size="12" font-weight="700">+ action</text>
+  <rect x="389" y="490" width="344" height="44" rx="9" fill="#11283e" stroke="#34536d"/>
+  <text x="561" y="518" text-anchor="middle" fill="#e1edf7" font-size="16">pθ(future state | history, action sequence)</text>
+  <text x="389" y="558" fill="#bdd2e2" font-size="16">Generate video, latents, or structured states</text>
+  <text x="389" y="580" fill="#8eafc4" font-size="13">Representations and architectures vary by method</text>
+
+  <rect x="788" y="216" width="438" height="384" rx="19" fill="#ffffff" stroke="#d9e5f3"/>
+  <text x="811" y="245" fill="#748aa5" font-size="13" font-weight="700" letter-spacing="1">03 / IMAGINATION</text>
+  <text x="811" y="286" fill="#182f49" font-size="27" font-weight="700">Imagined futures</text>
+  <text x="811" y="315" fill="#697e97" font-size="17">Same scene; different actions, different futures</text>
+  <rect x="811" y="338" width="392" height="105" rx="12" fill="#f0f8f5" stroke="#e1ebf5"/>
+  <rect x="811" y="454" width="392" height="105" rx="12" fill="#fcf8ef" stroke="#e1ebf5"/>
+  <circle cx="838" cy="365" r="15" fill="#daf2e8"/><text x="838" y="371" text-anchor="middle" fill="#20a783" font-size="17" font-weight="700">A</text>
+  <text x="824" y="400" fill="#182f49" font-size="18" font-weight="700">Keep lane</text>
+  <text x="824" y="419" fill="#697e97" font-size="12">Candidate action</text>
+  <circle cx="838" cy="481" r="15" fill="#faecd1"/><text x="838" y="487" text-anchor="middle" fill="#d49527" font-size="17" font-weight="700">B</text>
+  <text x="824" y="516" fill="#182f49" font-size="16" font-weight="700">Change lane</text>
+  <text x="824" y="535" fill="#697e97" font-size="12">Candidate action</text>
+  <use href="#road" x="928" y="348"/><use href="#road" x="1021" y="348"/><use href="#road" x="1114" y="348"/>
+  <use href="#road" x="928" y="464"/><use href="#road" x="1021" y="464"/><use href="#road" x="1114" y="464"/>
+  <path d="M979 528C979 508 963 488 963 467M1068 528C1068 508 1047 488 1047 467M1159 528C1159 508 1131 488 1131 467" fill="none" stroke="#d79b25" stroke-width="2" stroke-dasharray="5 3"/>
+  <g fill="#748aa5" font-size="12" text-anchor="middle"><text x="964" y="435">t+1</text><text x="1057" y="435">t+2</text><text x="1150" y="435">t+3</text><text x="964" y="551">t+1</text><text x="1057" y="551">t+2</text><text x="1150" y="551">t+3</text></g>
+  <g stroke="#8a9cb0" stroke-width="1.5" marker-end="url(#gray)"><path d="M1004 384H1016"/><path d="M1097 384H1109"/><path d="M1004 500H1016"/><path d="M1097 500H1109"/></g>
+  <text x="811" y="585" fill="#697e97" font-size="16">Illustration: predictions ≠ real feedback</text>
+
+  <rect x="1258" y="216" width="288" height="384" rx="19" fill="#ffffff" stroke="#d9e5f3"/>
+  <text x="1281" y="245" fill="#748aa5" font-size="13" font-weight="700" letter-spacing="1">04 / DECISION</text>
+  <text x="1281" y="286" fill="#182f49" font-size="27" font-weight="700">Policy / planning</text>
+  <text x="1281" y="315" fill="#697e97" font-size="17">Evaluate actions using predictions</text>
+  <rect x="1281" y="338" width="242" height="162" rx="12" fill="#f5f8fc" stroke="#e1ebf5"/>
+  <g fill="#182f49" font-size="18"><text x="1296" y="371">Task goals &amp; efficiency</text><text x="1296" y="422">Safety &amp; constraints</text><text x="1296" y="474">Value / reward estimates</text></g>
+  <path d="M1296 390H1507M1296 441H1507" stroke="#e1ebf5"/>
+  <rect x="1281" y="516" width="242" height="51" rx="12" fill="#eaf2ff" stroke="#cfdefa"/>
+  <circle cx="1304" cy="542" r="12" fill="#3478ee"/><path d="M1298 542L1302 546L1310 537" fill="none" stroke="#ffffff" stroke-width="2"/>
+  <text x="1325" y="548" fill="#326dc3" font-size="20" font-weight="700">Selected action a<tspan dy="5" font-size="13">t</tspan></text>
+  <text x="1505" y="590" text-anchor="end" fill="#697e97" font-size="14">Also supports policy training</text>
+
+  <g stroke-width="2" fill="none"><path d="M337 406H361" stroke="#8a9cb0" marker-end="url(#gray)"/><path d="M760 406H783" stroke="#14a7a0" marker-end="url(#teal)"/><path d="M1229 406H1253" stroke="#8a9cb0" marker-end="url(#gray)"/></g>
+  <rect x="54" y="660" width="416" height="106" rx="17" fill="#ffffff" stroke="#cce8db"/>
+  <rect x="70" y="675" width="76" height="76" rx="12" fill="#e3f3ec"/>
+  <use href="#road" x="72" y="677"/>
+  <text x="165" y="690" fill="#20a783" font-size="13" font-weight="700" letter-spacing="1">REAL ENVIRONMENT</text>
+  <text x="165" y="719" fill="#182f49" font-size="22" font-weight="700">Environment / execution</text>
+  <text x="165" y="747" fill="#697e97" font-size="17">Execute actions; provide real feedback</text>
+  <path d="M193 660V603" fill="none" stroke="#20a783" stroke-width="2" marker-end="url(#green)"/>
+  <rect x="225" y="622" width="252" height="28" rx="14" fill="#f3faf6" stroke="#d9eee4"/>
+  <text x="351" y="641" text-anchor="middle" fill="#20a783" font-size="14" font-weight="700">Real observations / rewards</text>
+  <path d="M1402 600V713H475" fill="none" stroke="#3478ee" stroke-width="2" marker-end="url(#blue)"/>
+  <rect x="818" y="691" width="283" height="40" rx="20" fill="#ffffff" stroke="#cfdefa"/>
+  <text x="959" y="717" text-anchor="middle" fill="#326dc3" font-size="18" font-weight="700">Execute selected action a_t</text>
+  <text x="1008" y="758" text-anchor="middle" fill="#697e97" font-size="16">Real feedback updates history; rewards support learning. Prediction differs from execution.</text>
+</svg>
