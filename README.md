@@ -14,6 +14,10 @@
   <img src="assets/interactive-world-model1.png" alt="交互式世界模型：智能体与世界模型的闭环交互" width="760">
 </p>
 
+<p align="center">
+  <img src="assets/monthly-paper-counts.png" alt="各类别每月收录篇数" width="760">
+</p>
+
 ## 交互能力图例
 
 | 图标 | 含义 |
