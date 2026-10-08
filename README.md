@@ -8,7 +8,7 @@
 
 世界模型 (World Model) 通过学习环境的动态表征，实现对未来的预测与想象； 可交互世界模型进一步支持以动作 (action) 为条件的生成与控制， 为自动驾驶和具身智能提供数据引擎、神经仿真器与策略学习基础。 本仓库收录并整理该方向的代表性工作，按应用场景分类， 并标注每篇工作的交互能力维度。
 
-📊 共收录 **219** 篇工作 ｜ 最后更新：2026-10-08
+📊 共收录 **222** 篇工作 ｜ 最后更新：2026-10-08
 
 <p align="center">
   <img src="assets/interactive-world-model1.png" alt="交互式世界模型：智能体与世界模型的闭环交互" width="760">
@@ -25,9 +25,9 @@
 
 ## 目录
 
-- [自动驾驶 Autonomous Driving](#自动驾驶-autonomous-driving)（114）
-- [具身智能 Embodied AI](#具身智能-embodied-ai)（64）
-- [通用 / 游戏 General / Game](#通用--游戏-general--game)（41）
+- [自动驾驶 Autonomous Driving](#自动驾驶-autonomous-driving)（115）
+- [具身智能 Embodied AI](#具身智能-embodied-ai)（65）
+- [通用 / 游戏 General / Game](#通用--游戏-general--game)（42）
 
 ## 自动驾驶 Autonomous Driving
 
@@ -69,6 +69,7 @@
 | **Ego-Dynamics-Augmented World Model for Autonomous Driving with Zero-Shot Cross-Chassis Adaptation** | arXiv (2026) | Chen Lv 团队 | — | [论文](https://arxiv.org/abs/2607.13410) | 显式自车动力学先验解耦 BEV 世界模型，支持零样本跨底盘迁移。 |
 | **EvoDrive**: Pareto Evolution for Safety-Critical Autonomous Driving via Self-Improving LLM Agents | arXiv (2026) | Wei Ma 团队 | — | [论文](https://arxiv.org/abs/2606.03678) | 仿真锚定 actor-critic + 自演化评估器路由，帕累托档案保持攻击-真实权衡。 |
 | **FlashDrive**: Flash Vision-Language-Action Inference for Autonomous Driving | arXiv (2026) | Zhijian Liu 团队 | ⚡ | [论文](https://arxiv.org/abs/2608.12932) | 算法-系统协同压缩 VLA 四级瓶颈，10B 模型从 1.4Hz 提升至 6.6Hz。 |
+| **ForeDrive**: Foresight-Guided End-to-End Autonomous Driving with a Planning-Relevant Latent World Model | arXiv (2026) | 华中科技大学 / 上海造孚 / 同济大学 | 🎮 | [论文](https://arxiv.org/abs/2609.26299) | JEPA 式潜世界模型预测多步视觉和自车状态，这些未来直接作为扩散规划器的条件。规划梯度只更新共享编码器，预测器被截断梯度，只用预测损失训练。推理只看当前前视图，纯模仿学习，没有强化学习和外部分数器。NAVSIM v1 为 89.9 PDMS，更大的 ViT-L 为 90.4；v2 单阶段 90.0 EPDMS。 |
 | **D-V2S**: From Driving Videos to Simulatable Scenarios | arXiv (2026) | Antonio Manuel López 团队 | — | [论文](https://arxiv.org/abs/2606.21993) | VLM 生成场景描述 + LLM 转可执行脚本，实现 90% 语义元素覆盖的视频到可仿真场景转换。 |
 | **FrozenDrive**: Zero-Shot Text-Guided Driving Scene Generation with Parameter-Free Frozen Diffusion | arXiv (2026) | Kuk-Jin Yoon 团队 | — | [论文](https://arxiv.org/abs/2606.20110) | 冻结扩散骨干 + 知识保持时空注意力，零样本生成多视角一致驾驶场景。 |
 | **GEM**: Gaussian Evolution Model for Occupancy Forecasting and Motion Planning | arXiv (2026) | Saurabh Bagchi 团队 | — | [论文](https://arxiv.org/abs/2605.17682) | 非自回归连续 4D 高斯占据世界模型，支持任意时刻查询与运动规划。 |
@@ -199,6 +200,7 @@
 | **TourPhysics**: Bringing Physics to World Models for Exploration and Manipulation from a Single Image | arXiv (2026) | 复旦 / TeleAI | 🎮 🔁 ⏳ | [论文](https://arxiv.org/abs/2609.04911) | 从单图与声明式物理配置在线初始化，把 PhysOmni 从有限物理视频扩展为可持久探索与操作：每步先由仿真器算出物理与相机轨迹再生成观测，仿真状态与几何在合成期间锁定，并用参考锚定外观记忆抑制长时重访漂移。 |
 | **Toward Unified Robot Learning: Bridging Representation, Vision-Language-Action, and World Models** | arXiv (2026) | Fujitsu / CMU | — | [论文](https://arxiv.org/abs/2609.03927) | 综述将机器人学习沿表征理解、VLA 执行、世界模型推理三条轴统一，分析组件如何交互以及割裂带来的不确定性、OOD、跨本体、长上下文与长程规划问题，并给出面向物理接地、概率化统一系统的方向。 |
 | **TrAct**: Bridging Robot Control and Visual Prediction with Visual Tracks | arXiv (2026) | Stanford | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.24101) | 用视觉轨迹作为控制与预测的中间接口：VLAT 联合预测动作与轨迹，轨迹条件世界模型 rollout，再由视觉语言奖励模型选动作，仿真与真机成功率均高于动作条件世界模型。 |
+| **Tri-View Bench**: TriWorldBench: A Tri-View Consistency Perspective on Embodied World Models | arXiv (2026) | 北京大学 / 清华大学 / 上海人工智能实验室 | — | [论文](https://arxiv.org/abs/2609.26314) \| [代码](https://github.com/TriWorldBench/TriWorldBench) | 2026 年 9 月 23 日发布的头相机与左右腕相机一致性基准，评三路视频是否在描述同一次操作；与 CausalWM 所报的 9 月 11 日总分榜不是同一套评测。500 条回合、50 个 RoboTwin 2.0 双臂任务、19 项指标，汇总为 TWB-Score。 |
 | **TrojanWorld**: Backdooring World-Model Agents via Imagination Steering | arXiv (2026) | 上海交通大学 | 🎮 🔁 | [论文](https://arxiv.org/abs/2609.07051) | 针对预训练世界模型供应链的后门：场景中的物理物体作触发器，经决策反射诱导、干净行为锚定与因果传播，把内部想象导向攻击者指定动作；在 TD-MPC2、DreamerV3 等上触发时目标动作偏差低至 0.026，干净性能保留 ≥98.8%，触发消失后仍可能锁死在诱导行为。 |
 | **WALL-SS**: Scaling Long-horizon World Models via Next-Scale Autoregression | arXiv (2026) | — | 🎮 🔁 ⏳ | [论文](https://arxiv.org/abs/2608.26239) | 把具身轨迹表示为观测-动作时序交错的因果序列，用 next-scale 粗到细自回归注入尺度对齐的动作表征，配合尺度压缩的长时记忆与 on-policy 对齐奖励，实现可变长生成、有界内存下的分钟级连贯流式 rollout 与更强动作跟随。 |
 | **WISE**: World-model-guided Imagination Scheduling for Efficient Post-training of Vision-Language-Action Models | arXiv (2026) | 清华大学 / BAAI | 🎮 🔁 | [论文](https://arxiv.org/abs/2609.03681) | 用世界模型做 VLA 后训练时不是全程想象，而是在交互关键状态才调用、有界多视角 rollout，并以进度/完成信号做相对评价、在真实交互上下文中更新策略；相对全量想象节省约 80% GPU 时间，π0 / π0.5 仿真与真机均更稳。 |
@@ -255,6 +257,7 @@
 | **WorldDirector**: Building Controllable World Simulators with Persistent Dynamic Memory | arXiv (2026) | Qifeng Chen 团队 | — | [论文](https://arxiv.org/abs/2607.02517) | 持久动态对象记忆 + 无限制视角探索的可控视频世界模型框架。 |
 | **WorldReward**: Reward Modeling for Camera-Conditioned World Models | arXiv (2026) | 复旦 / 腾讯混元 | — | [论文](https://arxiv.org/abs/2609.03952) \| [项目](https://codegoat24.github.io/WorldReward) | 用 VLM 成对偏好同时评判动作一致性与视觉质量：把长视频切成动作对齐 chunk、结构化视觉证据再投票聚合；配套 WorldReward-Bench，并作为奖励对 HY-WorldPlay 1.5 做 RL 后训练，短长时程的动作执行与画面质量均提升。 |
 | **Zing-0.5**: Toward Playable Worlds with Real-Time Joint Action and Text Control | arXiv (2026) | 涌跃智能 | 🎮 ⚡ 🔁 ⏳ | [论文](https://arxiv.org/abs/2609.17909) \| [代码](https://github.com/seedleap/zing-world-model) | 5B 自回归世界模型把键盘幅度和在线文本放进同一条序列，四步生成加流式缓存，832×480 达 24 FPS。158 个 WBench 导航案例上总分 81.0、一致性 88.5，文本可以在导航过程中改事件而不重开生成。 |
+| **minWM**: A Full-Stack Open-Source Framework for Real-Time Interactive Video World Models | arXiv (2026) | 生数 / 清华大学 | 🎮 | [论文](https://arxiv.org/abs/2605.30263) \| [代码](https://github.com/shengshu-ai/minWM) | 把双向文生视频模型做成相机可控的少步自回归世界模型，流水线覆盖数据、可控微调、自回归训练、少步蒸馏和流式推理，并在 Wan2.1-T2V-1.3B 与 HY1.5-TI2V-8B 上跑通。单张 A800 上、不计 VAE，首帧延迟 Wan2.1 从 269 秒降到 1.137 秒，HY1.5 从 771 秒降到 3.446 秒。 |
 | **Cosmos**: Cosmos World Foundation Model Platform for Physical AI | arXiv (2025) | NVIDIA | 🎮 | [论文](https://arxiv.org/abs/2501.03575) | 面向物理 AI 的世界基础模型平台，提供可动作条件化的预训练世界模型，服务于自动驾驶与机器人的后训练。 |
 | **Matrix-Game**: Interactive World Foundation Model | arXiv (2025) | Skywork AI | 🎮 ⚡ ⏳ | [论文](https://arxiv.org/abs/2506.18701) | 开源实时交互世界基础模型，支持丰富的动作可控性与长时程连贯生成，探索世界模型的交互式应用范式。 |
 | **GameNGen**: Diffusion Models Are Real-Time Game Engines | arXiv (2024) | Google | 🎮 ⚡ | [论文](https://arxiv.org/abs/2408.14837) | 基于扩散模型的神经游戏引擎，在单张 TPU 上以 20FPS 实时运行 DOOM，人类评测难以区分其与真实引擎。 |

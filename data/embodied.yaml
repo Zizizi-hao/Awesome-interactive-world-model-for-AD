@@ -793,3 +793,16 @@ papers:
     features: {action: true, closedloop: true}
     tags: [视觉力矩, 冻结世界模型, 噪声空间强化学习, 预测残差]
     note: 在 LeWorldModel 上扩展出的视觉–力矩世界模型在强化学习时保持冻结，按动作块预测未来视觉和力矩；评论器用历史预测残差决定信多少这些未来。四个真机任务、每项 50 次，只用 100 条强化学习轨迹，平均成功率比 DSRL 高 23.6%，比 VLA 基线高 60%。
+
+  - title: "TriWorldBench: A Tri-View Consistency Perspective on Embodied World Models"
+    short: Tri-View Bench
+    org: 北京大学 / 清华大学 / 上海人工智能实验室
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2609.26314"
+      code: "https://github.com/TriWorldBench/TriWorldBench"
+    features: {}
+    tags: [三视角一致性, 头腕相机, 双臂操作, 评测基准]
+    note: 2026 年 9 月 23 日发布的头相机与左右腕相机一致性基准，评三路视频是否在描述同一次操作；与 CausalWM 所报的 9 月 11 日总分榜不是同一套评测。500 条回合、50 个 RoboTwin 2.0 双臂任务、19 项指标，汇总为 TWB-Score。

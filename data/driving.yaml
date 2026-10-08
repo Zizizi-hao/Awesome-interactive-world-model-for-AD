@@ -1357,3 +1357,15 @@ papers:
     features: {action: true}
     tags: [场景图, 特权监督, 潜空间对齐, nuScenes]
     note: 在 LAW 上用 nuScenes 三维标注做成以交通参与者为中心的场景图，只在训练时把视觉潜状态对齐这张图的关系嵌入。推理时场景图和三维标注都丢掉。相对重训的 LAW，轨迹 L2 从 0.661 降到 0.622，碰撞率从 0.456 降到 0.217；结构化场景图优于无结构的文字描述。
+
+  - title: "ForeDrive: Foresight-Guided End-to-End Autonomous Driving with a Planning-Relevant Latent World Model"
+    short: ForeDrive
+    org: 华中科技大学 / 上海造孚 / 同济大学
+    year: 2026
+    venue: arXiv
+    category: driving
+    links:
+      arxiv: "2609.26299"
+    features: {action: true}
+    tags: [规划相关潜空间, 非对称耦合, 扩散规划, NAVSIM]
+    note: JEPA 式潜世界模型预测多步视觉和自车状态，这些未来直接作为扩散规划器的条件。规划梯度只更新共享编码器，预测器被截断梯度，只用预测损失训练。推理只看当前前视图，纯模仿学习，没有强化学习和外部分数器。NAVSIM v1 为 89.9 PDMS，更大的 ViT-L 为 90.4；v2 单阶段 90.0 EPDMS。
