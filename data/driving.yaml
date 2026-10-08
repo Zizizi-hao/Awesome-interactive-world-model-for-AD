@@ -1460,3 +1460,15 @@ papers:
     features: {}
     tags: [对称正则, 连续视角, 多视角, 流匹配]
     note: 微调多视角驾驶视频世界模型。几何扭曲得到噪声锚，再用跨锚去噪一致性做对称正则，训练时没有新视角真值画面。nuScenes 30 个验证场景的中点视角上，联合生成 FVD 为 158.62，对照里最低的 DiST-4D 为 231.95。源条件推理的 FID 为 19.22，FreeVS 为 20.60。条件是相机位姿。
+
+  - title: "GeoWM: Efficient Direct World Modeling in Explicit Geometry"
+    short: GeoWM
+    org: 华为诺亚方舟实验室
+    year: 2026
+    venue: arXiv
+    category: driving
+    links:
+      arxiv: "2610.07381"
+    features: {longhorizon: true}
+    tags: [显式几何, 直接时程, 深度预测, 相机运动]
+    note: 直接预测指定时程的深度和三维几何，不递归滚画面。KITTI 长时程 AbsRel 从 Cosmos-3 的 21.2 到 17.4。DOMINO 全时程从 20.5 到 9.6，同数据训练的 VGGT-World 为 24.6。任意时程推理都是 0.11 秒。条件是预测出的相机运动，机器人动作条件留作后续。

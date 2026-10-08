@@ -1261,3 +1261,41 @@ papers:
     features: {action: true, closedloop: true, longhorizon: true}
     tags: [视觉子目标, 世界动作模型, 组合操作, 上下文]
     note: 先预测下一子任务的视觉子目标，再在该子目标条件下同时生成未来画面和动作，两部分共用预训练世界模型。RoboTwin Clean 82.00%、Random 67.02%，平均 74.51%，4D-WAM 平均 61.65%。同一 Cosmos3-Nano 骨干去掉视觉子目标后，Random 为 22.46%。真机是 AgiBot A2 上的五个长程组合任务。
+
+  - title: "DepthWorld: 3D World Model for Robot Manipulation"
+    short: DepthWorld
+    org: 布拉格捷克技术大学
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2610.08780"
+      project: "https://www.jaibardhan.com/depthworld"
+    features: {action: true, longhorizon: true}
+    tags: [多视角深度, 动作条件, DROID, 三维一致]
+    note: 在 Ctrl-World 上同时预测多视角 RGB 和深度。DROID 留出轨迹的外部视角，PSNR 从 22.63 到 24.09，AbsRel 为 0.0765。8 秒时运动点误差 46 mm，PointWorld 为 56 mm；全场景 Chamfer 从 18 mm 到 9 mm。标定后的 DROID-3D 超过 7 万条。
+
+  - title: "Preserving Unstable Modes Through Inverse Dynamics in JEPA World Models"
+    short: EP-IDM
+    org: 哥伦比亚大学 / 纽约大学 / AMI
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2610.07540"
+      project: "https://jepa-control.github.io/"
+    features: {action: true, closedloop: true}
+    tags: [逆动力学, 不稳定模态, JEPA, 潜空间控制]
+    note: 从首尾潜状态反推中间动作，迫使编码器留下可控的不稳定方向。CartPole 上，只有预测和抗塌缩时潜空间 LQR 成功率为 0%，加上这项后为 100%。Walker2D 潜空间规划速度从 0.08 m/s 到 2.91 m/s，真动力学为 3.61 m/s。
+
+  - title: "RIWANav: Recursive World-Action Models with Self-Improvement for Urban Navigation"
+    short: RIWANav
+    org: 上海交通大学 / 北京航空航天大学 / 香港科技大学 / 清华大学 / 得克萨斯大学奥斯汀分校 / IGDL
+    year: 2026
+    venue: arXiv
+    category: embodied
+    links:
+      arxiv: "2610.08640"
+    features: {action: true, closedloop: true, longhorizon: true}
+    tags: [递归自改进, 城市导航, 世界动作模型, Cosmos]
+    note: 导航策略和 Cosmos 世界模型交替更新。UrbanNav 未见场景成功率从冻结世界模型的 80.31% 到 88.25%，SPL 从 76.09% 到 82.59%。同一划分上 NoMaD 为 84.80% 和 79.85%。

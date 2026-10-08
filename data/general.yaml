@@ -594,3 +594,28 @@ papers:
     features: {}
     tags: [可编程世界, 程序事件, 长时记忆, 视频基准]
     note: 170 个由程序生成的回合、600 段代理视频。引擎记下实体状态和带时间戳的事件，包括镜头外的事件，再检查生成视频有没有把这些事件画出来。指标是实体控制、长时记忆、逻辑–画面对齐和交互成功率。
+
+  - title: "Tracking Is Not Permanence: What Video World Models Keep of a Hidden Object"
+    short: Not Permanence
+    org: 慕尼黑工业大学
+    year: 2026
+    venue: arXiv
+    category: general
+    links:
+      arxiv: "2610.07355"
+    features: {}
+    tags: [物体恒存, 遮挡, V-JEPA, 信念探测]
+    note: 冻结的 V-JEPA 2 预测器在物体被挡住后约 0.3 秒就把它丢掉，同一编码器仍能读出它在不在。只训预测器 3000 步，容器内物体的信念从 0.05 到 1.00。IntPhys-2019 从 84.2% 到 93.3%，不用容器的课程也能抬高这个分数。
+
+  - title: "World Models' Last Exam in Physics"
+    short: WM Last Exam
+    org: Einsia.AI / 北京大学 / 清华大学
+    year: 2026
+    venue: arXiv
+    category: general
+    links:
+      arxiv: "2610.08791"
+      project: "https://lab.einsia.ai/phys-last-exam"
+    features: {}
+    tags: [物理一致性, 可测量, 视频基准, 多领域]
+    note: 40 个可测量物理任务、8 个视频模型、1280 段视频。最高的 Seedance 总分 57.76。合成参考视频上，测量模块的物理分为 97.53。输入是起始画面和提示词。

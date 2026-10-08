@@ -8,7 +8,7 @@
 
 世界模型 (World Model) 通过学习环境的动态表征，实现对未来的预测与想象； 可交互世界模型进一步支持以动作 (action) 为条件的生成与控制， 为自动驾驶和具身智能提供数据引擎、神经仿真器与策略学习基础。 本仓库收录并整理该方向的代表性工作，按应用场景分类， 并标注每篇工作的交互能力维度。
 
-📊 共收录 **271** 篇工作 ｜ 最后更新：2026-10-08
+📊 共收录 **277** 篇工作 ｜ 最后更新：2026-10-08
 
 <p align="center">
   <img src="assets/interactive-world-model1.png" alt="交互式世界模型：智能体与世界模型的闭环交互" width="760">
@@ -25,9 +25,9 @@
 
 ## 目录
 
-- [自动驾驶 Autonomous Driving](#自动驾驶-autonomous-driving)（122）
-- [具身智能 Embodied AI](#具身智能-embodied-ai)（101）
-- [通用 / 游戏 General / Game](#通用--游戏-general--game)（48）
+- [自动驾驶 Autonomous Driving](#自动驾驶-autonomous-driving)（123）
+- [具身智能 Embodied AI](#具身智能-embodied-ai)（104）
+- [通用 / 游戏 General / Game](#通用--游戏-general--game)（50）
 
 ## 自动驾驶 Autonomous Driving
 
@@ -77,6 +77,7 @@
 | **GSDrive**: Reinforcing Driving Policies by Multi-mode Future Trajectory Probing with 3D Gaussian Splatting Environment | arXiv (2026) | Zufeng Zhang 团队 | 🔁 | [论文](https://arxiv.org/abs/2604.28111) | 3DGS 可微环境中多模态轨迹探测，将仿真回报转为密集奖励塑造端到端策略。 |
 | **GaussianDWM++**: Language-Grounded 3D Gaussian Driving World Model for Unified Scene Understanding, Editing, and Multi-Modal Generation | arXiv (2026) | Tianchen Deng 团队 | 🎮 | [论文](https://arxiv.org/abs/2608.16234) | 语言接地的 3D 高斯驾驶世界模型，统一场景理解、语言推理、可控 4D 编辑与多模态生成，弥补现有方法缺乏显式 3D 表示的不足。 |
 | **GeoWAM**: Visual Geometry World Action Models for Autonomous Driving | arXiv (2026) | Uber AV Labs / Case Western Reserve University | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.23486) \| [项目](https://yiren-lu.com/project_pages/geowam/) | 主张以点云几何而非像素作为驾驶世界模型的状态空间，通过预训练预测未来场景几何、再由几何条件动作头预测自车轨迹，开环与闭环评测均显著优于基于图像的 WAM。 |
+| **GeoWM**: Efficient Direct World Modeling in Explicit Geometry | arXiv (2026) | 华为诺亚方舟实验室 | ⏳ | [论文](https://arxiv.org/abs/2610.07381) | 直接预测指定时程的深度和三维几何，不递归滚画面。KITTI 长时程 AbsRel 从 Cosmos-3 的 21.2 到 17.4。DOMINO 全时程从 20.5 到 9.6，同数据训练的 VGGT-World 为 24.6。任意时程推理都是 0.11 秒。条件是预测出的相机运动，机器人动作条件留作后续。 |
 | **GraphWorld**: Long-Horizon Planning with World Models for End-to-End Autonomous Driving | arXiv (2026) | Yadan Luo 团队 | ⏳ | [论文](https://arxiv.org/abs/2606.16274) | 自车中心交互图 + 世界状态条件规划，降低碰撞率提升长程规划。 |
 | **HERMES++**: Toward a Unified Driving World Model for 3D Scene Understanding and Generation | arXiv (2026) | Xiang Bai 团队 | — | [论文](https://arxiv.org/abs/2604.28196) | 统一 3D 场景理解与未来几何预测的驾驶世界模型，采用 BEV + LLM 增强世界查询。 |
 | **How Can Driving World Models Do Counterfactual Prediction?** | arXiv (2026) | Ziran Wang 团队 | — | [论文](https://arxiv.org/abs/2608.11601) | 形式化驾驶世界模型作为反事实仿真器的条件，分析因果可识别性与估计偏差。 |
@@ -176,6 +177,7 @@
 | **D-JEPA**: A Decision-Aligned Latent World Model | arXiv (2026) | Nebulis Lab | 🎮 🔁 | [论文](https://arxiv.org/abs/2609.24749) \| [项目](https://nebulis-lab.com/D-JEPA/) | 潜空间里离目标更近不等于这个动作会执行得更好。它用已经发生的结果学习少数候选未来之间的决策顺序，再写回 JEPA 的未来表示，使规划仍可按潜空间距离进行。PushT 成功率 87.89%，RoboTwin 平均提高 15.04 个点，真机任务提高 17 个点，并在自动驾驶场景中做了动作选择。 |
 | **DeltaWAM**: Change-Centric Visual Foresight via Delta Tokens for an Efficient World-Action Model | arXiv (2026) | 复旦大学 / 中佛罗里达大学 / 南加州大学 | 🎮 🔁 | [论文](https://arxiv.org/abs/2609.33177) \| [代码](https://github.com/deltawam/DeltaWAM) | 每帧只预测一个 DINO 特征差分 token，当前帧的 DINO 特征作空间锚，再交给流匹配动作专家。LIBERO 成功率 92.8%；把完整未来 DINO 特征喂给策略会掉到 79.0%。LIBERO-Pro 扰动下平均 17.85%，对照方法接近 0。0.725B，每个动作块 142.1 ms，峰值显存 3.86 GB。 |
 | **DeltaWorld**: Physically Consistent Interactive World Simulators via Action-Conditioned Latent Increment Learning | arXiv (2026) | Imprintx Robotics / 国网冀北电力科学研究院 / 华北电力科学研究院 / 中国科学院自动化研究所 | 🎮 ⏳ | [论文](https://arxiv.org/abs/2610.02691) | 不直接预测下一帧潜状态，而是预测动作引起的潜变量增量并加回当前状态，交互区域用反事实掩码加重监督。IWS 五项任务、两个视角上，FVD 从 264.52 降到 231.98，LPIPS 从 0.0661 降到 0.0490。自采的三台机器人、四项任务上，FVD 从 168.98 降到 90.31。评测是动作条件视频预测。 |
+| **DepthWorld**: 3D World Model for Robot Manipulation | arXiv (2026) | 布拉格捷克技术大学 | 🎮 ⏳ | [论文](https://arxiv.org/abs/2610.08780) \| [项目](https://www.jaibardhan.com/depthworld) | 在 Ctrl-World 上同时预测多视角 RGB 和深度。DROID 留出轨迹的外部视角，PSNR 从 22.63 到 24.09，AbsRel 为 0.0765。8 秒时运动点误差 46 mm，PointWorld 为 56 mm；全场景 Chamfer 从 18 mm 到 9 mm。标定后的 DROID-3D 超过 7 万条。 |
 | **Devol-ONE**: One Autoregressive Mixture of Transformers to Unify Vision-Language-Action and Latent World Modeling | arXiv (2026) | Devol Robots | 🎮 🔁 | [论文](https://arxiv.org/abs/2609.32193) | 视觉语言流、由 V-JEPA 初始化的动力学流和动作专家在每一层互相注意，训练时就用模型自己滚出来的潜状态。LIBERO 平均成功率 98.4%，未在扰动数据上微调的 LIBERO-Plus 为 71.4%。34 个 RoboTwin 2.0 任务上 Clean 61.1%、Randomized 63.7%。另有 Flexiv 单臂和双臂真机。 |
 | **DexTacWAM**: A Visuo-Tactile World-Action Model for Dexterous Manipulation | arXiv (2026) | UIUC / UC Berkeley | 🎮 🔁 | [论文](https://arxiv.org/abs/2609.24976) \| [项目](https://dextacwam.github.io/) | 每根指尖的触觉各自编码后注入视频扩散世界模型，同时预测视觉和接触演化并生成动作。22 自由度双臂的六个接触任务上平均 70.6，最强视觉基线 38.0；夹子任务 60 对 10。拿掉触觉演化、只保留触觉条件后，四项任务平均从 74.7 掉到 26.6。约每个任务 100 条示范即可把预训练视频模型接到触觉。 |
 | **DexTouch-WM**: Learning Action-Conditioned Tactile World Models from Human Touch for Dexterous Robot Manipulation | arXiv (2026) | HKUST(GZ) / Xspark AI | 🎮 🔁 | [论文](https://arxiv.org/abs/2609.20649) | 人和灵巧手使用同一布局的压阻触觉阵列，人手动作重定向到机器人动作空间后，按动作同时预测未来图像和双手触觉。机器人数据固定为 5 小时，人类触摸加到 100 小时后，任务并不相同的留出机器人视觉、几何和接触预测都会变好，并可当作策略评测环境和合成轨迹来源。 |
@@ -220,7 +222,9 @@
 | **PointCast**: One World Model for Rigid, Articulated, and Deformable Object Manipulation | arXiv (2026) | 明尼苏达大学 | 🎮 🔁 | [论文](https://arxiv.org/abs/2609.28393) \| [项目](https://pointcast-wm.github.io) | 用物体和末端上的三维点做状态，每个点保持身份并按自己的轨迹受监督。同一套 19.8M 扩散 Transformer 和训练配方覆盖刚体、布料、绳子和多关节柜，每种体制单独存一个权重。仿真展开误差在布料、绳子、柜子上最好；真机 PGND 六类里四类最低，且六类都好于原模型。冻住后放进采样式模型预测控制，推姿态误差 1.39 cm，拖绳子 Chamfer 1.71 cm。 |
 | **PointZero**: 3D Point Track Completion for Learning Transferable 3D Dynamics | arXiv (2026) | CMU / Columbia / NVIDIA | 🎮 | [论文](https://arxiv.org/abs/2609.19142) \| [项目](https://pointzero-wm.github.io/) | 用三维点轨迹补全预训练可迁移的三维动力学，不需要机器人动作标签。给定一张 RGB-D 和稀疏局部轨迹，补全所有观测点的未来轨迹；再用末端位姿微调成动作条件动力学，在 PGND 上超过基线。继续微调去预测动作和三维轨迹时，7 个仿真与真机操作任务里 6 个超过或打平基线。 |
 | **LWM**: Predicting Consequences and Reinforcing Navigation Policies with Latent World Models | ECCV (2026, Spotlight) | — | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.26190) \| [项目](https://wzm206.github.io/latent-world-model-nav) | 不重建观测或特征，而是预测动作条件下的潜特征兼容性来直接评估动作后果（空间邻近与特征相似相关），借跨轨迹动作序列做反事实训练，可在世界模型想象中用 RL 从无关标注视频监督并提升导航策略。 |
+| **EP-IDM**: Preserving Unstable Modes Through Inverse Dynamics in JEPA World Models | arXiv (2026) | 哥伦比亚大学 / 纽约大学 / AMI | 🎮 🔁 | [论文](https://arxiv.org/abs/2610.07540) \| [项目](https://jepa-control.github.io/) | 从首尾潜状态反推中间动作，迫使编码器留下可控的不稳定方向。CartPole 上，只有预测和抗塌缩时潜空间 LQR 成功率为 0%，加上这项后为 100%。Walker2D 潜空间规划速度从 0.08 m/s 到 2.91 m/s，真动力学为 3.61 m/s。 |
 | **Q-Learning With World Models** | arXiv (2026) | Chelsea Finn / Dorsa Sadigh 团队 | 🎮 🔁 | [论文](https://arxiv.org/abs/2608.17163) | 把世界模型引入离策略 Q 学习——预测状态变化而非仅动作，突破此前世界模型局限于监督式策略学习的困境，提升 VLA 模型 RL 微调的样本效率。 |
+| **RIWANav**: Recursive World-Action Models with Self-Improvement for Urban Navigation | arXiv (2026) | 上海交通大学 / 北京航空航天大学 / 香港科技大学 / 清华大学 / 得克萨斯大学奥斯汀分校 / IGDL | 🎮 🔁 ⏳ | [论文](https://arxiv.org/abs/2610.08640) | 导航策略和 Cosmos 世界模型交替更新。UrbanNav 未见场景成功率从冻结世界模型的 80.31% 到 88.25%，SPL 从 76.09% 到 82.59%。同一划分上 NoMaD 为 84.80% 和 79.85%。 |
 | **ReWAM**: Rethinking Representations for World-Action Modeling | arXiv (2026) | 华中科技大学 / 地平线 / D-Robotics | 🎮 🔁 | [论文](https://arxiv.org/abs/2609.38163) | 在同一套世界–动作模型里比较表示：没有生成式视频预训练时，原始 DINO 特征在 RoboTwin 2.0 上优于 Video-VAE 潜变量，尽管像素重建更差。ReWAM 把 DINO 特征收成紧凑世界状态，只有动作损失的梯度进入这个瓶颈。RoboTwin 2.0 成功率 93.6%。RoboDojo 上约 600 小时具身预训练，平均分 12.29，成功率 8.28%。 |
 | **ViGAR**: Rethinking World-Action Model for Compositional and In-Context Robotic Manipulation | arXiv (2026) | 北京大学 / AgiBot / CocoMatrix | 🎮 🔁 ⏳ | [论文](https://arxiv.org/abs/2610.02368) \| [项目](https://dagroup-pku.github.io/ViGAR) \| [代码](https://github.com/DAGroup-PKU/ViGAR) | 先预测下一子任务的视觉子目标，再在该子目标条件下同时生成未来画面和动作，两部分共用预训练世界模型。RoboTwin Clean 82.00%、Random 67.02%，平均 74.51%，4D-WAM 平均 61.65%。同一 Cosmos3-Nano 骨干去掉视觉子目标后，Random 为 22.46%。真机是 AgiBot A2 上的五个长程组合任务。 |
 | **RoboPhys-3D**: A Comprehensive Embodied World Model Evaluation via 3D Reconstruction | arXiv (2026) | Christian Claudel 团队 | — | [论文](https://arxiv.org/abs/2608.28718) | 基于 RoboTwin 2.0 的 3D 接地具身世界模型基准，覆盖 4 类场景 50 个操作任务、5,000 集与 25,000 段多视角真值视频；生成视频与真值视频走同一 3D 重建管线，从而区分重建误差与生成误差。50 项指标组织为像素保真、3D 几何一致性、状态理解、任务完成 4 层 18 个子维度，并提出 Average Full Score 及与任务成功强相关的 RoboPhyscore（与人类评价 Pearson r=0.9761）；评测 Cosmos 3 等代表性模型发现感知/ VLM 式评判会遗漏大量状态与执行层面的失败。 |
@@ -299,8 +303,10 @@
 | **Sekai2**: From World Exploration to Interactive World Modeling | arXiv (2026) | Yongtao Ge 团队 | ⏳ | [论文](https://arxiv.org/abs/2608.09449) | 从世界探索到交互式世界建模的统一框架，支持长时程交互 rollout。 |
 | **SolarWM**: Open Data and Scalable Training for Long-Horizon Video World Models | arXiv (2026) | Li Jiang 团队 | 🎮 ⚡ ⏳ | [论文](https://arxiv.org/abs/2609.02886) \| [项目](https://junchao-cs.github.io/SolarWM-Web/) | 开源可交互视频世界模型全栈：1.43M 片段统一数据契约，并在 Wan2.2 / LTX-2.5 / MiniMax-H3 上做骨干原生适配；三阶段（双向适配、因果 AR、DMD）仅用 5 秒序列训练即可实时相机交互、分钟到小时级长时 rollout，并释放数据、配方与权重。 |
 | **The Evaluation Protocol Determines the Result: An Independent Reproduction of LeWorldModel on TwoRoom** | arXiv (2026) | Joyjeet Singh 团队 | — | [论文](https://arxiv.org/abs/2608.10145) | 独立复现发现评价协议决定世界模型排名，揭示评测方法论对结果的影响。 |
+| **Not Permanence**: Tracking Is Not Permanence: What Video World Models Keep of a Hidden Object | arXiv (2026) | 慕尼黑工业大学 | — | [论文](https://arxiv.org/abs/2610.07355) | 冻结的 V-JEPA 2 预测器在物体被挡住后约 0.3 秒就把它丢掉，同一编码器仍能读出它在不在。只训预测器 3000 步，容器内物体的信念从 0.05 到 1.00。IntPhys-2019 从 84.2% 到 93.3%，不用容器的课程也能抬高这个分数。 |
 | **Twin Rollouts**: Noise-Coupled Counterfactual Branching in Interactive Video World Models | arXiv (2026) | Xinran Xu 团队 | 🎮 | [论文](https://arxiv.org/abs/2608.08982) | 噪声耦合实现同一世界状态的分支式反事实 rollout，保持共享上下文一致性。 |
 | **Waypoint-1.5**: A Real-Time Video World Model for Consumer Hardware | arXiv (2026) | Overworld / Hugging Face | 🎮 ⚡ 🔁 ⏳ | [论文](https://arxiv.org/abs/2609.37107) \| [项目](https://over.world/waypoint-1.5) \| [代码](https://github.com/Overworldai/world_engine) | 1.28B 扩散世界模型，用约 10 万小时、数百款游戏的键鼠对齐视频预训练，按完整键盘和鼠标生成。时间压缩 4 倍，60 FPS 画面对应 15 个潜帧/秒。RTX 4090 上 720P INT8 为 72.88 潜帧/秒，360P INT8 为 275.84。他们把 30 潜帧/秒当作实时线，720P INT8 从 RTX 5060 Ti 往上都能过。 |
+| **WM Last Exam**: World Models' Last Exam in Physics | arXiv (2026) | Einsia.AI / 北京大学 / 清华大学 | — | [论文](https://arxiv.org/abs/2610.08791) \| [项目](https://lab.einsia.ai/phys-last-exam) | 40 个可测量物理任务、8 个视频模型、1280 段视频。最高的 Seedance 总分 57.76。合成参考视频上，测量模块的物理分为 97.53。输入是起始画面和提示词。 |
 | **WorldAttention**: An Efficient Attention Architecture for Interactive Video World Models | arXiv (2026) | 香港科技大学 / 阿里巴巴达摩院 / 浙江大学 / 湖畔实验室 | ⚡ ⏳ | [论文](https://arxiv.org/abs/2609.34606) \| [项目](https://alibaba-damo-academy.github.io/WorldAttention) \| [代码](https://github.com/alibaba-damo-academy/WorldAttention) | 给自回归扩散的文本条件交互视频模型做混合稀疏注意力和分层 KV 缓存，避免滑窗丢掉历史，也避免全历史缓存撑满显存。单张 H100 上 22.0 FPS。定制核相对 FlashAttention-3 加速 14.02 倍，加上分层缓存后端到端 2.21 倍。VBench-Long 主体一致性 0.9472，InterVBench 0.9668。 |
 | **WorldCycle**: Self-Verifiable Reinforcement Learning for Long-Horizon Video World Models | arXiv (2026) | Song Guo 团队 | ⏳ | [论文](https://arxiv.org/abs/2608.04964) | 自验证强化学习让视频世界模型在长程 rollout 中自我检测并修正错误。 |
 | **WorldDirector**: Building Controllable World Simulators with Persistent Dynamic Memory | arXiv (2026) | Qifeng Chen 团队 | — | [论文](https://arxiv.org/abs/2607.02517) | 持久动态对象记忆 + 无限制视角探索的可控视频世界模型框架。 |
