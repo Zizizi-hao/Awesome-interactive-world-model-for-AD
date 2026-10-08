@@ -1210,3 +1210,16 @@ papers:
     features: {}
     tags: [第一人称, 目标导向, 多步操作, 视频基准]
     note: 110 个真实任务、2640 段视频。输入是起始画面和高层目标，平均要超过五步，人类成功执行的中位时长 20.4 秒。最高的 Seedance-2.0 总分只有 64.0。自动评判与人类共识的相关为 0.69，标注者之间的 ICC 为 0.86。常见失败是跳过或只做完部分步骤，后面的步骤因此缺少该有的状态。
+
+  - title: "Ctrl-World: A Controllable Generative World Model for Robot Manipulation"
+    short: Ctrl-World
+    org: 斯坦福大学 / 清华大学
+    year: 2026
+    venue: ICLR 2026
+    category: embodied
+    links:
+      arxiv: "2510.10125"
+      project: "https://ctrl-world.github.io"
+    features: {action: true, closedloop: true, longhorizon: true}
+    tags: [多视角, 帧级动作, 位姿记忆, 策略仿真]
+    note: 从 1.5B Stable Video Diffusion 微调成多视角动作条件世界模型，用位姿条件的记忆检索维持长时程。在 DROID（约 9.5 万条轨迹、564 个场景）上训练，新场景和新相机布置下可展开超过 20 秒。验证集 256 段 10 秒轨迹上，第三人称 FVD 为 97.4，单视角版本为 127.5，IRASim 单视角为 138.1。想象里筛出的成功轨迹用来监督微调 π0.5，陌生指令和物体上的成功率从 38.7% 到 83.4%。成功与否由人工判断。指令跟随与真机接近，但会低估底层执行成功率。

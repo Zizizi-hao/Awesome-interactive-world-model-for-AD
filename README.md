@@ -8,7 +8,7 @@
 
 世界模型 (World Model) 通过学习环境的动态表征，实现对未来的预测与想象； 可交互世界模型进一步支持以动作 (action) 为条件的生成与控制， 为自动驾驶和具身智能提供数据引擎、神经仿真器与策略学习基础。 本仓库收录并整理该方向的代表性工作，按应用场景分类， 并标注每篇工作的交互能力维度。
 
-📊 共收录 **266** 篇工作 ｜ 最后更新：2026-10-08
+📊 共收录 **267** 篇工作 ｜ 最后更新：2026-10-08
 
 <p align="center">
   <img src="assets/interactive-world-model1.png" alt="交互式世界模型：智能体与世界模型的闭环交互" width="760">
@@ -26,7 +26,7 @@
 ## 目录
 
 - [自动驾驶 Autonomous Driving](#自动驾驶-autonomous-driving)（121）
-- [具身智能 Embodied AI](#具身智能-embodied-ai)（97）
+- [具身智能 Embodied AI](#具身智能-embodied-ai)（98）
 - [通用 / 游戏 General / Game](#通用--游戏-general--game)（48）
 
 ## 自动驾驶 Autonomous Driving
@@ -170,6 +170,7 @@
 | **CausalWM**: Causal Chain-of-Thought Reasoning for Embodied World Model | arXiv (2026) | Aether AI | 🎮 | [论文](https://arxiv.org/abs/2609.23184) \| [项目](https://aetherlabsai.github.io/CausalWM/) \| [代码](https://github.com/AetherLabsAI/CausalWM) | 16B 具身视频世界模型先预测光流，再预测三维点图，最后预测未来画面，前一步结果固定为后一步的上下文。训练用了约 3.1 万小时具身数据。2026 年 9 月 11 日的 TriWorldBench 上，36 个已公开模型里以 66.04 排第一，比第二名高 0.50。 |
 | **CAG**: Completion Aware Guidance for World Action Models | arXiv (2026) | 首尔大学 / KAIST | 🎮 🔁 | [论文](https://arxiv.org/abs/2610.01559) | 短块控制会让世界–动作模型反复选看起来合理的局部延续，把完成任务所需要的状态转移丢掉。CAG 是免训练的采样引导，骨干没有重训。RoboTwin 2.0 子集上成功率从 64% 到 70%，零样本仿真从 69% 到 75%，任务未完成的想象从 79% 降到 40%。 |
 | **ContactWorld**: What Representations Matter for Vision-Tactile Latent World Models in Contact-Rich Manipulation | arXiv (2026) | 普渡大学 / 得克萨斯农工大学 | — | [论文](https://arxiv.org/abs/2606.13877) \| [项目](https://contact-world.github.io) | 固定世界模型和规划器，只比较视觉与触觉的表示。12 个接触任务上，点云规划成功率 32.1%，腕部和前方 RGB 为 20.7% 和 22.0%；点云加结构化触觉力场为 36.1%。真机 900 次，覆盖六个任务、两台机器人和三种触觉。环境和脚本计划在发表后放出。 |
+| **Ctrl-World**: A Controllable Generative World Model for Robot Manipulation | ICLR (2026) | 斯坦福大学 / 清华大学 | 🎮 🔁 ⏳ | [论文](https://arxiv.org/abs/2510.10125) \| [项目](https://ctrl-world.github.io) | 从 1.5B Stable Video Diffusion 微调成多视角动作条件世界模型，用位姿条件的记忆检索维持长时程。在 DROID（约 9.5 万条轨迹、564 个场景）上训练，新场景和新相机布置下可展开超过 20 秒。验证集 256 段 10 秒轨迹上，第三人称 FVD 为 97.4，单视角版本为 127.5，IRASim 单视角为 138.1。想象里筛出的成功轨迹用来监督微调 π0.5，陌生指令和物体上的成功率从 38.7% 到 83.4%。成功与否由人工判断。指令跟随与真机接近，但会低估底层执行成功率。 |
 | **D-JEPA**: A Decision-Aligned Latent World Model | arXiv (2026) | Nebulis Lab | 🎮 🔁 | [论文](https://arxiv.org/abs/2609.24749) \| [项目](https://nebulis-lab.com/D-JEPA/) | 潜空间里离目标更近不等于这个动作会执行得更好。它用已经发生的结果学习少数候选未来之间的决策顺序，再写回 JEPA 的未来表示，使规划仍可按潜空间距离进行。PushT 成功率 87.89%，RoboTwin 平均提高 15.04 个点，真机任务提高 17 个点，并在自动驾驶场景中做了动作选择。 |
 | **DeltaWAM**: Change-Centric Visual Foresight via Delta Tokens for an Efficient World-Action Model | arXiv (2026) | 复旦大学 / 中佛罗里达大学 / 南加州大学 | 🎮 🔁 | [论文](https://arxiv.org/abs/2609.33177) \| [代码](https://github.com/deltawam/DeltaWAM) | 每帧只预测一个 DINO 特征差分 token，当前帧的 DINO 特征作空间锚，再交给流匹配动作专家。LIBERO 成功率 92.8%；把完整未来 DINO 特征喂给策略会掉到 79.0%。LIBERO-Pro 扰动下平均 17.85%，对照方法接近 0。0.725B，每个动作块 142.1 ms，峰值显存 3.86 GB。 |
 | **Devol-ONE**: One Autoregressive Mixture of Transformers to Unify Vision-Language-Action and Latent World Modeling | arXiv (2026) | Devol Robots | 🎮 🔁 | [论文](https://arxiv.org/abs/2609.32193) | 视觉语言流、由 V-JEPA 初始化的动力学流和动作专家在每一层互相注意，训练时就用模型自己滚出来的潜状态。LIBERO 平均成功率 98.4%，未在扰动数据上微调的 LIBERO-Plus 为 71.4%。34 个 RoboTwin 2.0 任务上 Clean 61.1%、Randomized 63.7%。另有 Flexiv 单臂和双臂真机。 |
